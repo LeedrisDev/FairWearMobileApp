@@ -12,8 +12,7 @@ import {ColorSchemeName} from 'react-native';
 
 import Colors from '../constants/Colors';
 import useColorScheme from '../hooks/useColorScheme';
-import ModalScreen from '../screens/ModalScreen';
-import NotFoundScreen from '../screens/NotFoundScreen';
+import NotFoundView from '../Pages/NotFound/Views/NotFoundView';
 import {RootStackParamList, RootTabParamList} from '../types';
 import LinkingConfiguration from './LinkingConfiguration';
 import HomePageView from "../Pages/HomePage/Views/HomePageView";
@@ -38,11 +37,8 @@ const Stack = createNativeStackNavigator<RootStackParamList>();
 function RootNavigator() {
   return (
     <Stack.Navigator>
-      <Stack.Screen name="Root" component={BottomTabNavigator} options={{ headerShown: false }} />
-      <Stack.Screen name="NotFound" component={NotFoundScreen} options={{ title: 'Oops!' }} />
-      <Stack.Group screenOptions={{ presentation: 'modal' }}>
-        <Stack.Screen name="Modal" component={ModalScreen} />
-      </Stack.Group>
+      <Stack.Screen name="HomePage" component={BottomTabNavigator} options={{ headerShown: false }} />
+      <Stack.Screen name="NotFound" component={NotFoundView} options={{ title: 'Oops!' }} />
     </Stack.Navigator>
   );
 }
