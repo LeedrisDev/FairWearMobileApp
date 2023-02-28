@@ -227,7 +227,7 @@ dist
 **/*.backup.*
 **/*.back.*
 
-node_modules
+fairwear-app/node_modules
 
 *.sublime*
 
