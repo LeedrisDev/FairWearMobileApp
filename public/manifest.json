@@ -1,8 +1,7 @@
 {
-  "short_name": "FairWearApp",
   "name": "FairWear App",
+  "short_name": "FairWearApp",
   "description": "Scanner for environmental and ethical clothing",
-  "theme_color": "#ffffff",
   "icons": [
     {
       "src": "logo192.png",
@@ -20,5 +19,11 @@
       "type": "image/png",
       "purpose": "any maskable"
     }
-  ]
+  ],
+  "theme_color": "#ffffff",
+  "background_color": "#e8ebf2",
+  "display": "standalone",
+  "start_url": "/",
+  "scope": "/",
+  "orientation": "portrait"
 }
