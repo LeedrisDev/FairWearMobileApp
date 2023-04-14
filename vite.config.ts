@@ -34,6 +34,7 @@ export default defineConfig({
                         type: "image/png",
                         purpose: "any maskable"
                     }
+
                 ],
                 theme_color: "#ffffff",
                 background_color: "#e8ebf2",
@@ -46,6 +47,7 @@ export default defineConfig({
                 enabled: true,
                 type: 'module',
             },
+
         })
     ],
 })

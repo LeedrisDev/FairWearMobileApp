@@ -5,13 +5,13 @@
 Install dependencies:
 
 ```bash
-npm run install-legacy # or yarn
+npm run install-legacy
 ```
 
 In order to run it in development, run:
 
 ```bash
-npm run dev # or yarn dev
+npm run dev 
 ```
 
 In order to do a production build, run:
