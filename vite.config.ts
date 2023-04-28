@@ -1,5 +1,6 @@
 import {defineConfig} from 'vite'
 import react from '@vitejs/plugin-react'
+import basicSsl from '@vitejs/plugin-basic-ssl'
 import {VitePWA} from 'vite-plugin-pwa'
 import {} from 'vite-plugin-pwa'
 // @ts-ignore
@@ -10,6 +11,7 @@ import manifest from './public/manifest.json'
 export default defineConfig({
     plugins: [
         react(),
+        basicSsl(),
         VitePWA({
             registerType: "prompt",
             includeAssets: ["favicon.ico", "apple-touch-icon.png", "masked-icon.svg"],

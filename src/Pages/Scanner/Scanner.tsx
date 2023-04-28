@@ -1,78 +1,33 @@
-import React, { useEffect } from "react";
-import config from "./config";
-import Quagga from "@ericblade/quagga2";
+import {Readers} from "@ericblade/quagga2";
+import React, { useState } from 'react';
 
-const Scanner = (props: any) => {
-    const { onDetected } = props;
 
-    useEffect(() => {
+const Scanner = () => {
 
-        Quagga.init(config, (err: any) => {
-            if (err) {
-                console.log(err, "error msg");
-            }
-            Quagga.start();
-            return () => {
-                Quagga.stop()
-            }
-        });
+    const [result, setResult] = useState('No result');
 
-        //detecting boxes on stream
-        Quagga.onProcessed(result => {
-            var drawingCtx = Quagga.canvas.ctx.overlay,
-                drawingCanvas = Quagga.canvas.dom.overlay;
+    const handleError = (err: any) => {
+        console.log(err)
+    }
 
-            if (result) {
-                if (result.boxes) {
-                    drawingCtx.clearRect(
-                        0,
-                        0,
-                        Number(drawingCanvas.getAttribute("width")),
-                        Number(drawingCanvas.getAttribute("height"))
-                    );
-                    result.boxes
-                        .filter(function(box) {
-                            return box !== result.box;
-                        })
-                        .forEach(function(box) {
-                            Quagga.ImageDebug.drawPath(box, { x: 0, y: 1 }, drawingCtx, {
-                                color: "green",
-                                lineWidth: 2
-                            });
-                        });
-                }
+    const handleScan = (result: any) => {
+        if(result){
+            setResult(result)
+        }
+    }
 
-                if (result.box) {
-                    Quagga.ImageDebug.drawPath(result.box, { x: 0, y: 1 }, drawingCtx, {
-                        color: "#00F",
-                        lineWidth: 2
-                    });
-                }
-
-                if (result.codeResult && result.codeResult.code) {
-                    Quagga.ImageDebug.drawPath(
-                        result.line,
-                        { x: "x", y: "y" },
-                        drawingCtx,
-                        { color: "red", lineWidth: 3 }
-                    );
-                }
-            }
-        });
-
-        Quagga.onDetected(detected);
-    }, []);
-
-    const detected = (result: any) => {
-        onDetected(result.codeResult.code);
-    };
+    const previewStyle = {
+        height: 240,
+        width: 320,
+    }
 
     return (
-        // If you do not specify a target,
-        // QuaggaJS would look for an element that matches
-        // the CSS selector #interactive.viewport
-        <div id="interactive" className="viewport" />
+        <div className="scanner">
+
+
+            <div className="result">{result}</div>
+        </div>
     );
-};
+}
 
 export default Scanner;
