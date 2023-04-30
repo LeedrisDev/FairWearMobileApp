@@ -1,36 +1,23 @@
 :root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
-
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-text-size-adjust: 100%;
-}
-
-a {
+  font-family: 'Poppins', sans-serif;
+  line-height: 15px;
+  font-size: 15px;
   font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
+
+  color: #2A301E;
+  background-color: white;
 }
-a:hover {
-  color: #535bf2;
+
+@font-face {
+  font-family: 'Poppins';
+  src: url('https://fonts.googleapis.com/css?family=Poppins');
 }
 
 body {
   margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
 }
 
+/*
 h1 {
   font-size: 3.2em;
   line-height: 1.1;
@@ -47,23 +34,126 @@ button {
   cursor: pointer;
   transition: border-color 0.25s;
 }
+
 button:hover {
   border-color: #646cff;
 }
+
 button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
+}*/
+
+.title-one {
+  font-size: 20px;
+  font-weight: 600;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
+.title-two {
+  font-size: 17px;
+  font-weight: 600;
+}
+
+.title-four {
+  font-size: 13px;
+}
+
+.profile-picture {
+  border-radius: 115px;
+  width: 30%;
+  height: 30%;
+}
+
+.product-image {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  border-radius: 12px;
+}
+
+.profile {
+  margin-top: 75px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+}
+
+.title {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px 10px;
+  gap: 12px;
+  align-self: stretch;
+}
+
+.action {
+  color: #33765D;
+}
+
+.history {
+  margin: 0 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+  width: 91%;
+}
+
+.content2 {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 12px 12px 10px;
+  border: 2px solid #E1E1E1;
+  border-radius: 12px;
+}
+
+.clothes {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 0px;
+  gap: 10px;
+}
+
+.fairscore {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 0px;
+  gap: 2px;
+}
+
+.clothe {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0px;
+  gap: 7px;
+}
+
+.brand-and-grade {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 0px;
+  gap: 7px;
+}
+
+.content {
+  margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0px;
+  gap: 25px;
 }
