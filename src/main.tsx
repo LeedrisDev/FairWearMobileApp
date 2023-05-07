@@ -16,7 +16,7 @@ ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
       </Routes>
     </BrowserRouter>
   </React.StrictMode>,
-)
+);
 
 if ('serviceWorker' in navigator) {
   registerSW();
