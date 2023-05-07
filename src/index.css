@@ -21,7 +21,6 @@ body {
 }
 
 /* Text sizes */
-
 .title-one {
   font-size: 20px;
   font-weight: 600;
@@ -34,112 +33,10 @@ body {
 
 .title-four {
   font-size: 13px;
+  font-weight: 400;
 }
 
-.profile-picture {
-  border-radius: 115px;
-  width: 30%;
-  height: 30%;
-}
-
-.product-image {
-  width: 100%;
-  aspect-ratio: 1 / 1;
-  border-radius: 12px;
-}
-
-.profile {
-  margin-top: 80px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 15px;
-}
-
-.title {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0px 10px;
-  gap: 12px;
-  align-self: stretch;
-}
 
 .action {
   color: #33765D;
-}
-
-.history {
-  margin: 0 15px;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 12px;
-  width: 91%;
-}
-
-.content2 {
-  box-sizing: border-box;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 12px 12px 10px;
-  border: 2px solid #E1E1E1;
-  border-radius: 12px;
-}
-
-.clothes {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  padding: 0px;
-  gap: 10px;
-}
-
-.fairscore {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  padding: 0px;
-  gap: 2px;
-}
-
-.clothe {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 0px;
-  gap: 7px;
-}
-
-.brand-and-grade {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  padding: 0px;
-  gap: 7px;
-}
-
-.content {
-  margin-top: 50px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 0px;
-  gap: 25px;
-}
-
-.settings {
-  position: absolute;
-  width: 30px;
-  height: 30px;
-  left: 310px;
-  top: 50px;
 }

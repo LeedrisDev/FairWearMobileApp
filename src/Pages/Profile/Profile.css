@@ -1,0 +1,96 @@
+/* Header */
+.profile {
+    flex-direction: column;
+    gap: 15px;
+}
+
+.profile-picture {
+    border-radius: 115px;
+    height: 30%;
+    width: 30%;
+}
+
+.settings {
+    height: 30px;
+    margin-left: 80%;
+    margin-top: 50px;
+    width: 30px;
+}
+
+
+/* Content */
+.box,
+.clothing-item,
+.profile,
+.category,
+.content,
+.fairscore,
+.clothes,
+.brand-and-grade,
+.box-header {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+
+.content {
+    flex-direction: column;
+    gap: 25px;
+    margin-top: 50px;
+    padding: 0px;
+}
+
+.box-header {
+    align-self: stretch;
+    flex-direction: row;
+    gap: 12px;
+    justify-content: space-between;
+    padding: 0px 10px;
+}
+
+.box {
+    border-radius: 12px;
+    border: 2px solid #E1E1E1;
+    box-sizing: border-box;
+    flex-direction: column;
+    padding: 12px 12px 10px;
+}
+
+.category {
+    flex-direction: column;
+    gap: 12px;
+    margin: 0 15px;
+    width: 91%;
+}
+
+.clothes {
+    flex-direction: row;
+    gap: 10px;
+    padding: 0px;
+}
+
+
+/* Item of clothing */
+.clothing-item {
+    flex-direction: column;
+    gap: 7px;
+    padding: 0px;
+}
+
+.item-image {
+    aspect-ratio: 1 / 1;
+    border-radius: 12px;
+    width: 100%;
+}
+
+.brand-and-grade {
+    flex-direction: row;
+    gap: 7px;
+    padding: 0px;
+}
+
+.fairscore {
+    flex-direction: row;
+    gap: 2px;
+    padding: 0px;
+}
