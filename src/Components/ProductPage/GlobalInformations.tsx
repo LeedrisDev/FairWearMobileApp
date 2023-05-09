@@ -2,6 +2,10 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faTshirt, faEarth, faMap } from '@fortawesome/free-solid-svg-icons'
 import { IGlobalProductInformations } from "../../Tests/InterfaceProduct";;
 import { useState } from 'react'
+import product1 from "../../assets/produit1.png";
+
+
+
 
 import './GlobalInformations.css'
 import {IconDefinition} from "@fortawesome/fontawesome";
@@ -70,19 +74,10 @@ function GlobalInformations(props: IProps) {
     const [globalScore, setGlobalScore] = useState(props.globalProductInformations.globalScore)
 
 
-    import(`../../assets/${props.globalProductInformations.image}.png`).then(image => {
-        return setImage({
-            image
-        });
-    });
-
-
     return (
         <div className="product-page">
             <div className="image-box">
-                <div className="box">
-                    <img alt="" src={image}/>
-                </div>
+                <img src={product1} className='item-image' />
             </div>
 
             <div className="informations-box">

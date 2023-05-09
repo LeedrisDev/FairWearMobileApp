@@ -6,8 +6,19 @@
 }
 
 .box {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+
+    flex-direction: column;
+    gap: 7px;
+    padding: 0px;
+}
+
+.item-image {
+    aspect-ratio: 1 / 1;
+    border-radius: 12px;
     width: 100%;
-    height: 100%;
 }
 
 .name {
@@ -50,10 +61,14 @@
 
 .coloredIcon {
     color: #33765D;
+    width: 120%;
+    height: 120%;
 }
 
 .icon {
     color: #E1E1E1;
+    width: 120%;
+    height: 120%;
 }
 
 .informations-box {
@@ -67,9 +82,11 @@
 .score-information{
     display: flex;
     flex-direction: row;
-    align-items: flex-start;
     padding: 0px;
     gap: 5px;
+
+    height: 20%;
+
 
     flex: none;
     order: 1;
@@ -83,6 +100,8 @@
     padding: 0px;
     gap: 12px;
 
+    height : 15%;
+
     flex: none;
     order: 0;
     flex-grow: 0;
@@ -95,5 +114,5 @@
 
 .scoreIcon {
     width: 20%;
-    height: 20%;
+    height: 50%;
 }
