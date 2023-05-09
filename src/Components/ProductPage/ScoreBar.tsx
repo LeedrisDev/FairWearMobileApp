@@ -17,9 +17,15 @@ interface IPropsDesignBar{
 
 function DesignBar(props: any) {
     return (
-        <div className="design-bar">
-            <FontAwesomeIcon icon={props.icon}/>
-            <ProgressBar now={props.percent} />
+        <div className="marche">
+            <div>
+                <FontAwesomeIcon icon={props.icon}/>
+            </div>
+
+            <div>
+                <ProgressBar now={props.percent} variant="BAR"/>
+            </div>
+
         </div>
     )
 }
