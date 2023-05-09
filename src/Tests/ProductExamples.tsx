@@ -13,13 +13,13 @@ let product1: IProductInformations = {
     },
     composition: [
         {
+            percentage: 85,
+            component: "polyesther"
+        },
+        {
             percentage: 15,
             component: "cotton"
         },
-        {
-            percentage: 85,
-            component: "polyesther"
-        }
     ],
     alternatives: ["", "", "", ""]
 }

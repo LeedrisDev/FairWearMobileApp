@@ -11,16 +11,15 @@
 }
 
 .name {
-    width: 170px;
-    height: 44px;
-
-    font-family: 'Poppins', serif;
+    font-family: 'Poppins', sans-serif;
     font-style: normal;
     font-weight: 600;
     font-size: 20px;
-    line-height:101%;
+    line-height: 22px;
     display: flex;
     align-items: center;
+    justify-content: left;
+
 
     /* Dark green */
     color: #2A301E;
@@ -33,7 +32,7 @@
 }
 
 .detailsText {
-    font-family: 'Poppins', serif;
+    font-family: 'Poppins', sans-serif;
     font-style: normal;
     font-weight: 400;
     font-size: 15px;
@@ -66,13 +65,27 @@
 }
 
 .score-information{
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 0px;
+    gap: 5px;
+
+    flex: none;
+    order: 1;
+    flex-grow: 0;
 }
 
 .details-information{
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 0px;
+    gap: 12px;
+
+    flex: none;
+    order: 0;
+    flex-grow: 0;
 }
 
 .detailsIcon {

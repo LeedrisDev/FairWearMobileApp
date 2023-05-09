@@ -1,0 +1,18 @@
+.title {
+    font-family: 'Poppins', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 17px;
+    line-height: 22px;
+    display: flex;
+    align-items: center;
+
+    /* Dark green */
+    color: #2A301E;
+
+
+    /* Inside auto layout */
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+}
