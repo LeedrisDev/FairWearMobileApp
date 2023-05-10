@@ -19,7 +19,7 @@ const CameraHandler = () => {
 
     async function setCameraSupportedTrue()
     {
-      if (navigator.mediaDevices && await navigator.mediaDevices.getUserMedia()) {
+      if (navigator.mediaDevices && await navigator.mediaDevices.getUserMedia({video: true})) {
         setCameraSupported(true);
       }
     }
@@ -38,24 +38,22 @@ const CameraHandler = () => {
         {
           isCameraSupported && isCameraEnabled ?
             <Suspense fallback={<div>Loading...</div>}>
-              <p>test</p>
             </Suspense>
             :
-            "partout"
+            ""
         }
 
         {isCameraSupported && !isCameraEnabled ?
             <>
               <div className="cameraHandler__message">Enable your camera with the button below
                 <br/>
-                <div className="cameraHandler__messageIcon"><h1>fleche</h1></div>
+                <div className="cameraHandler__messageIcon"><h1></h1></div>
               </div>
               <button type="button" aria-label="Enable Camera" className="btn__round camera__enable" onClick={onCamEnabled}>
                 camera
               </button>
             </>
-            :
-            "la"
+            : ""
         }
 
         {!isCameraSupported ?
@@ -66,8 +64,7 @@ const CameraHandler = () => {
                 <BarcodeInputField />
               </div>
             </div>
-            :
-            "ici"
+            :""
         }
       </>
   );

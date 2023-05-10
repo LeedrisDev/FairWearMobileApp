@@ -42,7 +42,7 @@ const Video = () => {
 
   // @ts-ignore
   useEffect(async () => {
-    if(navigator.mediaDevices && await navigator.mediaDevices.getUserMedia) {
+    if(navigator.mediaDevices && await navigator.mediaDevices.getUserMedia({"video": true})) {
 
 
       await Quagga.init({
@@ -75,7 +75,6 @@ const Video = () => {
 
   useEffect(() => {
     if (attempts > 3) {
-      console.log("ouep");
     }
   }, [attempts]);
 
