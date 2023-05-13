@@ -9,7 +9,8 @@
     "preview": "vite --config=config/vite.config.ts preview",
     "install-legacy": "npm install --legacy-peer-deps",
     "lint": "eslint --ext .js,.jsx,.ts,.tsx src __tests__",
-    "test": "jest --config config/jest.config.ts"
+    "test": "jest --config config/jest.config.ts",
+    "test:coverage": "jest --config config/jest.config.ts --coverage=true"
   },
   "dependencies": {
     "@jest/globals": "^29.5.0",
