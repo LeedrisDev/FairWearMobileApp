@@ -20,10 +20,30 @@ jobs:
         cache: 'npm'
     - run: npm ci
     - run: npm run build
+    
+  UnitTesting:
+    name: Unit Testing
+    runs-on: ubuntu-latest
+    needs: build
+
+    strategy:
+      matrix:
+        node-version: [18.x]
+
+    steps:
+      - uses: actions/checkout@v3
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: 'npm'
+      - run: npm ci
+      - run: npm test
 
   linter:
     name: Linter
     runs-on: ubuntu-latest
+    needs: UnitTesting
 
     strategy:
       matrix:
@@ -38,3 +58,31 @@ jobs:
         cache: 'npm'
     - run: npm ci
     - run: npm run lint
+    
+  Coverage:
+    name: Code coverage
+    runs-on: ubuntu-latest
+    needs: UnitTesting
+
+    strategy:
+      matrix:
+        node-version: [18.x]
+
+    steps:
+      - uses: actions/checkout@v3
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: 'npm'
+      - run: npm ci
+      - run: npm run test:coverage
+      - name: Save coverage report as artifact
+        uses: actions/upload-artifact@v2
+        with:
+          name: coverage-report
+          path: coverage/lcov-report/
+      
+  
+  
+    
