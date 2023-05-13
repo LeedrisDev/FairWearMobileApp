@@ -24,6 +24,7 @@ jobs:
   UnitTesting:
     name: Unit Testing
     runs-on: ubuntu-latest
+    needs: build
 
     strategy:
       matrix:
@@ -42,6 +43,7 @@ jobs:
   linter:
     name: Linter
     runs-on: ubuntu-latest
+    needs: UnitTesting
 
     strategy:
       matrix:
