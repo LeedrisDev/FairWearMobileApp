@@ -5,6 +5,7 @@ import ProgressBar from 'react-bootstrap/ProgressBar';
 import { faDog, faLeaf, faPerson } from "@fortawesome/free-solid-svg-icons";
 
 import 'bootstrap/dist/css/bootstrap.min.css';
+import React, {useEffect} from "react";
 
 interface IPropsProductInformations {
     informations: IProductScore
@@ -15,7 +16,10 @@ interface IPropsDesignBar{
     percent: number,
 }
 
+
 function DesignBar(props: any) {
+
+
     return (
         <div className="marche">
             <div>
@@ -23,7 +27,7 @@ function DesignBar(props: any) {
             </div>
 
             <div>
-                <ProgressBar now={props.percent} variant="BAR"/>
+                <ProgressBar now={props.percent} />
             </div>
 
         </div>
