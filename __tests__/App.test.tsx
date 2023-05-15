@@ -1,7 +1,7 @@
 import '@testing-library/jest-dom';
 import '@testing-library/jest-dom/extend-expect';
 
-import React from 'react'
+import React from 'react';
 import { render, screen, fireEvent } from '@testing-library/react';
 import App from '../src/App';
 
@@ -23,5 +23,4 @@ describe('App component', () => {
     const updatedCountElement = screen.getByText(/count is 1/i);
     expect(updatedCountElement).toBeInTheDocument();
   });
-
 });

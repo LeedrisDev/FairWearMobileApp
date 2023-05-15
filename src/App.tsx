@@ -1,12 +1,12 @@
-import './App.css'
-import { useState } from 'react'
-import { useNavigate } from "react-router-dom";
-import reactLogo from '../public/react.svg'
+import React, { useState } from 'react';
+import './App.css';
+import { useNavigate } from 'react-router-dom';
+import reactLogo from '../public/react.svg';
 
 function App() {
-  const [count, setCount] = useState(0)
-  let navigate = useNavigate();
-  
+  const [count, setCount] = useState(0);
+  const navigate = useNavigate();
+
   return (
     <div className="App">
       <div>
@@ -35,7 +35,7 @@ function App() {
       <p className="read-the-docs">
         Click on the Vite and React logos to learn more
       </p>
-      <button onClick={() => { navigate('Profile') }}>Go to Profile</button>
+      <button type="button" onClick={() => { navigate('Profile'); }}>Go to Profile</button>
     </div>
   );
 }
