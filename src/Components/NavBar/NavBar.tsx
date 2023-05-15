@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { Link } from 'react-router-dom';
 import { useState } from 'react';
 import {
   FaHome, FaSearch, FaUser, FaBarcode,
@@ -15,42 +16,50 @@ function NavBar() {
 
   return (
     <div className="navbar">
-        <div className="navbar-icon">
-      <div
-        className={`${activeIcon === 'home' ? 'active' : 'passive'}`}
-        onClick={() => handleIconClick('home')}
-      >
-        <FaHome className="icon" />
-        <div className="title">Home</div>
+      <div className="navbar-icon">
+        <Link className="nav-link" to="/Home">
+          <div
+            className={`${activeIcon === 'home' ? 'active' : 'passive'}`}
+            onClick={() => handleIconClick('home')}
+          >
+            <FaHome className="icon" />
+            <div className="title">Home</div>
+          </div>
+        </Link>
       </div>
-    </div>
-        <div className="navbar-icon">
-      <div
-        className={`${activeIcon === 'search' ? 'active' : 'passive'}`}
-        onClick={() => handleIconClick('search')}
-      >
-        <FaSearch className="icon" />
-        <div className="title">Search</div>
+      <div className="navbar-icon">
+        <Link className="nav-link" to="/Search">
+          <div
+            className={`${activeIcon === 'search' ? 'active' : 'passive'}`}
+            onClick={() => handleIconClick('search')}
+          >
+            <FaSearch className="icon" />
+            <div className="title">Search</div>
+          </div>
+        </Link>
       </div>
-        </div>
-        <div className="navbar-icon">
-      <div
-        className={`${activeIcon === 'add' ? 'active' : 'passive'}`}
-        onClick={() => handleIconClick('add')}
-      >
-        <FaBarcode className="icon" />
-        <div className="title">Scanner</div>
+      <div className="navbar-icon">
+        <Link className="nav-link" to="/">
+          <div
+            className={`${activeIcon === 'add' ? 'active' : 'passive'}`}
+            onClick={() => handleIconClick('add')}
+          >
+            <FaBarcode className="icon" />
+            <div className="title">Scanner</div>
+          </div>
+        </Link>
       </div>
-        </div>
-        <div className="navbar-icon">
-      <div
-        className={`${activeIcon === 'user' ? 'active' : 'passive'}`}
-        onClick={() => handleIconClick('user')}
-      >
-        <FaUser className="icon" />
-        <div className="title">Profile</div>
+      <div className="navbar-icon">
+        <Link className="nav-link" to="/Profile">
+          <div
+            className={`${activeIcon === 'user' ? 'active' : 'passive'}`}
+            onClick={() => handleIconClick('user')}
+          >
+            <FaUser className="icon" />
+            <div className="title">Profile</div>
+          </div>
+        </Link>
       </div>
-        </div>
     </div>
   );
 }
