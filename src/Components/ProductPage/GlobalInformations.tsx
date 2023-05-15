@@ -1,95 +1,92 @@
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faTshirt, faEarth, faMap } from '@fortawesome/free-solid-svg-icons'
-import { IGlobalProductInformations } from "../../Tests/InterfaceProduct";;
-import { useState } from 'react'
-import product1 from "../../assets/produit1.png";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import {
+  faTshirt, faEarth, faMap,
+} from '@fortawesome/free-solid-svg-icons';
+import { IGlobalProductInformations } from '../../Tests/InterfaceProduct';
+import { useState } from 'react';
+import * as React from 'react';
+import product1 from '../../assets/produit1.png';
 
-
-
-
-import './GlobalInformations.css'
-import {IconDefinition} from "@fortawesome/fontawesome";
+import './GlobalInformations.css';
+import { IconDefinition } from '@fortawesome/fontawesome';
+import { IconProp } from '@fortawesome/fontawesome-svg-core';
 
 interface IProps {
-    globalProductInformations: IGlobalProductInformations
+  globalProductInformations: IGlobalProductInformations
 }
 
-
 interface IPropsScore {
-    globalScore: number
+  globalScore: number
 }
 
 interface IPropsTextandLogo {
-    icon: IconDefinition,
-    text: string,
+  icon: IconDefinition,
+  text: string,
 }
 
-function TextAndIcon(type: any) {
-    const [text, setText] = useState(type.text)
-    const [iconType, setIcon] = useState(type.icon)
+function TextAndIcon({ text, icon }: IPropsTextandLogo) {
+  const [texte] = useState(text);
+  const [iconType] = useState(icon);
 
-    return (
-        <div className="details-information">
-            <div className="detailsIcon">
-                <FontAwesomeIcon icon={iconType} />
-            </div>
+  return (
+    <div className="details-information">
+      <div className="detailsIcon">
+        <FontAwesomeIcon icon={iconType as IconProp} />
+      </div>
 
-            <p className="detailsText">{text}</p>
-        </div>
-    )
+      <p className="detailsText">{texte}</p>
+    </div>
+  );
 }
 
-function Score(props: IPropsScore) {
-    const [score, setText] = useState(props.globalScore)
+function Score({ globalScore }: IPropsScore) {
+  const [score] = useState(globalScore);
 
-    return (
-        <div className="score-information">
-            {
+  return (
+    <div className="score-information">
+      {
                 Array.from({ length: 5 }, (_, i) => {
-                    if (i < score) {
-                        return (
-                                <div className="scoreIcon" key={i}>
-                                    <FontAwesomeIcon className="coloredIcon" icon={faEarth}/>
-                                </div>
-                        )
-                    }
-                    else {
-                        return (
-                                <div className="scoreIcon" key={i}>
-                                    <FontAwesomeIcon className="icon" icon={faEarth}/>
-                                </div>
-                        )
-                    }
+                  if (i < score) {
+                    return (
+                      <div className="scoreIcon" key={i}>
+                        <FontAwesomeIcon className="coloredIcon" icon={faEarth} />
+                      </div>
+                    );
+                  }
+
+                  return (
+                    <div className="scoreIcon" key={i}>
+                      <FontAwesomeIcon className="icon" icon={faEarth} />
+                    </div>
+                  );
                 })
             }
-        </div>
-    )
+    </div>
+  );
 }
 
-function GlobalInformations(props: IProps) {
-    const [name, setName] = useState(props.globalProductInformations.name)
-    const [brand, setBrand] = useState(props.globalProductInformations.brand)
-    const [image, setImage]: any = useState()
-    const [country, setCountry] = useState(props.globalProductInformations.country)
-    const [globalScore, setGlobalScore] = useState(props.globalProductInformations.globalScore)
+function GlobalInformations({ globalProductInformations }: IProps) {
+  const [name] = useState(globalProductInformations.name);
+  const [brand] = useState(globalProductInformations.brand);
+  const [country] = useState(globalProductInformations.country);
+  const [globalScore] = useState(globalProductInformations.globalScore);
 
+  return (
+    <div className="product-page">
+      <div className="image-box">
+        <img src={product1} className="item-image" alt="" />
+      </div>
 
-    return (
-        <div className="product-page">
-            <div className="image-box">
-                <img src={product1} className='item-image' />
-            </div>
+      <div className="informations-box">
+        <p className="name">{name}</p>
 
-            <div className="informations-box">
-                <p className="name">{name}</p>
+        <Score globalScore={globalScore} />
 
-                <Score globalScore={globalScore}/>
-
-                <TextAndIcon icon={faTshirt} text={brand} />
-                <TextAndIcon icon={faMap} text={country} />
-            </div>
-        </div>
-    )
+        <TextAndIcon icon={faTshirt as IconDefinition} text={brand} />
+        <TextAndIcon icon={faMap as IconDefinition} text={country} />
+      </div>
+    </div>
+  );
 }
 
 export default GlobalInformations;
