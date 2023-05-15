@@ -1,23 +1,23 @@
-import ProductPage from "./ProductPage";
-import Scanner from "./Scanner";
-import React, { useState } from "react";
+import ProductPage from './ProductPage';
+import Scanner from './Scanner';
+import React, { useState } from 'react';
 
-import "./ScannerPage.css"
+import './ScannerPage.css';
 
 function ScannerPage() {
-    const [result, setResult] = useState(null);
+  const [result, setResult] = useState(null);
 
-    const onDetected = (result: any) => {
-        setResult(result);
-    };
+  const onDetected = (result: any) => {
+    setResult(result);
+  };
 
-    return (
-        <div className="ScannerPage" >
-            {
-                result ? <ProductPage  result={result}/>: <Scanner onDetected={onDetected} />
+  return (
+    <div className="ScannerPage">
+      {
+                result ? <ProductPage result={result} /> : <Scanner onDetected={onDetected} />
             }
-        </div>
-    );
+    </div>
+  );
 }
 
 export default ScannerPage;

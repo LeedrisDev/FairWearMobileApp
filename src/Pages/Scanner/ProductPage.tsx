@@ -1,13 +1,12 @@
-
 interface IPropsResult {
-    result: number
+  result: number
 }
 export default function ProductPage(props: IPropsResult) {
-    return (
-        <div>
-            <div>
-                {props.result}
-            </div>
-        </div>
-    )
+  return (
+    <div>
+      <div>
+        {props.result}
+      </div>
+    </div>
+  );
 }

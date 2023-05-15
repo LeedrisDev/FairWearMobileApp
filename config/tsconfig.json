@@ -5,7 +5,7 @@
     "lib": ["DOM", "DOM.Iterable", "ESNext"],
     "allowJs": true,
     "skipLibCheck": true,
-    "esModuleInterop": false,
+    "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
     "strict": true,
     "forceConsistentCasingInFileNames": true,
@@ -16,9 +16,9 @@
     "noEmit": true,
     "jsx": "react-jsx",
     "types": [
-      "vite-plugin-pwa/client"
-    ],
+      "vite-plugin-pwa/client",
+    ]
   },
-  "include": ["src"],
+  "include": ["../src", "../__tests__"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }

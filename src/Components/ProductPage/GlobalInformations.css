@@ -1,0 +1,118 @@
+.product-page {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 10px;
+    grid-auto-rows: minmax(100px, auto);
+}
+
+.box {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+
+    flex-direction: column;
+    gap: 7px;
+    padding: 0px;
+}
+
+.item-image {
+    aspect-ratio: 1 / 1;
+    border-radius: 12px;
+    width: 100%;
+}
+
+.name {
+    font-family: 'Poppins', sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 22px;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+
+
+    /* Dark green */
+    color: #2A301E;
+
+
+    /* Inside auto layout */
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+}
+
+.detailsText {
+    font-family: 'Poppins', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 22px;
+
+    display: flex;
+    align-items: center;
+
+    color: #2A301E;
+
+    flex: none;
+    order: 1;
+    flex-grow: 0;
+}
+
+.coloredIcon {
+    color: #33765D;
+    width: 120%;
+    height: 120%;
+}
+
+.icon {
+    color: #E1E1E1;
+    width: 120%;
+    height: 120%;
+}
+
+.informations-box {
+    grid-column: 2;
+}
+
+.image-box {
+    grid-column: 1;
+}
+
+.score-information{
+    display: flex;
+    flex-direction: row;
+    padding: 0px;
+    gap: 5px;
+
+    height: 20%;
+
+
+    flex: none;
+    order: 1;
+    flex-grow: 0;
+}
+
+.details-information{
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 0px;
+    gap: 12px;
+
+    height : 15%;
+
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+}
+
+.detailsIcon {
+    width: 10%;
+    height: 10%;
+}
+
+.scoreIcon {
+    width: 20%;
+    height: 50%;
+}
