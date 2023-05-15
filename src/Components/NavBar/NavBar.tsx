@@ -15,30 +15,42 @@ function NavBar() {
 
   return (
     <div className="navbar">
+        <div className="navbar-icon">
       <div
-        className={`navbar-icon ${activeIcon === 'home' ? 'active' : ''}`}
+        className={`${activeIcon === 'home' ? 'active' : 'passive'}`}
         onClick={() => handleIconClick('home')}
       >
-        <FaHome />
+        <FaHome className="icon" />
+        <div className="title">Home</div>
       </div>
+    </div>
+        <div className="navbar-icon">
       <div
-        className={`navbar-icon ${activeIcon === 'search' ? 'active' : ''}`}
+        className={`${activeIcon === 'search' ? 'active' : 'passive'}`}
         onClick={() => handleIconClick('search')}
       >
-        <FaSearch />
+        <FaSearch className="icon" />
+        <div className="title">Search</div>
       </div>
+        </div>
+        <div className="navbar-icon">
       <div
-        className={`navbar-icon ${activeIcon === 'add' ? 'active' : ''}`}
+        className={`${activeIcon === 'add' ? 'active' : 'passive'}`}
         onClick={() => handleIconClick('add')}
       >
-        <FaBarcode />
+        <FaBarcode className="icon" />
+        <div className="title">Scanner</div>
       </div>
+        </div>
+        <div className="navbar-icon">
       <div
-        className={`navbar-icon ${activeIcon === 'user' ? 'active' : ''}`}
+        className={`${activeIcon === 'user' ? 'active' : 'passive'}`}
         onClick={() => handleIconClick('user')}
       >
-        <FaUser />
+        <FaUser className="icon" />
+        <div className="title">Profile</div>
       </div>
+        </div>
     </div>
   );
 }

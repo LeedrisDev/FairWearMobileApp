@@ -6,7 +6,7 @@ import './App.css';
 function App() {
   return (
     <div className="App" style={{ width: window.innerWidth, height: window.innerHeight }}>
-        <NavBar />
+      <NavBar />
     </div>
   );
 }
