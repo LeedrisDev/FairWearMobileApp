@@ -1,3 +1,4 @@
+import ProductPage from "./ProductPage";
 import Scanner from "./Scanner";
 import React, { useState } from "react";
 
@@ -12,7 +13,9 @@ function ScannerPage() {
 
     return (
         <div className="ScannerPage" >
-            <Scanner onDetected={onDetected} />
+            {
+                result ? <ProductPage  result={result}/>: <Scanner onDetected={onDetected} />
+            }
         </div>
     );
 }
