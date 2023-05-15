@@ -573,6 +573,6 @@ $RECYCLE.BIN/
 # Windows shortcuts
 *.lnk
 
-
+package-lock.json
 
 # End of https://www.toptal.com/developers/gitignore/api/node,reactnative,vim,emacs,jetbrains,visualstudiocode

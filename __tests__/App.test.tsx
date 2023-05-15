@@ -1,23 +1,26 @@
-import React from 'react';
-import { fireEvent, render } from '@testing-library/react';
-import App from '../src/App';
-
 import '@testing-library/jest-dom';
 import '@testing-library/jest-dom/extend-expect';
 
-describe('App', () => {
-  it('renders the app and increments count on button click', () => {
-    const { getByText } = render(<App />);
+import React from 'react';
+import { render, screen, fireEvent } from '@testing-library/react';
+import App from '../src/App';
 
-    // Check if the initial count is rendered
-    const countText = getByText(/count is/i);
-    expect(countText).toHaveTextContent('count is 0');
+jest.mock('react-router-dom', () => ({
+  useNavigate: jest.fn(),
+}));
 
-    // Simulate a button click
-    const button = getByText(/count is/i).closest('button');
-    fireEvent.click(button!);
+describe('App component', () => {
+  test('renders the initial count as 0', () => {
+    render(<App />);
+    const countElement = screen.getByText(/count is 0/i);
+    expect(countElement).toBeInTheDocument();
+  });
 
-    // Check if the count has incremented
-    expect(countText).toHaveTextContent('count is 1');
+  test('increments the count when the button is clicked', () => {
+    render(<App />);
+    const countButton = screen.getByText(/count is 0/i);
+    fireEvent.click(countButton);
+    const updatedCountElement = screen.getByText(/count is 1/i);
+    expect(updatedCountElement).toBeInTheDocument();
   });
 });
