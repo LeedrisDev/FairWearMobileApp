@@ -1,10 +1,9 @@
 import React from 'react';
-
-import CameraHandler from "./cameraHandler";
+import ScannerPage from "./Pages/Scanner/ScannerPage";
 
 const App = () => (
     <div className="app">
-        <CameraHandler />
+        <ScannerPage />
     </div>
 );
 

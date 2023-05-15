@@ -1,3 +1,6 @@
+.container {
+    position: relative;
+}
 
 #interactive > video {
     width: 100%;
@@ -5,7 +8,10 @@
 }
 
 #interactive > canvas.drawing, canvas.drawingBuffer {
+    height: auto;
     position: absolute;
     left: 0;
     top: 0;
 }
+
+

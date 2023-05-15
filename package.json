@@ -11,17 +11,12 @@
     "install-legacy": "npm install --legacy-peer-deps"
   },
   "dependencies": {
-    "@createnextapp/react-barcode": "^1.1.1",
     "@ericblade/quagga2": "^1.8.2",
-    "@material-ui/core": "^4.11.3",
-    "@material-ui/icons": "^4.11.2",
     "prop-types": "^15.8.1",
     "quagga": "^0.12.1",
     "react": "^18.2.0",
-    "react-barcode-reader": "^0.0.2",
     "react-dom": "^18.2.0",
     "react-feather": "^2.0.10",
-    "react-qr-reader": "^3.0.0-beta-1",
     "react-router-dom": "^6.10.0"
   },
   "devDependencies": {
@@ -31,6 +26,7 @@
     "@vitejs/plugin-react": "^3.1.0",
     "typescript": "^4.9.3",
     "vite": "^4.1.0",
+    "vite-plugin-mkcert": "^1.15.0",
     "vite-plugin-pwa": "^0.14.4",
     "workbox-window": "^6.5.4"
   }
