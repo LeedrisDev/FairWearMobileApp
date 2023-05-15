@@ -5,6 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite --config=config/vite.config.ts",
+    "host": "vite --config=config/vite.config.ts --host",
     "build": "tsc --project config/tsconfig.json && vite --config=config/vite.config.ts build",
     "preview": "vite --config=config/vite.config.ts preview",
     "install-legacy": "npm install --legacy-peer-deps",
