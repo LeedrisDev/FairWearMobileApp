@@ -90,8 +90,8 @@ function setPieData(composition: IProductComposition[]) {
   };
 }
 
-function Composition(composition: ICompositionProps) {
-  const data = setPieData(composition.composition);
+function Composition({ composition } : ICompositionProps) {
+  const data = setPieData(composition);
 
   return (
     <div className="composition">
