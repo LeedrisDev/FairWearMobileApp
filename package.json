@@ -31,6 +31,7 @@
     "react-chartjs-2": "^5.2.0"
   },
   "devDependencies": {
+    "bootstrap": "^5.2.3",
     "@types/node": "^20.1.1",
     "@jest/globals": "^29.5.0",
     "react": "^18.2.0",
