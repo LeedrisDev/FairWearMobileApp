@@ -17,7 +17,6 @@ jobs:
       uses: actions/setup-node@v3
       with:
         node-version: ${{ matrix.node-version }}
-        cache: 'npm'
     - run: npm i
     - run: npm run build
     
@@ -36,8 +35,7 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node-version }}
-          cache: 'npm'
-      - run: npm ci
+      - run: npm i
       - run: npm test
 
   linter:
@@ -55,8 +53,7 @@ jobs:
       uses: actions/setup-node@v3
       with:
         node-version: ${{ matrix.node-version }}
-        cache: 'npm'
-    - run: npm ci
+    - run: npm i
     - run: npm run lint
     
   Coverage:
@@ -74,8 +71,7 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node-version }}
-          cache: 'npm'
-      - run: npm ci
+      - run: npm i
       - run: npm run test:coverage
       - name: Save coverage report as artifact
         uses: actions/upload-artifact@v2
