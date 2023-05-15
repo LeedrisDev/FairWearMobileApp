@@ -67,9 +67,7 @@ const Scanner = (props: any) => {
     };
 
     return (
-        <div>
             <div id="interactive" className="viewport" />
-        </div>
     );
 };
 
