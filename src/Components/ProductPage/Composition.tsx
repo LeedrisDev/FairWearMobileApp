@@ -7,6 +7,10 @@ import {
 
 ChartJS.register(ArcElement, Tooltip, Legend);
 
+interface ICompositionProps {
+  composition: IProductComposition[];
+}
+
 const color = [
   'rgb(51,118,93)',
   'rgb(42,48,30)',
@@ -86,8 +90,8 @@ function setPieData(composition: IProductComposition[]) {
   };
 }
 
-function Composition(composition: IProductComposition[]) {
-  const data = setPieData(composition);
+function Composition(composition: ICompositionProps) {
+  const data = setPieData(composition.composition);
 
   return (
     <div className="composition">

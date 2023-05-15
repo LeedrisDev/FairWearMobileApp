@@ -13,7 +13,7 @@ function ProductPage() {
       <GlobalInformations globalProductInformations={product1} />
       <ScoreBar informations={product1.scores} />
       <Composition composition={product1.composition} />
-      <Alternatives alternative={product1.alternatives} />
+      <Alternatives />
     </div>
   );
 }
