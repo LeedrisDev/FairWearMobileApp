@@ -14,12 +14,29 @@
     "test:coverage": "jest --config config/jest.config.ts --coverage=true"
   },
   "dependencies": {
+    "@fortawesome/fontawesome": "^1.1.8",
+    "@fortawesome/fontawesome-free-solid": "^5.0.13",
+    "@fortawesome/fontawesome-svg-core": "^6.4.0",
+    "@fortawesome/free-regular-svg-icons": "^6.4.0",
+    "@fortawesome/free-solid-svg-icons": "^6.4.0",
+    "@fortawesome/react-fontawesome": "^0.2.0",
+    "bootstrap": "^5.2.3",
+    "chart.js": "^4.3.0",
+    "react-bootstrap": "^2.7.4",
+    "react-charts": "^3.0.0-beta.54",
+    "react-icons": "^4.8.0",
+    "react-router-dom": "^6.11.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-chartjs-2": "^5.2.0"
+  },
+  "devDependencies": {
+    "bootstrap": "^5.2.3",
+    "@types/node": "^20.1.1",
     "@jest/globals": "^29.5.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-router-dom": "^6.11.0"
-  },
-  "devDependencies": {
+    "react-router-dom": "^6.11.0",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^14.0.0",
     "@types/jest": "^29.5.1",
@@ -27,6 +44,7 @@
     "@types/react-dom": "^18.0.10",
     "@typescript-eslint/parser": "^5.55.0",
     "@vitejs/plugin-react": "^3.1.0",
+    "react-chartjs-2": "^5.2.0",
     "cliui": "^8.0.1",
     "eslint": "^8.36.0",
     "eslint-config-airbnb": "^19.0.4",
