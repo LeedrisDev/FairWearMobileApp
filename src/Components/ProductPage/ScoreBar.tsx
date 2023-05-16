@@ -25,8 +25,8 @@ function DesignBar({ icon, percent }: IPropsDesignBar) {
 
       <div className="percent-design-bar-box">
         <div className="progress-container">
-          <div className="progress-bar" style={{ width: `${percent}%` }} >
-              <div className="progress-bar-inside" />
+          <div className="progress-bar" style={{ width: `${percent}%` }}>
+            <div className="progress-bar-inside" />
           </div>
         </div>
       </div>

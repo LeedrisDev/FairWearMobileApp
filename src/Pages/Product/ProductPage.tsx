@@ -13,19 +13,13 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 function ProductPage(props: any) {
   const { onDetected } = props;
 
-  const detected = (result: any) => {
-    onDetected(result.codeResult.code);
-  };
   const undetected = () => {
     onDetected(null);
   };
 
   return (
+
     <div className="productPage" style={{ width: window.innerWidth, height: window.innerHeight }}>
-      <div className="text">
-        result is :
-        {detected}
-      </div>
       <button className="back-product-page" type="button" onClick={undetected}>
         <Link className="nav-link" to="/">
           <FontAwesomeIcon icon={faArrowLeft} className="icon-navigation" />
