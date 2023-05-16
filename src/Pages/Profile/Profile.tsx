@@ -1,6 +1,6 @@
 import '../../App.css';
 import './Profile.css';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import beanie from '../../Images/beanie.jpeg';
 import globe from '../../Images/globe.png';
 import jeans from '../../Images/jeans.jpeg';

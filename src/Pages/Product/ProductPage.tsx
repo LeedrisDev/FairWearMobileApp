@@ -6,10 +6,19 @@ import './ProductPage.css';
 import Composition from '../../Components/ProductPage/Composition';
 import ScoreBar from '../../Components/ProductPage/ScoreBar';
 import Alternatives from '../../Components/ProductPage/Alternatives';
+import { Link } from 'react-router-dom';
 
-function ProductPage() {
+function ProductPage(props: any) {
+  const { onDetected } = props;
+  const undetected = () => {
+    onDetected(null);
+  };
+
   return (
-    <div className="productPage">
+    <div className="productPage" style={{ width: window.innerWidth, height: window.innerHeight }}>
+      <button className="settings" type="button" onClick={undetected}>
+        <Link className="nav-link" to="/Scanner">S</Link>
+      </button>
       <GlobalInformations globalProductInformations={product1} />
       <ScoreBar informations={product1.scores} />
       <Composition composition={product1.composition} />
