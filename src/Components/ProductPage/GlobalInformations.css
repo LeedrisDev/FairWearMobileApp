@@ -1,11 +1,19 @@
-.product-page {
+.global-information {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-gap: 10px;
     grid-auto-rows: minmax(100px, auto);
+
+    width: 90%;
 }
 
-.box {
+.box1 {
     align-items: center;
     display: flex;
     justify-content: center;
@@ -15,13 +23,13 @@
     padding: 0px;
 }
 
-.item-image {
+.item-image1 {
     aspect-ratio: 1 / 1;
     border-radius: 12px;
     width: 100%;
 }
 
-.name {
+.name1 {
     font-family: 'Poppins', sans-serif;
     font-style: normal;
     font-weight: 600;
@@ -42,7 +50,7 @@
     flex-grow: 0;
 }
 
-.detailsText {
+.detailsText1 {
     font-family: 'Poppins', sans-serif;
     font-style: normal;
     font-weight: 400;
@@ -59,33 +67,33 @@
     flex-grow: 0;
 }
 
-.coloredIcon {
+.coloredIcon1 {
     color: #33765D;
     width: 120%;
     height: 120%;
 }
 
-.not-colored-icon {
+.not-colored-icon1 {
     color: #E1E1E1;
     width: 120%;
     height: 120%;
 }
 
-.informations-box {
+.informations-box1 {
     grid-column: 2;
 }
 
-.image-box {
+.image-box1 {
     grid-column: 1;
 }
 
-.score-information{
+.score-information1{
     display: flex;
     flex-direction: row;
     padding: 0px;
     gap: 5px;
 
-    height: 20%;
+    height: 15%;
 
 
     flex: none;
@@ -96,7 +104,8 @@
 .details-information{
     display: flex;
     flex-direction: row;
-    align-items: flex-start;
+    justify-content: center;
+    align-items: center;
     padding: 0px;
     gap: 12px;
 
@@ -107,12 +116,17 @@
     flex-grow: 0;
 }
 
-.detailsIcon {
+.details-icon-box {
     width: 10%;
-    height: 10%;
+    height: 40%;
 }
 
-.scoreIcon {
-    width: 20%;
-    height: 50%;
+.details-icon {
+    width: 100%;
+    height: 100%;
+}
+
+.scoreIcon1 {
+    width: 40%;
+    height: 70%;
 }

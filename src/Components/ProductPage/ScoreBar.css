@@ -1,3 +1,49 @@
-.score {
-    margin-bottom: 20px;
+.score-bar {
+    margin-bottom: 5%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.score-bar-box {
+    width: 90%;
+}
+
+
+.progress-container {
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(225, 225, 225);
+    border-radius: 12px;
+    margin-bottom: 15px;
+}
+
+.progress-bar {
+    border-radius: 12px;
+    background-color: #33765D;
+}
+
+.progress-bar-inside {
+    margin-bottom: 15px;
+    border-radius: 12px;
+}
+
+.design-bar {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+
+}
+
+.icon-design-bar {
+    width: 40%;
+}
+
+.icon-design-bar-box {
+    grid-column-start: 1;
+    grid-column-end: 2;
+}
+
+.percent-design-bar-box {
+    grid-column-start: 2;
+    grid-column-end: 7;
 }

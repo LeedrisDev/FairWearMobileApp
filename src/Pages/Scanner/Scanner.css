@@ -9,3 +9,19 @@
     left: 0;
     top: 0;
 }
+
+#interactive > .drawingBuffer {
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.drawingBuffer {
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.viewport {
+    background-color: rgba(87,86,86,0);
+}

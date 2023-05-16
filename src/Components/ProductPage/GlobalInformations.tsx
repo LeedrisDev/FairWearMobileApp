@@ -10,7 +10,7 @@ import product1 from '../../assets/produit1.png';
 import { IconDefinition } from '@fortawesome/fontawesome';
 import { IconProp } from '@fortawesome/fontawesome-svg-core';
 
-import "./GlobalInformations.css"
+import './GlobalInformations.css';
 
 interface IProps {
   globalProductInformations: IGlobalProductInformations
@@ -31,11 +31,11 @@ function TextAndIcon({ text, icon }: IPropsTextandLogo) {
 
   return (
     <div className="details-information">
-      <div className="detailsIcon">
-        <FontAwesomeIcon icon={iconType as IconProp} />
+      <div className="details-icon-box">
+        <FontAwesomeIcon icon={iconType as IconProp} className="details-icon" />
       </div>
 
-      <p className="detailsText">{texte}</p>
+      <p className="detailsText1">{texte}</p>
     </div>
   );
 }
@@ -44,20 +44,20 @@ function Score({ globalScore }: IPropsScore) {
   const [score] = useState(globalScore);
 
   return (
-    <div className="score-information">
+    <div className="score-information1">
       {
                 Array.from({ length: 5 }, (_, i) => {
                   if (i < score) {
                     return (
-                      <div className="scoreIcon" key={i}>
-                        <FontAwesomeIcon className="coloredIcon" icon={faEarth} />
+                      <div className="scoreIcon1" key={i}>
+                        <FontAwesomeIcon className="coloredIcon1" icon={faEarth} />
                       </div>
                     );
                   }
 
                   return (
-                    <div className="scoreIcon" key={i}>
-                      <FontAwesomeIcon className="not-colored-icon" icon={faEarth} />
+                    <div className="scoreIcon1" key={i}>
+                      <FontAwesomeIcon className="not-colored-icon1" icon={faEarth} />
                     </div>
                   );
                 })
@@ -73,18 +73,20 @@ function GlobalInformations({ globalProductInformations }: IProps) {
   const [globalScore] = useState(globalProductInformations.globalScore);
 
   return (
-    <div className="product-page">
-      <div className="image-box">
-        <img src={product1} className="item-image" alt="" />
-      </div>
+    <div className="global-information">
+      <div className="grid">
+        <div className="image-box1">
+          <img src={product1} className="item-image1" alt="" />
+        </div>
 
-      <div className="informations-box">
-        <p className="name">{name}</p>
+        <div className="informations-box1">
+          <p className="name1">{name}</p>
 
-        <Score globalScore={globalScore} />
+          <Score globalScore={globalScore} />
 
-        <TextAndIcon icon={faTshirt as IconDefinition} text={brand} />
-        <TextAndIcon icon={faMap as IconDefinition} text={country} />
+          <TextAndIcon icon={faTshirt as IconDefinition} text={brand} />
+          <TextAndIcon icon={faMap as IconDefinition} text={country} />
+        </div>
       </div>
     </div>
   );

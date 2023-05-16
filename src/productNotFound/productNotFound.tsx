@@ -14,7 +14,6 @@ function ProductNotFound(props: any) {
         {' '}
         gave no results!
       </p>
-      <p>You can also enter the barcode below and try again:</p>
     </div>
   );
 }

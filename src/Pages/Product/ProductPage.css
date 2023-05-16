@@ -1,18 +1,27 @@
 .productPage {
+    position: absolute;
     overflow-x: unset;
     overflow-y: scroll;
+    background-color: white;
+    z-index: 10;
 }
 
-.back {
-    height: 30px;
+.back-product-page {
+    height: 5%;
     margin-right: 80%;
-    margin-top: 50px;
-    width: 30px;
+    width: 10%;
     border: rgba(183,115,255,0);
     background-color: rgba(255,253,253,0);
+    margin-bottom: 3%;
 }
 
 .icon-navigation {
+    text-decoration: none;
     height: 150%;
     width: 150%;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: #0c4128;
 }

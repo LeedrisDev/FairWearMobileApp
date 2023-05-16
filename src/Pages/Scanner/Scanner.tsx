@@ -2,6 +2,8 @@ import React, { useEffect } from 'react';
 import config from './cameraConfig';
 import Quagga from '@ericblade/quagga2';
 
+import './Scanner.css';
+
 function Scanner(props: any) {
   const { onDetected } = props;
 

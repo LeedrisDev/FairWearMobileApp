@@ -67,7 +67,6 @@
     grid-gap: 10px;
     grid-auto-rows: minmax(100px, auto);
     gap: 10px;
-    padding: 0px;
 }
 
 
@@ -88,4 +87,15 @@
     flex-direction: row;
     gap: 7px;
     padding: 0px;
+}
+
+
+.alternatives {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.alternatives-box {
+    width: 90%;
 }

@@ -8,14 +8,14 @@ import beanie from '../../Images/beanie.jpeg';
 import * as React from 'react';
 import shirt from '../../Images/shirt.jpeg';
 import { faGear } from '@fortawesome/free-solid-svg-icons';
-import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 function Profile() {
   return (
     <div className="App">
       <button className="settings" type="button">
         <Link className="nav-link" to="/Settings">
-          <FontAwesomeIcon icon={ faGear } className="icon-navigation" />
+          <FontAwesomeIcon icon={faGear} className="icon-navigation" />
         </Link>
       </button>
       <div className="profile">
@@ -29,7 +29,7 @@ function Profile() {
             <span className="action">See all</span>
           </div>
           <div className="box">
-            <div className="clothes">
+            <div className="historic">
               <div className="clothing-item">
                 <img src={shirt} className="item-image" alt="Item" />
                 <div className="brand-and-grade title-four">

@@ -1,21 +1,21 @@
 import * as React from 'react';
 import './Settings.css';
 import '../../App.css';
-import {faArrowLeft} from '@fortawesome/free-solid-svg-icons';
+import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
 import { Link, useNavigate } from 'react-router-dom';
-import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 function Settings() {
   return (
     <div className="App">
       <button className="back">
         <Link className="nav-link" to="/Profile">
-          <FontAwesomeIcon icon={ faArrowLeft } className="icon-navigation" />
+          <FontAwesomeIcon icon={faArrowLeft} className="icon-navigation" />
         </Link>
       </button>
-      <div className="content">
+      <div className="content-settings">
         {/* Personnal information */}
-        <div className="category">
+        <div className="category-settings">
           <div className="title-one">Personal Information</div>
           <div className="options">
             <div className="option">
@@ -34,7 +34,7 @@ function Settings() {
         </div>
         <hr />
         {/* Security */}
-        <div className="category">
+        <div className="category-settings">
           <div className="title-one">Security</div>
           <div className="options">
             <div className="option">
@@ -45,7 +45,7 @@ function Settings() {
         </div>
         <hr />
         {/* Options */}
-        <div className="category">
+        <div className="category-settings">
           <div className="title-one">Options</div>
           <div className="options">
             <div className="option">

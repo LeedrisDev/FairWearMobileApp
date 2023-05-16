@@ -5,7 +5,7 @@ import {
   Chart as ChartJS, ArcElement, Tooltip, Legend,
 } from 'chart.js';
 
-
+import './Composition.css';
 
 ChartJS.register(ArcElement, Tooltip, Legend);
 
@@ -32,6 +32,8 @@ const borderColor = [
 ];
 
 const options: any = {
+  responsive: true,
+  maintainAspectRatio: false,
   plugins: {
     legend: {
       display: true,
@@ -97,9 +99,13 @@ function Composition({ composition } : ICompositionProps) {
 
   return (
     <div className="composition">
-      <div className="title">Composition</div>
-      <div style={{ width: '320px' }}>
-        <Pie data={data} options={options} />
+      <div className="composition-box">
+        <div className="title">Composition</div>
+        <div className="pie-box">
+          <div className="pie" style={{ width: '80%' }}>
+            <Pie data={data} options={options} />
+          </div>
+        </div>
       </div>
     </div>
   );

@@ -1,5 +1,9 @@
 .ScannerPage{
     overflow: scroll;
+    background-color: #343434;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .container {
@@ -13,7 +17,6 @@
 
 
 #interactive > canvas.drawing, canvas.drawingBuffer {
-    height: auto;
     position: absolute;
     left: 0;
     top: 0;
