@@ -1,22 +1,26 @@
 import '../../App.css';
 import './Profile.css';
 import { Link } from 'react-router-dom';
-import beanie from '../../Images/beanie.jpeg';
+import Unknow from '../../assets/unknown.jpeg';
 import globe from '../../Images/globe.png';
 import jeans from '../../Images/jeans.jpeg';
-import profilePicture from '../../Images/profilePic.jpg';
+import beanie from '../../Images/beanie.jpeg';
 import * as React from 'react';
 import shirt from '../../Images/shirt.jpeg';
+import { faGear } from '@fortawesome/free-solid-svg-icons';
+import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 
 function Profile() {
   return (
     <div className="App">
       <button className="settings" type="button">
-        <Link className="nav-link" to="/Settings">S</Link>
+        <Link className="nav-link" to="/Settings">
+          <FontAwesomeIcon icon={ faGear } className="icon-navigation" />
+        </Link>
       </button>
       <div className="profile">
-        <img src={profilePicture} className="profile-picture" alt="Me" />
-        <div className="title-one">Margaux</div>
+        <img src={Unknow} className="profile-picture" alt="Me" />
+        <div className="title-one">Connectez-vous</div>
       </div>
       <div className="content">
         <div className="category">

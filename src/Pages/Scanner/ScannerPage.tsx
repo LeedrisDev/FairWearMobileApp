@@ -16,7 +16,7 @@ function ScannerPage() {
         {result}
       </div>
       {
-        result ? <ProductPage onDetected={onDetected} /> : <Scanner onDetected={onDetected} />
+          result ? <div></div> : <Scanner onDetected={onDetected} />
       }
     </div>
   );
