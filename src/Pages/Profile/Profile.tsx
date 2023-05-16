@@ -1,6 +1,6 @@
 import '../../App.css';
 import './Profile.css';
-import { useNavigate } from 'react-router-dom';
+import {Link, useNavigate} from 'react-router-dom';
 import beanie from '../../Images/beanie.jpeg';
 import globe from '../../Images/globe.png';
 import jeans from '../../Images/jeans.jpeg';
@@ -9,11 +9,12 @@ import * as React from 'react';
 import shirt from '../../Images/shirt.jpeg';
 
 function Profile() {
-  const navigate = useNavigate();
 
   return (
     <div className="App">
-      <button className="settings" type="button" onClick={() => { navigate('Settings'); }}>S</button>
+      <button className="settings" type="button">
+        <Link className="nav-link" to="/Settings">S</Link>
+      </button>
       <div className="profile">
         <img src={profilePicture} className="profile-picture" alt="Me" />
         <div className="title-one">Margaux</div>
