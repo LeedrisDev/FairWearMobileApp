@@ -8,7 +8,7 @@ import {
 import './NavBar.css';
 
 function NavBar() {
-  const [activeIcon, setActiveIcon] = useState('home');
+  const [activeIcon, setActiveIcon] = useState('scan');
 
   const handleIconClick = (icon) => {
     setActiveIcon(icon);
@@ -41,7 +41,7 @@ function NavBar() {
       <div className="navbar-icon">
         <Link className="nav-link" to="/">
           <div
-            className={`${activeIcon === 'add' ? 'active' : 'passive'}`}
+            className={`${activeIcon === 'scan' ? 'active' : 'passive'}`}
             onClick={() => handleIconClick('add')}
           >
             <FaBarcode className="icon" />
