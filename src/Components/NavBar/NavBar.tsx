@@ -42,10 +42,10 @@ function NavBar() {
         <Link className="nav-link" to="/">
           <div
             className={`${activeIcon === 'scan' ? 'active' : 'passive'}`}
-            onClick={() => handleIconClick('add')}
+            onClick={() => handleIconClick('scan')}
           >
             <FaBarcode className="icon" />
-            <div className="title">Scanner</div>
+            <div className="title">Scan</div>
           </div>
         </Link>
       </div>
