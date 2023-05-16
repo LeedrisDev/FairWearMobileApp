@@ -6,6 +6,7 @@
 
   color: #2A301E;
   background-color: white;
+  overflow: scroll;
 }
 
 @font-face {
@@ -18,6 +19,7 @@
 
 body {
   margin: 0;
+  overflow: unset;
 }
 
 /* Text sizes */

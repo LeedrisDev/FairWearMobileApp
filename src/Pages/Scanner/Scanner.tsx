@@ -5,6 +5,10 @@ import Quagga from '@ericblade/quagga2';
 function Scanner(props: any) {
   const { onDetected } = props;
 
+  const detected = (result: any) => {
+    onDetected(result.codeResult.code);
+  };
+
   useEffect(() => {
     Quagga.init(config, (err: Error) => {
       if (err) {
@@ -58,10 +62,6 @@ function Scanner(props: any) {
 
     Quagga.onDetected(detected);
   }, []);
-
-  const detected = (result: any) => {
-    onDetected(result.codeResult.code);
-  };
 
   return (
     <div id="interactive" className="viewport" />

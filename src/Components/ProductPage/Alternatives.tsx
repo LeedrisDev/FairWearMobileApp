@@ -1,8 +1,6 @@
 import product1 from '../../assets/produit1.png';
 import * as React from 'react';
 
-import './Alternatives.css';
-
 function Alternatives() {
   return (
     <div className="score">

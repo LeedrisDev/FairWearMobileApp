@@ -7,7 +7,6 @@ import { useState } from 'react';
 import * as React from 'react';
 import product1 from '../../assets/produit1.png';
 
-import './GlobalInformations.css';
 import { IconDefinition } from '@fortawesome/fontawesome';
 import { IconProp } from '@fortawesome/fontawesome-svg-core';
 

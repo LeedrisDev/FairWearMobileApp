@@ -1,3 +1,7 @@
+.ScannerPage{
+    overflow: scroll;
+}
+
 .container {
     position: relative;
 }
@@ -12,6 +16,10 @@
     position: absolute;
     left: 0;
     top: 0;
+}
+
+.text {
+    color: #0c4128;
 }
 
 

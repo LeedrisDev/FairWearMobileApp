@@ -1,6 +1,6 @@
 import '../../App.css';
 import './Profile.css';
-import {Link, useNavigate} from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import beanie from '../../Images/beanie.jpeg';
 import globe from '../../Images/globe.png';
 import jeans from '../../Images/jeans.jpeg';
@@ -9,7 +9,6 @@ import * as React from 'react';
 import shirt from '../../Images/shirt.jpeg';
 
 function Profile() {
-
   return (
     <div className="App">
       <button className="settings" type="button">

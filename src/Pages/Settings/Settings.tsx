@@ -1,10 +1,9 @@
 import * as React from 'react';
 import './Settings.css';
 import '../../App.css';
-import {Link, useNavigate} from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 function Settings() {
-
   return (
     <div className="App">
       <button className="back">

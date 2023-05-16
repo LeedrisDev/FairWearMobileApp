@@ -7,7 +7,6 @@ const config: QuaggaJSConfigObject = {
     target: document.querySelector('#interactive') as string | Element | undefined,
     constraints: {
       width: window.innerWidth,
-      height: window.innerHeight,
       facingMode: 'environment',
     },
   },
