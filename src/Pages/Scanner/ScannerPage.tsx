@@ -1,7 +1,5 @@
 import Scanner from './Scanner';
 import React, { useState } from 'react';
-
-import './ScannerPage.css';
 import ProductPage from '../Product/ProductPage';
 
 function ScannerPage() {

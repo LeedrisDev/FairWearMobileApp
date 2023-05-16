@@ -14,14 +14,16 @@ import ScannerPage from './Pages/Scanner/ScannerPage';
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
     <BrowserRouter>
-      <Routes>
-        <Route path="/Home" element={<Home />} />
-        <Route path="/Search" element={<Search />} />
-        <Route path="/" element={<ScannerPage />} />
-        <Route path="/Profile" element={<Profile />} />
-        <Route path="/Settings" element={<Settings />} />
-      </Routes>
-      <NavBar />
+      <div style={{ width: window.innerWidth, height: window.innerHeight }}>
+        <Routes>
+          <Route path="/Home" element={<Home />} />
+          <Route path="/Search" element={<Search />} />
+          <Route path="/" element={<ScannerPage />} />
+          <Route path="/Profile" element={<Profile />} />
+          <Route path="/Settings" element={<Settings />} />
+        </Routes>
+        <NavBar />
+      </div>
     </BrowserRouter>
   </React.StrictMode>,
 );

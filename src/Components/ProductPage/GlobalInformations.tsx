@@ -10,6 +10,8 @@ import product1 from '../../assets/produit1.png';
 import { IconDefinition } from '@fortawesome/fontawesome';
 import { IconProp } from '@fortawesome/fontawesome-svg-core';
 
+import "./GlobalInformations.css"
+
 interface IProps {
   globalProductInformations: IGlobalProductInformations
 }
@@ -55,7 +57,7 @@ function Score({ globalScore }: IPropsScore) {
 
                   return (
                     <div className="scoreIcon" key={i}>
-                      <FontAwesomeIcon className="icon" icon={faEarth} />
+                      <FontAwesomeIcon className="not-colored-icon" icon={faEarth} />
                     </div>
                   );
                 })
