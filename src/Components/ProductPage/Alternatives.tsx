@@ -10,8 +10,8 @@ function Alternatives() {
       <div className="alternatives-box">
           <div className="box-header">
           <div className="title">Alternatives</div>
-          <button className="back-product-page" type="button">
-            <Link className="nav-link" to="/Alternative">
+          <button className="go-alternative-page" type="button">
+            <Link className="alternatives-link" to="/Alternative">
               <span className="plus-alternatives">See all</span>
             </Link>
           </button>

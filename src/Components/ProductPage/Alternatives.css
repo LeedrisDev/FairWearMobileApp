@@ -51,12 +51,21 @@
     padding: 0px 10px;
 }
 
+.alternatives-link {
+    text-decoration: none;
+}
+
 .box {
     border-radius: 12px;
     border: 2px solid #E1E1E1;
     box-sizing: border-box;
     flex-direction: column;
     padding: 12px 12px 10px;
+}
+
+.go-alternative-page {
+    border: rgba(87,86,86,0);
+    background-color: white;
 }
 
 .category {
