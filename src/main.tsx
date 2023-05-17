@@ -10,6 +10,7 @@ import Search from './Pages/Search/Search';
 import NavBar from './Components/NavBar/NavBar';
 import Settings from './Pages/Settings/Settings';
 import ScannerPage from './Pages/Scanner/ScannerPage';
+import ListImagesPage from "./Components/ListImagesPage/ListImagesPage";
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
@@ -21,6 +22,7 @@ ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
           <Route path="/" element={<ScannerPage />} />
           <Route path="/Profile" element={<Profile />} />
           <Route path="/Settings" element={<Settings />} />
+          <Route path="/Alternative" element={<ListImagesPage />} />
         </Routes>
         <NavBar />
       </div>

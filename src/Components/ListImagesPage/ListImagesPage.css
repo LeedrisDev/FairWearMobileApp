@@ -1,11 +1,22 @@
-.title {
+.alternatives {
+    position: absolute;
+    overflow-x: unset;
+    overflow-y: scroll;
+    background-color: white;
+    z-index: 10;
+}
+
+
+.title-list-image {
     font-family: 'Poppins', sans-serif;
     font-style: normal;
     font-weight: 500;
-    font-size: 17px;
+    font-size: 21px;
     line-height: 22px;
     display: flex;
     align-items: center;
+    justify-content: center;
+    margin-bottom: 3%;
 
     /* Dark green */
     color: #2A301E;
@@ -15,11 +26,6 @@
     flex: none;
     order: 0;
     flex-grow: 0;
-}
-
-.plus-alternatives {
-    color: #33765D;
-    width: 20%;
 }
 
 .box,
@@ -66,7 +72,7 @@
     width: 91%;
 }
 
-.clothes {
+.clothes-alternatives {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-gap: 10px;
@@ -76,13 +82,13 @@
 
 
 /* Item of clothing */
-.clothing-item {
+.clothing-item-alternatives {
     flex-direction: column;
     gap: 7px;
     padding: 0px;
 }
 
-.item-image {
+.item-image-alternatives {
     aspect-ratio: 1 / 1;
     border-radius: 12px;
     width: 100%;
