@@ -12,10 +12,7 @@ function Scanner(props: any) {
   };
 
   useEffect(() => {
-    Quagga.init(config, (err: Error) => {
-      if (err) {
-        console.log(err, 'error msg');
-      }
+    Quagga.init(config, () => {
       Quagga.start();
       return () => {
         Quagga.stop();

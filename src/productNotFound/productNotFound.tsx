@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
+import * as React from 'react';
 
 import './productNotFound.css';
 
-function ProductNotFound(props: any) {
+function ProductNotFound() {
   const code = 'TEST';
 
   return (

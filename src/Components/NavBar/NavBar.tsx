@@ -10,7 +10,7 @@ import './NavBar.css';
 function NavBar() {
   const [activeIcon, setActiveIcon] = useState('scan');
 
-  const handleIconClick = (icon) => {
+  const handleIconClick = (icon: string) => {
     setActiveIcon(icon);
   };
 
@@ -18,46 +18,50 @@ function NavBar() {
     <div className="navbar">
       <div className="navbar-icon">
         <Link className="nav-link" to="/Home">
-          <div
+          <button
+            type="button"
             className={`${activeIcon === 'home' ? 'active' : 'passive'}`}
             onClick={() => handleIconClick('home')}
           >
             <FaHome className="icon" />
             <div className="title">Home</div>
-          </div>
+          </button>
         </Link>
       </div>
       <div className="navbar-icon">
         <Link className="nav-link" to="/Search">
-          <div
+          <button
+            type="button"
             className={`${activeIcon === 'search' ? 'active' : 'passive'}`}
             onClick={() => handleIconClick('search')}
           >
             <FaSearch className="icon" />
             <div className="title">Search</div>
-          </div>
+          </button>
         </Link>
       </div>
       <div className="navbar-icon">
         <Link className="nav-link" to="/">
-          <div
+          <button
+            type="button"
             className={`${activeIcon === 'scan' ? 'active' : 'passive'}`}
             onClick={() => handleIconClick('scan')}
           >
             <FaBarcode className="icon" />
             <div className="title">Scan</div>
-          </div>
+          </button>
         </Link>
       </div>
       <div className="navbar-icon">
         <Link className="nav-link" to="/Profile">
-          <div
+          <button
+            type="button"
             className={`${activeIcon === 'user' ? 'active' : 'passive'}`}
             onClick={() => handleIconClick('user')}
           >
             <FaUser className="icon" />
             <div className="title">Profile</div>
-          </div>
+          </button>
         </Link>
       </div>
     </div>

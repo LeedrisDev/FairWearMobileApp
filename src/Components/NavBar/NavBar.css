@@ -54,6 +54,7 @@
     height: 85%;
     width: 75%;
     align-self: center;
+    border-width: 0px;
 }
 
 .passive {
@@ -67,6 +68,8 @@
     height: 80%;
     width: 75%;
     align-self: center;
+    border-width: 0px;
+    background-color: rgba(87,86,86,0);
 }
 
 .nav-link  {

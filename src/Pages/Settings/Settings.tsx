@@ -2,13 +2,13 @@ import * as React from 'react';
 import './Settings.css';
 import '../../App.css';
 import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 function Settings() {
   return (
     <div className="App">
-      <button className="back">
+      <button className="back" type="button">
         <Link className="nav-link" to="/Profile">
           <FontAwesomeIcon icon={faArrowLeft} className="icon-navigation" />
         </Link>

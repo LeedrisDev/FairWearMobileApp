@@ -10,7 +10,7 @@ import Search from './Pages/Search/Search';
 import NavBar from './Components/NavBar/NavBar';
 import Settings from './Pages/Settings/Settings';
 import ScannerPage from './Pages/Scanner/ScannerPage';
-import ListImagesPage from "./Components/ListImagesPage/ListImagesPage";
+import ListImagesPage from './Components/ListImagesPage/ListImagesPage';
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>

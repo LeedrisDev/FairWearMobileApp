@@ -2,13 +2,13 @@ import product1 from '../../assets/produit1.png';
 import * as React from 'react';
 
 import './Alternatives.css';
-import {Link} from "react-router-dom";
+import { Link } from 'react-router-dom';
 
 function Alternatives() {
   return (
     <div className="alternatives">
       <div className="alternatives-box">
-          <div className="box-header">
+        <div className="box-header">
           <div className="title">Alternatives</div>
           <button className="go-alternative-page" type="button">
             <Link className="alternatives-link" to="/Alternative">
