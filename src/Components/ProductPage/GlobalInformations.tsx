@@ -6,6 +6,7 @@ import { IGlobalProductInformations } from '../../Tests/InterfaceProduct';
 import { useState } from 'react';
 import * as React from 'react';
 import product1 from '../../assets/produit1.png';
+import chemise from '../../Images/chemise.png';
 
 import { IconDefinition } from '@fortawesome/fontawesome';
 import { IconProp } from '@fortawesome/fontawesome-svg-core';
@@ -46,22 +47,22 @@ function Score({ globalScore }: IPropsScore) {
   return (
     <div className="score-information1">
       {
-                Array.from({ length: 5 }, (_, i) => {
-                  if (i < score) {
-                    return (
-                      <div className="scoreIcon1" key={i}>
-                        <FontAwesomeIcon className="coloredIcon1" icon={faEarth} />
-                      </div>
-                    );
-                  }
+        Array.from({ length: 5 }, (_, i) => {
+          if (i < score) {
+            return (
+              <div className="scoreIcon1" key={i}>
+                <FontAwesomeIcon className="coloredIcon1" icon={faEarth} />
+              </div>
+            );
+          }
 
-                  return (
-                    <div className="scoreIcon1" key={i}>
-                      <FontAwesomeIcon className="not-colored-icon1" icon={faEarth} />
-                    </div>
-                  );
-                })
-            }
+          return (
+            <div className="scoreIcon1" key={i}>
+              <FontAwesomeIcon className="not-colored-icon1" icon={faEarth} />
+            </div>
+          );
+        })
+      }
     </div>
   );
 }
@@ -76,7 +77,7 @@ function GlobalInformations({ globalProductInformations }: IProps) {
     <div className="global-information">
       <div className="grid">
         <div className="image-box1">
-          <img src={product1} className="item-image1" alt="" />
+          <img src={chemise} className="item-image1" alt="" />
         </div>
 
         <div className="informations-box1">

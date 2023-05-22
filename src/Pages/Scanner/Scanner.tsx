@@ -5,7 +5,7 @@ import Quagga from '@ericblade/quagga2';
 import './Scanner.css';
 
 async function SendBarcode(barcode) {
-  const response = await fetch(`https://localhost:8080/api/products?Upc=${barcode}`);
+  const response = await fetch(`https://localhost:8081/api/product?Upc=${barcode}`);
   const data = await response.json();
   return data;
 }
