@@ -4,11 +4,19 @@ import Quagga from '@ericblade/quagga2';
 
 import './Scanner.css';
 
+async function SendBarcode(barcode) {
+  const response = await fetch(`https://localhost:8080/api/products?Upc=${barcode}`);
+  const data = await response.json();
+  return data;
+}
+
 function Scanner(props: any) {
   const { onDetected } = props;
 
   const detected = (result: any) => {
-    onDetected(result.codeResult.code);
+    SendBarcode(result.codeResult.code).then((data) => {
+      onDetected(data);
+    });
   };
 
   useEffect(() => {
