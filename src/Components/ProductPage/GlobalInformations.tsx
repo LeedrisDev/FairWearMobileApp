@@ -6,7 +6,7 @@ import { IGlobalProductInformations } from '../../Tests/InterfaceProduct';
 import { useState } from 'react';
 import * as React from 'react';
 import product1 from '../../assets/produit1.png';
-import chemise from '../../Images/chemise.png';
+import chemise from '../../Images/chemise.jpg';
 
 import { IconDefinition } from '@fortawesome/fontawesome';
 import { IconProp } from '@fortawesome/fontawesome-svg-core';
