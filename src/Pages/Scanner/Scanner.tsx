@@ -3,20 +3,22 @@ import config from './cameraConfig';
 import Quagga from '@ericblade/quagga2';
 
 import './Scanner.css';
+import {log} from "util";
 
 async function SendBarcode(barcode) {
-  const response = await fetch(`https://localhost:8081/api/product?Upc=${barcode}`);
+  const response = await fetch(`http://localhost:8081/api/product?Upc=${barcode}`);
   const data = await response.json();
+  console.log(data);
   return data;
 }
 
 function Scanner(props: any) {
   const { onDetected } = props;
 
-  const detected = (result: any) => {
-    SendBarcode(result.codeResult.code).then((data) => {
-      onDetected(data);
-    });
+  const detected = async (result: any) => {
+    let json = await SendBarcode(result.codeResult.code);
+    console.log(json);
+    onDetected(result.codeResult.code);
   };
 
   useEffect(() => {

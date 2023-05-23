@@ -7,7 +7,7 @@ import './ScannerPage.css';
 function ScannerPage() {
   const [result, setResult] = useState(null);
 
-  const onDetected = (resultFinal: any) => {
+  const onDetected = async (resultFinal: any) => {
     setResult(resultFinal);
   };
 
