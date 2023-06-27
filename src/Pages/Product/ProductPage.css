@@ -7,12 +7,11 @@
 }
 
 .back-product-page {
-    height: 5%;
     margin-right: 80%;
     width: 10%;
     border: rgba(183,115,255,0);
     background-color: rgba(255,253,253,0);
-    margin-bottom: 3%;
+    margin-top: 5%;
 }
 
 .icon-navigation {

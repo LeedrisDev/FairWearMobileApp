@@ -39,7 +39,7 @@ function ScoreBar({ informations } : IPropsProductInformations) {
   return (
     <div className="score-bar">
       <div className="score-bar-box">
-        <div className="title">Score Breakdown</div>
+        <div className="title-product">Score Breakdown</div>
         <DesignBar percent={informations.environemental} icon={faLeaf as IconDefinition} />
         <DesignBar percent={informations.moral} icon={faPerson as IconDefinition} />
         <DesignBar percent={informations.animal} icon={faDog as IconDefinition} />

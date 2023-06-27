@@ -1,63 +1,83 @@
 import * as React from 'react';
-import './Settings.css';
-import '../../App.css';
 import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
-import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { ISecurityInformations } from './interfaces';
+import { Link } from 'react-router-dom';
+import {
+  IOptionsProps,
+  IPersonalInformationsProps,
+  ISettingFieldProps,
+  ISettingSetUpProps,
+} from './interfacesProps';
 
-function Settings() {
+import '../../App.css';
+import './Settings.css';
+
+function SettingField({ field, content }: ISettingFieldProps) {
   return (
-    <div className="App">
+    <div className="option">
+      <div className="title-four grey">{field}</div>
+      <div className="action">{content}</div>
+    </div>
+  );
+}
+
+function PersonalinformationsSettings({ personalInformations }: IPersonalInformationsProps) {
+  return (
+    <div className="category-settings">
+      <div className="title-one">Personal Information</div>
+      <div className="options">
+        <SettingField field="Username" content={personalInformations.username} />
+        <SettingField field="Email address" content={personalInformations.email} />
+        <SettingField field="Phone number" content={personalInformations.phone} />
+      </div>
+    </div>
+  );
+}
+
+function OptionsSettings({ options }: IOptionsProps) {
+  return (
+    <div className="category-settings">
+      <div className="title-one">Options</div>
+      <div className="options">
+        <SettingField field="Language" content={options.langage} />
+        <SettingField field="Theme" content={options.theme} />
+      </div>
+    </div>
+  );
+}
+
+function SecuritySettings({ password }: ISecurityInformations) {
+  return (
+    <div className="category-settings">
+      <div className="title-one">Security</div>
+      <div className="options">
+        <SettingField field="Password" content={password} />
+      </div>
+    </div>
+  );
+}
+
+function Settings({ settings }: ISettingSetUpProps) {
+  return (
+    <div className="settings-page" style={{ width: window.innerWidth, height: window.innerHeight }}>
       <button className="back" type="button">
         <Link className="nav-link" to="/Profile">
           <FontAwesomeIcon icon={faArrowLeft} className="icon-navigation" />
         </Link>
       </button>
+      {
+          settings.isConnected ? (
+            <div className="content-settings">
+              <PersonalinformationsSettings personalInformations={settings.personalInformations} />
+              <hr />
+              <SecuritySettings password={settings.security.password} />
+              <hr />
+            </div>
+          ) : null
+        }
       <div className="content-settings">
-        {/* Personnal information */}
-        <div className="category-settings">
-          <div className="title-one">Personal Information</div>
-          <div className="options">
-            <div className="option">
-              <div className="title-four grey">Username</div>
-              <div className="action">XXXXXX</div>
-            </div>
-            <div className="option">
-              <div className="title-four grey">Email address</div>
-              <div className="action">XXXXXX</div>
-            </div>
-            <div className="option">
-              <div className="title-four grey">Phone number</div>
-              <div className="action">+33 X XX XX XX XX</div>
-            </div>
-          </div>
-        </div>
-        <hr />
-        {/* Security */}
-        <div className="category-settings">
-          <div className="title-one">Security</div>
-          <div className="options">
-            <div className="option">
-              <div className="title-four grey">Password</div>
-              <div className="action">************</div>
-            </div>
-          </div>
-        </div>
-        <hr />
-        {/* Options */}
-        <div className="category-settings">
-          <div className="title-one">Options</div>
-          <div className="options">
-            <div className="option">
-              <div className="title-four grey">Language</div>
-              <div className="action">English</div>
-            </div>
-            <div className="option">
-              <div className="title-four grey">Theme</div>
-              <div className="action">Light</div>
-            </div>
-          </div>
-        </div>
+        <OptionsSettings options={settings.options} />
       </div>
     </div>
   );

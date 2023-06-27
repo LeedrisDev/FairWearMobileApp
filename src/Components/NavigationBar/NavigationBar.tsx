@@ -2,12 +2,12 @@ import * as React from 'react';
 import { Link } from 'react-router-dom';
 import { useState } from 'react';
 import {
-  FaHome, FaSearch, FaUser, FaBarcode,
-} from 'react-icons/fa';
+  FaBarcode, FaHome, FaSearch, FaUser,
+} from 'react-icons/all';
 
-import './NavBar.css';
+import './NavigationBar.css';
 
-function NavBar() {
+function NavigationBar() {
   const [activeIcon, setActiveIcon] = useState('scan');
 
   const handleIconClick = (icon: string) => {
@@ -15,7 +15,7 @@ function NavBar() {
   };
 
   return (
-    <div className="navbar">
+    <div className="navigation-bar">
       <div className="navbar-icon">
         <Link className="nav-link" to="/Home">
           <button
@@ -28,6 +28,7 @@ function NavBar() {
           </button>
         </Link>
       </div>
+
       <div className="navbar-icon">
         <Link className="nav-link" to="/Search">
           <button
@@ -40,6 +41,7 @@ function NavBar() {
           </button>
         </Link>
       </div>
+
       <div className="navbar-icon">
         <Link className="nav-link" to="/">
           <button
@@ -52,6 +54,7 @@ function NavBar() {
           </button>
         </Link>
       </div>
+
       <div className="navbar-icon">
         <Link className="nav-link" to="/Profile">
           <button
@@ -68,4 +71,4 @@ function NavBar() {
   );
 }
 
-export default NavBar;
+export default NavigationBar;

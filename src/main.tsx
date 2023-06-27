@@ -1,16 +1,16 @@
 import * as React from 'react';
+import Home from './Pages/Home/Home';
+import ImagesGrid from './Components/Images/ImagesGrid';
+import NavigationBar from './Components/NavigationBar/NavigationBar';
+import ProfileSetUp from './Pages/Profile/ProfileSetUp';
 import ReactDOM from 'react-dom/client';
 import { registerSW } from 'virtual:pwa-register';
+import ScannerPage from './Pages/Scanner/ScannerPage';
+import Search from './Pages/Search/Search';
+import SettingsSetUp from './Pages/Settings/SettingsSetUp';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
 import './index.css';
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import Profile from './Pages/Profile/Profile';
-import Home from './Pages/Home/Home';
-import Search from './Pages/Search/Search';
-import NavBar from './Components/NavBar/NavBar';
-import Settings from './Pages/Settings/Settings';
-import ScannerPage from './Pages/Scanner/ScannerPage';
-import ListImagesPage from './Components/ListImagesPage/ListImagesPage';
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
@@ -20,11 +20,11 @@ ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
           <Route path="/Home" element={<Home />} />
           <Route path="/Search" element={<Search />} />
           <Route path="/" element={<ScannerPage />} />
-          <Route path="/Profile" element={<Profile />} />
-          <Route path="/Settings" element={<Settings />} />
-          <Route path="/Alternative" element={<ListImagesPage />} />
+          <Route path="/Profile" element={<ProfileSetUp />} />
+          <Route path="/Settings" element={<SettingsSetUp />} />
+          <Route path="/Alternative" element={<ImagesGrid />} />
         </Routes>
-        <NavBar />
+        <NavigationBar />
       </div>
     </BrowserRouter>
   </React.StrictMode>,

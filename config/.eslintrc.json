@@ -22,7 +22,9 @@
     ],
     "rules": {
         "react/jsx-filename-extension": [2, { "extensions": [".js", ".jsx", ".ts", ".tsx"] }],
-        "import/order" : "off"
+        "import/order" : "off",
+        "jsx-a11y/click-events-have-key-events": "off",
+        "jsx-a11y/no-static-element-interactions": "off"
     },
     "settings": {
         "import/resolver": {

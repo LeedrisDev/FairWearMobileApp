@@ -1,21 +1,16 @@
-.composition {
+.composition-product {
     display: flex;
     justify-content: center;
     align-items: center;
     margin-bottom: 3%;
 }
 
-.composition-box {
+.composition-product-box {
     width: 90%;
+    margin-bottom: 20px;
 }
 
-.pie-box {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.title {
+.composition-product-title {
     height: 22px;
 
     font-family: 'Poppins', sans-serif;
@@ -31,4 +26,15 @@
     flex: none;
     order: 0;
     flex-grow: 0;
+}
+
+.pie-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.pie {
+    width: 90%;
+    height: 170px;
 }

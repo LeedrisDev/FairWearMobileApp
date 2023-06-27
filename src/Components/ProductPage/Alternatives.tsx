@@ -1,32 +1,33 @@
-import product1 from '../../assets/produit1.png';
 import * as React from 'react';
+import vestiairecollective from '../../assets/vestiaire-collective.jpeg';
+import vinted from '../../assets/vinted.png';
 
 import './Alternatives.css';
-import { Link } from 'react-router-dom';
 
 function Alternatives() {
   return (
     <div className="alternatives">
       <div className="alternatives-box">
         <div className="box-header">
-          <div className="title">Alternatives</div>
-          <button className="go-alternative-page" type="button">
-            <Link className="alternatives-link" to="/Alternative">
-              <span className="plus-alternatives">See all</span>
-            </Link>
-          </button>
+          <div className="title-product">Alternatives</div>
         </div>
+
         <div className="clothes">
           <div className="clothing-item">
-            <img src={product1} className="item-image" alt="" />
+            <a href="https://www.vinted.fr/">
+              <img src={vinted} className="alternatives-image" alt="vinted" />
+            </a>
             <div className="brand-and-grade1 title-four">
-              <span>Shirt</span>
+              <span>Vinted</span>
             </div>
           </div>
+
           <div className="clothing-item">
-            <img src={product1} className="item-image" alt="" />
+            <a href="https://vestiairecollective.com/">
+              <img src={vestiairecollective} className="alternatives-image" alt="vestiaire-collective" />
+            </a>
             <div className="brand-and-grade1 title-four">
-              <span>Shirt</span>
+              <span>Vestiaire Collective</span>
             </div>
           </div>
         </div>

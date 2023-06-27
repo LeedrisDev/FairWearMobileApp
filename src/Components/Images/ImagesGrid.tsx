@@ -1,12 +1,12 @@
-import product1 from '../../assets/produit1.png';
 import * as React from 'react';
-
-import './ListImagesPage.css';
-import { Link } from 'react-router-dom';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { Link } from 'react-router-dom';
+import product1 from '../../assets/produit1.png';
 
-function ListImagesPage() {
+import './ImagesGrid.css';
+
+function ImagesGrid() {
   return (
     <div className="alternatives" style={{ width: window.innerWidth, height: window.innerHeight }}>
       <div className="alternatives-box">
@@ -33,4 +33,4 @@ function ListImagesPage() {
   );
 }
 
-export default ListImagesPage;
+export default ImagesGrid;

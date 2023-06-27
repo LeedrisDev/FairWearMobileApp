@@ -1,6 +1,7 @@
-import React, { useEffect } from 'react';
+import * as React from 'react';
 import config from './cameraConfig';
 import Quagga from '@ericblade/quagga2';
+import { useEffect } from 'react';
 
 import './Scanner.css';
 
@@ -31,6 +32,7 @@ function Scanner(props: any) {
             Number(drawingCanvas.getAttribute('width')),
             Number(drawingCanvas.getAttribute('height')),
           );
+
           result.boxes
             .filter((box: (number[])[]) => box !== result.box)
             .forEach((box: (number[])[]) => {

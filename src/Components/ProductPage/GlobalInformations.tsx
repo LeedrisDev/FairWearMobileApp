@@ -1,14 +1,13 @@
+import * as React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { IconDefinition } from '@fortawesome/fontawesome';
+import { IconProp } from '@fortawesome/fontawesome-svg-core';
+import { IGlobalProductInformations } from '../../Tests/InterfaceProduct';
+import product1 from '../../assets/produit1.png';
+import { useState } from 'react';
 import {
   faTshirt, faEarth, faMap,
 } from '@fortawesome/free-solid-svg-icons';
-import { IGlobalProductInformations } from '../../Tests/InterfaceProduct';
-import { useState } from 'react';
-import * as React from 'react';
-import product1 from '../../assets/produit1.png';
-
-import { IconDefinition } from '@fortawesome/fontawesome';
-import { IconProp } from '@fortawesome/fontawesome-svg-core';
 
 import './GlobalInformations.css';
 
@@ -16,16 +15,16 @@ interface IProps {
   globalProductInformations: IGlobalProductInformations
 }
 
-interface IPropsScore {
+interface IScoreProps {
   globalScore: number
 }
 
-interface IPropsTextandLogo {
+interface ITextandLogoProps {
   icon: IconDefinition,
   text: string,
 }
 
-function TextAndIcon({ text, icon }: IPropsTextandLogo) {
+function TextAndIcon({ text, icon }: ITextandLogoProps) {
   const [texte] = useState(text);
   const [iconType] = useState(icon);
 
@@ -40,7 +39,7 @@ function TextAndIcon({ text, icon }: IPropsTextandLogo) {
   );
 }
 
-function Score({ globalScore }: IPropsScore) {
+function Score({ globalScore }: IScoreProps) {
   const [score] = useState(globalScore);
 
   return (
@@ -76,7 +75,7 @@ function GlobalInformations({ globalProductInformations }: IProps) {
     <div className="global-information">
       <div className="grid">
         <div className="image-box1">
-          <img src={product1} className="item-image1" alt="" />
+          <img src={product1} className="item-image1" alt="product" />
         </div>
 
         <div className="informations-box1">
