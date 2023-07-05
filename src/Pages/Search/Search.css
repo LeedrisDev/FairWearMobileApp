@@ -3,10 +3,11 @@
     padding: 13px 24px;
     gap: 10px;
 
-    width: 90%;
+    width: 80%;
     height: 45px;
     background: #FFFFFF;
     margin-top: 10%;
+    margin-right: 7%;
 
     border: 1px solid #E1E1E1;
     box-shadow: 0px 4px 4px rgba(199, 199, 199, 0.25);
@@ -57,8 +58,14 @@
     align-items: center;
 }
 
+.input-box {
+    width: 90%;
+    display: flex;
+    flex-direction: row;
+}
+
 .input {
-    width: 85%;
+    width: 90%;
 }
 
 .line {
@@ -70,4 +77,44 @@
     align-items: center;
     height: 10%;
     margin-left: 10%;
+}
+
+.button-search {
+    box-sizing: border-box;
+    width: 20%;
+    height: 45px;
+    margin-top: 10%;
+
+    color: #33765D;
+    border: 1px solid rgba(51, 118, 93, 0.65);
+    background-color: rgba(51, 118, 93, 0.15);;
+    box-shadow: 0px 4px 4px rgba(199, 199, 199, 0.25);
+    border-radius: 15px;
+}
+
+.icon-search {
+    color: #33765d;
+    width: 130%;
+    height: 130%;
+}
+
+.clothes-alternatives {
+    margin-top: 6%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 10px;
+    grid-auto-rows: minmax(100px, auto);
+    gap: 10px;
+    width: 90%;
+    max-height: 800px;
+    overflow-y: scroll;
+    overflow-x: unset;
+}
+
+.title-brand {
+    color: black;
+}
+
+.brand-proposition {
+    text-decoration:none;
 }

@@ -11,6 +11,7 @@
     position: absolute;
     overflow-x: unset;
     overflow-y: scroll;
+    background-color: #ffffff;
     z-index: 10;
 }
 

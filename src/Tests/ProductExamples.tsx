@@ -23,4 +23,5 @@ const product1: IProductInformations = {
   ],
   alternatives: ['', '', '', ''],
 };
+
 export default product1;

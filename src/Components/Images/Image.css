@@ -86,13 +86,13 @@
 
 
 /* Item of clothing */
-.clothing-item {
+.brand-item {
     flex-direction: column;
     gap: 7px;
     padding: 0px;
 }
 
-.item-image {
+.brand-image {
     aspect-ratio: 1 / 1;
     border-radius: 12px;
     width: 100%;

@@ -19,6 +19,32 @@ interface IScoreProps {
   globalScore: number
 }
 
+function Score({ globalScore }: IScoreProps) {
+  const [score] = useState(globalScore);
+
+  return (
+    <div className="score-information1">
+      {
+          Array.from({ length: 5 }, (_, i) => {
+            if (i < score) {
+              return (
+                <div className="scoreIcon1" key={i}>
+                  <FontAwesomeIcon className="coloredIcon1" icon={faEarth} />
+                </div>
+              );
+            }
+
+            return (
+              <div className="scoreIcon1" key={i}>
+                <FontAwesomeIcon className="not-colored-icon1" icon={faEarth} />
+              </div>
+            );
+          })
+        }
+    </div>
+  );
+}
+
 interface ITextandLogoProps {
   icon: IconDefinition,
   text: string,
@@ -35,32 +61,6 @@ function TextAndIcon({ text, icon }: ITextandLogoProps) {
       </div>
 
       <p className="detailsText1">{texte}</p>
-    </div>
-  );
-}
-
-function Score({ globalScore }: IScoreProps) {
-  const [score] = useState(globalScore);
-
-  return (
-    <div className="score-information1">
-      {
-                Array.from({ length: 5 }, (_, i) => {
-                  if (i < score) {
-                    return (
-                      <div className="scoreIcon1" key={i}>
-                        <FontAwesomeIcon className="coloredIcon1" icon={faEarth} />
-                      </div>
-                    );
-                  }
-
-                  return (
-                    <div className="scoreIcon1" key={i}>
-                      <FontAwesomeIcon className="not-colored-icon1" icon={faEarth} />
-                    </div>
-                  );
-                })
-            }
     </div>
   );
 }

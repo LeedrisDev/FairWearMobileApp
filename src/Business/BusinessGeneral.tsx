@@ -6,7 +6,7 @@ import {
   ISettingSetUp,
 } from '../Pages/Settings/interfaces';
 
-const isConnected = false;
+const isConnected = true;
 
 const profile: IProfileSetUp = {
   isConnected,

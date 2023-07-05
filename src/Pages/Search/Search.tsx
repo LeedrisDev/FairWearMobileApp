@@ -2,9 +2,12 @@ import * as React from 'react';
 import { faArrowDown } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { searchInformations } from './objects';
+import produit1 from '../../assets/produit1.png';
 
 import './Search.css';
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
+import { FaSearch } from 'react-icons/all';
 
 const sizes = ['XXS', 'XS', 'S', 'M', 'L', 'XL', 'XXL', '3XL', '4XL', '5XL'];
 const genders = ['Man', 'Woman', 'Child'];
@@ -76,29 +79,55 @@ function FilterSearch({ title, items }: IFilterSearchProps) {
 
 function Search() {
   const [text, setText] = useState('');
+  const [length, setLength] = useState(0);
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setText(event.target.value);
     searchInformations.input = event.target.value;
   };
 
+  const handleSearch = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setText('');
+    setLength(5);
+  };
+
   return (
     <div className="search">
-      <input
-        className="input-search"
-        type="text"
-        placeholder="Find an item or brand"
-        value={text}
-        onChange={handleChange}
-        style={{
-          color: text ? 'black' : 'gray',
-        }}
-      />
-      <div className="filter-box">
-        <FilterSearch title="Gender" items={genders} />
-        <FilterSearch title="Size" items={sizes} />
-        <FilterSearch title="Color" items={colors} />
+      <div className="input-box">
+        <input
+          className="input-search"
+          type="text"
+          placeholder="Find an item or brand"
+          value={text}
+          onChange={handleChange}
+          style={{
+            color: text ? 'black' : 'gray',
+          }}
+        />
+        <button
+          type="button"
+          className="button-search"
+          onClick={handleSearch}
+        >
+          Search
+        </button>
+
       </div>
+      <div className="clothes-alternatives">
+        {
+                Array.from({ length }, () => (
+                  <Link to="/Brand" className="brand-proposition">
+                    <div className="clothing-item-alternatives">
+                      <img src={produit1} className="item-image-alternatives" alt="" />
+                      <div className="brand-and-grade1 title-four">
+                        <span className="title-brand">Shirt</span>
+                      </div>
+                    </div>
+                  </Link>
+                ))
+            }
+      </div>
+      <div />
     </div>
   );
 }
