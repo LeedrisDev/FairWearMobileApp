@@ -1,7 +1,7 @@
 import './Home.css';
 import * as React from 'react';
 import logo from '../../assets/FairWear.png';
-import tips from '../../assets/imageTips.png'
+import tips from '../../assets/imageTips.png';
 import ImageComponent from '../../Components/Images/Image';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -44,9 +44,9 @@ function Home() {
         <div className="tips-text-box">
           <div className="tips-title">L'entretien d'un vêtement</div>
           <p className="tips-text">Prendre soin de nos vêtements est un moyen de lutter contre la surconsommation. Cela passe notemment par le lavage de vos vêtement ! Alors n'hésitez pas à regardez leur étiquette pour savoir à combien de degrés vos vêtements peuvent se laver en fonction de leurs matières ! </p>
-            <div className="tips-image-box">
-                <img src={tips} className="tips-image" alt="Item" />
-            </div>
+          <div className="tips-image-box">
+            <img src={tips} className="tips-image" alt="Item" />
+          </div>
         </div>
       </div>
 

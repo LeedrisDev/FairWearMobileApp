@@ -3,16 +3,16 @@ import { render, screen } from '@testing-library/react';
 import ProfileSetUp from '../src/Pages/Profile/ProfileSetUp';
 
 jest.mock('../../Business/BusinessGeneral', () => ({
-    profile: {
-        name: 'John Doe',
-        isConnected: true,
-    },
+  profile: {
+    name: 'John Doe',
+    isConnected: true,
+  },
 }));
 
 describe('ProfileSetUp component', () => {
-    it('renders the Profile component with the provided profile', () => {
-        render(<ProfileSetUp />);
-        const profileElement = screen.getByText('John Doe');
-        expect(profileElement).toBeInTheDocument();
-    });
+  it('renders the Profile component with the provided profile', () => {
+    render(<ProfileSetUp />);
+    const profileElement = screen.getByText('John Doe');
+    expect(profileElement).toBeInTheDocument();
+  });
 });

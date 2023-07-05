@@ -1,14 +1,13 @@
 import * as React from 'react';
-import { faArrowDown } from '@fortawesome/free-solid-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { searchInformations } from './objects';
 import produit1 from '../../assets/produit1.png';
+import BrandBusiness from '../../Business/BrandBusiness';
 
 import './Search.css';
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { FaSearch } from 'react-icons/all';
 
+/*
 const sizes = ['XXS', 'XS', 'S', 'M', 'L', 'XL', 'XXL', '3XL', '4XL', '5XL'];
 const genders = ['Man', 'Woman', 'Child'];
 const colors = ['Blue', 'Pink', 'Black', 'White'];
@@ -77,16 +76,20 @@ function FilterSearch({ title, items }: IFilterSearchProps) {
   );
 }
 
+ */
+
 function Search() {
   const [text, setText] = useState('');
   const [length, setLength] = useState(0);
+  // const [brands, setBrands] = useState(0);
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setText(event.target.value);
     searchInformations.input = event.target.value;
   };
 
-  const handleSearch = (event: React.ChangeEvent<HTMLInputElement>) => {
+  const handleSearch = () => {
+    BrandBusiness(text);
     setText('');
     setLength(5);
   };
