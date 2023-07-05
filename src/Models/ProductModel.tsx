@@ -1,20 +1,20 @@
 interface ProductModel {
 
-    'name': string,
-    "country": string,
-    "image": string,
-    "globalScore": number,
-    'scores': {
-    "moral": 0,
-        "animal": 0,
-        "environmental": 0
-},
-    "composition": [
+  'name': string,
+  'country': string,
+  'image': string,
+  'globalScore': number,
+  'scores': {
+    'moral': 0,
+    'animal': 0,
+    'environmental': 0
+  },
+  'composition': [
     {
-        "percentage": 0,
-        "component": "string"
-    }
-],
-    "brand": "string"
+      'percentage': 0,
+      'component': 'string'
+    },
+  ],
+  'brand': 'string'
 
 }
