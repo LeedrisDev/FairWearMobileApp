@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { useState } from 'react';
 import {
   FaBarcode, FaHome, FaSearch, FaUser,
-} from 'react-icons/all';
+} from 'react-icons/fa';
 
 import './NavigationBar.css';
 
