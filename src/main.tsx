@@ -10,6 +10,7 @@ import ScannerPage from './Pages/Scanner/ScannerPage';
 import Search from './Pages/Search/Search';
 import SettingsSetUp from './Pages/Settings/SettingsSetUp';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import BrandPage from './Pages/Brand/BrandPage';
 
 import './index.css';
 
@@ -25,6 +26,7 @@ ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
           <Route path="/Settings" element={<SettingsSetUp />} />
           <Route path="/Alternative" element={<ImagesGrid />} />
           <Route path="/TopBrand/:productId" element={<TopBrandPage />} />
+          <Route path="/Brand/:productId" element={<BrandPage />} />
         </Routes>
         <NavigationBar />
       </div>

@@ -118,3 +118,16 @@
 .brand-proposition {
     text-decoration:none;
 }
+
+.text-search {
+    color: rgba(51, 118, 93);
+    font-size: 16px;
+}
+
+.brand-and-grade-search {
+    border: #33765d 1px solid;
+    border-radius: 20px;
+    background: rgba(51, 118, 93, 0.15);
+    padding-bottom: 40px;
+    padding-top: 40px;
+}

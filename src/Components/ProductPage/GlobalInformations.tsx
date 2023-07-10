@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { IconDefinition } from '@fortawesome/fontawesome';
 import { IconProp } from '@fortawesome/fontawesome-svg-core';
 import { IGlobalProductInformations } from '../../Tests/InterfaceProduct';
-import product1 from '../../assets/produit1.png';
+import product1 from '../../assets/glove.jpeg';
 import { useState } from 'react';
 import {
   faTshirt, faEarth, faMap,

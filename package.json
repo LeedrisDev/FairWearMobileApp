@@ -2,8 +2,8 @@
   "name": "fairwear-app",
   "private": true,
   "version": "0.0.0",
-  "type": "module",
   "scripts": {
+    "cypress:open": "cypress open",
     "dev": "vite --config=config/vite.config.ts",
     "host": "vite --config=config/vite.config.ts --host",
     "build": "tsc --project config/tsconfig.json && vite --config=config/vite.config.ts build",
@@ -27,12 +27,13 @@
     "axios": "^1.4.0",
     "bootstrap": "^5.2.3",
     "chart.js": "^4.3.0",
+    "core-js": "^3.23.3",
     "react": "^18.2.0",
     "react-bootstrap": "^2.7.4",
     "react-chartjs-2": "^5.2.0",
     "react-charts": "^3.0.0-beta.54",
     "react-dom": "^18.2.0",
-    "react-icons": "^4.8.0",
+    "react-icons": "^4.10.1",
     "react-router-dom": "^6.11.0"
   },
   "devDependencies": {
@@ -49,6 +50,7 @@
     "@vitejs/plugin-react": "^3.1.0",
     "bootstrap": "^5.2.3",
     "cliui": "^8.0.1",
+    "cypress": "^12.17.0",
     "eslint": "^8.36.0",
     "eslint-config-airbnb": "^19.0.4",
     "eslint-config-airbnb-typescript": "^17.0.0",
