@@ -15,7 +15,6 @@ function postBrand(brand:string) {
       Host: 'gateway.traefik.me',
       'Accept-Encoding': 'gzip, deflate, br',
       Connection: 'keep-alive',
-        'Access-Control-Allow-Origin': '*',
     },
     formdata,
   };
