@@ -1,44 +1,25 @@
 import axios from 'axios';
+import { IBrandModel } from '../Models/BrandModel';
 
-function postBrand(brand:string) {
-  // const formdata = new FormData();
-  // formdata.append('name', brand);
-  //
-  // const config = {
-  //   method: 'post',
-  //   maxBodyLength: Infinity,
-  //   url: 'https://gateway.traefik.me/api/brand/name',
-  //   headers: {
-  //     'Content-Type': 'application/json',
-  //     // 'User-Agent': 'PostmanRuntime/7.32.3',
-  //     // Accept: '*/*',
-  //     // Host: 'gateway.traefik.me',
-  //     // 'Accept-Encoding': 'gzip, deflate, br',
-  //     // Connection: 'keep-alive',
-  //     // 'Access-Control-Allow-Origin': '*',
-  //   },
-  //   formdata,
-  // };
-  //
-  // axios.request(config)
-  //   .then((response) => {
-  //     console.log(JSON.stringify(response.data));
-  //   })
-  //   .catch((error) => {
-  //     console.log(error);
-  //   });
-
-  axios.post('https://gateway.traefik.me/api/brand/name', {
-    name: 'zara',
-  })
-    .then((response) => {
-      console.log('Response:', response.data);
-      // Handle the response data here
-    })
-    .catch((error) => {
-      console.error('Error:', error);
-      // Handle errors here
+export async function postBrand(brand): Promise<IBrandModel> {
+  try {
+    const response = await axios.post('https://gateway.traefik.me/api/brand/name', {
+      name: brand,
     });
+    return response.data;
+  } catch (error) {
+    console.error('Error:', error);
+    throw error;
+  }
 }
 
-export default postBrand;
+export async function getBrandById(brandId): Promise<IBrandModel> {
+  try {
+    const response = await axios.get(`https://gateway.traefik.me/api/brand/${brandId}`);
+    return response.data;
+  } catch (error) {
+    console.error('Error:', error);
+    throw error;
+  }
+}
+

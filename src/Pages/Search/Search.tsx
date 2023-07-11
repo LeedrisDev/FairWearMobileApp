@@ -1,7 +1,6 @@
 import * as React from 'react';
 import { searchInformations } from './objects';
-import produit1 from '../../assets/produit1.png';
-import BrandBusiness from '../../Business/BrandBusiness';
+import { BrandBusiness } from '../../Business/BrandBusiness';
 
 import './Search.css';
 import { useState } from 'react';
@@ -81,17 +80,17 @@ function FilterSearch({ title, items }: IFilterSearchProps) {
 function Search() {
   const [text, setText] = useState('');
   const [length, setLength] = useState(0);
-  // const [brands, setBrands] = useState(0);
+  const [brands, setBrands] = useState(null);
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setText(event.target.value);
     searchInformations.input = event.target.value;
   };
 
-  const handleSearch = () => {
-    BrandBusiness(text);
+  const handleSearch = async () => {
+    setBrands(await BrandBusiness(text));
     setText('');
-    setLength(5);
+    setLength(1);
   };
 
   return (
@@ -119,11 +118,10 @@ function Search() {
       <div className="clothes-alternatives">
         {
                 Array.from({ length }, () => (
-                  <Link to="/Brand" className="brand-proposition">
+                  <Link to={`/Brand/${encodeURIComponent(brands.id)}`} className="brand-proposition">
                     <div className="clothing-item-alternatives">
-                      <img src={produit1} className="item-image-alternatives" alt="" />
-                      <div className="brand-and-grade1 title-four">
-                        <span className="title-brand">Shirt</span>
+                      <div className="brand-and-grade-search title-four">
+                        <span className="text-search title-brand">{brands.name}</span>
                       </div>
                     </div>
                   </Link>

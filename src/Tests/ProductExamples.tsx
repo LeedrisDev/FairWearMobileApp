@@ -1,15 +1,15 @@
 import { IProductInformations } from './InterfaceProduct';
 
 const product1: IProductInformations = {
-  name: 'White shirt with stripes',
-  brand: 'Ralph Lauren',
-  country: 'Bangladesh',
+  name: 'Black glove HardFace',
+  brand: 'The North Face',
+  country: 'United State',
   image: 'produit1',
-  globalScore: 2,
+  globalScore: 3,
   scores: {
-    moral: 50,
-    animal: 20,
-    environemental: 36,
+    moral: 30,
+    animal: 40,
+    environemental: 30,
   },
   composition: [
     {
