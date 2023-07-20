@@ -1,4 +1,4 @@
-import { IProfileSetUp } from '../Pages/Profile/interfaces';
+import IProfileSetUp from '../Pages/Profile/interfaces';
 import {
   IOptions,
   IPersonalInformations,

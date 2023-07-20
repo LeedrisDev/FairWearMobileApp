@@ -1,10 +1,10 @@
 import * as React from 'react';
-import { searchInformations } from './objects';
-import { BrandBusiness } from '../../Business/BrandBusiness';
+import {searchInformations} from './objects';
+import {BrandByName, BrandSearchSuggestions} from '../../Business/BrandBusiness';
 
 import './Search.css';
-import { useState } from 'react';
-import { Link } from 'react-router-dom';
+import {Link} from 'react-router-dom';
+import {IBrandModel} from "../../Models/BrandModel";
 
 /*
 const sizes = ['XXS', 'XS', 'S', 'M', 'L', 'XL', 'XXL', '3XL', '4XL', '5XL'];
@@ -76,61 +76,81 @@ function FilterSearch({ title, items }: IFilterSearchProps) {
 }
 
  */
+interface SearchStateProps {
+    text: string;
+    brands: IBrandModel[];
+}
 
 function Search() {
-  const [text, setText] = useState('');
-  const [length, setLength] = useState(0);
-  const [brands, setBrands] = useState(null);
+    const initialState: SearchStateProps = {
+        text: "",
+        brands: [],
+    }
 
-  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setText(event.target.value);
-    searchInformations.input = event.target.value;
-  };
+    const [state, setState] = React.useState(initialState);
+    const {text, brands} = state
 
-  const handleSearch = async () => {
-    setBrands(await BrandBusiness(text));
-    setText('');
-    setLength(1);
-  };
+    const updateState = (newState: any) => {
+        setState({...state, ...newState});
+    };
 
-  return (
-    <div className="search">
-      <div className="input-box">
-        <input
-          className="input-search"
-          type="text"
-          placeholder="Find an item or brand"
-          value={text}
-          onChange={handleChange}
-          style={{
-            color: text ? 'black' : 'gray',
-          }}
-        />
-        <button
-          type="button"
-          className="button-search"
-          onClick={handleSearch}
-        >
-          Search
-        </button>
+    const handleChange = async (event: React.ChangeEvent<HTMLInputElement>) => {
+        const input : string = event.target.value;
+        const brandSuggestions : IBrandModel[] = event.target.value != "" ? await BrandSearchSuggestions(input) : []
 
-      </div>
-      <div className="clothes-alternatives">
-        {
-                Array.from({ length }, () => (
-                  <Link to={`/Brand/${encodeURIComponent(brands.id)}`} className="brand-proposition">
-                    <div className="clothing-item-alternatives">
-                      <div className="brand-and-grade-search title-four">
-                        <span className="text-search title-brand">{brands.name}</span>
-                      </div>
-                    </div>
-                  </Link>
-                ))
-            }
-      </div>
-      <div />
-    </div>
-  );
+        updateState({text: input, brands: brandSuggestions});
+        searchInformations.input = input;
+    };
+
+    const handleSearch = async () => {
+        try {
+            await BrandByName(text)
+        } catch (error) {
+            console.log(error)
+        }
+
+        updateState({brands: await BrandSearchSuggestions(text)})
+        console.log(brands)
+    };
+
+    return (
+        <div className="search">
+            <div className="input-box">
+                <input
+                    className="input-search"
+                    type="text"
+                    placeholder="Find an item or brand"
+                    value={text}
+                    onChange={handleChange}
+                    style={{
+                        color: text ? 'black' : 'gray',
+                    }}
+                />
+                <button
+                    type="button"
+                    className="button-search"
+                    onClick={handleSearch}
+                >
+                    Search
+                </button>
+
+            </div>
+            <div className="clothes-alternatives">
+                {
+                    brands.map((brand: IBrandModel) => (
+                        <Link to={`/Brand/${encodeURIComponent(brand.id)}`} className="brand-proposition">
+                            <div className="clothing-item-alternatives">
+                                <div className="brand-and-grade-search title-four">
+                                    <span className="text-search title-brand">{brand.name}</span>
+                                </div>
+                            </div>
+                        </Link>
+                    ))
+                }
+            </div>
+            <div/>
+        </div>
+    );
 }
 
 export default Search;
