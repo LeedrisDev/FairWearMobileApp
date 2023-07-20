@@ -1,4 +1,4 @@
-export interface IBrandModel {
+export interface BrandModel {
   'id': number,
   'name': string,
   'country': string,

@@ -1,5 +1,4 @@
-interface ProductModel {
-
+export interface ProductModel {
   'name': string,
   'country': string,
   'image': string,

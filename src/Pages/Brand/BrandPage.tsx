@@ -1,22 +1,19 @@
 import * as React from 'react';
-import {
-  faArrowLeft, faEarth,
-} from '@fortawesome/free-solid-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { Link, useParams } from 'react-router-dom';
-import { useEffect, useState } from 'react';
-import photo from '../../assets/nepivel.jpg';
+import {useEffect, useState} from 'react';
+import {faArrowLeft, faEarth,} from '@fortawesome/free-solid-svg-icons';
+import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
+import {Link, useParams} from 'react-router-dom';
 
 import './BrandPage.css';
-import { BrandByIdBusiness } from '../../Business/BrandBusiness';
-import { IBrandModel } from '../../Models/BrandModel';
+import {BrandByIdBusiness} from '../../Business/BrandBusiness';
+import {BrandModel} from '../../Models/BrandModel';
 
 interface IScoreProps {
   globalScore: number
 }
 
 interface ITopBrandInformationsProps {
-  globalBrandInformations: IBrandModel
+  globalBrandInformations: BrandModel
 }
 
 function Score({ globalScore }: IScoreProps) {

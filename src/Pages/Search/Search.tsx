@@ -4,7 +4,7 @@ import {BrandByName, BrandSearchSuggestions} from '../../Business/BrandBusiness'
 
 import './Search.css';
 import {Link} from 'react-router-dom';
-import {IBrandModel} from "../../Models/BrandModel";
+import {BrandModel} from "../../Models/BrandModel";
 
 /*
 const sizes = ['XXS', 'XS', 'S', 'M', 'L', 'XL', 'XXL', '3XL', '4XL', '5XL'];
@@ -78,7 +78,7 @@ function FilterSearch({ title, items }: IFilterSearchProps) {
  */
 interface SearchStateProps {
     text: string;
-    brands: IBrandModel[];
+    brands: BrandModel[];
 }
 
 function Search() {
@@ -95,8 +95,8 @@ function Search() {
     };
 
     const handleChange = async (event: React.ChangeEvent<HTMLInputElement>) => {
-        const input : string = event.target.value;
-        const brandSuggestions : IBrandModel[] = event.target.value != "" ? await BrandSearchSuggestions(input) : []
+        const input: string = event.target.value;
+        const brandSuggestions: BrandModel[] = event.target.value != "" ? await BrandSearchSuggestions(input) : []
 
         updateState({text: input, brands: brandSuggestions});
         searchInformations.input = input;
@@ -137,7 +137,7 @@ function Search() {
             </div>
             <div className="clothes-alternatives">
                 {
-                    brands.map((brand: IBrandModel) => (
+                    brands.map((brand: BrandModel) => (
                         <Link to={`/Brand/${encodeURIComponent(brand.id)}`} className="brand-proposition">
                             <div className="clothing-item-alternatives">
                                 <div className="brand-and-grade-search title-four">

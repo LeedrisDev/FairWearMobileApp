@@ -1,4 +1,4 @@
-import { IProductInformations } from './InterfaceProduct';
+import {IProductInformations} from './InterfaceProduct';
 
 const product1: IProductInformations = {
   name: 'Black glove HardFace',
@@ -7,9 +7,9 @@ const product1: IProductInformations = {
   image: 'produit1',
   globalScore: 3,
   scores: {
-    moral: 30,
-    animal: 40,
-    environemental: 30,
+    moral: 3,
+    animal: 4,
+    environmental: 3,
   },
   composition: [
     {
