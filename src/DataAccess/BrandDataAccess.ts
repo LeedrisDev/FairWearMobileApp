@@ -1,9 +1,10 @@
 import axios from 'axios';
 import {BrandModel} from '../Models/BrandModel';
+import {AppConstants} from "../Utils/AppConstants";
 
 export async function getBrandByName(brand: string): Promise<BrandModel> {
   try {
-    const response = await axios.post('https://gateway.traefik.me/api/brand/name', {
+    const response = await axios.post(`${AppConstants.API_HOST}/api/brand/name`, {
       name: brand,
     });
     return response.data;
@@ -15,7 +16,7 @@ export async function getBrandByName(brand: string): Promise<BrandModel> {
 
 export async function getBrandById(brandId: string): Promise<BrandModel> {
   try {
-    const response = await axios.get(`https://gateway.traefik.me/api/brand/${brandId}`);
+    const response = await axios.get(`${AppConstants.API_HOST}/api/brand/${brandId}`);
     return response.data;
   } catch (error) {
     console.error('Error:', error);
@@ -25,7 +26,8 @@ export async function getBrandById(brandId: string): Promise<BrandModel> {
 
 export async function getBrandSearchSuggestions(searchInput: string): Promise<[BrandModel]> {
   try {
-    const response = await axios.get(`https://gateway.traefik.me/api/brand?name=${searchInput}`);
+    console.log({API_HOST: AppConstants.API_HOST})
+    const response = await axios.get(`${AppConstants.API_HOST}/api/brand?name=${searchInput}`);
     return response.data;
   } catch (error) {
     console.error('Error:', error);
