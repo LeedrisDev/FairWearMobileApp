@@ -4,16 +4,15 @@ import Profile from '../../Pages/Profile/Profile';
 import Scanner from '../../Pages/Scanner/Scanner';
 import Search from '../../Pages/Search/Search';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import {IProductInformations} from "../../Tests/InterfaceProduct";
-import IProfileSetUp from "../../Pages/Profile/interfaces";
+import IProfileSetUp from '../../Pages/Profile/interfaces';
 
 function Router() {
-    const fakeProfile: IProfileSetUp = {
-        isConnected: false,
-        image: "profile-image-url",
-        name: "John Doe",
-        historic: []
-    }
+  const fakeProfile: IProfileSetUp = {
+    isConnected: false,
+    image: 'profile-image-url',
+    name: 'John Doe',
+    historic: [],
+  };
 
   return (
     <BrowserRouter>
