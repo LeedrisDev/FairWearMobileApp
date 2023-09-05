@@ -5,6 +5,8 @@ import Profile from '../src/Pages/Profile/Profile';
 
 describe('Profile component', () => {
   const mockProfile = {
+    image: "profile-url",
+    historic: [],
     name: 'John Doe',
     isConnected: true,
   };

@@ -6,6 +6,8 @@ jest.mock('../../Business/BusinessGeneral', () => ({
   profile: {
     name: 'John Doe',
     isConnected: true,
+    image: "profile-url",
+    historic: [],
   },
 }));
 
