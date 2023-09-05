@@ -1,12 +1,12 @@
 import * as React from 'react';
-import {useEffect, useState} from 'react';
-import {faArrowLeft, faEarth,} from '@fortawesome/free-solid-svg-icons';
-import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
-import {Link, useParams} from 'react-router-dom';
+import { useEffect, useState } from 'react';
+import { faArrowLeft, faEarth } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { Link, useParams } from 'react-router-dom';
 
 import './BrandPage.css';
-import {BrandByIdBusiness} from '../../Business/BrandBusiness';
-import {BrandModel} from '../../Models/BrandModel';
+import { BrandByIdBusiness } from '../../Business/BrandBusiness';
+import { BrandModel } from '../../Models/BrandModel';
 
 interface IScoreProps {
   globalScore: number

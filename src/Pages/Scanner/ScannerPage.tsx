@@ -1,11 +1,11 @@
 import ProductPage from '../Product/ProductPage';
 import Scanner from './Scanner';
 import * as React from 'react';
-import {useEffect} from 'react';
+import { useEffect } from 'react';
 
 import './ScannerPage.css';
-import {ProductByUpc} from "../../Business/ProductBusiness";
-import {ProductModel} from "../../Models/ProductModel";
+import { ProductByUpc } from '../../Business/ProductBusiness';
+import { ProductModel } from '../../Models/ProductModel';
 
 interface ScannerStateProps {
   barcode: string;
@@ -13,16 +13,15 @@ interface ScannerStateProps {
 }
 
 function ScannerPage() {
-
   const initialState: ScannerStateProps = {
-    barcode: "",
+    barcode: '',
     product: null,
-  }
+  };
   const [state, setState] = React.useState(initialState);
-  const {barcode, product} = state
+  const { barcode, product } = state;
 
   const updateState = (newState: any) => {
-    setState({...state, ...newState});
+    setState({ ...state, ...newState });
   };
 
   function isValidUPCorEAN(code: string): boolean {
@@ -32,30 +31,34 @@ function ScannerPage() {
 
   const onDetected = async (resultFinal: any) => {
     if (isValidUPCorEAN(resultFinal)) {
-      updateState({barcode: resultFinal})
+      updateState({ barcode: resultFinal });
     } else {
-      console.error(`bad barcode format ${resultFinal}`)
+      console.error(`bad barcode format ${resultFinal}`);
     }
   };
 
   useEffect(() => {
-    if (barcode != "") {
+    if (barcode !== '') {
       ProductByUpc(barcode).then((productResponse: ProductModel) => {
-        updateState({product: productResponse})
+        updateState({ product: productResponse });
       });
     }
-  }, [barcode])
+  }, [barcode]);
 
   const handleBackButton = () => {
-    updateState({product: null})
-  }
+    updateState({ product: null });
+  };
 
   return (
-      <div className="ScannerPage" style={{width: window.innerWidth, height: window.innerHeight}}>
-        {
-          product ? <ProductPage product={product} onDetected={handleBackButton}/> : <Scanner onDetected={onDetected}/>
-        }
-      </div>
+    <div className="ScannerPage" style={{ width: window.innerWidth, height: window.innerHeight }}>
+      {
+        product ? (
+          <ProductPage product={product} onDetected={handleBackButton} />
+        ) : (
+          <Scanner onDetected={onDetected} />
+        )
+      }
+    </div>
   );
 }
 

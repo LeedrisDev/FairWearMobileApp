@@ -1,4 +1,4 @@
-import {IProductInformations} from './InterfaceProduct';
+import { IProductInformations } from './InterfaceProduct';
 
 const product1: IProductInformations = {
   name: 'Black glove HardFace',

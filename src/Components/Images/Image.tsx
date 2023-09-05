@@ -1,6 +1,4 @@
 import * as React from 'react';
-import globe from '../../assets/globe.png';
-import shirt from '../../assets/shirt.jpeg';
 
 import '../../App.css';
 import './Image.css';

@@ -1,6 +1,6 @@
-import {ProductModel} from "../Models/ProductModel";
-import {getProductByUpc} from "../DataAccess/ProductDataAccess";
+import { ProductModel } from '../Models/ProductModel';
+import { getProductByUpc } from '../DataAccess/ProductDataAccess';
 
-export async function ProductByUpc(barcode: string): Promise<ProductModel> {
-    return await getProductByUpc(barcode);
+export default async function ProductByUpc(barcode: string): Promise<ProductModel> {
+  return getProductByUpc(barcode);
 }

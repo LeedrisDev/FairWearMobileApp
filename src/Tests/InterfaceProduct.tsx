@@ -1,7 +1,7 @@
 export interface IProductScore {
-    moral: number,
-    animal: number,
-    environmental: number,
+  moral: number,
+  animal: number,
+  environmental: number,
 }
 export interface IProductComposition {
   percentage: number,

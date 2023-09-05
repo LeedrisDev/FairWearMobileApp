@@ -37,13 +37,18 @@ function Home() {
 
       <div className="home-subtitle-box">
         <FontAwesomeIcon icon={faPaperclip} className="icon-home-subtitle1" />
-        <div className="home-subtitle">Today's tips</div>
+        <div className="home-subtitle">Today&apos;s tips</div>
       </div>
 
       <div className="tips">
         <div className="tips-text-box">
-          <div className="tips-title">L'entretien d'un vêtement</div>
-          <p className="tips-text">Prendre soin de nos vêtements est un moyen de lutter contre la surconsommation. Cela passe notemment par le lavage de vos vêtement ! Alors n'hésitez pas à regardez leur étiquette pour savoir à combien de degrés vos vêtements peuvent se laver en fonction de leurs matières ! </p>
+          <div className="tips-title">L&apos;entretien d&apos;un vêtement</div>
+          <p className="tips-text">
+            Prendre soin de nos vêtements est un moyen de lutter contre la surconsommation.
+            Cela passe notamment par le lavage de vos vêtements ! Alors n&apos;hésitez pas à
+            regarder leur étiquette pour savoir à combien de degrés vos vêtements peuvent se
+            laver en fonction de leurs matières !
+          </p>
           <div className="tips-image-box">
             <img src={tips} className="tips-image" alt="Item" />
           </div>
