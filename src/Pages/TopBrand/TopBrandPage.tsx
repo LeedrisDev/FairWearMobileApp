@@ -70,7 +70,7 @@ function GlobalInformationsBrand({ globalBrandInformations }: ITopBrandInformati
 
 function TopBrandPage() {
   const { productId } = useParams();
-  const brand = topBrands[productId];
+  const brand = topBrands[Number(productId)];
 
   return (
     <div className="brandPage" style={{ width: window.innerWidth, height: window.innerHeight }}>

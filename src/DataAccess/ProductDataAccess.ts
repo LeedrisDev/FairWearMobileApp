@@ -1,6 +1,6 @@
 import axios from 'axios';
 import { ProductModel } from '../Models/ProductModel';
-import { AppConstants } from '../Utils/AppConstants';
+import AppConstants from '../Utils/AppConstants';
 
 export default async function getProductByUpc(barcode: string): Promise<ProductModel> {
   try {

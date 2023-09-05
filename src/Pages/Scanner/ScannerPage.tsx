@@ -4,7 +4,7 @@ import * as React from 'react';
 import { useEffect } from 'react';
 
 import './ScannerPage.css';
-import { ProductByUpc } from '../../Business/ProductBusiness';
+import ProductByUpc from '../../Business/ProductBusiness';
 import { ProductModel } from '../../Models/ProductModel';
 
 interface ScannerStateProps {

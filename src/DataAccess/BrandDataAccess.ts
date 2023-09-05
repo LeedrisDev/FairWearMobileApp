@@ -1,6 +1,6 @@
 import axios from 'axios';
 import { BrandModel } from '../Models/BrandModel';
-import { AppConstants } from '../Utils/AppConstants';
+import AppConstants from '../Utils/AppConstants';
 
 export async function getBrandByName(brand: string): Promise<BrandModel> {
   try {

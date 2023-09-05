@@ -1,5 +1,5 @@
-import { IProfileSetUp } from './interfaces';
+import IProfileSetUp from './interfaces';
 
 export default interface IProfileProps {
-  profile: IProfileSetUp
+  profile: IProfileSetUp;
 }

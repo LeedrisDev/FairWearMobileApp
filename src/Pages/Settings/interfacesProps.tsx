@@ -19,6 +19,6 @@ interface IPersonalInformationsProps {
   personalInformations: IPersonalInformations
 }
 
-export {
+export type {
   ISettingSetUpProps, ISettingFieldProps, IOptionsProps, IPersonalInformationsProps,
 };

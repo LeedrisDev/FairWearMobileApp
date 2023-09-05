@@ -19,6 +19,6 @@ interface ISettingSetUp {
   options: IOptions,
 }
 
-export {
+export type{
   IOptions, IPersonalInformations, ISecurityInformations, ISettingSetUp,
 };

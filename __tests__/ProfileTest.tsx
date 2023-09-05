@@ -1,5 +1,6 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
+import '@testing-library/jest-dom/extend-expect'; // This line is important for extending Jest's expect function with DOM matchers.
 import Profile from '../src/Pages/Profile/Profile';
 
 describe('Profile component', () => {

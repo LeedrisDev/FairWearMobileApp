@@ -72,9 +72,9 @@ function GlobalInformationsBrand({ globalBrandInformations }: ITopBrandInformati
 
 function BrandPage() {
   const { productId } = useParams();
-  const [data, setData] = useState(null);
+  const [data, setData] = useState<BrandModel | null>(null);
   const getBrand = async () => {
-    const dataBack = await BrandByIdBusiness(productId);
+    const dataBack = await BrandByIdBusiness(productId || "");
     setData(dataBack);
   };
 
