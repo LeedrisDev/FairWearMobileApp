@@ -1,42 +1,5 @@
-import * as React from 'react';
 import { IProductComposition } from '../../Tests/InterfaceProduct';
-import { Pie } from 'react-chartjs-2';
-import {
-  Chart as ChartJS, ArcElement, Tooltip, Legend,
-} from 'chart.js';
-
-ChartJS.register(ArcElement, Tooltip, Legend);
-
-interface ICompositionProps {
-  composition: IProductComposition[];
-}
-
-const color = [
-  'rgb(51,118,93)',
-  'rgb(42,48,30)',
-  'rgb(225,225,225)',
-  'rgb(109,113,109)',
-  'rgba(59,98,81,0.15)',
-  'rgb(0,0,0)',
-];
-
-const borderColor = [
-  'rgb(51,118,93)',
-  'rgb(42,48,30)',
-  'rgb(225,225,225)',
-  'rgb(109,113,109)',
-  'rgba(59,98,81,1)',
-  'rgb(0,0,0)',
-];
-
-const options: any = {
-  plugins: {
-    legend: {
-      display: true,
-      position: 'right',
-    },
-  },
-};
+import { borderColor, color } from './constantes';
 
 function getData(composition: IProductComposition[]): number[] {
   return composition.map((item) => item.percentage);
@@ -90,16 +53,6 @@ function setPieData(composition: IProductComposition[]) {
   };
 }
 
-function Composition({ composition } : ICompositionProps) {
-  const data = setPieData(composition);
-
-  return (
-    <div className="composition">
-      <div className="title">Composition</div>
-      <div style={{ width: '320px' }}>
-        <Pie data={data} options={options} />
-      </div>
-    </div>
-  );
-}
-export default Composition;
+export {
+  getBorderColor, getColor, getData, getLabels, setPieData,
+};

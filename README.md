@@ -10,13 +10,13 @@ The FairWear app is a mobile application designed to help users make environment
 1. Clone the repository.
 2. Install dependencies by running the following command:
 ```bash
-npm run install-legacy # or yarn
+npm run install-legacy
 ```
 
 ### Development
 In order to run it in development, run:
 ```bash
-npm run dev # or yarn dev
+npm run dev 
 ```
 
 ### Production

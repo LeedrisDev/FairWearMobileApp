@@ -1,23 +1,34 @@
-import product1 from '../../assets/produit1.png';
 import * as React from 'react';
+import vestiairecollective from '../../assets/vestiaire-collective.jpeg';
+import vinted from '../../assets/vinted.png';
 
 import './Alternatives.css';
 
 function Alternatives() {
   return (
-    <div className="score">
-      <div>Alternatives</div>
-      <div className="clothes">
-        <div className="clothing-item">
-          <img src={product1} className="item-image" alt="" />
-          <div className="brand-and-grade title-four">
-            <span>Shirt</span>
-          </div>
+    <div className="alternatives">
+      <div className="alternatives-box">
+        <div className="box-header">
+          <div className="title-product">Alternatives</div>
         </div>
-        <div className="clothing-item">
-          <img src={product1} className="item-image" alt="" />
-          <div className="brand-and-grade title-four">
-            <span>Shirt</span>
+
+        <div className="clothes">
+          <div className="clothing-item">
+            <a href="https://www.vinted.fr/">
+              <img src={vinted} className="alternatives-image" alt="vinted" />
+            </a>
+            <div className="brand-and-grade1 title-four">
+              <span>Vinted</span>
+            </div>
+          </div>
+
+          <div className="clothing-item">
+            <a href="https://vestiairecollective.com/">
+              <img src={vestiairecollective} className="alternatives-image" alt="vestiaire-collective" />
+            </a>
+            <div className="brand-and-grade1 title-four">
+              <span>Vestiaire Collective</span>
+            </div>
           </div>
         </div>
       </div>

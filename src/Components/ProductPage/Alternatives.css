@@ -1,20 +1,23 @@
-.title {
+.title-product {
     font-family: 'Poppins', sans-serif;
     font-style: normal;
     font-weight: 500;
     font-size: 17px;
     line-height: 22px;
+    margin-bottom: 20px;
     display: flex;
     align-items: center;
 
-    /* Dark green */
     color: #2A301E;
 
-
-    /* Inside auto layout */
     flex: none;
     order: 0;
     flex-grow: 0;
+}
+
+.plus-alternatives {
+    color: #33765D;
+    width: 20%;
 }
 
 .box,
@@ -46,12 +49,21 @@
     padding: 0px 10px;
 }
 
+.alternatives-link {
+    text-decoration: none;
+}
+
 .box {
     border-radius: 12px;
     border: 2px solid #E1E1E1;
     box-sizing: border-box;
     flex-direction: column;
     padding: 12px 12px 10px;
+}
+
+.go-alternative-page {
+    border: rgba(87,86,86,0);
+    background-color: white;
 }
 
 .category {
@@ -67,7 +79,6 @@
     grid-gap: 10px;
     grid-auto-rows: minmax(100px, auto);
     gap: 10px;
-    padding: 0px;
 }
 
 
@@ -88,4 +99,21 @@
     flex-direction: row;
     gap: 7px;
     padding: 0px;
+}
+
+
+.alternatives {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.alternatives-box {
+    width: 90%;
+}
+
+.alternatives-image {
+    aspect-ratio: 1 / 1;
+    border-radius: 50%;
+    width: 40%;
 }

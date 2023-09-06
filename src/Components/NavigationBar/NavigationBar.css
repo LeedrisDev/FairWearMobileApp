@@ -1,0 +1,83 @@
+.navigation-bar {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+
+    height: 10%;
+    width: 100%;
+
+    position: absolute;
+    bottom: 0;
+    border-top: 1px solid #E1E1E1;
+    background-color: white;
+
+    z-index: 2;
+}
+
+.navbar-icon {
+    place-items: center;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+
+    width: 25%;
+    height: 100%;
+
+
+    flex: none;
+    order: 0;
+    align-self: stretch;
+    flex-grow: 0;
+    z-index: 1;
+
+    color: #6D716D;
+}
+
+.icon {
+    width: 40%;
+    height: 40%;
+}
+
+.active {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5%;
+    color: #33765D;
+    background: rgba(51, 118, 93, 0.15);
+    border-radius: 12px;
+    height: 85%;
+    width: 75%;
+    align-self: center;
+    border-width: 0px;
+}
+
+.passive {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5%;
+    color: #6D716D;
+    border-radius: 12px;
+    height: 80%;
+    width: 75%;
+    align-self: center;
+    border-width: 0px;
+    background-color: rgba(87,86,86,0);
+}
+
+.nav-link  {
+    display: flex;
+    text-decoration: none;
+    height: 90%;
+    width: 90%;
+    align-self: center;
+    justify-content: center;
+    align-items: center;
+}

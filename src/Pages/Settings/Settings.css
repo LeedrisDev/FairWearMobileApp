@@ -1,0 +1,69 @@
+.back {
+    height: 30px;
+    margin-right: 80%;
+    margin-top: 50px;
+    width: 30px;
+    border: rgba(183,115,255,0);
+    background-color: rgba(255,253,253,0);
+}
+
+.settings-page {
+    position: absolute;
+    overflow-x: unset;
+    overflow-y: scroll;
+    background-color: #ffffff;
+    z-index: 10;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: #0c4128;
+}
+
+.icon-navigation {
+    text-decoration: none;
+    height: 150%;
+    width: 150%;
+}
+
+.content-settings {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    width: 90%;
+    margin-top: 35px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.category-settings {
+    align-items: flex-start;
+    display: flex;
+    flex-direction: column;
+    gap: 21px;
+    padding: 0px;
+}
+
+.options {
+    align-items: flex-start;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    padding: 0px;
+}
+
+.option {
+    align-items: flex-start;
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+    justify-content: center;
+    padding: 0px;
+}
+
+hr {
+    border: none;
+    width: 100%;
+    height: 1px;
+    background-color: #E1E1E1;
+}

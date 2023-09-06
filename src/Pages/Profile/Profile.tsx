@@ -1,77 +1,76 @@
+import * as React from 'react';
+import { faGear } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import ImageProfile from '../../assets/profilePic.jpg';
+import IProfileProps from './interfaceProps';
+import { Link } from 'react-router-dom';
+import Unknow from '../../assets/unknown.jpeg';
+
 import '../../App.css';
 import './Profile.css';
-import { useNavigate } from 'react-router-dom';
-import beanie from '../../Images/beanie.jpeg';
-import globe from '../../Images/globe.png';
-import jeans from '../../Images/jeans.jpeg';
-import profilePicture from '../../Images/profilePic.jpg';
-import React from 'react';
-import shirt from '../../Images/shirt.jpeg';
 
-function Profile() {
-  const navigate = useNavigate();
-
+function UnConnectedProfile() {
   return (
-    <div className="App">
-      <button className="settings" type="button" onClick={() => { navigate('Settings'); }}>S</button>
-      <div className="profile">
-        <img src={profilePicture} className="profile-picture" alt="Me" />
-        <div className="title-one">Margaux</div>
+    <div>
+      <div>
+        <img src={Unknow} className="picture-unconnected" alt="Me" />
+        <div className="title-box-unconnected">
+          <div className="title-unconnected">Connectez-vous</div>
+        </div>
       </div>
-      <div className="content">
-        <div className="category">
-          <div className="box-header">
-            <span className="title-two">History</span>
-            <span className="action">See all</span>
-          </div>
-          <div className="box">
-            <div className="clothes">
-              <div className="clothing-item">
-                <img src={shirt} className="item-image" alt="Item" />
-                <div className="brand-and-grade title-four">
-                  <span>Shirt</span>
-                  <span className="fairscore">
-                    <img src={globe} width={15} alt="FairScore" />
-                    {' '}
-                    4
-                  </span>
-                </div>
-              </div>
-              <div className="clothing-item">
-                <img src={beanie} className="item-image" alt="Item" />
-                <div className="brand-and-grade title-four">
-                  <span>Beanie</span>
-                  <span className="fairscore">
-                    <img src={globe} width={15} alt="FairScore" />
-                    {' '}
-                    4
-                  </span>
-                </div>
-              </div>
-              <div className="clothing-item">
-                <img src={jeans} className="item-image" alt="Item" />
-                <div className="brand-and-grade title-four">
-                  <span>Jeans</span>
-                  <span className="fairscore">
-                    <img src={globe} width={15} alt="airScore" />
-                    {' '}
-                    4
-                  </span>
-                </div>
-              </div>
+      <div>
+        <div className="box-unconnected">
+          <div className="box-unconnected-text">
+            <div className="text">
+              In the next version of FairWear,
+              you can create your own account to remember your scanned products,
+              your consumption or set new shopping goals.
             </div>
+            <div className="text">Then we’ll see you in our next update!</div>
           </div>
         </div>
+      </div>
+    </div>
+  );
+}
+
+function ConnectedProfile({ profile }: IProfileProps) {
+  return (
+    <div>
+      <div>
+        <img src={ImageProfile} className="picture-connected" alt="Me" />
+        <div className="title-box-unconnected">
+          <div className="title-unconnected">{profile.name}</div>
+        </div>
+      </div>
+      <div className="content-profile">
         <div className="category">
           <div className="box-header">
-            <span className="title-two">Stats</span>
+            <span className="title-two">Statistics And Goals</span>
           </div>
           <div className="box">
-            <div className="clothes">
+            <div className="coming-soon">
               Coming soon
             </div>
           </div>
         </div>
+      </div>
+    </div>
+  );
+}
+
+function Profile({ profile }: IProfileProps) {
+  return (
+    <div className="App">
+      <button className="settings" type="button">
+        <Link className="nav-link" to="/Settings">
+          <FontAwesomeIcon icon={faGear} className="icon-navigation" />
+        </Link>
+      </button>
+      <div>
+        {
+            profile.isConnected ? <ConnectedProfile profile={profile} /> : <UnConnectedProfile />
+        }
       </div>
     </div>
   );

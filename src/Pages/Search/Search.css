@@ -1,0 +1,133 @@
+.input-search {
+    box-sizing: border-box;
+    padding: 13px 24px;
+    gap: 10px;
+
+    width: 80%;
+    height: 45px;
+    background: #FFFFFF;
+    margin-top: 10%;
+    margin-right: 7%;
+
+    border: 1px solid #E1E1E1;
+    box-shadow: 0px 4px 4px rgba(199, 199, 199, 0.25);
+    border-radius: 15px;
+}
+
+
+.filter-box {
+    position: fixed;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 20px;
+    width: 90%;
+    top: 10%;
+}
+
+.text-filtre {
+    color: #888888;
+}
+
+.filter-field {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    gap: 7px;
+
+    height: 15px;
+
+    background: #E1E1E1;
+    border-radius: 10px;
+    margin-top: 20%;
+}
+
+.icon-filter {
+    color: #888888;
+}
+
+.dropdown-filter {
+    background-color: #E1E1E1;
+    border-bottom-left-radius: 8%;
+    border-bottom-right-radius: 8%;
+}
+
+.search {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.input-box {
+    width: 90%;
+    display: flex;
+    flex-direction: row;
+}
+
+.input {
+    width: 90%;
+}
+
+.line {
+    background-color: #fffdfd;
+}
+
+.item-filter {
+    display: flex;
+    align-items: center;
+    height: 10%;
+    margin-left: 10%;
+}
+
+.button-search {
+    box-sizing: border-box;
+    width: 20%;
+    height: 45px;
+    margin-top: 10%;
+
+    color: #33765D;
+    border: 1px solid rgba(51, 118, 93, 0.65);
+    background-color: rgba(51, 118, 93, 0.15);;
+    box-shadow: 0px 4px 4px rgba(199, 199, 199, 0.25);
+    border-radius: 15px;
+}
+
+.icon-search {
+    color: #33765d;
+    width: 130%;
+    height: 130%;
+}
+
+.clothes-alternatives {
+    margin-top: 6%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 10px;
+    grid-auto-rows: minmax(100px, auto);
+    gap: 10px;
+    width: 90%;
+    max-height: 800px;
+    overflow-y: scroll;
+    overflow-x: unset;
+}
+
+.title-brand {
+    color: black;
+}
+
+.brand-proposition {
+    text-decoration:none;
+}
+
+.text-search {
+    color: rgba(51, 118, 93);
+    font-size: 16px;
+}
+
+.brand-and-grade-search {
+    border: #33765d 1px solid;
+    border-radius: 20px;
+    background: rgba(51, 118, 93, 0.15);
+    padding-bottom: 40px;
+    padding-top: 40px;
+}

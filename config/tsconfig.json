@@ -17,6 +17,7 @@
     "jsx": "react-jsx",
     "types": [
       "vite-plugin-pwa/client",
+      "jest"
     ]
   },
   "include": ["../src", "../__tests__"],
