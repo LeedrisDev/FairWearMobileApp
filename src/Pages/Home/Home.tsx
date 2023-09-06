@@ -42,12 +42,12 @@ function Home() {
 
       <div className="tips">
         <div className="tips-text-box">
-          <div className="tips-title">L&apos;entretien d&apos;un vêtement</div>
+          <div className="tips-title">Take care of clothes</div>
           <p className="tips-text">
-            Prendre soin de nos vêtements est un moyen de lutter contre la surconsommation.
-            Cela passe notamment par le lavage de vos vêtements ! Alors n&apos;hésitez pas à
-            regarder leur étiquette pour savoir à combien de degrés vos vêtements peuvent se
-            laver en fonction de leurs matières !
+              Taking care of our clothes is a way to fight against overconsumption.
+              This includes washing your clothes! So do not hesitate to
+              look at their label to know how many degrees your clothes can be
+              wash according to their materials!
           </p>
           <div className="tips-image-box">
             <img src={tips} className="tips-image" alt="Item" />

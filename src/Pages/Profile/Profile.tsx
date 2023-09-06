@@ -15,7 +15,7 @@ function UnConnectedProfile() {
       <div>
         <img src={Unknow} className="picture-unconnected" alt="Me" />
         <div className="title-box-unconnected">
-          <div className="title-unconnected">Connectez-vous</div>
+          <div className="title-unconnected">Log In/Sign It</div>
         </div>
       </div>
       <div>

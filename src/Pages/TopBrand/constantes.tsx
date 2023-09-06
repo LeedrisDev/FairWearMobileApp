@@ -14,42 +14,42 @@ export interface ITopBrandInformations {
 
 const Napperon: ITopBrandInformations = {
   name: 'Napperon',
-  theme: 'Pièces de lingerie upcyclées à partir de napperons',
+  theme: 'Lingerie pieces upcycled from placemats',
   image: napperon,
   globalScore: 5,
-  description: 'Chez Napperon, nous revalorisons de la matière déjà existante : napperons, nappes brodées, voilages et nous confectionnons nos pièces en France, au Pays Basque en petites quantités, et à la commande',
+  description: 'At Napperon, we revalue existing material: placemats, embroidered tablecloths, veils and we make our pieces in France, the Basque Country in small quantities, and to order.',
 };
 
 const Pemlab: ITopBrandInformations = {
   name: 'Pemlab',
-  theme: 'Lingerie menstruelle',
+  theme: 'Menstrual lingerie',
   image: pemlab,
   globalScore: 5,
-  description: 'Notre boutique menstruelle propose une large gamme de produits sains, écologiques et certifiés pour les règles, les troubles hormonaux, la maternité, la ménopause et l\'hygiène intime.',
+  description: 'Our menstrual shop offers a wide range of healthy, ecological and certified products for menstruation, hormonal disorders, maternity, menopause and intimate hygiene.',
 };
 
 const Nepivel: ITopBrandInformations = {
   name: 'Nepivel',
-  theme: 'Chez Nepivel on réalise les vêtements, en France, à la main, à partir de tissus upcyclés.',
+  theme: 'At Nepivel we make clothes, in France, by hand, from upcycled fabrics.',
   image: nepivel,
   globalScore: 5,
-  description: 'Nepivel c\'est un combo de mes passions et mes valeurs. J\'ai vraiment espoir que l\'on puisse continuer à s\'amuser en s\'habillant tout en respectant l\'environnement et les humains.\n',
+  description: 'Nepivel is a combo of my passions and values. I really hope that we can continue to have fun while dressing while respecting the environment and humans.',
 };
 
 const Sunaïa: ITopBrandInformations = {
   name: 'Sunaïa',
-  theme: 'Nous sommes fiers de vous proposer des maillots de bain échancrés fabriqués au Portugal et en France.',
+  theme: 'We are proud to offer you swimwear made in Portugal and France.',
   image: sunaia,
   globalScore: 5,
-  description: 'Et si vous créiez des souvenirs inoubliables cet été avec Sunaïa ? En moyenne, nous n\'avons que 80 étés dans notre vie. Alors lâchez prise, sentez-vous vivantes, osez, amusez-vous... Nous sommes là pour vous aider à profiter pleinement de chaque instant de votre été. Chez Sunaïa, nous croyons en la liberté de se sentir belle et confiante tout en respectant l\'environnement.',
+  description: 'What if you create unforgettable memories this summer with Sunaïa? On average, we only have 80 summers in our life. So let go, feel alive, dare, have fun... We are here to help you enjoy every moment of your summer. At Sunaïa, we believe in the freedom to feel beautiful and confident while respecting the environment.',
 };
 
 const Ryfas: ITopBrandInformations = {
   name: 'Ryfas',
-  theme: 'Chez Ryfas, nous voulons proposer un prix juste pour des vetêments qui durent dans le temps',
+  theme: 'At Ryfas, we want to offer a fair price for clothing that lasts over time.',
   image: ryfas,
   globalScore: 5,
-  description: 'Ryfas est née d\'une envie de faire découvrir la mode éthique et durable au plus grand nombre. Celle-ci s\'inscrit dans une démarche locale, respectueuse de l\'environnement et des salarié.es qui contribuent à la naissance de ce projet.',
+  description: 'Ryfas was born from a desire to introduce ethical and sustainable fashion to as many people as possible. This is part of a local approach, respectful of the environment and employees who contribute to the birth of this project.',
 };
 
 const topBrands = [
