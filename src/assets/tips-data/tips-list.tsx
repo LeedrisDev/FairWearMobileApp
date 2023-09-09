@@ -1,15 +1,9 @@
-interface ITips {
-  title: string,
-  tip: string,
-  image: ImageData
-}
+import { tip1, tip2, tip3 } from './data';
 
-const tips: [ITips] = [
-  {
-    title: '',
-    tip: '',
-    image: null,
-  },
+const tips = [
+  tip1,
+  tip2,
+  tip3,
 ];
 
 export default tips;

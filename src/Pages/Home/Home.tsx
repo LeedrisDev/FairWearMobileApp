@@ -7,7 +7,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEarth, faPaperclip } from '@fortawesome/free-solid-svg-icons';
 import { faStar } from '@fortawesome/free-regular-svg-icons';
 import topBrands from '../TopBrand/constantes';
-import tips from "../../assets/tips-data/tips-list";
+import tips from '../../assets/tips-data/tips-list';
 
 function SliderBrand() {
   return (
@@ -55,7 +55,7 @@ function Home() {
 
       <div className="home-subtitle-box">
         <FontAwesomeIcon icon={faPaperclip} className="icon-home-subtitle1" />
-        <div className="home-subtitle">Today&apos;s tips</div>
+        <div className="home-subtitle">Tip of the day</div>
       </div>
 
       <div className="tips">
