@@ -23,7 +23,7 @@
 }
 
 .text-filtre {
-    color: #888888;
+    color: var(--secondary-color);
 }
 
 .filter-field {
@@ -38,7 +38,7 @@
 }
 
 .icon-filter {
-    color: #888888;
+    color: var(--secondary-color);
 }
 
 .dropdown-filter {
@@ -88,7 +88,7 @@
 }
 
 .icon-search {
-    color: #33765d;
+    color: var(--accentuation-color);
     width: 130%;
     height: 130%;
 }
@@ -115,7 +115,7 @@
 }
 
 .text-search {
-    color: rgba(51, 118, 93);
+    color: var(--accentuation-color);
     font-size: 16px;
 }
 

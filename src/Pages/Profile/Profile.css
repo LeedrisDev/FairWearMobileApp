@@ -1,6 +1,6 @@
 .nav-link {
     text-decoration: none;
-    color: #0c4128;
+    color: var(--text-color);
 }
 
 .profile-picture {
@@ -9,16 +9,10 @@
     width: 30%;
 }
 
-.picture-unconnected {
+.picture {
     border-radius: 50%;
-    height: 60%;
-    width: 60%;
-}
-
-.picture-connected {
-    border-radius: 50%;
-    height: 50%;
-    width: 50%;
+    height: 45%;
+    width: 45%;
 }
 
 .icon-navigation {
@@ -32,8 +26,8 @@
     margin-left: 80%;
     margin-top: 50px;
     width: 30px;
-    border: rgba(183,115,255,0);
-    background-color: rgba(255,253,253,0);
+    border: transparent;
+    background-color: transparent;
     text-decoration: none;
 }
 
@@ -68,15 +62,16 @@
 .box-unconnected-text {
     width: 85%;
     border-radius: 12px;
-    border: 2px solid #888888;
+    border: 2px solid var(--secondary-color);
     box-sizing: border-box;
     padding: 12px 12px 10px;
 }
 
 .text {
-    font-size: 140%;
+    font-size: 120%;
     line-height: 1.2em;
     text-align: justify;
+    color: var(--text-color);
 }
 
 .box-header {
@@ -91,7 +86,7 @@
     display: flex;
     width: 95%;
     border-radius: 12px;
-    border: 2px solid #888888;
+    border: 2px solid var(--secondary-color);
     box-sizing: border-box;
     flex-direction: column;
     margin-top: 15px;
@@ -144,11 +139,11 @@
     margin-top: 30px;
     margin-bottom: 30px;
 
-    color: #888888;
+    color: var(--secondary-color);
 }
 
 .title-unconnected {
-    font-size: 160%;
+    font-size: 130%;
 }
 
 .title-box-unconnected {

@@ -13,7 +13,7 @@ function UnConnectedProfile() {
   return (
     <div>
       <div>
-        <img src={Unknow} className="picture-unconnected" alt="Me" />
+        <img src={Unknow} className="picture" alt="Me" />
         <div className="title-box-unconnected">
           <div className="title-unconnected">Connectez-vous</div>
         </div>
@@ -25,8 +25,8 @@ function UnConnectedProfile() {
               In the next version of FairWear,
               you can create your own account to remember your scanned products,
               your consumption or set new shopping goals.
+              See you in our next update!
             </div>
-            <div className="text">Then we’ll see you in our next update!</div>
           </div>
         </div>
       </div>
@@ -38,7 +38,7 @@ function ConnectedProfile({ profile }: IProfileProps) {
   return (
     <div>
       <div>
-        <img src={ImageProfile} className="picture-connected" alt="Me" />
+        <img src={ImageProfile} className="picture" alt="Me" />
         <div className="title-box-unconnected">
           <div className="title-unconnected">{profile.name}</div>
         </div>
@@ -69,7 +69,7 @@ function Profile({ profile }: IProfileProps) {
       </button>
       <div>
         {
-            profile.isConnected ? <ConnectedProfile profile={profile} /> : <UnConnectedProfile />
+          profile.isConnected ? <ConnectedProfile profile={profile} /> : <UnConnectedProfile />
         }
       </div>
     </div>
