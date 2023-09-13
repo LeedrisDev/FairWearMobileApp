@@ -1,17 +1,14 @@
 .navigation-bar {
+    align-items: flex-start;
+    background-color: white;
+    border-top: 1px solid #E1E1E1;
+    bottom: 0;
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
-    align-items: flex-start;
-
     height: 10%;
+    justify-content: space-between;
+    position: fixed;
     width: 100%;
-
-    position: absolute;
-    bottom: 0;
-    border-top: 1px solid #E1E1E1;
-    background-color: white;
-
     z-index: 2;
 }
 
@@ -69,10 +66,10 @@
     width: 75%;
     align-self: center;
     border-width: 0px;
-    background-color: rgba(87,86,86,0);
+    background-color: rgba(87, 86, 86, 0);
 }
 
-.nav-link  {
+.nav-link {
     display: flex;
     text-decoration: none;
     height: 90%;
