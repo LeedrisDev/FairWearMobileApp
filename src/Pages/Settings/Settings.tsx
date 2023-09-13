@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { useState, useEffect } from 'react';
 import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { ISecurityInformations } from './interfaces';
@@ -13,11 +14,11 @@ import {
 import '../../App.css';
 import './Settings.css';
 
-function SettingField({ field, content }: ISettingFieldProps) {
+function SettingField({ field, content, action }: ISettingFieldProps) {
   return (
     <div className="option">
       <div className="title-four grey">{field}</div>
-      <div className="action">{content}</div>
+      <button className="action" onClick={action}>{content}</button>
     </div>
   );
 }
@@ -36,12 +37,23 @@ function PersonalinformationsSettings({ personalInformations }: IPersonalInforma
 }
 
 function OptionsSettings({ options }: IOptionsProps) {
+  const [theme, setTheme] = useState('light-mode');
+  const toggleTheme = () => {
+    if (theme === 'light-mode') {
+      setTheme('dark-mode');
+    } else {
+      setTheme('light-mode');
+    }
+  };
+  useEffect(() => {
+    document.body.className = theme;
+  }, [theme]);
   return (
     <div className="category-settings">
       <div className="title-one">Options</div>
       <div className="options">
         <SettingField field="Language" content={options.langage} />
-        <SettingField field="Theme" content={options.theme} />
+        <SettingField field="Theme" content={options.theme} action={toggleTheme} />
       </div>
     </div>
   );
@@ -67,15 +79,15 @@ function Settings({ settings }: ISettingSetUpProps) {
         </Link>
       </button>
       {
-          settings.isConnected ? (
-            <div className="content-settings">
-              <PersonalinformationsSettings personalInformations={settings.personalInformations} />
-              <hr />
-              <SecuritySettings password={settings.security.password} />
-              <hr />
-            </div>
-          ) : null
-        }
+        settings.isConnected ? (
+          <div className="content-settings">
+            <PersonalinformationsSettings personalInformations={settings.personalInformations} />
+            <hr />
+            <SecuritySettings password={settings.security.password} />
+            <hr />
+          </div>
+        ) : null
+      }
       <div className="content-settings">
         <OptionsSettings options={settings.options} />
       </div>

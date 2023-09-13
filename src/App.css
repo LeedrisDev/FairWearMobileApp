@@ -17,3 +17,13 @@
   bottom: 0;
   right: 0;
 }
+
+.dark-mode {
+  background-color: #34312A;
+  color: #FFFF;
+}
+
+.light-mode {
+  background-color: #fff;
+  color: #2A301E;
+}
