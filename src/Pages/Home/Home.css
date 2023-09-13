@@ -62,7 +62,7 @@
 }
 
 .go-alternative-page {
-    border: rgba(87,86,86,0);
+    border: rgba(87, 86, 86, 0);
     background-color: white;
 }
 
@@ -128,7 +128,7 @@
 }
 
 .tips-text-box {
-    width: 100% ;
+    width: 100%;
     height: 390px;
     border-radius: 15px;
     border: 1px solid #E1E1E1;
@@ -140,7 +140,6 @@
 }
 
 .tips-title {
-    color: #2A301E;
     font-size: 15px;
     font-style: normal;
     font-weight: 400;
@@ -253,4 +252,3 @@
 .tips-image {
     width: 60%;
 }
-

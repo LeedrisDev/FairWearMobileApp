@@ -5,12 +5,22 @@
 
 }
 
-.dark-mode {
-  background-color: #34312A;
-  color: #FFFF;
-}
-
 .light-mode {
   background-color: #fff;
   color: #2A301E;
+  --background-color: #FFFF;
+  --text-color: #2A301E;
+  --accentuation-color: #33765D;
+  --secondary-color: #6D716D;
+  --tertiary-color: #E1E1E1;
+}
+
+.dark-mode {
+  background-color: #34312A;
+  color: #FFFF;
+  --background-color: #34312A;
+  --text-color: #FFFF;
+  --accentuation-color: #6ADE9F;
+  --secondary-color: #E8E0D1;
+  --tertiary-color: #858077;
 }
