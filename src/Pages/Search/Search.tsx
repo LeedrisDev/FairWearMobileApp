@@ -123,7 +123,7 @@ function Search() {
           value={text}
           onChange={handleChange}
           style={{
-            color: text ? 'black' : 'gray',
+            color: text ? 'var(--text-color)' : 'var(--tertiary-color)',
           }}
         />
         <button
@@ -137,16 +137,16 @@ function Search() {
       </div>
       <div className="clothes-alternatives">
         {
-                    brands.map((brand: BrandModel) => (
-                      <Link to={`/Brand/${encodeURIComponent(brand.id)}`} className="brand-proposition">
-                        <div className="clothing-item-alternatives">
-                          <div className="brand-and-grade-search title-four">
-                            <span className="text-search title-brand">{brand.name}</span>
-                          </div>
-                        </div>
-                      </Link>
-                    ))
-                }
+          brands.map((brand: BrandModel) => (
+            <Link to={`/Brand/${encodeURIComponent(brand.id)}`} className="brand-proposition">
+              <div className="clothing-item-alternatives">
+                <div className="brand-and-grade-search title-four">
+                  <span className="text-search title-brand">{brand.name}</span>
+                </div>
+              </div>
+            </Link>
+          ))
+        }
       </div>
       <div />
     </div>
