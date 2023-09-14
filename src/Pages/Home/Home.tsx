@@ -1,42 +1,40 @@
 import './Home.css';
 import * as React from 'react';
-import logo from '../../assets/FairWear.png';
 import tips from '../../assets/imageTips.png';
 import ImageComponent from '../../Components/Images/Image';
 import { Link } from 'react-router-dom';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faEarth, faPaperclip } from '@fortawesome/free-solid-svg-icons';
-import { faStar } from '@fortawesome/free-regular-svg-icons';
 import topBrands from '../TopBrand/constantes';
 
 function SliderBrand() {
   return (
     <div className="brands-grid">
       {
-      Array.from({ length: 5 }, (_, i) => (
-        <div className="brand-item-box">
-          <Link to={`/TopBrand/${encodeURIComponent(i)}`}>
-            <ImageComponent image={topBrands[i].image} />
-          </Link>
-        </div>
-      ))
-}
+        Array.from({ length: 5 }, (_, i) => (
+          <div className="brand-item-box">
+            <Link to={`/TopBrand/${encodeURIComponent(i)}`}>
+              <ImageComponent image={topBrands[i].image} />
+            </Link>
+          </div>
+        ))
+      }
     </div>
   );
 }
 
+
 function Home() {
   return (
     <div className="home">
+      <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'></link>
       <div className="header-home">
-        <FontAwesomeIcon icon={faEarth} className="logo-icon-home" />
-        <div className="hearder-home-logo-box">
-          <img src={logo} alt={logo} />
+        <i class='bx bx-world bx-lg logo-icon-home'></i>
+        <div className="header-home-fairwear">
+          FairWear
         </div>
       </div>
 
       <div className="home-subtitle-box">
-        <FontAwesomeIcon icon={faPaperclip} className="icon-home-subtitle1" />
+        <i class='bx bx-bulb bx-sm'></i>
         <div className="home-subtitle">Today&apos;s tips</div>
       </div>
 
@@ -57,7 +55,7 @@ function Home() {
 
       <div className="box-top-brand">
         <div className="home-subtitle-box">
-          <FontAwesomeIcon icon={faStar} className="icon-home-subtitle2" />
+          <i class='bx bx-star bx-sm'></i>
           <div className="home-subtitle">Top Brands</div>
         </div>
         <div className="top-brands-slider">

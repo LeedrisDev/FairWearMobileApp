@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Marck+Script&display=swap');
+
 .title-product {
     font-family: 'Poppins', sans-serif;
     font-style: normal;
@@ -124,14 +126,14 @@
     align-items: flex-start;
     gap: 12px;
     flex-shrink: 0;
-    width: 80%;
+    width: 85%;
 }
 
 .tips-text-box {
     width: 100%;
     height: 390px;
     border-radius: 15px;
-    border: 1px solid #E1E1E1;
+    border: 1px solid var(--tertiary-color);
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -159,6 +161,12 @@
     line-height: 17px;
 }
 
+.header-home-fairwear {
+    color: var(--accentuation-color);
+    font-size: 240%;
+    font-family: 'Marck Script', cursive;
+}
+
 .home {
     display: flex;
     flex-direction: column;
@@ -168,7 +176,8 @@
     display: flex;
     justify-content: flex-start;
     margin-top: 60px;
-    width: 80%;
+    width: 85%;
+    align-items: center;
 }
 
 
@@ -177,7 +186,8 @@
     justify-content: flex-start;
     margin-top: 20px;
     margin-bottom: 15px;
-    width: 80%;
+    width: 85%;
+    align-items: center;
 }
 
 .home-subtitle {
@@ -185,18 +195,6 @@
     font-style: normal;
     font-weight: 500;
     line-height: normal;
-}
-
-.icon-home-subtitle1 {
-    width: 7%;
-    height: 7%;
-    margin-right: 10px;
-}
-
-.icon-home-subtitle2 {
-    width: 9%;
-    height: 9%;
-    margin-right: 10px;
 }
 
 .top-brands-slider {
@@ -239,16 +237,19 @@
     justify-content: flex-end;
     margin-bottom: 15px;
     width: 90%;
-    margin-left: 10%;
+    margin-left: 5%;
 }
 
 .logo-icon-home {
-    color: #33765D;
-    width: 12%;
-    height: 12%;
+    color: var(--accentuation-color);
     margin-right: 10px;
 }
 
 .tips-image {
     width: 60%;
+    border-radius: 7%;
+}
+
+.bx {
+    margin-right: 5px;
 }
