@@ -123,7 +123,7 @@ function Search() {
           value={text}
           onChange={handleChange}
           style={{
-            color: text ? 'var(--text-color)' : 'var(--tertiary-color)',
+            color: text ? 'var(--text-color)' : 'var(--secondary-color)',
           }}
         />
         <button

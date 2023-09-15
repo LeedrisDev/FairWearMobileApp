@@ -7,10 +7,10 @@
     font-size: 13px;
     gap: 10px;
     height: 45px;
-    margin-right: 7%;
+    margin-right: 3%;
     margin-top: 10%;
     padding: 13px 24px;
-    width: 80%;
+    width: 90%;
 }
 
 
@@ -78,7 +78,7 @@
 
 .button-search {
     background-color: rgba(51, 118, 93, 0.15);
-    border-radius: 15px;
+    border-radius: 20px;
     border: 1px solid rgba(51, 118, 93, 0.65);
     box-shadow: 0px 4px 4px rgba(199, 199, 199, 0.25);
     box-sizing: border-box;
@@ -86,6 +86,7 @@
     height: 45px;
     margin-top: 10%;
     width: 20%;
+    font-size: 12px;
 }
 
 .icon-search {
