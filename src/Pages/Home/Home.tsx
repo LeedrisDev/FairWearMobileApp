@@ -1,6 +1,6 @@
 import './Home.css';
 import * as React from 'react';
-import logo from '../../assets/FairWear.png';
+import logo from '../../assets/images/FairWear.png';
 import ImageComponent from '../../Components/Images/Image';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
