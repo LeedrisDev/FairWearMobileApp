@@ -58,7 +58,11 @@ jobs:
           build: npm run build
           start: npm run dev
           browser: chrome
-          
+      - uses: actions/upload-artifact@v2
+        with:
+          name: Cypress-video
+          path: cypress/videos/
+      
   linter:
     name: Linter
     runs-on: ubuntu-latest
