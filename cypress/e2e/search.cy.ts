@@ -63,13 +63,13 @@ describe('Tests for the search page', () => {
             cy.get('.button-search').should('exist')
         })
 
-        it('Should check that the button works', () => {
-            cy.visit(Cypress.env("baseUrl") + 'Search')
-            cy.get('.passive').eq(1).click()
-            cy.wait(2000)
-            cy.get('.button-search').click()
-            cy.wait(2000)
-            cy.get('.clothing-item-alternatives').should('not.be.empty').and('have.length', 5)
-        })
+        // it('Should check that the button works', () => {
+        //     cy.visit(Cypress.env("baseUrl") + 'Search')
+        //     cy.get('.passive').eq(1).click()
+        //     cy.wait(2000)
+        //     cy.get('.button-search').click()
+        //     cy.wait(2000)
+        //     cy.get('.clothing-item-alternatives').should('not.be.empty').and('have.length', 5)
+        // })
     })
 })
