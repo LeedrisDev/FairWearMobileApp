@@ -97,28 +97,28 @@ describe('Tests for the search page', () => {
         })
 
         it('Should check that the button works', () => {
-            // cy.intercept(
-            //     {
-            //         method: 'GET',
-            //         url: '**/brand*',
-            //     },
-            //     {
-            //         statusCode: 200,
-            //         body:
-            //             [{
-            //                 'id': 1,
-            //                 'name': "Nike",
-            //                 'country': "USA",
-            //                 'environmentRating': 4,
-            //                 'peopleRating': 5,
-            //                 'animalRating': 5,
-            //                 'ratingDescription': "It's a good brand",
-            //                 'categories': [],
-            //                 'ranges': []
-            //             }]
-            //         ,
-            //     }
-            // ).as('getSuggestions')
+            cy.intercept(
+                {
+                    method: 'GET',
+                    url: '**/brand*',
+                },
+                {
+                    statusCode: 200,
+                    body:
+                        [{
+                            'id': 1,
+                            'name': "Nike",
+                            'country': "USA",
+                            'environmentRating': 4,
+                            'peopleRating': 5,
+                            'animalRating': 5,
+                            'ratingDescription': "It's a good brand",
+                            'categories': [],
+                            'ranges': []
+                        }]
+                    ,
+                }
+            ).as('getSuggestions')
             cy.visit(Cypress.env("baseUrl") + 'Search')
             cy.get('.passive').eq(1).click()
             cy.wait(100)
