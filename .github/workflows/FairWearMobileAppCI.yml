@@ -58,8 +58,8 @@ jobs:
           build: npm run build
           start: npm run dev
           browser: chrome
-          if: failure()
       - uses: actions/upload-artifact@v2
+        if: failure()
         with:
           name: Cypress-video
           path: cypress/videos/
