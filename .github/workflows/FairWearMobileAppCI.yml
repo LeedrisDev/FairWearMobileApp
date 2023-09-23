@@ -58,7 +58,6 @@ jobs:
           build: npm run build
           start: npm run dev
           browser: chrome
-          record: true
           if: failure()
       - uses: actions/upload-artifact@v2
         with:
