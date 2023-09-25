@@ -14,7 +14,6 @@ interface IOptions {
 
 interface ISettingSetUp {
   isConnected: boolean,
-  theme: string,
   personalInformations: IPersonalInformations,
   security: ISecurityInformations,
   options: IOptions,
