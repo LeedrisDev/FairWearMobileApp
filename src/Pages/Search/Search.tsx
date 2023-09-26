@@ -126,24 +126,15 @@ function Search() {
             color: text ? 'black' : 'gray',
           }}
         />
-        <button
-          type="button"
-          className="button-search"
-          onClick={handleSearch}
-        >
-          Search
-        </button>
 
       </div>
-      <div className="clothes-alternatives">
+      <div className="search-proposition">
         {
                     brands.map((brand: BrandModel) => (
                       <Link to={`/Brand/${encodeURIComponent(brand.id)}`} className="brand-proposition">
-                        <div className="clothing-item-alternatives">
-                          <div className="brand-and-grade-search title-four">
+                          <div className="brand-and-grade-search">
                             <span className="text-search title-brand">{brand.name}</span>
                           </div>
-                        </div>
                       </Link>
                     ))
                 }
