@@ -41,8 +41,9 @@
     padding: 0px;
 }
 
-.box-header {
-    align-self: stretch;
+.box-header-alternative {
+    display: flex;
+    align-self: center;
     flex-direction: row;
     gap: 12px;
     justify-content: space-between;
@@ -81,8 +82,6 @@
     gap: 10px;
 }
 
-
-/* Item of clothing */
 .clothing-item {
     flex-direction: column;
     gap: 7px;

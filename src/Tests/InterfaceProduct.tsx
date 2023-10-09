@@ -15,7 +15,7 @@ export interface IProductInformations {
   globalScore: number,
   scores : IProductScore,
   composition : IProductComposition[],
-  alternatives: string[],
+  alternatives: IAlternativeProduct[],
 }
 
 export interface IGlobalProductInformations {
@@ -24,4 +24,10 @@ export interface IGlobalProductInformations {
   country: string,
   image: string,
   globalScore: number,
+}
+
+export interface IAlternativeProduct {
+  name: string,
+  image : ImageData,
+  link: string,
 }

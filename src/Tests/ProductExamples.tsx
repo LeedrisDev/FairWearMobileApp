@@ -1,4 +1,5 @@
 import { IProductInformations } from './InterfaceProduct';
+import gloves from '../assets/glove.jpeg';
 
 const product1: IProductInformations = {
   name: 'Black glove HardFace',
@@ -21,7 +22,22 @@ const product1: IProductInformations = {
       component: 'cotton',
     },
   ],
-  alternatives: ['', '', '', ''],
+  alternatives: [
+    {
+      name: 'gants 1',
+      image: gloves,
+      link: 'https://www.vinted.fr/',
+    },
+    {
+      name: 'gants 2',
+      image: gloves,
+      link: 'https://www.vinted.fr/',
+    },
+    {
+      name: 'gants 3',
+      image: gloves,
+      link: 'https://www.vinted.fr/',
+    }],
 };
 
 export default product1;
