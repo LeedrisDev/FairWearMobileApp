@@ -5,6 +5,7 @@ import Scanner from '../../Pages/Scanner/Scanner';
 import Search from '../../Pages/Search/Search';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import IProfileSetUp from '../../Pages/Profile/interfaces';
+import Alternatives from "../../Pages/Alternatives/Alternatives";
 
 function Router() {
   const fakeProfile: IProfileSetUp = {
@@ -21,6 +22,7 @@ function Router() {
         <Route path="/Search" element={<Search />} />
         <Route path="/" element={<Scanner />} />
         <Route path="/Profile" element={<Profile profile={fakeProfile} />} />
+        <Route path="/Alternative" element={<Alternatives alternatives={} />} />
       </Routes>
     </BrowserRouter>
   );

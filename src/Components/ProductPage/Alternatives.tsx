@@ -2,9 +2,9 @@ import * as React from 'react';
 import vestiairecollective from '../../assets/vestiaire-collective.jpeg';
 import vinted from '../../assets/vinted.png';
 import { IAlternativeProduct } from '../../Tests/InterfaceProduct';
+import { Link } from 'react-router-dom';
 
 import './Alternatives.css';
-import { BrandModel } from '../../Models/BrandModel';
 
 interface IAlternativesProps {
   alternatives: IAlternativeProduct[]
@@ -16,8 +16,8 @@ function Alternatives({ alternatives }: IAlternativesProps) {
       <div className="alternatives-box">
         <div className="box-header-alternative">
           <div className="title-product">Alternatives</div>
-            {
-                alternatives.length === 0 ? null : <div className="voir-plus">Voir plus</div>
+          {
+                alternatives.length === 0 ? null : <Link className="nav-link voir-plus" to="/Alternative">Voir plus</Link>
             }
         </div>
 
