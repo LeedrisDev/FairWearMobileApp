@@ -100,13 +100,6 @@
     padding: 0px;
 }
 
-
-.alternatives {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
 .alternatives-box {
     width: 90%;
 }

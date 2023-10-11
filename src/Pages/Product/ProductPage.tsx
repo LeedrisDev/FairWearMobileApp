@@ -37,19 +37,17 @@ function ProductPage({ product, onDetected }: ProductPageProps) {
       {isAlternative ? (
         <div className="alternatives" style={{ width: window.innerWidth, height: window.innerHeight }}>
           <div className="alternatives-box">
-            <button className="back-product-page" type="button">
-              <Link className="nav-link" to="/">
-                <FontAwesomeIcon icon={faArrowLeft} className="icon-navigation" onClick={showAlternatives} />
-              </Link>
+            <button className="back-product-page-alternative-page" type="button" onClick={showAlternatives}>
+              <FontAwesomeIcon icon={faArrowLeft} className="icon-navigation-alternative-page" />
             </button>
-            <div className="title-list-image">Alternatives</div>
-            <div className="clothes-alternatives">
+
+            <div className="clothes-alternatives-product-page">
               {
                           Array.from(product1.alternatives).map((alternative) => (
-                            <a href={alternative.link} className="clothing-item-alternatives">
+                            <a href={alternative.link} className="clothing-item-alternatives" style={{ textDecoration: 'none', color: 'black' }}>
                               <img src={vinted} className="item-image-alternatives" alt="" />
                               <div className="brand-and-grade1 title-four">
-                                <span>{alternative.name}</span>
+                                <div style={{ textDecoration: 'none' }}>{alternative.name}</div>
                               </div>
                             </a>
                           ))
@@ -67,7 +65,6 @@ function ProductPage({ product, onDetected }: ProductPageProps) {
           <GlobalInformations globalProductInformations={product1} />
           <ScoreBar informations={product1.scores} />
           <Composition composition={product1.composition} />
-          <Alternatives alternatives={product1.alternatives} />
           <div className="alternatives">
             <div className="alternatives-box">
               <div className="box-header-alternative">

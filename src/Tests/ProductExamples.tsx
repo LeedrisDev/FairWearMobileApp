@@ -37,6 +37,36 @@ const product1: IProductInformations = {
       name: 'gants 3',
       image: gloves,
       link: 'https://www.vinted.fr/',
+    },
+    {
+      name: 'gants 1',
+      image: gloves,
+      link: 'https://www.vinted.fr/',
+    },
+    {
+      name: 'gants 2',
+      image: gloves,
+      link: 'https://www.vinted.fr/',
+    },
+    {
+      name: 'gants 3',
+      image: gloves,
+      link: 'https://www.vinted.fr/',
+    },
+    {
+      name: 'gants 1',
+      image: gloves,
+      link: 'https://www.vinted.fr/',
+    },
+    {
+      name: 'gants 2',
+      image: gloves,
+      link: 'https://www.vinted.fr/',
+    },
+    {
+      name: 'gants 3',
+      image: gloves,
+      link: 'https://www.vinted.fr/',
     }],
 };
 
