@@ -65,6 +65,7 @@
 
 .clothes-alternatives-alternative-page {
     display: grid;
+
     grid-template-columns: repeat(2, 1fr);
     grid-gap: 10px;
     grid-auto-rows: minmax(140px, auto);
