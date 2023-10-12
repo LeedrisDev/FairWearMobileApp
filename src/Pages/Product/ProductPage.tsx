@@ -41,7 +41,7 @@ function ProductPage({ product, onDetected }: ProductPageProps) {
               <FontAwesomeIcon icon={faArrowLeft} className="icon-navigation-alternative-page" />
             </button>
 
-            <div className="clothes-alternatives-product-page">
+            <div className="clothes-alternatives-alternative-page">
               {
                           Array.from(product1.alternatives).map((alternative) => (
                             <a href={alternative.link} className="clothing-item-alternatives" style={{ textDecoration: 'none', color: 'black' }}>
@@ -68,10 +68,10 @@ function ProductPage({ product, onDetected }: ProductPageProps) {
           <div className="alternatives">
             <div className="alternatives-box">
               <div className="box-header-alternative">
-                <div className="title-product">Alternatives</div>
+                <div className="title-product-product-page">Alternatives</div>
                 {
                               product1.alternatives.length === 0 ? null
-                                : <span className="nav-link voir-plus" onClick={showAlternatives}>Voir plus</span>
+                                : <div className="voir-plus" onClick={showAlternatives}>Voir plus</div>
                           }
               </div>
 
@@ -104,16 +104,17 @@ function ProductPage({ product, onDetected }: ProductPageProps) {
                               </div>
                             )
                             : (
-                              <div className="clothes-alternatives">
-                                {Array.from([product1.alternatives[0], product1.alternatives[1]])
+                              <div className="clothes-alternatives-product-page">
+                                {Array.from([product1.alternatives[0], product1.alternatives[1], product1.alternatives[2]])
                                   .map((alternative) => (
                                     <a
                                       href={alternative.link}
                                       className="clothing-item-alternatives"
+                                      style={{ textDecoration: 'none', color: 'black' }}
                                     >
                                       <img
                                         src={vinted}
-                                        className="item-image-alternatives"
+                                        className="item-image-alternatives-product-page"
                                         alt=""
                                       />
                                       <div className="brand-and-grade1 title-four">

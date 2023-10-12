@@ -39,10 +39,35 @@
     color: #0c4128;
 }
 
-.header-alternative-page {
-
+.title-product-product-page {
+    font-family: 'Poppins', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 17px;
+    line-height: 22px;
+    display: flex;
+    align-items: center;
+    color: #2A301E;
 }
 
-.alternatives-box-page-alternative {
+.box-header-alternative {
+    display: flex;
+    align-self: center;
+    flex-direction: row;
+    justify-content: space-between;
+}
 
+.item-image-alternatives-product-page {
+    aspect-ratio: 1 / 1;
+    border-radius: 12px;
+    width: 100%;
+}
+
+.clothes-alternatives-alternative-page {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 10px;
+    grid-auto-rows: minmax(140px, auto);
+    gap: 10px;
+    margin-top: 20px;
 }
