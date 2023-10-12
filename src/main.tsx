@@ -11,11 +11,14 @@ import Search from './Pages/Search/Search';
 import SettingsSetUp from './Pages/Settings/SettingsSetUp';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import BrandPage from './Pages/Brand/BrandPage';
-
+// import SignupPage from "./Pages/Authentication/SignUp/SignupPage";
+import AuthProvider from "./Context/Auth";
+import 'firebase/auth';
 import './index.css';
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
+    <AuthProvider>
     <BrowserRouter>
       <div style={{ width: window.innerWidth, height: window.innerHeight }}>
         <Routes>
@@ -31,6 +34,7 @@ ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
         <NavigationBar />
       </div>
     </BrowserRouter>
+    </AuthProvider>
   </React.StrictMode>,
 );
 
