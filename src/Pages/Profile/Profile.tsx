@@ -67,6 +67,11 @@ function Profile({ profile }: IProfileProps) {
           <FontAwesomeIcon icon={faGear} className="icon-navigation" />
         </Link>
       </button>
+      <button className="settings" type="button">
+        <Link className="nav-link" to="/SignUp">
+          <FontAwesomeIcon icon={faGear} className="icon-navigation" />
+        </Link>
+      </button>
       <div>
         {
             profile.isConnected ? <ConnectedProfile profile={profile} /> : <UnConnectedProfile />
