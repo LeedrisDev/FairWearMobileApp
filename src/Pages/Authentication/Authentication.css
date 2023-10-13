@@ -1,0 +1,34 @@
+.auth-button {
+    width: 283px;
+    height: 44px;
+    top: 356px;
+    left: 39px;
+    border-radius: 12px;
+    align-items: center;
+    justify-content: center;
+}
+
+.button-text {
+    color: white;
+    text-align: center;
+    font-variant-numeric: lining-nums proportional-nums;
+    font-family: Poppins;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    text-transform: capitalize;
+}
+
+
+.logo {
+    width: 184px;
+    height: 180px;
+    top: 134px;
+    left: 88px;
+    margin-top: 134px;
+}
+
+.google-sign-in {
+    background-color: #E2E4E7;
+}

@@ -2,6 +2,7 @@ import './Home.css';
 import * as React from 'react';
 import logo from '../../assets/FairWear.png';
 import tips from '../../assets/imageTips.png';
+
 import ImageComponent from '../../Components/Images/Image';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
