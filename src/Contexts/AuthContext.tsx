@@ -14,9 +14,9 @@ export default function AuthProvider({ children } : any) {
     auth.onAuthStateChanged((user) => {
       setCurrentUser(user);
       if (user) {
-            console.log('New connection: ', user);
-            // You can access user properties like user.displayName, user.email, etc.
-        }
+        console.log('New connection: ', user);
+        // You can access user properties like user.displayName, user.email, etc.
+      }
     });
   }, []);
 

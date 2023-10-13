@@ -3,7 +3,7 @@ import 'firebaseui/dist/firebaseui.css';
 import auth from '../../../Utils/Auth';
 import { Button, Form } from 'react-bootstrap';
 import { createUserWithEmailAndPassword } from 'firebase/auth';
-import {useNavigate} from "react-router-dom";
+import { useNavigate } from 'react-router-dom';
 
 interface SignUpFormStateProps {
   username: string;
@@ -14,7 +14,7 @@ interface SignUpFormStateProps {
 }
 
 export default function SignupPage() {
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
   const [signUpFormState, setSignUpState] = useState<SignUpFormStateProps>({
     username: '',
@@ -35,10 +35,14 @@ export default function SignupPage() {
     } else {
       try {
         console.log('here');
-        const result = await createUserWithEmailAndPassword(auth, signUpFormState.email, signUpFormState.password);
+        const result = await createUserWithEmailAndPassword(
+          auth,
+          signUpFormState.email,
+          signUpFormState.password,
+        );
         // handle Phone and username
         console.log('User created:', result.user);
-        navigate("/Auth")
+        navigate('/Auth');
       } catch (error) {
         console.error('Error creating user:', error);
       }
@@ -110,7 +114,7 @@ export default function SignupPage() {
             isValid={signUpFormState.password === signUpFormState.confirmPassword}
           />
           <Form.Control.Feedback type="invalid">
-            Passwords don't match
+            Passwords don&apos;t match
           </Form.Control.Feedback>
         </Form.Group>
         <Button variant="primary" type="submit">

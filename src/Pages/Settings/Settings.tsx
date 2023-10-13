@@ -12,12 +12,11 @@ import {
 
 import '../../App.css';
 import './Settings.css';
-import {signOut} from "firebase/auth";
-import auth from "../../Utils/Auth";
-import {Sign} from "crypto";
-import {Button} from "react-bootstrap";
-import {useContext} from "react";
-import {AuthContext} from "../../Contexts/AuthContext";
+import { signOut } from 'firebase/auth';
+import auth from '../../Utils/Auth';
+import { Button } from 'react-bootstrap';
+import { useContext } from 'react';
+import { AuthContext } from '../../Contexts/AuthContext';
 
 function SettingField({ field, content }: ISettingFieldProps) {
   return (
@@ -65,9 +64,9 @@ function SecuritySettings({ password }: ISecurityInformations) {
 }
 
 function Settings({ settings }: ISettingSetUpProps) {
-    const currentUser = useContext(AuthContext);
+  const currentUser = useContext(AuthContext);
 
-    return (
+  return (
     <div className="settings-page" style={{ width: window.innerWidth, height: window.innerHeight }}>
       <button className="back" type="button">
         <Link className="nav-link" to="/Profile">
@@ -87,9 +86,9 @@ function Settings({ settings }: ISettingSetUpProps) {
       <div className="content-settings">
         <OptionsSettings options={settings.options} />
       </div>
-    <Button variant="secondary" onClick={() => signOut(auth)} hidden={!currentUser}>
-            Sign out
-        </Button>
+      <Button variant="secondary" onClick={() => signOut(auth)} hidden={!currentUser}>
+        Sign out
+      </Button>
 
     </div>
   );
