@@ -1,17 +1,23 @@
 import React, {
-  createContext, ReactNode, useEffect, useState,
+  createContext, useEffect, useState,
 } from 'react';
 import { User } from 'firebase/auth';
 import auth from '../Utils/Auth';
 
 export const AuthContext = createContext<User>(null);
 
-export default function AuthProvider({ children } : ReactNode) {
+export default function AuthProvider({ children } : any) {
   const [currentUser, setCurrentUser] = useState<User>();
 
   useEffect(() => {
-    auth.onAuthStateChanged(setCurrentUser);
-    console.log('auth : ', currentUser);
+    // auth.onAuthStateChanged(setCurrentUser);
+    auth.onAuthStateChanged((user) => {
+      setCurrentUser(user);
+      if (user) {
+            console.log('New connection: ', user);
+            // You can access user properties like user.displayName, user.email, etc.
+        }
+    });
   }, []);
 
   return (

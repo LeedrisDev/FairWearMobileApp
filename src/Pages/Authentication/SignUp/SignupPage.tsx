@@ -3,6 +3,7 @@ import 'firebaseui/dist/firebaseui.css';
 import auth from '../../../Utils/Auth';
 import { Button, Form } from 'react-bootstrap';
 import { createUserWithEmailAndPassword } from 'firebase/auth';
+import {useNavigate} from "react-router-dom";
 
 interface SignUpFormStateProps {
   username: string;
@@ -13,32 +14,7 @@ interface SignUpFormStateProps {
 }
 
 export default function SignupPage() {
-  // useEffect(() => {
-  //     const ui = firebaseui.auth.AuthUI.getInstance() || new firebaseui.auth.AuthUI(auth);
-  //     ui.start("#firebaseui-auth-container", {
-  //         signInOptions: [
-  //             firebase.auth.EmailAuthProvider.PROVIDER_ID,
-  //             firebase.auth.GoogleAuthProvider.PROVIDER_ID,
-  //         ],
-  //         // Other config options...
-  //     });
-  //
-  //     auth.onAuthStateChanged((user) => {
-  //         if (user) {
-  //             console.log('New user created:', user);
-  //             // You can access user properties like user.displayName, user.email, etc.
-  //         }
-  //     });
-  // }, []);
-  //
-  //
-  // return (
-  //     <>
-  //         <h1 className="text-center my-3 title">Signup Page</h1>
-  //         <Button variant="link" href="#">Login</Button>
-  //         <div id="firebaseui-auth-container"></div>
-  //     </>
-  // )
+  const navigate = useNavigate()
 
   const [signUpFormState, setSignUpState] = useState<SignUpFormStateProps>({
     username: '',
@@ -62,6 +38,7 @@ export default function SignupPage() {
         const result = await createUserWithEmailAndPassword(auth, signUpFormState.email, signUpFormState.password);
         // handle Phone and username
         console.log('User created:', result.user);
+        navigate("/Auth")
       } catch (error) {
         console.error('Error creating user:', error);
       }
@@ -71,7 +48,7 @@ export default function SignupPage() {
 
   return (
     <div>
-      <h1 className="text-center my-3 title">Signup Page</h1>
+      <h1 className="text-center my-3 title">Signup</h1>
       <Form noValidate validated={validated} onSubmit={onSubmit}>
         <Form.Group className="mb-3" controlId="usernameField">
           <Form.Label>Username</Form.Label>

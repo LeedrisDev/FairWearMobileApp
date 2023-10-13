@@ -16,6 +16,8 @@ import './index.css';
 import AuthProvider from './Contexts/AuthContext';
 import SignupPage from './Pages/Authentication/SignUp/SignupPage';
 import './index.scss';
+import LoginPage from "./Pages/Authentication/Login/LoginPage";
+import AuthenticationPage from "./Pages/Authentication/AuthenticationPage";
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
@@ -31,7 +33,9 @@ ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
             <Route path="/Alternative" element={<ImagesGrid />} />
             <Route path="/TopBrand/:productId" element={<TopBrandPage />} />
             <Route path="/Brand/:productId" element={<BrandPage />} />
-            <Route path="/SignUp" element={<SignupPage />} />
+            <Route path="/Auth" element={<AuthenticationPage />} />
+            <Route path="/Signup" element={<SignupPage />} />
+            <Route path="/Login" element={<LoginPage />} />
           </Routes>
           <NavigationBar />
         </div>
