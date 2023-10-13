@@ -1,40 +1,47 @@
 import React, { useContext, useEffect } from 'react';
 import firebase from 'firebase/compat/app';
 import * as firebaseui from 'firebaseui';
-import auth from '../../Utils/Auth';
+import auth, {provider} from '../../Utils/Auth';
 import { Button } from 'react-bootstrap';
 import { AuthContext } from '../../Contexts/AuthContext';
+import { signInWithPopup, GoogleAuthProvider } from 'firebase/auth';
 
 export default function AuthenticationPage() {
   const currentUser = useContext(AuthContext);
   useEffect(() => {
-    const ui = firebaseui.auth.AuthUI.getInstance() || new firebaseui.auth.AuthUI(auth);
-    ui.start('#firebaseui-auth-container', {
-      signInOptions: [
-        firebase.auth.GoogleAuthProvider.PROVIDER_ID,
-      ],
-      // Other config options...
-    });
-  }, []);
-  useEffect(() => {
     console.log({ currentUser });
   }, [currentUser]);
-  //
-  //
-  // return (
-  //     <>
-  //         <h1 className="text-center my-3 title">Signup Page</h1>
-  //         <Button variant="link" href="#">Login</Button>
-  //         <div id="firebaseui-auth-container"></div>
-  //     </>
-  // )
+
+  const handleGoogleConnection = () => {
+    signInWithPopup(auth, provider)
+        .then((result) => {
+          // This gives you a Google Access Token. You can use it to access the Google API.
+          const credential = GoogleAuthProvider.credentialFromResult(result);
+          const token = credential.accessToken;
+          // The signed-in user info.
+          const user = result.user;
+          // IdP data available using getAdditionalUserInfo(result)
+          // ...
+        }).catch((error) => {
+      // Handle Errors here.
+      const errorCode = error.code;
+      const errorMessage = error.message;
+      // The email of the user's account used.
+      const email = error.customData.email;
+      // The AuthCredential type that was used.
+      const credential = GoogleAuthProvider.credentialFromError(error);
+      // ...
+    });
+  }
+
   return (
     <div>
       <h1>Authentication</h1>
       <div className="d-flex flex-column align-items-center">
         <Button href="/Login" className="mb-2">Login</Button>
-        <Button href="/Signup" className="mb-2">Signup</Button>
-        <div id="firebaseui-auth-container" />
+        <Button variant="secondary" href="/Signup" className="mb-2">Signup</Button>
+        <Button className="mb-2" onClick={handleGoogleConnection}>Sign in with Google</Button>
+        {/* <div id="firebaseui-auth-container" /> */}
       </div>
     </div>
   );
