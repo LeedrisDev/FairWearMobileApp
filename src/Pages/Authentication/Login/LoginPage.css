@@ -1,0 +1,93 @@
+.login-page {
+    position: absolute;
+    overflow-x: unset;
+    overflow-y: scroll;
+    background-color: #ffffff;
+    z-index: 10;
+}
+
+.main-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10vh;
+}
+
+.login-page span {
+    font-family: 'Poppins', serif;
+    font-size: 16px;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.logo {
+    width: 184px;
+    height: 180px;
+}
+
+.login-form {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 26px;
+    margin-top: 60px;
+}
+
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 9px;
+}
+
+.form-label {
+    color: #000;
+    text-align: center;
+    font-family: 'Poppins', 'sans-serif';
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 15px; /* 115.385% */
+}
+
+.form-control {
+    display: flex;
+    width: 304px;
+    padding: 14px 16px;
+    align-items: flex-start;
+    gap: 10px;
+    border-radius: 12px;
+    border: 2px solid #E1E1E1;
+}
+
+.login-button {
+    color: #FFF;
+    width: 182px;
+    height: 44px;
+    border-radius: 12px;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    margin-top: 10px;
+    text-decoration: none;
+    font-family: 'Poppins', 'sans-serif';
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    background-color: #33765D;
+}
+
+.buttons-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
