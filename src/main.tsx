@@ -15,7 +15,6 @@ import 'firebase/auth';
 import './index.css';
 import AuthProvider from './Contexts/AuthContext';
 import SignupPage from './Pages/Authentication/SignUp/SignupPage';
-import './index.scss';
 import LoginPage from './Pages/Authentication/Login/LoginPage';
 import AuthenticationPage from './Pages/Authentication/AuthenticationPage';
 

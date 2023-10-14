@@ -4,6 +4,7 @@ import auth from '../../../Utils/Auth';
 import { Button, Form } from 'react-bootstrap';
 import { createUserWithEmailAndPassword } from 'firebase/auth';
 import { useNavigate } from 'react-router-dom';
+// import "../../../index.scss"
 
 interface SignUpFormStateProps {
   username: string;

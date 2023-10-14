@@ -1,34 +1,63 @@
+.authentication-page {
+    position: absolute;
+    overflow-x: unset;
+    overflow-y: scroll;
+    background-color: #ffffff;
+    z-index: 10;
+}
+
+.authentication-page span {
+    font-family: 'Poppins', serif;
+    font-size: 16px;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.logo {
+    width: 184px;
+    height: 180px;
+}
+
+.buttons-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 42px;
+}
+
 .auth-button {
     width: 283px;
     height: 44px;
     top: 356px;
     left: 39px;
     border-radius: 12px;
+    display: flex;
+    align-items: center;
+    border: none;
+    margin-top: 10px;
+    text-decoration: none;
+}
+
+.custom-buttons{
+    color: white;
+    justify-content: center;
+    align-items: center;
+}
+
+.google-button-text {
+    flex-grow: 1;
+    color: black;
+}
+
+.main-container {
+    display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
-}
-
-.button-text {
-    color: white;
-    text-align: center;
-    font-variant-numeric: lining-nums proportional-nums;
-    font-family: Poppins;
-    font-size: 16px;
-    font-style: normal;
-    font-weight: 500;
-    line-height: normal;
-    text-transform: capitalize;
-}
-
-
-.logo {
-    width: 184px;
-    height: 180px;
-    top: 134px;
-    left: 88px;
-    margin-top: 134px;
-}
-
-.google-sign-in {
-    background-color: #E2E4E7;
+    margin-top: 10vh;
 }
