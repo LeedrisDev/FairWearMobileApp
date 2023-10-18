@@ -1,21 +1,18 @@
-import React, { useContext, useEffect } from 'react';
+import React from 'react';
 import bigLogo from '../../assets/FairWearBig.png';
 import './Authentication.css';
 import auth, { provider } from '../../Utils/Auth';
 import { Button } from 'react-bootstrap';
-import { AuthContext } from '../../Contexts/AuthContext';
 import { signInWithRedirect } from 'firebase/auth';
-import {Link, useNavigate} from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
 
 export default function AuthenticationPage() {
-  const currentUser = useContext(AuthContext);
-
   const handleGoogleConnection = () => {
     signInWithRedirect(auth, provider)
       .catch((error) => {
-        alert(error.message);
+        console.error(error.message);
       });
   };
 

@@ -1,20 +1,18 @@
-import React, {useContext, useEffect, useState} from 'react';
-import {AuthContext} from "../../Contexts/AuthContext";
-import ScannerPage from "../Scanner/ScannerPage";
-import AuthenticationPage from "../Authentication/AuthenticationPage";
+import React, { useContext, useEffect, useState } from 'react';
+import { AuthContext } from '../../Contexts/AuthContext';
+import ScannerPage from '../Scanner/ScannerPage';
+import AuthenticationPage from '../Authentication/AuthenticationPage';
 
-export default function StartPage()
-{
-    const currentUser = useContext(AuthContext);
+export default function StartPage() {
+  const currentUser = useContext(AuthContext);
 
-    const [startingPage, setStartingPage] = useState(<AuthenticationPage/>)
+  const [startingPage, setStartingPage] = useState(<AuthenticationPage />);
 
-    useEffect(() => {
-        if (currentUser)
-        {
-            setStartingPage(<ScannerPage/>)
-        }
-    }, [currentUser]);
+  useEffect(() => {
+    if (currentUser) {
+      setStartingPage(<ScannerPage />);
+    }
+  }, [currentUser]);
 
-    return startingPage;
+  return startingPage;
 }

@@ -3,9 +3,9 @@ import 'firebaseui/dist/firebaseui.css';
 import auth from '../../../Utils/Auth';
 import { Button, Form } from 'react-bootstrap';
 import { signInWithEmailAndPassword } from 'firebase/auth';
-import {Link, useNavigate} from 'react-router-dom';
-import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
-import {faArrowLeft} from "@fortawesome/free-solid-svg-icons";
+import { Link, useNavigate } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
 import bigLogo from '../../../assets/FairWearBig.png';
 import './LoginPage.css';
 
@@ -30,7 +30,7 @@ export default function LoginPage() {
       event.stopPropagation();
     } else {
       try {
-        const result = await signInWithEmailAndPassword(
+        await signInWithEmailAndPassword(
           auth,
           loginFormState.email,
           loginFormState.password,

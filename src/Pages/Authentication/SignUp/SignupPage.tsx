@@ -3,12 +3,11 @@ import 'firebaseui/dist/firebaseui.css';
 import auth from '../../../Utils/Auth';
 import { Button, Form } from 'react-bootstrap';
 import { createUserWithEmailAndPassword } from 'firebase/auth';
-import {Link, useNavigate} from 'react-router-dom';
-import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
-import {faArrowLeft} from "@fortawesome/free-solid-svg-icons";
+import { useNavigate } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
 import bigLogo from '../../../assets/FairWearBig.png';
 import './SignupPage.css';
-
 
 interface SignUpFormStateProps {
   username: string;
@@ -39,7 +38,7 @@ export default function SignupPage() {
       event.stopPropagation();
     } else {
       try {
-        const result = await createUserWithEmailAndPassword(
+        await createUserWithEmailAndPassword(
           auth,
           signUpFormState.email,
           signUpFormState.password,
@@ -54,27 +53,25 @@ export default function SignupPage() {
   };
 
   const handleNextPage = () => {
-    if (signUpFormState.email !== "" && signUpFormState.username !== ""
-        && signUpFormState.phone !== "")
-    {
+    if (signUpFormState.email !== '' && signUpFormState.username !== ''
+        && signUpFormState.phone !== '') {
       setNextPage(true);
     }
-  }
+  };
 
   const handleBack = () => {
     if (nextPage) {
       setNextPage(false);
-    }
-    else {
+    } else {
       navigate('/Auth');
     }
-  }
+  };
 
   return (
     <div className="signup-page" style={{ width: window.innerWidth, height: window.innerHeight }}>
-    <div className="nav-link back" onClick={handleBack}>
-      <FontAwesomeIcon icon={faArrowLeft} className="icon-navigation" />
-    </div>
+      <div className="nav-link back" onClick={handleBack}>
+        <FontAwesomeIcon icon={faArrowLeft} className="icon-navigation" />
+      </div>
 
       <div className="main-container">
         <div className="logo-container">
@@ -83,7 +80,7 @@ export default function SignupPage() {
 
         <Form noValidate validated={validated} onSubmit={onSubmit}>
 
-          <div className={nextPage ? "" : "signup-form"} hidden={nextPage}>
+          <div className={nextPage ? '' : 'signup-form'} hidden={nextPage}>
             <Form.Group className="form-group" controlId="usernameField">
               <Form.Label>Username</Form.Label>
               <Form.Control
@@ -131,7 +128,7 @@ export default function SignupPage() {
             </Button>
           </div>
 
-          <div className={nextPage ? "signup-form" : ""} hidden={!nextPage}>
+          <div className={nextPage ? 'signup-form' : ''} hidden={!nextPage}>
             <Form.Group className="form-group" controlId="passwordField">
               <Form.Label>Password</Form.Label>
               <Form.Control
@@ -147,7 +144,7 @@ export default function SignupPage() {
               />
               <Form.Label>Confirm password</Form.Label>
               <Form.Control
-                id={"confirmPassword"}
+                id="confirmPassword"
                 className="form-control"
                 required
                 type="password"
