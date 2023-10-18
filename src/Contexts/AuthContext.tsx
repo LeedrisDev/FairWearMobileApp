@@ -4,7 +4,7 @@ import React, {
 import { User } from 'firebase/auth';
 import auth from '../Utils/Auth';
 
-export const AuthContext = createContext<User|null>(null);
+export const AuthContext = createContext<User | null>(null);
 
 export default function AuthProvider({ children } : any) {
   const [currentUser, setCurrentUser] = useState<User | null>(null);
@@ -12,7 +12,7 @@ export default function AuthProvider({ children } : any) {
   useEffect(() => {
     // auth.onAuthStateChanged(setCurrentUser);
     auth.onAuthStateChanged((user) => {
-      setCurrentUser(user ? user : null);
+      setCurrentUser(user || null);
     });
   }, []);
 

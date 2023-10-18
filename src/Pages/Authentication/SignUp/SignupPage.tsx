@@ -1,7 +1,7 @@
-import React, {useRef, useState} from 'react';
+import React, { useRef, useState } from 'react';
 import 'firebaseui/dist/firebaseui.css';
 import auth from '../../../Utils/Auth';
-import {Alert, Button, Form} from 'react-bootstrap';
+import { Alert, Button, Form } from 'react-bootstrap';
 import { createUserWithEmailAndPassword } from 'firebase/auth';
 import { useNavigate } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -26,7 +26,6 @@ export default function SignupPage() {
   const navigate = useNavigate();
   const formRef = useRef<HTMLFormElement | null>(null);
 
-
   const [signUpFormState, setSignUpState] = useState<SignUpFormStateProps>({
     username: '',
     email: '',
@@ -50,8 +49,8 @@ export default function SignupPage() {
       event.stopPropagation();
       setFormError({
         hasError: true,
-        message: "Please fill all the fields",
-      })
+        message: 'Please fill all the fields',
+      });
     } else {
       try {
         await createUserWithEmailAndPassword(
@@ -65,8 +64,8 @@ export default function SignupPage() {
         console.error('Error creating user:', error);
         setFormError({
           hasError: true,
-          message: "user with this email already exist",
-        })
+          message: 'user with this email already exist',
+        });
       }
     }
     setValidated(true);

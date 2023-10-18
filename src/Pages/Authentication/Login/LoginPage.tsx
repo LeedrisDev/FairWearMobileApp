@@ -1,15 +1,13 @@
-import React, {useRef, useState} from 'react';
+import React, { useRef, useState } from 'react';
 import 'firebaseui/dist/firebaseui.css';
 import auth from '../../../Utils/Auth';
-import {Alert, Button, Form} from 'react-bootstrap';
+import { Alert, Button, Form } from 'react-bootstrap';
 import { signInWithEmailAndPassword } from 'firebase/auth';
 import { Link, useNavigate } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
 import bigLogo from '../../../assets/FairWearBig.png';
 import './LoginPage.css';
-import {Simulate} from "react-dom/test-utils";
-import error = Simulate.error;
 
 interface LoginFormStateProps {
   email: string;
@@ -40,8 +38,8 @@ export default function LoginPage() {
       event.stopPropagation();
       setFormError({
         hasError: true,
-        message: "Please fill all the fields",
-      })
+        message: 'Please fill all the fields',
+      });
     } else {
       try {
         await signInWithEmailAndPassword(
@@ -54,8 +52,8 @@ export default function LoginPage() {
       } catch (error) {
         setFormError({
           hasError: true,
-          message: "user or password incorrect",
-        })
+          message: 'user or password incorrect',
+        });
         console.error('Error creating user:', error);
       }
     }
