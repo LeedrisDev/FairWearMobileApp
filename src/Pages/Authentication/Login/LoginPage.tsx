@@ -1,17 +1,23 @@
-import React, { useState } from 'react';
+import React, {useRef, useState} from 'react';
 import 'firebaseui/dist/firebaseui.css';
 import auth from '../../../Utils/Auth';
-import { Button, Form } from 'react-bootstrap';
+import {Alert, Button, Form} from 'react-bootstrap';
 import { signInWithEmailAndPassword } from 'firebase/auth';
 import { Link, useNavigate } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
 import bigLogo from '../../../assets/FairWearBig.png';
 import './LoginPage.css';
+import {Simulate} from "react-dom/test-utils";
+import error = Simulate.error;
 
 interface LoginFormStateProps {
   email: string;
   password: string;
+}
+interface ErrorProps {
+  hasError: boolean;
+  message: string;
 }
 
 export default function LoginPage() {
@@ -21,13 +27,21 @@ export default function LoginPage() {
     password: '',
   });
 
+  const formRef = useRef<HTMLFormElement | null>(null);
   const [validated, setValidated] = useState(false);
+  const [formError, setFormError] = useState<ErrorProps>({
+    hasError: false,
+    message: '',
+  });
 
   const onSubmit = async (event: React.FormEvent) => {
     event.preventDefault();
-    const form = event.currentTarget;
-    if (form.checkValidity() === false) {
+    if (formRef.current?.checkValidity() === false) {
       event.stopPropagation();
+      setFormError({
+        hasError: true,
+        message: "Please fill all the fields",
+      })
     } else {
       try {
         await signInWithEmailAndPassword(
@@ -38,6 +52,10 @@ export default function LoginPage() {
         // handle Phone and username
         navigate('/');
       } catch (error) {
+        setFormError({
+          hasError: true,
+          message: "user or password incorrect",
+        })
         console.error('Error creating user:', error);
       }
     }
@@ -49,12 +67,15 @@ export default function LoginPage() {
       <Link className="nav-link back" to="/auth">
         <FontAwesomeIcon icon={faArrowLeft} className="icon-navigation" />
       </Link>
+      <Alert key="warning" variant="warning" hidden={!formError.hasError}>
+        {formError.message}
+      </Alert>
       <div className="main-container">
         <div className="logo-container">
           <img className="logo" src={bigLogo} alt={bigLogo} />
         </div>
 
-        <Form className="login-form buttons-container" noValidate validated={validated} onSubmit={onSubmit}>
+        <Form ref={formRef} className="login-form buttons-container" noValidate validated={validated} onSubmit={onSubmit}>
           <Form.Group className="form-group" controlId="emailField">
             <Form.Label>Email</Form.Label>
             <Form.Control

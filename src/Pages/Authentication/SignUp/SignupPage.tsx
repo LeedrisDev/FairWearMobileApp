@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
+import React, {useRef, useState} from 'react';
 import 'firebaseui/dist/firebaseui.css';
 import auth from '../../../Utils/Auth';
-import { Button, Form } from 'react-bootstrap';
+import {Alert, Button, Form} from 'react-bootstrap';
 import { createUserWithEmailAndPassword } from 'firebase/auth';
 import { useNavigate } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -17,8 +17,15 @@ interface SignUpFormStateProps {
   confirmPassword: string;
 }
 
+interface ErrorProps {
+  hasError: boolean;
+  message: string;
+}
+
 export default function SignupPage() {
   const navigate = useNavigate();
+  const formRef = useRef<HTMLFormElement | null>(null);
+
 
   const [signUpFormState, setSignUpState] = useState<SignUpFormStateProps>({
     username: '',
@@ -27,15 +34,24 @@ export default function SignupPage() {
     password: '',
     confirmPassword: '',
   });
+
   const [nextPage, setNextPage] = useState(false);
 
   const [validated, setValidated] = useState(false);
 
+  const [formError, setFormError] = useState<ErrorProps>({
+    hasError: false,
+    message: '',
+  });
+
   const onSubmit = async (event: React.FormEvent) => {
     event.preventDefault();
-    const form = event.currentTarget;
-    if (form.checkValidity() === false) {
+    if (formRef.current?.checkValidity() === false) {
       event.stopPropagation();
+      setFormError({
+        hasError: true,
+        message: "Please fill all the fields",
+      })
     } else {
       try {
         await createUserWithEmailAndPassword(
@@ -47,6 +63,10 @@ export default function SignupPage() {
         navigate('/Auth');
       } catch (error) {
         console.error('Error creating user:', error);
+        setFormError({
+          hasError: true,
+          message: "user with this email already exist",
+        })
       }
     }
     setValidated(true);
@@ -72,13 +92,16 @@ export default function SignupPage() {
       <div className="nav-link back" onClick={handleBack}>
         <FontAwesomeIcon icon={faArrowLeft} className="icon-navigation" />
       </div>
+      <Alert key="warning" variant="warning" hidden={!formError.hasError}>
+        {formError.message}
+      </Alert>
 
       <div className="main-container">
         <div className="logo-container">
           <img className="logo" src={bigLogo} alt={bigLogo} />
         </div>
 
-        <Form noValidate validated={validated} onSubmit={onSubmit}>
+        <Form ref={formRef} noValidate validated={validated} onSubmit={onSubmit}>
 
           <div className={nextPage ? '' : 'signup-form'} hidden={nextPage}>
             <Form.Group className="form-group" controlId="usernameField">
