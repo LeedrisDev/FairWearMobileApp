@@ -2,7 +2,7 @@ import * as React from 'react';
 import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { ISecurityInformations } from './interfaces';
-import { Link } from 'react-router-dom';
+import {Link, useNavigate} from 'react-router-dom';
 import {
   IOptionsProps,
   IPersonalInformationsProps,
@@ -65,7 +65,13 @@ function SecuritySettings({ password }: ISecurityInformations) {
 
 function Settings({ settings }: ISettingSetUpProps) {
   const currentUser = useContext(AuthContext);
+  const navigate = useNavigate();
 
+  const handleSignOut = () => {
+      signOut(auth).then(() => {
+        navigate("/");
+      })
+  }
   return (
     <div className="settings-page" style={{ width: window.innerWidth, height: window.innerHeight }}>
       <button className="back" type="button">
@@ -86,9 +92,9 @@ function Settings({ settings }: ISettingSetUpProps) {
       <div className="content-settings">
         <OptionsSettings options={settings.options} />
       </div>
-      <Button variant="secondary" onClick={() => signOut(auth)} hidden={!currentUser}>
-        Sign out
-      </Button>
+        <Button className="button-container logout-button" onClick={handleSignOut} hidden={!currentUser}>
+            <span>Sign out</span>
+        </Button>
 
     </div>
   );

@@ -36,18 +36,15 @@ export default function SignupPage() {
     event.preventDefault();
     const form = event.currentTarget;
     if (form.checkValidity() === false) {
-      console.log('invalid stuff');
       event.stopPropagation();
     } else {
       try {
-        console.log('here');
         const result = await createUserWithEmailAndPassword(
           auth,
           signUpFormState.email,
           signUpFormState.password,
         );
         // handle Phone and username
-        console.log('User created:', result.user);
         navigate('/Auth');
       } catch (error) {
         console.error('Error creating user:', error);
@@ -90,6 +87,7 @@ export default function SignupPage() {
             <Form.Group className="form-group" controlId="usernameField">
               <Form.Label>Username</Form.Label>
               <Form.Control
+                id="username"
                 className="form-control "
                 required
                 type="text"
@@ -103,6 +101,7 @@ export default function SignupPage() {
             <Form.Group className="form-group" controlId="emailField">
               <Form.Label>Email</Form.Label>
               <Form.Control
+                id="email"
                 className="form-control"
                 required
                 type="email"
@@ -116,6 +115,7 @@ export default function SignupPage() {
             <Form.Group className="form-group" controlId="phoneField">
               <Form.Label>Phone number</Form.Label>
               <Form.Control
+                id="phone"
                 className="form-control"
                 required
                 type="tel"
@@ -135,6 +135,7 @@ export default function SignupPage() {
             <Form.Group className="form-group" controlId="passwordField">
               <Form.Label>Password</Form.Label>
               <Form.Control
+                id="password"
                 className="form-control"
                 required
                 type="password"
@@ -146,6 +147,7 @@ export default function SignupPage() {
               />
               <Form.Label>Confirm password</Form.Label>
               <Form.Control
+                id={"confirmPassword"}
                 className="form-control"
                 required
                 type="password"

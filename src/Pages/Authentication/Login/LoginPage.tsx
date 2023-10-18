@@ -27,19 +27,16 @@ export default function LoginPage() {
     event.preventDefault();
     const form = event.currentTarget;
     if (form.checkValidity() === false) {
-      console.log('invalid stuff');
       event.stopPropagation();
     } else {
       try {
-        console.log('here');
         const result = await signInWithEmailAndPassword(
           auth,
           loginFormState.email,
           loginFormState.password,
         );
         // handle Phone and username
-        console.log('User created:', result.user);
-        navigate('/Auth');
+        navigate('/');
       } catch (error) {
         console.error('Error creating user:', error);
       }
@@ -61,6 +58,7 @@ export default function LoginPage() {
           <Form.Group className="form-group" controlId="emailField">
             <Form.Label>Email</Form.Label>
             <Form.Control
+              id="login"
               className="form-control"
               required
               type="email"
@@ -74,6 +72,7 @@ export default function LoginPage() {
           <Form.Group className="form-group" controlId="passwordField">
             <Form.Label>Password</Form.Label>
             <Form.Control
+              id="password"
               required
               type="password"
               placeholder="Enter password"

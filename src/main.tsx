@@ -17,28 +17,30 @@ import AuthProvider from './Contexts/AuthContext';
 import SignupPage from './Pages/Authentication/SignUp/SignupPage';
 import LoginPage from './Pages/Authentication/Login/LoginPage';
 import AuthenticationPage from './Pages/Authentication/AuthenticationPage';
+import StartPage from "./Pages/StartPage/StartPage";
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
     <AuthProvider>
-      <BrowserRouter>
-        <div style={{ width: window.innerWidth, height: window.innerHeight }}>
-          <Routes>
-            <Route path="/Home" element={<Home />} />
-            <Route path="/Search" element={<Search />} />
-            <Route path="/" element={<ScannerPage />} />
-            <Route path="/Profile" element={<ProfileSetUp />} />
-            <Route path="/Settings" element={<SettingsSetUp />} />
-            <Route path="/Alternative" element={<ImagesGrid />} />
-            <Route path="/TopBrand/:productId" element={<TopBrandPage />} />
-            <Route path="/Brand/:productId" element={<BrandPage />} />
-            <Route path="/Auth" element={<AuthenticationPage />} />
-            <Route path="/Signup" element={<SignupPage />} />
-            <Route path="/Login" element={<LoginPage />} />
-          </Routes>
-          <NavigationBar />
-        </div>
-      </BrowserRouter>
+        <BrowserRouter>
+          <div style={{ width: window.innerWidth, height: window.innerHeight }}>
+            <Routes>
+              <Route path="/Home" element={<Home />} />
+              <Route path="/Search" element={<Search />} />
+              <Route path="/" element={<StartPage />} />
+              <Route path="/Scan" element={<ScannerPage />} />
+              <Route path="/Profile" element={<ProfileSetUp />} />
+              <Route path="/Settings" element={<SettingsSetUp />} />
+              <Route path="/Alternative" element={<ImagesGrid />} />
+              <Route path="/TopBrand/:productId" element={<TopBrandPage />} />
+              <Route path="/Brand/:productId" element={<BrandPage />} />
+              <Route path="/Auth" element={<AuthenticationPage />} />
+              <Route path="/Signup" element={<SignupPage />} />
+              <Route path="/Login" element={<LoginPage />} />
+            </Routes>
+            <NavigationBar />
+          </div>
+        </BrowserRouter>
     </AuthProvider>
   </React.StrictMode>,
 );

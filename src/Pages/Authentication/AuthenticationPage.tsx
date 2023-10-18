@@ -5,16 +5,12 @@ import auth, { provider } from '../../Utils/Auth';
 import { Button } from 'react-bootstrap';
 import { AuthContext } from '../../Contexts/AuthContext';
 import { signInWithRedirect } from 'firebase/auth';
-import { Link, useNavigate } from 'react-router-dom';
+import {Link, useNavigate} from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
 
 export default function AuthenticationPage() {
   const currentUser = useContext(AuthContext);
-
-  useEffect(() => {
-    console.log({ currentUser });
-  }, [currentUser]);
 
   const handleGoogleConnection = () => {
     signInWithRedirect(auth, provider)
@@ -25,7 +21,7 @@ export default function AuthenticationPage() {
 
   return (
     <div className="authentication-page" style={{ width: window.innerWidth, height: window.innerHeight }}>
-      <Link className="nav-link back" to="/">
+      <Link className="nav-link back" to="/scan">
         <FontAwesomeIcon icon={faArrowLeft} className="icon-navigation" />
       </Link>
       <div className="main-container">

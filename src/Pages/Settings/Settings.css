@@ -67,3 +67,28 @@ hr {
     height: 1px;
     background-color: #E1E1E1;
 }
+
+.logout-button {
+    color: #FFF;
+    width: 182px;
+    height: 44px;
+    border-radius: 12px;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    margin-top: 10px;
+    text-decoration: none;
+    font-family: 'Poppins', 'sans-serif';
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    background-color: #33765D;
+}
+
+.buttons-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}

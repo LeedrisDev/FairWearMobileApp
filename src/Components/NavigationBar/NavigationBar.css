@@ -73,6 +73,7 @@
 }
 
 .nav-link  {
+    margin-left: 15px;
     display: flex;
     text-decoration: none;
     height: 90%;

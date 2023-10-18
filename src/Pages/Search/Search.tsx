@@ -106,11 +106,10 @@ function Search() {
     try {
       await BrandByName(text);
     } catch (error) {
-      console.log(error);
+      console.error(error);
     }
 
     updateState({ brands: await BrandSearchSuggestions(text) });
-    console.log(brands);
   };
 
   return (
