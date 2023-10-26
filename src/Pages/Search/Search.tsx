@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { searchInformations } from './objects';
-import { BrandByName, BrandSearchSuggestions } from '../../Business/BrandBusiness';
+import { BrandSearchSuggestions } from '../../Business/BrandBusiness';
 
 import './Search.css';
 import { Link } from 'react-router-dom';
