@@ -5,7 +5,7 @@ const product1: IProductInformations = {
   name: 'Black glove HardFace',
   brand: 'The North Face',
   country: 'United State',
-  image: 'produit1',
+  image: gloves,
   globalScore: 3,
   scores: {
     moral: 3,

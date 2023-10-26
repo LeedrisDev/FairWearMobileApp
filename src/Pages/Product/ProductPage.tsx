@@ -1,12 +1,10 @@
 import * as React from 'react';
-import Alternatives from '../../Components/ProductPage/Alternatives';
 import Composition from '../../Components/ProductComposition/ProductComposition';
 import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import GlobalInformations from '../../Components/ProductPage/GlobalInformations';
 import { Link } from 'react-router-dom';
 import ScoreBar from '../../Components/ProductPage/ScoreBar';
-
 import './ProductPage.css';
 import { ProductModel } from '../../Models/ProductModel';
 import product1 from '../../Tests/ProductExamples';
@@ -21,11 +19,9 @@ interface ProductPageProps {
 
 function ProductPage({ product, onDetected }: ProductPageProps) {
   const [isAlternative, setIsAlternative] = useState(false);
-
   const showAlternatives = () => {
     setIsAlternative(!isAlternative);
   };
-
   return (
     <div
       className="productPage"
@@ -62,9 +58,9 @@ function ProductPage({ product, onDetected }: ProductPageProps) {
               <FontAwesomeIcon icon={faArrowLeft} className="icon-navigation" />
             </Link>
           </button>
-          <GlobalInformations globalProductInformations={product1} />
-          <ScoreBar informations={product1.scores} />
-          <Composition composition={product1.composition} />
+          <GlobalInformations globalProductInformations={product} />
+          <ScoreBar informations={product.scores} />
+          <Composition composition={product.composition} />
           <div className="alternatives">
             <div className="alternatives-box">
               <div className="box-header-alternative">
@@ -94,7 +90,7 @@ function ProductPage({ product, onDetected }: ProductPageProps) {
                                     <img
                                       src={vestiairecollective}
                                       className="alternatives-image"
-                                      alt="vestiaire-collective"
+                                      alt="vc"
                                     />
                                   </a>
                                   <div className="brand-and-grade1 title-four">
@@ -124,7 +120,7 @@ function ProductPage({ product, onDetected }: ProductPageProps) {
                                   ))}
                               </div>
                             )
-                      }
+}
             </div>
           </div>
         </div>

@@ -28,6 +28,6 @@ export interface IGlobalProductInformations {
 
 export interface IAlternativeProduct {
   name: string,
-  image : ImageData,
+  image : string,
   link: string,
 }
