@@ -1,5 +1,5 @@
 import {
-  tip1, tip2, tip3, tip5, tip4, tip6, tip9, tip10, tip7, tip8, tip11, tip12, tip13, tip14,
+  tip1, tip2, tip3, tip5, tip4, tip6, tip9, tip10, tip7, tip8, tip11, tip12, tip13,
 } from './data';
 
 const tips = [
@@ -16,7 +16,6 @@ const tips = [
   tip11,
   tip12,
   tip13,
-  tip14,
 ];
 
 export default tips;

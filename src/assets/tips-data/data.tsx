@@ -10,7 +10,7 @@ import tip4Image from '../images/tips-images/tips4.png';
 export default interface ITips {
   title: string,
   tip: string,
-  image: string
+  image: string | undefined
 }
 
 export const tip1: ITips = {
@@ -22,7 +22,7 @@ export const tip1: ITips = {
 export const tip2: ITips = {
   title: 'What is a Minimalist wardrobe ?',
   tip: 'Putting quality above quantity is certainly not a new concept. Nevertheless, fast fashion trends make us quickly forget this guiding principle. It is helpful to ask yourself questions before making a purchase. Why do I want to buy this item? How often will I realistically wear it? And how can it be combined with my current wardrobe? When buying new, develop a strategy and choose garments that are easy to combine and do not quickly fall out of fashion.',
-  image: null,
+  image: undefined,
 };
 
 export const tip3: ITips = {
@@ -40,7 +40,7 @@ export const tip4: ITips = {
 export const tip5: ITips = {
   title: 'Change your habits',
   tip: 'There are different ways to give your clothes a second life. By making a donation to an association, you extend the life of your garment and make people happy. You can also sell or modify it! A good formula to keep in mind is to apply the policy of "one in, one out": every time you buy a garment, you give or sell one in exchange.',
-  image: null,
+  image: undefined,
 };
 
 export const tip6: ITips = {
@@ -57,7 +57,7 @@ export const tip7: ITips = {
       + '• S as Similar: do I have something similar that could do?\n'
       + '• O as Origin: what is the origin of this product?\n'
       + '• U as Utility: will this object be useful to me?',
-  image: null,
+  image: undefined,
 };
 
 export const tip8: ITips = {
@@ -94,15 +94,4 @@ export const tip13: ITips = {
   title: 'Don’t feel guilty',
   tip: 'You want to consume better but you have fast fashion pieces and not sustainable brands. That’s okay! Sustainability does not mean emptying your closet and replacing all your clothes (it is the exact opposite). Try to extend the life cycle by repairing or repairing. The ultimate goal of the sustainable consumer is not to achieve perfection, but rather to buy consciously and carefully.',
   image: tip13Image,
-};
-
-export const tip14: ITips = {
-  title: 'Materials',
-  tip: 'To clarify, here is a list of eco-responsible materials:\n'
-      + '• flax (France is the world’s largest producer!) and requires little water and fertilizer \n'
-      + '• Jute has the same ecological properties but grows in Asia).\n'
-      + '• Organic cotton: much less water intensive than conventional cotton\n'
-      + '• Lyocell is an interesting artificial material because it is produced from eucalyptus pulp using an environmentally friendly process.\n'
-      + '• Recycled or upcycled materials, even synthetic materials, can extend the life of materials.',
-  image: null,
 };
