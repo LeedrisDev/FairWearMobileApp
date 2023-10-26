@@ -44,10 +44,10 @@ function Home() {
         <div className="tips-text-box">
           <div className="tips-title">Take care of clothes</div>
           <p className="tips-text">
-              Taking care of our clothes is a way to fight against overconsumption.
-              This includes washing your clothes! So do not hesitate to
-              look at their label to know how many degrees your clothes can be
-              wash according to their materials!
+            Taking care of our clothes is a way to fight against overconsumption.
+            This includes washing your clothes! So do not hesitate to
+            look at their label to know how many degrees your clothes can be
+            wash according to their materials!
           </p>
           <div className="tips-image-box">
             <img src={tips} className="tips-image" alt="Item" />
