@@ -6,7 +6,6 @@ import tip11Image from '../images/tips-images/tip11.png';
 import tip13Image from '../images/tips-images/tip13.png';
 import tip3Image from '../images/tips-images/tips3.png';
 import tip4Image from '../images/tips-images/tips4.png';
-import tip9Image from '../images/tips-images/tips9.png';
 
 export default interface ITips {
   title: string,
