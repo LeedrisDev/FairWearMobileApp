@@ -102,17 +102,6 @@ function Search() {
     searchInformations.input = input;
   };
 
-  const handleSearch = async () => {
-    try {
-      await BrandByName(text);
-    } catch (error) {
-      console.log(error);
-    }
-
-    updateState({ brands: await BrandSearchSuggestions(text) });
-    console.log(brands);
-  };
-
   return (
     <div className="search">
       <div className="input-box">
@@ -132,9 +121,9 @@ function Search() {
         {
                     brands.map((brand: BrandModel) => (
                       <Link to={`/Brand/${encodeURIComponent(brand.id)}`} className="brand-proposition">
-                          <div className="brand-and-grade-search">
-                            <span className="text-search title-brand">{brand.name}</span>
-                          </div>
+                        <div className="brand-and-grade-search">
+                          <span className="text-search title-brand">{brand.name}</span>
+                        </div>
                       </Link>
                     ))
                 }
