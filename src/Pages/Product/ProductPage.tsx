@@ -19,7 +19,7 @@ interface ProductPageProps {
 function ProductPage({ product, onDetected }: ProductPageProps) {
   return (
     <div className="productPage" style={{ width: window.innerWidth, height: window.innerHeight }}>
-      <button className="back-product-page" type="button" onClick={onDetected}>
+      <button className="back-product-page" type="button" onClick={onDetected} aria-label="Back to Previous Page">
         <Link className="nav-link" to="/">
           <FontAwesomeIcon icon={faArrowLeft} className="icon-navigation" />
         </Link>

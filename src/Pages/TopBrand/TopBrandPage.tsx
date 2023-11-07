@@ -75,7 +75,7 @@ function TopBrandPage() {
   return (
     <div className="brandPage" style={{ width: window.innerWidth, height: window.innerHeight }}>
       <div className="informations-brand">
-        <button className="back-product-page" type="button">
+        <button className="back-product-page" type="button" aria-label="Back to Previous Page">
           <Link className="nav-link" to="/Home">
             <FontAwesomeIcon icon={faArrowLeft} className="icon-navigation" />
           </Link>
