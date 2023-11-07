@@ -8,6 +8,7 @@ import { faEarth, faPaperclip } from '@fortawesome/free-solid-svg-icons';
 import { faStar } from '@fortawesome/free-regular-svg-icons';
 import topBrands from '../TopBrand/constantes';
 import tips from '../../assets/tips-data/tips-list';
+import tipsImage from '../../assets/imageTips.png';
 
 function SliderBrand() {
   return (
@@ -68,7 +69,7 @@ function Home() {
             wash according to their materials!
           </p>
           <div className="tips-image-box">
-            <img src={tips} className="tips-image" alt="Item" />
+            <img src={tipsImage} className="tips-image" alt="Item" />
           </div>
         </div>
       </div>
