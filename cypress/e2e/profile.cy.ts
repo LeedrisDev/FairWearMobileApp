@@ -8,7 +8,7 @@ describe('Tests for the profile page', () => {
         cy.visit(Cypress.env("baseUrl") + 'Profile')
         cy.get('.passive').eq(2).click()
         cy.wait(2000)
-        cy.contains('Connectez-vous');
+        cy.contains('Connect your account');
     })
 
     it('Should check that the settings button works', () => {
