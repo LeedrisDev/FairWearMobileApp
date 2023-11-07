@@ -1,11 +1,10 @@
 import * as React from 'react';
-import { searchInformations } from './objects';
-import {BrandByName, BrandSearchSuggestions} from '../../Business/BrandBusiness';
+import { BrandByName, BrandSearchSuggestions } from '../../Business/BrandBusiness';
 
 import './Search.css';
 import { Link } from 'react-router-dom';
 import { BrandModel } from '../../Models/BrandModel';
-import {debounce} from "lodash";
+import { debounce } from 'lodash';
 
 function Search() {
   const [inputText, setInputText] = React.useState('');
@@ -13,31 +12,30 @@ function Search() {
 
   const debouncedBrandByName = React.useRef(
     debounce(async (input: string) => {
-        try {
-            await BrandByName(input);
-            const brandSuggestions: BrandModel[] = input !== '' ? await BrandSearchSuggestions(input) : [];
-            setBrands(brandSuggestions);
-        } catch (error) {
-            if (error.response && error.response.status === 404) {
-                console.log("Brand not found:", error);
-            } else {
-                console.error("An error occurred:", error);
-            }
+      try {
+        await BrandByName(input);
+        const brandSuggestions: BrandModel[] = input !== '' ? await BrandSearchSuggestions(input) : [];
+        setBrands(brandSuggestions);
+      } catch (error) {
+        if (error.response && error.response.status === 404) {
+          console.log('Brand not found:', error);
+        } else {
+          console.error('An error occurred:', error);
         }
-    }, 500)).current// Adjust the debounce delay as needed (e.g., 500 milliseconds)
+      }
+    }, 500),
+  ).current;// Adjust the debounce delay as needed (e.g., 500 milliseconds)
 
-    React.useEffect(() => {
-        return () => {
-            debouncedBrandByName.cancel();
-        };
-    }, [debouncedBrandByName]);
+  React.useEffect(() => () => {
+    debouncedBrandByName.cancel();
+  }, [debouncedBrandByName]);
 
   const handleChange = async (event: React.ChangeEvent<HTMLInputElement>) => {
-      const input: string = event.target.value;
-      const brandSuggestions: BrandModel[] = input !== '' ? await BrandSearchSuggestions(input) : [];
-      setBrands(brandSuggestions);
-      setInputText(input);
-      await debouncedBrandByName(input);
+    const input: string = event.target.value;
+    const brandSuggestions: BrandModel[] = input !== '' ? await BrandSearchSuggestions(input) : [];
+    setBrands(brandSuggestions);
+    setInputText(input);
+    await debouncedBrandByName(input);
   };
 
   return (
