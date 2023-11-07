@@ -54,7 +54,67 @@ describe('Tests for the search page', () => {
         cy.wait(2000)
         cy.get('.clothing-item-alternatives').should('not.be.empty').and('have.length', 0)
     })
+
     describe('Tests for search functionality', () => {
+        it('should check that the search works', () => {
+
+            cy.intercept(
+                {
+                    method: 'GET',
+                    url: '**/brand*',
+                },
+                {
+                    statusCode: 200,
+                    body:
+                        [{
+                            'id': 1,
+                            'name': "Nike",
+                            'country': "USA",
+                            'environmentRating': 4,
+                            'peopleRating': 5,
+                            'animalRating': 5,
+                            'ratingDescription': "It's a good brand",
+                            'categories': [],
+                            'ranges': []
+                        }]
+                    ,
+                }
+            ).as('getAllSuggestions')
+
+            cy.intercept(
+                {
+                    method: 'POST',
+                    url: '**/brand/name',
+                },
+                {
+                    statusCode: 200,
+                    body:
+                        {
+                            'id': 1,
+                            'name': "Nike",
+                            'country': "USA",
+                            'environmentRating': 4,
+                            'peopleRating': 5,
+                            'animalRating': 5,
+                            'ratingDescription': "It's a good brand",
+                            'categories': [],
+                            'ranges': []
+                        }
+
+                }
+            ).as('getName')
+
+            cy.visit(Cypress.env("baseUrl") + 'Search')
+            cy.get('.passive').eq(1).click()
+            cy.wait(100)
+            cy.get('.input-search')
+                .type('N', {delay: 100})
+                .type('i', {delay: 100})
+                .type('k', {delay: 100})
+                .type('e', {delay: 100});
+            cy.wait(600)
+            cy.get('.brand-and-grade-search').should('not.be.empty').and('have.length', 1)
+        })
 
     });
 
