@@ -7,7 +7,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEarth, faPaperclip } from '@fortawesome/free-solid-svg-icons';
 import { faStar } from '@fortawesome/free-regular-svg-icons';
 import topBrands from '../TopBrand/constantes';
-import tips from '../../assets/tips-data/tips-list';
+// import tips from '../../assets/tips-data/tips-list';
 import tipsImage from '../../assets/images/imageTips.png';
 
 function SliderBrand() {
@@ -26,23 +26,23 @@ function SliderBrand() {
   );
 }
 
-function TipOfTheDay() {
-  const index = Math.floor(Math.random() * tips.length);
-
-  return (
-    <div className="tips-text-box">
-      <div className="tips-title">{tips[index].title}</div>
-      <p className="tips-text">
-        {tips[index].tip}
-      </p>
-      <div className="tips-image-box">
-        {
-                    tips[index].image ? <img src={tips[index].image} className="tips-image" alt="Item" /> : null
-                }
-      </div>
-    </div>
-  );
-}
+// function TipOfTheDay() {
+//   const index = Math.floor(Math.random() * tips.length);
+//
+//   return (
+//     <div className="tips-text-box">
+//       <div className="tips-title">{tips[index].title}</div>
+//       <p className="tips-text">
+//         {tips[index].tip}
+//       </p>
+//       <div className="tips-image-box">
+//         {
+//      tips[index].image ? <img src={tips[index].image} className="tips-image" alt="Item" /> : null
+//         }
+//       </div>
+//     </div>
+//   );
+// }
 
 function Home() {
   return (
