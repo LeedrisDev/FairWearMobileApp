@@ -2,7 +2,7 @@ import * as React from 'react';
 import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Link } from 'react-router-dom';
-import product1 from '../../assets/produit1.png';
+import product1 from '../../assets/images/produit1.png';
 
 import './ImagesGrid.css';
 

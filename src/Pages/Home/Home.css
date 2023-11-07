@@ -136,7 +136,7 @@
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
-    gap: 18px;
+
 }
 
 .tips-title {
@@ -158,6 +158,7 @@
     font-style: italic;
     font-weight: 300;
     line-height: 17px;
+    white-space: pre-wrap;
 }
 
 .home {
@@ -251,6 +252,6 @@
 }
 
 .tips-image {
-    width: 60%;
+    width: 45%;
 }
 

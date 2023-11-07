@@ -1,13 +1,13 @@
 import './Home.css';
 import * as React from 'react';
-import logo from '../../assets/FairWear.png';
-import tips from '../../assets/imageTips.png';
+import logo from '../../assets/images/FairWear.png';
 import ImageComponent from '../../Components/Images/Image';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEarth, faPaperclip } from '@fortawesome/free-solid-svg-icons';
 import { faStar } from '@fortawesome/free-regular-svg-icons';
 import topBrands from '../TopBrand/constantes';
+import tips from '../../assets/tips-data/tips-list';
 
 function SliderBrand() {
   return (
@@ -25,6 +25,24 @@ function SliderBrand() {
   );
 }
 
+function TipOfTheDay() {
+  const index = Math.floor(Math.random() * tips.length);
+
+  return (
+    <div className="tips-text-box">
+      <div className="tips-title">{tips[index].title}</div>
+      <p className="tips-text">
+        {tips[index].tip}
+      </p>
+      <div className="tips-image-box">
+        {
+                    tips[index].image ? <img src={tips[index].image} className="tips-image" alt="Item" /> : null
+                }
+      </div>
+    </div>
+  );
+}
+
 function Home() {
   return (
     <div className="home">
@@ -37,22 +55,11 @@ function Home() {
 
       <div className="home-subtitle-box">
         <FontAwesomeIcon icon={faPaperclip} className="icon-home-subtitle1" />
-        <div className="home-subtitle">Today&apos;s tips</div>
+        <div className="home-subtitle">Tip of the day</div>
       </div>
 
       <div className="tips">
-        <div className="tips-text-box">
-          <div className="tips-title">L&apos;entretien d&apos;un vêtement</div>
-          <p className="tips-text">
-            Prendre soin de nos vêtements est un moyen de lutter contre la surconsommation.
-            Cela passe notamment par le lavage de vos vêtements ! Alors n&apos;hésitez pas à
-            regarder leur étiquette pour savoir à combien de degrés vos vêtements peuvent se
-            laver en fonction de leurs matières !
-          </p>
-          <div className="tips-image-box">
-            <img src={tips} className="tips-image" alt="Item" />
-          </div>
-        </div>
+        <TipOfTheDay />
       </div>
 
       <div className="box-top-brand">
