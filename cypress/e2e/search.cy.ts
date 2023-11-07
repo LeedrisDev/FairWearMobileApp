@@ -84,7 +84,7 @@ describe('Tests for the search page', () => {
             cy.get('.passive').eq(1).click()
             cy.wait(100)
             cy.get('.input-search').type('N')
-            cy.get('.clothing-item-alternatives').should('not.be.empty').and('have.length', 1)
+            cy.get('.brand-and-grade-search').should('not.be.empty').and('have.length', 1)
         })
     });
 
