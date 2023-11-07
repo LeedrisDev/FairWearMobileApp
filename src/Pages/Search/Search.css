@@ -3,11 +3,10 @@
     padding: 13px 24px;
     gap: 10px;
 
-    width: 80%;
+    width: 100%;
     height: 45px;
     background: #FFFFFF;
     margin-top: 10%;
-    margin-right: 7%;
 
     border: 1px solid #E1E1E1;
     box-shadow: 0px 4px 4px rgba(199, 199, 199, 0.25);
@@ -98,36 +97,24 @@
     height: 130%;
 }
 
-.clothes-alternatives {
-    margin-top: 6%;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-gap: 10px;
-    grid-auto-rows: minmax(100px, auto);
-    gap: 10px;
-    width: 90%;
-    max-height: 800px;
-    overflow-y: scroll;
-    overflow-x: unset;
-}
 
 .title-brand {
-    color: black;
+    color: rgb(51, 118, 93);
 }
 
 .brand-proposition {
     text-decoration:none;
 }
 
-.text-search {
-    color: rgba(51, 118, 93);
-    font-size: 16px;
-}
 
 .brand-and-grade-search {
-    border: #33765d 1px solid;
-    border-radius: 20px;
-    background: rgba(51, 118, 93, 0.15);
-    padding-bottom: 40px;
-    padding-top: 40px;
+    display: flex;
+    border-bottom: rgba(199, 199, 199, 0.40) 1px solid;
+    height: 48px;
+    align-items: center;
+}
+
+.search-proposition {
+    width: 85%;
+    margin-top: 5%;
 }
