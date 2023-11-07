@@ -8,7 +8,7 @@ import { faEarth, faPaperclip } from '@fortawesome/free-solid-svg-icons';
 import { faStar } from '@fortawesome/free-regular-svg-icons';
 import topBrands from '../TopBrand/constantes';
 import tips from '../../assets/tips-data/tips-list';
-import tipsImage from '../../assets/imageTips.png';
+import tipsImage from '../../assets/images/imageTips.png';
 
 function SliderBrand() {
   return (
