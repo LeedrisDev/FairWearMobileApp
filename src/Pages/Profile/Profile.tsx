@@ -62,7 +62,7 @@ function ConnectedProfile({ profile }: IProfileProps) {
 function Profile({ profile }: IProfileProps) {
   return (
     <div className="App">
-      <button className="settings" type="button">
+      <button className="settings" type="button" aria-label="Back to Previous Page">
         <Link className="nav-link" to="/Settings">
           <FontAwesomeIcon icon={faGear} className="icon-navigation" />
         </Link>
