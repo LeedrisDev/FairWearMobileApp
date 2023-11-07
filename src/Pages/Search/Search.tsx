@@ -7,8 +7,8 @@ import { BrandModel } from '../../Models/BrandModel';
 import { debounce } from 'lodash';
 
 function Search() {
-  const [inputText, setInputText] = React.useState('');
-  const [brands, setBrands] = React.useState([]);
+  const [inputText, setInputText] = React.useState<string>('');
+  const [brands, setBrands] = React.useState<BrandModel[]>([]);
 
   const debouncedBrandByName = React.useRef(
     debounce(async (input: string) => {
@@ -16,7 +16,7 @@ function Search() {
         await BrandByName(input);
         const brandSuggestions: BrandModel[] = input !== '' ? await BrandSearchSuggestions(input) : [];
         setBrands(brandSuggestions);
-      } catch (error) {
+      } catch (error : any) {
         if (error.response && error.response.status === 404) {
           console.log('Brand not found:', error);
         } else {
