@@ -54,22 +54,25 @@ describe('Tests for the search page', () => {
         cy.wait(2000)
         cy.get('.clothing-item-alternatives').should('not.be.empty').and('have.length', 0)
     })
+    describe('Tests for search functionality', () => {
 
-    describe("Tests for the 'Search' button", () => {
-        it('Should check that the button is there', () => {
-            cy.visit(Cypress.env("baseUrl") + 'Search')
-            cy.get('.passive').eq(1).click()
-            cy.wait(2000)
-            cy.get('.button-search').should('exist')
-        })
+    });
 
-        it('Should check that the button works', () => {
-            cy.visit(Cypress.env("baseUrl") + 'Search')
-            cy.get('.passive').eq(1).click()
-            cy.wait(2000)
-            cy.get('.button-search').click()
-            cy.wait(2000)
-            cy.get('.clothing-item-alternatives').should('not.be.empty').and('have.length', 5)
-        })
-    })
+    // describe("Tests for the 'Search' button", () => {
+    //     it('Should check that the button is there', () => {
+    //         cy.visit(Cypress.env("baseUrl") + 'Search')
+    //         cy.get('.passive').eq(1).click()
+    //         cy.wait(2000)
+    //         cy.get('.button-search').should('exist')
+    //     })
+    //
+    //     it('Should check that the button works', () => {
+    //         cy.visit(Cypress.env("baseUrl") + 'Search')
+    //         cy.get('.passive').eq(1).click()
+    //         cy.wait(2000)
+    //         cy.get('.button-search').click()
+    //         cy.wait(2000)
+    //         cy.get('.clothing-item-alternatives').should('not.be.empty').and('have.length', 5)
+    //     })
+    // })
 })

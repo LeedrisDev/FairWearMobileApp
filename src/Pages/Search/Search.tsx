@@ -1,10 +1,11 @@
 import * as React from 'react';
 import { searchInformations } from './objects';
-import { BrandSearchSuggestions } from '../../Business/BrandBusiness';
+import {BrandByName, BrandSearchSuggestions} from '../../Business/BrandBusiness';
 
 import './Search.css';
 import { Link } from 'react-router-dom';
 import { BrandModel } from '../../Models/BrandModel';
+import {debounce} from "lodash";
 
 /*
 const sizes = ['XXS', 'XS', 'S', 'M', 'L', 'XL', 'XXL', '3XL', '4XL', '5XL'];
@@ -76,30 +77,38 @@ function FilterSearch({ title, items }: IFilterSearchProps) {
 }
 
  */
-interface SearchStateProps {
-  text: string;
-  brands: BrandModel[];
-}
 
 function Search() {
-  const initialState: SearchStateProps = {
-    text: '',
-    brands: [],
-  };
+  const [inputText, setInputText] = React.useState('');
+  const [brands, setBrands] = React.useState([]); // BrandModel[
 
-  const [state, setState] = React.useState(initialState);
-  const { text, brands } = state;
+  const debouncedBrandByName = React.useRef(
+    debounce(async (input: string) => {
+        try {
+            await BrandByName(input);
+            const brandSuggestions: BrandModel[] = input !== '' ? await BrandSearchSuggestions(input) : [];
+            setBrands(brandSuggestions);
+        } catch (error) {
+            if (error.response && error.response.status === 404) {
+                console.log("Brand not found:", error);
+            } else {
+                console.error("An error occurred:", error);
+            }
+        }
+    }, 500)).current// Adjust the debounce delay as needed (e.g., 500 milliseconds)
 
-  const updateState = (newState: any) => {
-    setState({ ...state, ...newState });
-  };
+    React.useEffect(() => {
+        return () => {
+            debouncedBrandByName.cancel();
+        };
+    }, [debouncedBrandByName]);
 
   const handleChange = async (event: React.ChangeEvent<HTMLInputElement>) => {
-    const input: string = event.target.value;
-    const brandSuggestions: BrandModel[] = event.target.value !== '' ? await BrandSearchSuggestions(input) : [];
-
-    updateState({ text: input, brands: brandSuggestions });
-    searchInformations.input = input;
+      const input: string = event.target.value;
+      const brandSuggestions: BrandModel[] = input !== '' ? await BrandSearchSuggestions(input) : [];
+      setBrands(brandSuggestions);
+      setInputText(input);
+      await debouncedBrandByName(input);
   };
 
   return (
@@ -109,10 +118,10 @@ function Search() {
           className="input-search"
           type="text"
           placeholder="Find an item or brand"
-          value={text}
+          value={inputText}
           onChange={handleChange}
           style={{
-            color: text ? 'black' : 'gray',
+            color: inputText ? 'black' : 'gray',
           }}
         />
 
