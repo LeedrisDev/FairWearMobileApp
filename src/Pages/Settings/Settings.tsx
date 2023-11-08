@@ -1,22 +1,20 @@
 import * as React from 'react';
-import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { ISecurityInformations } from './interfaces';
-import { Link, useNavigate } from 'react-router-dom';
+import {faArrowLeft} from '@fortawesome/free-solid-svg-icons';
+import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
+import {ISecurityInformations} from './interfaces';
+import {Link, useNavigate} from 'react-router-dom';
 import {
-  IOptionsProps,
-  IPersonalInformationsProps,
-  ISettingFieldProps,
-  ISettingSetUpProps,
+    IOptionsProps,
+    IPersonalInformationsProps,
+    ISettingFieldProps,
+    ISettingSetUpProps,
 } from './interfacesProps';
 
 import '../../App.css';
 import './Settings.css';
-import { signOut } from 'firebase/auth';
+import {signOut} from 'firebase/auth';
 import auth from '../../Utils/Auth';
-import { Button } from 'react-bootstrap';
-import { useContext } from 'react';
-import { AuthContext } from '../../Contexts/AuthContext';
+import {Button} from 'react-bootstrap';
 
 function SettingField({ field, content }: ISettingFieldProps) {
   return (
@@ -45,7 +43,7 @@ function OptionsSettings({ options }: IOptionsProps) {
     <div className="category-settings">
       <div className="title-one">Options</div>
       <div className="options">
-        <SettingField field="Language" content={options.langage} />
+          <SettingField field="Language" content={options.language}/>
         <SettingField field="Theme" content={options.theme} />
       </div>
     </div>
@@ -64,7 +62,6 @@ function SecuritySettings({ password }: ISecurityInformations) {
 }
 
 function Settings({ settings }: ISettingSetUpProps) {
-  const currentUser = useContext(AuthContext);
   const navigate = useNavigate();
 
   const handleSignOut = () => {
@@ -92,7 +89,8 @@ function Settings({ settings }: ISettingSetUpProps) {
       <div className="content-settings">
         <OptionsSettings options={settings.options} />
       </div>
-      <Button className="button-container logout-button" onClick={handleSignOut} hidden={!currentUser}>
+        <Button className="button-container logout-button" onClick={handleSignOut}
+                hidden={!settings.isConnected}>
         <span>Sign out</span>
       </Button>
 

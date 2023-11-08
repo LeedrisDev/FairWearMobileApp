@@ -8,7 +8,7 @@ interface IPersonalInformations {
 }
 
 interface IOptions {
-  langage: string,
+  language: string,
   theme: string,
 }
 

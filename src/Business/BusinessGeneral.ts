@@ -26,7 +26,7 @@ const security: ISecurityInformations = {
 };
 
 const options: IOptions = {
-  langage: 'English',
+  language: 'English',
   theme: 'Light',
 };
 
