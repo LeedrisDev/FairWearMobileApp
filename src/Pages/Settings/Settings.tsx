@@ -1,7 +1,7 @@
 import * as React from 'react';
 import {faArrowLeft} from '@fortawesome/free-solid-svg-icons';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
-import {ISecurityInformations} from './interfaces';
+import 'primereact/resources/themes/lara-light-indigo/theme.css';
 import {Link, useNavigate} from 'react-router-dom';
 import {
     IOptionsProps,
@@ -13,8 +13,10 @@ import {
 import '../../App.css';
 import './Settings.css';
 import {signOut} from 'firebase/auth';
-import auth from '../../Utils/Auth';
+import auth, {passwordReset} from '../../Utils/Auth';
 import {Button} from 'react-bootstrap';
+import {Messages} from "primereact/messages";
+import {useMountEffect} from "primereact/hooks";
 
 function SettingField({ field, content }: ISettingFieldProps) {
   return (
@@ -50,12 +52,34 @@ function OptionsSettings({ options }: IOptionsProps) {
   );
 }
 
-function SecuritySettings({ password }: ISecurityInformations) {
+function SecuritySettings({setAlert}: { setAlert: (state: any) => void }) {
+
   return (
     <div className="category-settings">
       <div className="title-one">Security</div>
       <div className="options">
-        <SettingField field="Password" content={password} />
+          {/* <SettingField field="Password" content={""} /> */}
+          <button className="no-container-button" onClick={() => {
+              passwordReset()
+                  ?.then(() => {
+                      console.log(setAlert)
+                      setAlert({
+                          hasError: false,
+                          message: "Password reset email sent!"
+                      })
+
+                  })
+                  ?.catch((error) => {
+                      console.log(setAlert)
+
+                      setAlert({
+                          hasError: true,
+                          message: error
+                      })
+                  })
+          }}>
+              <span className="action">Reset password</span>
+          </button>
       </div>
     </div>
   );
@@ -63,7 +87,34 @@ function SecuritySettings({ password }: ISecurityInformations) {
 
 function Settings({ settings }: ISettingSetUpProps) {
   const navigate = useNavigate();
+    const msgs = React.useRef<Messages>(null);
 
+    const [alert, setAlert] = React.useState({
+        hasError: false,
+        message: ""
+    })
+    useMountEffect(() => {
+        if (msgs.current) {
+            msgs.current.clear();
+            if (alert.hasError) {
+                msgs.current.show({
+                    sticky: true,
+                    severity: 'error',
+                    summary: 'Error',
+                    detail: alert.message,
+                    closable: true,
+                });
+            } else if (alert.message !== "") {
+                msgs.current.show({
+                    sticky: true,
+                    severity: 'success',
+                    summary: 'Success',
+                    detail: alert.message,
+                    closable: true,
+                });
+            }
+        }
+    });
   const handleSignOut = () => {
     signOut(auth).then(() => {
       navigate('/');
@@ -76,12 +127,14 @@ function Settings({ settings }: ISettingSetUpProps) {
           <FontAwesomeIcon icon={faArrowLeft} className="icon-navigation" />
         </Link>
       </button>
-      {
+        <Messages ref={msgs}/>
+
+        {
           settings.isConnected ? (
             <div className="content-settings">
               <PersonalinformationsSettings personalInformations={settings.personalInformations} />
               <hr />
-              <SecuritySettings password={settings.security.password} />
+                <SecuritySettings setAlert={(state: any) => setAlert(state)}/>
               <hr />
             </div>
           ) : null

@@ -92,3 +92,8 @@ hr {
     align-items: center;
     justify-content: center;
 }
+
+.no-container-button {
+    border: rgba(183, 115, 255, 0);
+    background-color: rgba(255, 253, 253, 0);
+}
