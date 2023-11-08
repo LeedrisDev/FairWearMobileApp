@@ -1,11 +1,11 @@
-import React, { useRef, useState } from 'react';
+import React, {useRef, useState} from 'react';
 import 'firebaseui/dist/firebaseui.css';
 import auth from '../../../Utils/Auth';
-import { Alert, Button, Form } from 'react-bootstrap';
-import { createUserWithEmailAndPassword } from 'firebase/auth';
-import { useNavigate } from 'react-router-dom';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
+import {Alert, Button, Form} from 'react-bootstrap';
+import {createUserWithEmailAndPassword} from 'firebase/auth';
+import {useNavigate} from 'react-router-dom';
+import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
+import {faArrowLeft} from '@fortawesome/free-solid-svg-icons';
 import bigLogo from '../../../assets/FairWearBig.png';
 import './SignupPage.css';
 
@@ -59,7 +59,7 @@ export default function SignupPage() {
           signUpFormState.password,
         );
         // handle Phone and username
-        navigate('/Auth');
+        navigate('/Auth?success=true');
       } catch (error) {
         console.error('Error creating user:', error);
         setFormError({
@@ -103,7 +103,7 @@ export default function SignupPage() {
         <Form ref={formRef} noValidate validated={validated} onSubmit={onSubmit}>
 
           <div className={nextPage ? '' : 'signup-form'} hidden={nextPage}>
-            <Form.Group className="form-group" controlId="usernameField">
+            <Form.Group className="form-group">
               <Form.Label>Username</Form.Label>
               <Form.Control
                 id="username"
@@ -117,7 +117,7 @@ export default function SignupPage() {
                 )}
               />
             </Form.Group>
-            <Form.Group className="form-group" controlId="emailField">
+            <Form.Group className="form-group">
               <Form.Label>Email</Form.Label>
               <Form.Control
                 id="email"
@@ -131,7 +131,7 @@ export default function SignupPage() {
                 )}
               />
             </Form.Group>
-            <Form.Group className="form-group" controlId="phoneField">
+            <Form.Group className="form-group">
               <Form.Label>Phone number</Form.Label>
               <Form.Control
                 id="phone"
@@ -151,7 +151,7 @@ export default function SignupPage() {
           </div>
 
           <div className={nextPage ? 'signup-form' : ''} hidden={!nextPage}>
-            <Form.Group className="form-group" controlId="passwordField">
+            <Form.Group className="form-group">
               <Form.Label>Password</Form.Label>
               <Form.Control
                 id="password"
@@ -178,9 +178,6 @@ export default function SignupPage() {
                 )}
                 isValid={signUpFormState.password === signUpFormState.confirmPassword}
               />
-              {/* <Form.Control.Feedback type="invalid"> */}
-              {/*   <span>Passwords don&apos;t match</span> */}
-              {/* </Form.Control.Feedback> */}
             </Form.Group>
             <Button className="button-container signup-button" type="submit">
               SIGN UP

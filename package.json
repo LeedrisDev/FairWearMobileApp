@@ -30,6 +30,7 @@
     "core-js": "^3.23.3",
     "firebase": "^10.5.0",
     "firebaseui": "^6.1.0",
+    "primereact": "^10.0.9",
     "react": "^18.2.0",
     "react-bootstrap": "^2.7.4",
     "react-chartjs-2": "^5.2.0",

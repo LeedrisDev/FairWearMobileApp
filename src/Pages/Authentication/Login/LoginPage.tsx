@@ -1,13 +1,16 @@
-import React, { useRef, useState } from 'react';
+import React, {useRef, useState} from 'react';
 import 'firebaseui/dist/firebaseui.css';
 import auth from '../../../Utils/Auth';
-import { Alert, Button, Form } from 'react-bootstrap';
-import { signInWithEmailAndPassword } from 'firebase/auth';
-import { Link, useNavigate } from 'react-router-dom';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
+import {Button, Form} from 'react-bootstrap';
+import {signInWithEmailAndPassword} from 'firebase/auth';
+import {Link, useNavigate} from 'react-router-dom';
+import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
+import {faArrowLeft} from '@fortawesome/free-solid-svg-icons';
 import bigLogo from '../../../assets/FairWearBig.png';
 import './LoginPage.css';
+import 'primereact/resources/themes/lara-light-indigo/theme.css';
+import {Messages} from 'primereact/messages';
+import {useMountEffect} from 'primereact/hooks';
 
 interface LoginFormStateProps {
   email: string;
@@ -20,6 +23,7 @@ interface ErrorProps {
 
 export default function LoginPage() {
   const navigate = useNavigate();
+  const msgs = React.useRef<Messages>(null);
   const [loginFormState, setLoginState] = useState<LoginFormStateProps>({
     email: '',
     password: '',
@@ -30,6 +34,21 @@ export default function LoginPage() {
   const [formError, setFormError] = useState<ErrorProps>({
     hasError: false,
     message: '',
+  });
+
+  useMountEffect(() => {
+    if (msgs.current) {
+      msgs.current.clear();
+      if (formError.hasError) {
+        msgs.current.show({
+          sticky: true,
+          severity: 'error',
+          summary: 'Error',
+          detail: formError.message,
+          closable: true,
+        });
+      }
+    }
   });
 
   const onSubmit = async (event: React.FormEvent) => {
@@ -65,16 +84,14 @@ export default function LoginPage() {
       <Link className="nav-link back" to="/auth">
         <FontAwesomeIcon icon={faArrowLeft} className="icon-navigation" />
       </Link>
-      <Alert key="warning" variant="warning" hidden={!formError.hasError}>
-        {formError.message}
-      </Alert>
+      <Messages ref={msgs}/>
       <div className="main-container">
         <div className="logo-container">
           <img className="logo" src={bigLogo} alt={bigLogo} />
         </div>
 
         <Form ref={formRef} className="login-form buttons-container" noValidate validated={validated} onSubmit={onSubmit}>
-          <Form.Group className="form-group" controlId="emailField">
+          <Form.Group className="form-group">
             <Form.Label>Email</Form.Label>
             <Form.Control
               id="login"
@@ -88,7 +105,7 @@ export default function LoginPage() {
               )}
             />
           </Form.Group>
-          <Form.Group className="form-group" controlId="passwordField">
+          <Form.Group className="form-group">
             <Form.Label>Password</Form.Label>
             <Form.Control
               id="password"
