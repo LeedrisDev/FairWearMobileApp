@@ -13,7 +13,7 @@ import {
 import '../../App.css';
 import './Settings.css';
 import {signOut} from 'firebase/auth';
-import auth, {passwordReset} from '../../Utils/Auth';
+import auth, {deleteAccount, passwordReset} from '../../Utils/Auth';
 import {Button} from 'react-bootstrap';
 import {Messages} from "primereact/messages";
 import {useMountEffect} from "primereact/hooks";
@@ -53,6 +53,7 @@ function OptionsSettings({ options }: IOptionsProps) {
 }
 
 function SecuritySettings({setAlert}: { setAlert: (state: any) => void }) {
+    const navigate = useNavigate();
 
   return (
     <div className="category-settings">
@@ -71,7 +72,6 @@ function SecuritySettings({setAlert}: { setAlert: (state: any) => void }) {
                   })
                   ?.catch((error) => {
                       console.log(setAlert)
-
                       setAlert({
                           hasError: true,
                           message: error
@@ -79,6 +79,20 @@ function SecuritySettings({setAlert}: { setAlert: (state: any) => void }) {
                   })
           }}>
               <span className="action">Reset password</span>
+          </button>
+          <button className="no-container-button" onClick={() => {
+              deleteAccount()
+                  ?.then(() => {
+                      navigate('/Auth')
+                  })
+                  ?.catch((error) => {
+                      setAlert({
+                          hasError: true,
+                          message: error
+                      })
+                  })
+          }}>
+              <span className="action" style={{color: "RED"}}>Delete Account</span>
           </button>
       </div>
     </div>

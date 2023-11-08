@@ -1,5 +1,5 @@
 import firebaseApp from './FirebaseInit'; // This is the Firebase object from the previous tutorial
-import {getAuth, GoogleAuthProvider, sendPasswordResetEmail} from 'firebase/auth';
+import {deleteUser, getAuth, GoogleAuthProvider, sendPasswordResetEmail} from 'firebase/auth';
 
 const auth = getAuth(firebaseApp);
 export const provider = new GoogleAuthProvider();
@@ -10,5 +10,10 @@ export function passwordReset() {
     if (auth.currentUser) {
         return sendPasswordResetEmail(auth, auth!.currentUser!.email!)
     }
+}
 
+export function deleteAccount() {
+    if (auth.currentUser) {
+        return deleteUser(auth.currentUser);
+    }
 }
