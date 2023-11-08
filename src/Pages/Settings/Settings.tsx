@@ -17,6 +17,7 @@ import auth, {deleteAccount, passwordReset} from '../../Utils/Auth';
 import {Button} from 'react-bootstrap';
 import {Messages} from "primereact/messages";
 import {useMountEffect} from "primereact/hooks";
+import {IPersonalInformations} from "./interfaces";
 
 function SettingField({ field, content }: ISettingFieldProps) {
   return (
@@ -52,16 +53,18 @@ function OptionsSettings({ options }: IOptionsProps) {
   );
 }
 
-function SecuritySettings({setAlert}: { setAlert: (state: any) => void }) {
+function SecuritySettings({
+                              user,
+                              setAlert
+                          }: { user: IPersonalInformations, setAlert: (state: any) => void }) {
     const navigate = useNavigate();
-
   return (
     <div className="category-settings">
       <div className="title-one">Security</div>
       <div className="options">
           {/* <SettingField field="Password" content={""} /> */}
           <button className="no-container-button" onClick={() => {
-              passwordReset()
+              passwordReset(user.email)
                   ?.then(() => {
                       console.log(setAlert)
                       setAlert({
@@ -148,7 +151,8 @@ function Settings({ settings }: ISettingSetUpProps) {
             <div className="content-settings">
               <PersonalinformationsSettings personalInformations={settings.personalInformations} />
               <hr />
-                <SecuritySettings setAlert={(state: any) => setAlert(state)}/>
+                <SecuritySettings user={settings.personalInformations}
+                                  setAlert={(state: any) => setAlert(state)}/>
               <hr />
             </div>
           ) : null

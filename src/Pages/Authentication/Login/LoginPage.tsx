@@ -121,6 +121,9 @@ export default function LoginPage() {
           <Button className="button-container login-button" type="submit">
             <span>LOG IN</span>
           </Button>
+          <Link to={'/Auth/Reset'} className="forgot-password">
+            forgot your password ?
+          </Link>
         </Form>
       </div>
     </div>

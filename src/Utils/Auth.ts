@@ -5,11 +5,8 @@ const auth = getAuth(firebaseApp);
 export const provider = new GoogleAuthProvider();
 export default auth;
 
-export function passwordReset() {
-    console.log("here")
-    if (auth.currentUser) {
-        return sendPasswordResetEmail(auth, auth!.currentUser!.email!)
-    }
+export function passwordReset(email: string) {
+    return sendPasswordResetEmail(auth, email);
 }
 
 export function deleteAccount() {
