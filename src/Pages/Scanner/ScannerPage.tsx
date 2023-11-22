@@ -52,7 +52,7 @@ function ScannerPage() {
   return (
     <div className="ScannerPage" style={{ width: window.innerWidth, height: window.innerHeight }}>
       {
-        product ? (
+        !product ? (
           <ProductPage product={product} onDetected={handleBackButton} />
         ) : (
           <Scanner onDetected={onDetected} />

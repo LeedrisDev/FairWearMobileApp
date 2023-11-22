@@ -24,8 +24,8 @@ function ProductPage({ product, onDetected }: ProductPageProps) {
           <FontAwesomeIcon icon={faArrowLeft} className="icon-navigation" />
         </Link>
       </button>
-      <GlobalInformations globalProductInformations={product} />
-      <ScoreBar informations={product.scores} />
+      <GlobalInformations globalProductInformations={product1} />
+      <ScoreBar informations={product1.scores} />
       <Composition composition={product1.composition} />
       {' '}
       {/* To remove once composition is treated in backend */}

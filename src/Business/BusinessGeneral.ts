@@ -6,13 +6,17 @@ import {
   ISettingSetUp,
 } from '../Pages/Settings/interfaces';
 
-const isConnected = false;
+const isConnected = true;
 
 const profile: IProfileSetUp = {
   isConnected,
   image: '',
   name: 'Marie Maturana',
-  historic: [],
+  historic: [null, null, null],
+  numberOfScan: 10,
+  score: 240,
+  level: 2,
+  todos: [1, 1, 0],
 };
 
 const personalInformations: IPersonalInformations = {
