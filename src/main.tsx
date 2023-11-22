@@ -13,11 +13,25 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import BrandPage from './Pages/Brand/BrandPage';
 
 import './index.css';
-import LevelPage from "./Pages/Levels/LevelsPage";
-import {profile} from "./Business/BusinessGeneral";
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
-  <LevelPage profile={profile} />
+  <React.StrictMode>
+    <BrowserRouter>
+      <div style={{ width: window.innerWidth, height: window.innerHeight }}>
+        <Routes>
+          <Route path="/Home" element={<Home />} />
+          <Route path="/Search" element={<Search />} />
+          <Route path="/" element={<ScannerPage />} />
+          <Route path="/Profile" element={<ProfileSetUp />} />
+          <Route path="/Settings" element={<SettingsSetUp />} />
+          <Route path="/Alternative" element={<ImagesGrid />} />
+          <Route path="/TopBrand/:productId" element={<TopBrandPage />} />
+          <Route path="/Brand/:productId" element={<BrandPage />} />
+        </Routes>
+        <NavigationBar />
+      </div>
+    </BrowserRouter>
+  </React.StrictMode>,
 );
 
 if ('serviceWorker' in navigator) {

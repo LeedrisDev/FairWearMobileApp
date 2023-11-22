@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 import levels from '../../Data/levels';
 import IProfileProps from '../Profile/interfaceProps';
 
@@ -56,7 +56,7 @@ function LevelPage({ profile } : IProfileProps) {
         </div>
         <div className="levelComponent">
           {levels.map((levelTasks, index) => (
-            <div key={`level${index}`}>
+            <div key={`level${index + 1}`}>
               <h2 className="textLevel">
                 Level
                 {' '}
@@ -65,7 +65,7 @@ function LevelPage({ profile } : IProfileProps) {
               <div className="taskComponent">
                 {levelTasks.map((task, taskIndex) => (
                   <div
-                    key={`task${taskIndex}`}
+                    key={`task${taskIndex + 1}`}
                     className="textTask"
                     style={{
                       color:

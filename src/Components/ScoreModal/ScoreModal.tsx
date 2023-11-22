@@ -3,12 +3,8 @@ import '../../App.css';
 import './ScoreModal.css';
 import IProfileProps from '../../Pages/Profile/interfaceProps';
 import levels from '../../Data/levels';
-import { DesignBar } from '../ProductPage/ScoreBar';
 
-interface IPropsDesignBarScore {
-  percent: number
-}
-function DesignBarScore({ percent }: IPropsDesignBarScore) {
+function DesignBarScore() {
   return (
     <div className="design-bar-profil">
       <div className="percent-design-bar-box-profil">
@@ -59,7 +55,7 @@ function ScoreModal({ profile }: IProfileProps) {
         <div className="titleScoreModale">
           {numberOfScan}
           {' '}
-            products scanned
+          products scanned
         </div>
         <div className="levelComponent">
           <div className="titleScoreModale">
@@ -67,12 +63,12 @@ function ScoreModal({ profile }: IProfileProps) {
             {' '}
             { currentLevel}
           </div>
-          <DesignBarScore percent={3} />
+          <DesignBarScore />
         </div>
         <div className="taskComponent">
           {levels[currentLevel - 1].map((task, taskIndex) => (
             <div
-              key={`task${taskIndex}`}
+              key={`task${taskIndex + 1}`}
               className="textScoreModale"
               style={{
                 color:
