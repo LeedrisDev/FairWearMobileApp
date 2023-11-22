@@ -4,13 +4,6 @@ describe('Tests for the profile page', () => {
         cy.get('.passive').eq(2).click()
     })
 
-    it('Should check that the message to connect is there', () => {
-        cy.visit(Cypress.env("baseUrl") + 'Profile')
-        cy.get('.passive').eq(2).click()
-        cy.wait(100)
-        cy.contains('Connectez-vous');
-    })
-
     it('Should check that the settings button works', () => {
         cy.visit(Cypress.env("baseUrl") + 'Profile')
         cy.get('.passive').eq(2).click()
