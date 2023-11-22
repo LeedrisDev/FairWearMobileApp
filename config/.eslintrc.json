@@ -25,7 +25,8 @@
         "import/order" : "off",
         "jsx-a11y/click-events-have-key-events": "off",
         "jsx-a11y/no-static-element-interactions": "off",
-        "no-console": "off"
+        "no-console": "off",
+        "max-len": "off"
     },
     "settings": {
         "import/resolver": {
