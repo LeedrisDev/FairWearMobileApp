@@ -10,7 +10,7 @@ import { ProductModel } from '../../Models/ProductModel';
 import product1 from '../../Tests/ProductExamples';
 import vinted from '../../assets/images/vinted.png';
 import vestiairecollective from '../../assets/images/vestiaire-collective.jpeg';
-import { useState } from 'react';
+import { useState } from "react";
 
 interface ProductPageProps {
   product: ProductModel
@@ -33,7 +33,7 @@ function ProductPage({ product, onDetected }: ProductPageProps) {
       {isAlternative ? (
         <div className="alternatives" style={{ width: window.innerWidth, height: window.innerHeight }}>
           <div className="alternatives-box">
-            <button className="back-product-page-alternative-page" type="button" onClick={showAlternatives}>
+            <button className="back-product-page-alternative-page" type="button" aria-label="next" onClick={showAlternatives}>
               <FontAwesomeIcon icon={faArrowLeft} className="icon-navigation-alternative-page" />
             </button>
 
@@ -53,7 +53,7 @@ function ProductPage({ product, onDetected }: ProductPageProps) {
         </div>
       ) : (
         <div>
-          <button className="back-product-page" type="button" onClick={onDetected}>
+          <button className="back-product-page" type="button" onClick={onDetected} aria-label="next">
             <Link className="nav-link" to="/">
               <FontAwesomeIcon icon={faArrowLeft} className="icon-navigation" />
             </Link>
