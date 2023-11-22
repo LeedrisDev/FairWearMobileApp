@@ -2,11 +2,16 @@ import * as React from 'react';
 import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Link } from 'react-router-dom';
-import product1 from '../../assets/images/produit1.png';
+import vinted from '../../assets/images/glove.jpeg';
 
-import './ImagesGrid.css';
+import './Alternatives.css';
+import { IAlternativeProduct } from '../../Tests/InterfaceProduct';
 
-function ImagesGrid() {
+interface IAlternativesProps {
+  alternatives: IAlternativeProduct[]
+}
+
+function Alternatives({ alternatives }: IAlternativesProps) {
   return (
     <div className="alternatives" style={{ width: window.innerWidth, height: window.innerHeight }}>
       <div className="alternatives-box">
@@ -18,14 +23,14 @@ function ImagesGrid() {
         <div className="title-list-image">Alternatives</div>
         <div className="clothes-alternatives">
           {
-                        Array.from({ length: 5 }, () => (
-                          <div className="clothing-item-alternatives">
-                            <img src={product1} className="item-image-alternatives" alt="" />
-                            <div className="brand-and-grade1 title-four">
-                              <span>Shirt</span>
-                            </div>
-                          </div>
-                        ))
+            Array.from(alternatives).map((alternative) => (
+              <a href={alternative.link} className="clothing-item-alternatives">
+                <img src={vinted} className="item-image-alternatives" alt="" />
+                <div className="brand-and-grade1 title-four">
+                  <span>{alternative.name}</span>
+                </div>
+              </a>
+            ))
                     }
         </div>
       </div>
@@ -33,4 +38,4 @@ function ImagesGrid() {
   );
 }
 
-export default ImagesGrid;
+export default Alternatives;

@@ -1,7 +1,6 @@
 import * as React from 'react';
 import TopBrandPage from './Pages/TopBrand/TopBrandPage';
 import Home from './Pages/Home/Home';
-import ImagesGrid from './Components/Images/ImagesGrid';
 import NavigationBar from './Components/NavigationBar/NavigationBar';
 import ProfileSetUp from './Pages/Profile/ProfileSetUp';
 import ReactDOM from 'react-dom/client';
@@ -24,7 +23,6 @@ ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
           <Route path="/" element={<ScannerPage />} />
           <Route path="/Profile" element={<ProfileSetUp />} />
           <Route path="/Settings" element={<SettingsSetUp />} />
-          <Route path="/Alternative" element={<ImagesGrid />} />
           <Route path="/TopBrand/:productId" element={<TopBrandPage />} />
           <Route path="/Brand/:productId" element={<BrandPage />} />
         </Routes>
