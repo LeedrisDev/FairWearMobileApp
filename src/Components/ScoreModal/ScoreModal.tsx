@@ -18,7 +18,7 @@ function DesignBarScore() {
   );
 }
 
-function createTodoList(currentLevel, numLevels, todosLevel): number[] {
+function createTodoList(currentLevel: number, numLevels: number, todosLevel: number[]): number[] {
   const todoList = [];
 
   for (let i = 0; i < numLevels; i += 1) {

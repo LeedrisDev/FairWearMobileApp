@@ -12,7 +12,7 @@ const profile: IProfileSetUp = {
   isConnected,
   image: '',
   name: 'Marie Maturana',
-  historic: [null, null, null],
+  historic: [],
   numberOfScan: 10,
   score: 240,
   level: 2,
