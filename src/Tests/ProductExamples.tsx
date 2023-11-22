@@ -1,5 +1,5 @@
 import { IProductInformations } from './InterfaceProduct';
-import gloves from '../assets/glove.jpeg';
+import gloves from '../assets/images/glove.jpeg';
 
 const product1: IProductInformations = {
   name: 'Black glove HardFace',

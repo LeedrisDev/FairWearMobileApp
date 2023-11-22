@@ -8,8 +8,8 @@ import ScoreBar from '../../Components/ProductPage/ScoreBar';
 import './ProductPage.css';
 import { ProductModel } from '../../Models/ProductModel';
 import product1 from '../../Tests/ProductExamples';
-import vinted from '../../assets/vinted.png';
-import vestiairecollective from '../../assets/vestiaire-collective.jpeg';
+import vinted from '../../assets/images/vinted.png';
+import vestiairecollective from '../../assets/images/vestiaire-collective.jpeg';
 import { useState } from 'react';
 
 interface ProductPageProps {
