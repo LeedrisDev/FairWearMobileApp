@@ -1,10 +1,10 @@
 import * as React from 'react';
 import { faGear } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import ImageProfile from '../../assets/profilePic.jpg';
+import ImageProfile from '../../assets/images/profilePic.jpg';
 import IProfileProps from './interfaceProps';
 import { Link } from 'react-router-dom';
-import Unknow from '../../assets/unknown.jpeg';
+import Unknow from '../../assets/images/unknown.jpeg';
 
 import '../../App.css';
 import './Profile.css';
@@ -62,7 +62,7 @@ function ConnectedProfile({ profile }: IProfileProps) {
 function Profile({ profile }: IProfileProps) {
   return (
     <div className="App">
-      <button className="settings" type="button">
+      <button className="settings" type="button" aria-label="settings">
         <Link className="nav-link" to="/Settings">
           <FontAwesomeIcon icon={faGear} className="icon-navigation" />
         </Link>

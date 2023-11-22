@@ -1,8 +1,8 @@
 import * as React from 'react';
-import vestiairecollective from '../../assets/vestiaire-collective.jpeg';
-import vinted from '../../assets/vinted.png';
 import { IAlternativeProduct } from '../../Tests/InterfaceProduct';
 import { Link } from 'react-router-dom';
+import vestiairecollective from '../../assets/images/vestiaire-collective.jpeg';
+import vinted from '../../assets/images/vinted.png';
 
 import './Alternatives.css';
 

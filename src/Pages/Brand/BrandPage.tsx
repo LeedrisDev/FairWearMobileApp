@@ -87,7 +87,7 @@ function BrandPage() {
       {
         data && (
         <div className="informations-brand">
-          <button className="back-product-page" type="button">
+          <button className="back-product-page" type="button" aria-label="Back to Previous Page">
             <Link className="nav-link" to="/Search">
               <FontAwesomeIcon icon={faArrowLeft} className="icon-navigation" />
             </Link>
