@@ -70,7 +70,6 @@
 .category {
     flex-direction: column;
     gap: 12px;
-    margin: 0 15px;
     width: 91%;
 }
 

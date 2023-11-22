@@ -8,6 +8,8 @@ import Unknow from '../../assets/images/unknown.jpeg';
 
 import '../../App.css';
 import './Profile.css';
+import HistoryModal from '../../Components/HistoryModal/HistoryModal';
+import ScoreModal from '../../Components/ScoreModal/ScoreModal';
 
 function UnConnectedProfile() {
   return (
@@ -44,16 +46,8 @@ function ConnectedProfile({ profile }: IProfileProps) {
         </div>
       </div>
       <div className="content-profile">
-        <div className="category">
-          <div className="box-header">
-            <span className="title-two">Statistics And Goals</span>
-          </div>
-          <div className="box">
-            <div className="coming-soon">
-              Coming soon
-            </div>
-          </div>
-        </div>
+        <HistoryModal history={profile.historic} />
+        <ScoreModal profile={profile} />
       </div>
     </div>
   );

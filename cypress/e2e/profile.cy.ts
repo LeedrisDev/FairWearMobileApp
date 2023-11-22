@@ -4,7 +4,6 @@ describe('Tests for the profile page', () => {
         cy.get('.passive').eq(2).click()
     })
 
-
     it('Should check that the settings button works', () => {
         cy.visit(Cypress.env("baseUrl") + 'Profile')
         cy.get('.passive').eq(2).click()

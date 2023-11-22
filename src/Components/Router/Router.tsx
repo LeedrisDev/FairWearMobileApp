@@ -12,6 +12,10 @@ function Router() {
     image: 'profile-image-url',
     name: 'John Doe',
     historic: [],
+    todos: [0, 0, 0],
+    level: 7,
+    score: 123,
+    numberOfScan: 12,
   };
 
   return (
