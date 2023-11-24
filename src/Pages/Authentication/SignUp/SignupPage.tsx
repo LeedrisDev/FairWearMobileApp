@@ -1,11 +1,11 @@
-import React, {useRef, useState} from 'react';
+import React, { useRef, useState } from 'react';
 import 'firebaseui/dist/firebaseui.css';
 import auth from '../../../Utils/Auth';
-import {Alert, Button, Form} from 'react-bootstrap';
-import {createUserWithEmailAndPassword} from 'firebase/auth';
-import {useNavigate} from 'react-router-dom';
-import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
-import {faArrowLeft} from '@fortawesome/free-solid-svg-icons';
+import { Alert, Button, Form } from 'react-bootstrap';
+import { createUserWithEmailAndPassword } from 'firebase/auth';
+import { useNavigate } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
 import bigLogo from '../../../assets/FairWearBig.png';
 import './SignupPage.css';
 

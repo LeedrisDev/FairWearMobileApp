@@ -1,16 +1,16 @@
-import React, {useRef, useState} from 'react';
+import React, { useRef, useState } from 'react';
 import 'firebaseui/dist/firebaseui.css';
 import auth from '../../../Utils/Auth';
-import {Button, Form} from 'react-bootstrap';
-import {signInWithEmailAndPassword} from 'firebase/auth';
-import {Link, useNavigate} from 'react-router-dom';
-import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
-import {faArrowLeft} from '@fortawesome/free-solid-svg-icons';
+import { Button, Form } from 'react-bootstrap';
+import { signInWithEmailAndPassword } from 'firebase/auth';
+import { Link, useNavigate } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
 import bigLogo from '../../../assets/FairWearBig.png';
 import './LoginPage.css';
 import 'primereact/resources/themes/lara-light-indigo/theme.css';
-import {Messages} from 'primereact/messages';
-import {useMountEffect} from 'primereact/hooks';
+import { Messages } from 'primereact/messages';
+import { useMountEffect } from 'primereact/hooks';
 
 interface LoginFormStateProps {
   email: string;
@@ -84,7 +84,7 @@ export default function LoginPage() {
       <Link className="nav-link back" to="/auth">
         <FontAwesomeIcon icon={faArrowLeft} className="icon-navigation" />
       </Link>
-      <Messages ref={msgs}/>
+      <Messages ref={msgs} />
       <div className="main-container">
         <div className="logo-container">
           <img className="logo" src={bigLogo} alt={bigLogo} />
@@ -121,7 +121,7 @@ export default function LoginPage() {
           <Button className="button-container login-button" type="submit">
             <span>LOG IN</span>
           </Button>
-          <Link to={'/Auth/Reset'} className="forgot-password">
+          <Link to="/Auth/Reset" className="forgot-password">
             forgot your password ?
           </Link>
         </Form>

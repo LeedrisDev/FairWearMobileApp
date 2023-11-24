@@ -5,11 +5,11 @@ import ImagesGrid from './Components/Images/ImagesGrid';
 import NavigationBar from './Components/NavigationBar/NavigationBar';
 import ProfileSetUp from './Pages/Profile/ProfileSetUp';
 import ReactDOM from 'react-dom/client';
-import {registerSW} from 'virtual:pwa-register';
+import { registerSW } from 'virtual:pwa-register';
 import ScannerPage from './Pages/Scanner/ScannerPage';
 import Search from './Pages/Search/Search';
 import SettingsSetUp from './Pages/Settings/SettingsSetUp';
-import {BrowserRouter, Route, Routes} from 'react-router-dom';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import BrandPage from './Pages/Brand/BrandPage';
 import 'firebase/auth';
 import './index.css';
@@ -18,7 +18,7 @@ import SignupPage from './Pages/Authentication/SignUp/SignupPage';
 import LoginPage from './Pages/Authentication/Login/LoginPage';
 import AuthenticationPage from './Pages/Authentication/AuthenticationPage';
 import StartPage from './Pages/StartPage/StartPage';
-import PasswordForgotPage from "./Pages/Authentication/PasswordForgot/PasswordForgotPage";
+import PasswordForgotPage from './Pages/Authentication/PasswordForgot/PasswordForgotPage';
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
@@ -38,7 +38,7 @@ ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
             <Route path="/Auth" element={<AuthenticationPage />} />
             <Route path="/Signup" element={<SignupPage />} />
             <Route path="/Login" element={<LoginPage />} />
-            <Route path="/Auth/Reset" element={<PasswordForgotPage/>}/>
+            <Route path="/Auth/Reset" element={<PasswordForgotPage />} />
           </Routes>
           <NavigationBar />
         </div>

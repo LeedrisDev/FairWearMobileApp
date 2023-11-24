@@ -2,12 +2,13 @@ import * as React from 'react';
 import { faGear } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import ImageProfile from '../../assets/profilePic.jpg';
-import IProfileProps from './interfaceProps';
 import { Link } from 'react-router-dom';
 import Unknow from '../../assets/unknown.jpeg';
 
 import '../../App.css';
 import './Profile.css';
+import { useContext } from 'react';
+import { AuthContext } from '../../Contexts/AuthContext';
 
 function UnConnectedProfile() {
   return (
@@ -15,7 +16,9 @@ function UnConnectedProfile() {
       <div>
         <img src={Unknow} className="picture-unconnected" alt="Me" />
         <div className="title-box-unconnected">
-          <div className="title-unconnected">Connectez-vous</div>
+          <Link className="nav-link" to="/">
+            <div className="title-unconnected">Connectez-vous</div>
+          </Link>
         </div>
       </div>
       <div>
@@ -34,13 +37,13 @@ function UnConnectedProfile() {
   );
 }
 
-function ConnectedProfile({ profile }: IProfileProps) {
+function ConnectedProfile({ profile }: any) {
   return (
     <div>
       <div>
         <img src={ImageProfile} className="picture-connected" alt="Me" />
         <div className="title-box-unconnected">
-          <div className="title-unconnected">{profile.name}</div>
+          <div className="title-unconnected">{profile.displayName}</div>
         </div>
       </div>
       <div className="content-profile">
@@ -59,7 +62,9 @@ function ConnectedProfile({ profile }: IProfileProps) {
   );
 }
 
-function Profile({ profile }: IProfileProps) {
+function Profile() {
+  const currentUser = useContext(AuthContext);
+
   return (
     <div className="App">
       <button className="settings" type="button">
@@ -69,7 +74,7 @@ function Profile({ profile }: IProfileProps) {
       </button>
       <div>
         {
-            profile.isConnected ? <ConnectedProfile profile={profile} /> : <UnConnectedProfile />
+            currentUser ? <ConnectedProfile profile={currentUser} /> : <UnConnectedProfile />
         }
       </div>
     </div>

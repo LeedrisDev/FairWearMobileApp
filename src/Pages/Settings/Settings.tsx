@@ -1,23 +1,23 @@
 import * as React from 'react';
-import {faArrowLeft} from '@fortawesome/free-solid-svg-icons';
-import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
+import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import 'primereact/resources/themes/lara-light-indigo/theme.css';
-import {Link, useNavigate} from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import {
-    IOptionsProps,
-    IPersonalInformationsProps,
-    ISettingFieldProps,
-    ISettingSetUpProps,
+  IOptionsProps,
+  IPersonalInformationsProps,
+  ISettingFieldProps,
+  ISettingSetUpProps,
 } from './interfacesProps';
 
 import '../../App.css';
 import './Settings.css';
-import {signOut} from 'firebase/auth';
-import auth, {deleteAccount, passwordReset} from '../../Utils/Auth';
-import {Button} from 'react-bootstrap';
-import {Messages} from "primereact/messages";
-import {useMountEffect} from "primereact/hooks";
-import {IPersonalInformations} from "./interfaces";
+import { signOut } from 'firebase/auth';
+import auth, { deleteAccount, passwordReset } from '../../Utils/Auth';
+import { Button } from 'react-bootstrap';
+import { Messages } from 'primereact/messages';
+import { useMountEffect } from 'primereact/hooks';
+import { IPersonalInformations } from './interfaces';
 
 function SettingField({ field, content }: ISettingFieldProps) {
   return (
@@ -46,7 +46,7 @@ function OptionsSettings({ options }: IOptionsProps) {
     <div className="category-settings">
       <div className="title-one">Options</div>
       <div className="options">
-          <SettingField field="Language" content={options.language}/>
+        <SettingField field="Language" content={options.language} />
         <SettingField field="Theme" content={options.theme} />
       </div>
     </div>
@@ -54,49 +54,56 @@ function OptionsSettings({ options }: IOptionsProps) {
 }
 
 function SecuritySettings({
-                              user,
-                              setAlert
-                          }: { user: IPersonalInformations, setAlert: (state: any) => void }) {
-    const navigate = useNavigate();
+  user,
+  setAlert,
+}: { user: IPersonalInformations, setAlert: (state: any) => void }) {
+  const navigate = useNavigate();
   return (
     <div className="category-settings">
       <div className="title-one">Security</div>
       <div className="options">
-          {/* <SettingField field="Password" content={""} /> */}
-          <button className="no-container-button" onClick={() => {
-              passwordReset(user.email)
-                  ?.then(() => {
-                      console.log(setAlert)
-                      setAlert({
-                          hasError: false,
-                          message: "Password reset email sent!"
-                      })
-
-                  })
-                  ?.catch((error) => {
-                      console.log(setAlert)
-                      setAlert({
-                          hasError: true,
-                          message: error
-                      })
-                  })
-          }}>
-              <span className="action">Reset password</span>
-          </button>
-          <button className="no-container-button" onClick={() => {
-              deleteAccount()
-                  ?.then(() => {
-                      navigate('/Auth')
-                  })
-                  ?.catch((error) => {
-                      setAlert({
-                          hasError: true,
-                          message: error
-                      })
-                  })
-          }}>
-              <span className="action" style={{color: "RED"}}>Delete Account</span>
-          </button>
+        {/* <SettingField field="Password" content={""} /> */}
+        <button
+          type="button"
+          className="no-container-button"
+          onClick={() => {
+            passwordReset(user.email)
+              ?.then(() => {
+                console.log(setAlert);
+                setAlert({
+                  hasError: false,
+                  message: 'Password reset email sent!',
+                });
+              })
+              ?.catch((error) => {
+                console.log(setAlert);
+                setAlert({
+                  hasError: true,
+                  message: error,
+                });
+              });
+          }}
+        >
+          <span className="action">Reset password</span>
+        </button>
+        <button
+          type="button"
+          className="no-container-button"
+          onClick={() => {
+            deleteAccount()
+              ?.then(() => {
+                navigate('/Auth');
+              })
+              ?.catch((error) => {
+                setAlert({
+                  hasError: true,
+                  message: error,
+                });
+              });
+          }}
+        >
+          <span className="action" style={{ color: 'RED' }}>Delete Account</span>
+        </button>
       </div>
     </div>
   );
@@ -104,37 +111,37 @@ function SecuritySettings({
 
 function Settings({ settings }: ISettingSetUpProps) {
   const navigate = useNavigate();
-    const msgs = React.useRef<Messages>(null);
+  const msgs = React.useRef<Messages>(null);
 
-    const [alert, setAlert] = React.useState({
-        hasError: false,
-        message: ""
-    })
-    useMountEffect(() => {
-        if (msgs.current) {
-            msgs.current.clear();
-            if (alert.hasError) {
-                msgs.current.show({
-                    sticky: true,
-                    severity: 'error',
-                    summary: 'Error',
-                    detail: alert.message,
-                    closable: true,
-                });
-            } else if (alert.message !== "") {
-                msgs.current.show({
-                    sticky: true,
-                    severity: 'success',
-                    summary: 'Success',
-                    detail: alert.message,
-                    closable: true,
-                });
-            }
-        }
-    });
+  const [alert, setAlert] = React.useState({
+    hasError: false,
+    message: '',
+  });
+  useMountEffect(() => {
+    if (msgs.current) {
+      msgs.current.clear();
+      if (alert.hasError) {
+        msgs.current.show({
+          sticky: true,
+          severity: 'error',
+          summary: 'Error',
+          detail: alert.message,
+          closable: true,
+        });
+      } else if (alert.message !== '') {
+        msgs.current.show({
+          sticky: true,
+          severity: 'success',
+          summary: 'Success',
+          detail: alert.message,
+          closable: true,
+        });
+      }
+    }
+  });
   const handleSignOut = () => {
     signOut(auth).then(() => {
-      navigate('/');
+      navigate('/Profile');
     });
   };
   return (
@@ -144,15 +151,17 @@ function Settings({ settings }: ISettingSetUpProps) {
           <FontAwesomeIcon icon={faArrowLeft} className="icon-navigation" />
         </Link>
       </button>
-        <Messages ref={msgs}/>
+      <Messages ref={msgs} />
 
-        {
+      {
           settings.isConnected ? (
             <div className="content-settings">
               <PersonalinformationsSettings personalInformations={settings.personalInformations} />
               <hr />
-                <SecuritySettings user={settings.personalInformations}
-                                  setAlert={(state: any) => setAlert(state)}/>
+              <SecuritySettings
+                user={settings.personalInformations}
+                setAlert={(state: any) => setAlert(state)}
+              />
               <hr />
             </div>
           ) : null
@@ -160,8 +169,11 @@ function Settings({ settings }: ISettingSetUpProps) {
       <div className="content-settings">
         <OptionsSettings options={settings.options} />
       </div>
-        <Button className="button-container logout-button" onClick={handleSignOut}
-                hidden={!settings.isConnected}>
+      <Button
+        className="button-container logout-button"
+        onClick={handleSignOut}
+        hidden={!settings.isConnected}
+      >
         <span>Sign out</span>
       </Button>
 

@@ -43,7 +43,7 @@ function NavigationBar() {
       </div>
 
       <div className="navbar-icon">
-        <Link className="nav-link" to="/">
+        <Link className="nav-link" to="/Scan">
           <button
             type="button"
             className={`${activeIcon === 'scan' ? 'active' : 'passive'}`}
