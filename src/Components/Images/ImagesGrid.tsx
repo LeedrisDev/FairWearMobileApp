@@ -10,7 +10,7 @@ function ImagesGrid() {
   return (
     <div className="alternatives" style={{ width: window.innerWidth, height: window.innerHeight }}>
       <div className="alternatives-box">
-        <button className="back-product-page" type="button">
+        <button className="back-product-page" type="button" aria-label="Go back to product">
           <Link className="nav-link" to="/">
             <FontAwesomeIcon icon={faArrowLeft} className="icon-navigation" />
           </Link>

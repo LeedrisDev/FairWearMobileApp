@@ -67,7 +67,7 @@ function Profile() {
 
   return (
     <div className="App">
-      <button className="settings" type="button">
+      <button className="settings" type="button" aria-label="Go back">
         <Link className="nav-link" to="/Settings">
           <FontAwesomeIcon icon={faGear} className="icon-navigation" />
         </Link>

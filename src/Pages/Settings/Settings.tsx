@@ -146,7 +146,7 @@ function Settings({ settings }: ISettingSetUpProps) {
   };
   return (
     <div className="settings-page" style={{ width: window.innerWidth, height: window.innerHeight }}>
-      <button className="back" type="button">
+      <button className="back" type="button" aria-label="Go back">
         <Link className="nav-link" to="/Profile">
           <FontAwesomeIcon icon={faArrowLeft} className="icon-navigation" />
         </Link>
