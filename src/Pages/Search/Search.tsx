@@ -65,8 +65,6 @@ function Search() {
           ))
         }
       </div>
-
-      <div />
     </div>
   );
 }

@@ -1,7 +1,5 @@
 import * as React from 'react';
 import { useEffect, useState } from 'react';
-import { faArrowLeft, faEarth } from '@fortawesome/free-solid-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Link, useParams } from 'react-router-dom';
 
 import './BrandPage.css';
@@ -21,28 +19,29 @@ function Score({ globalScore }: IScoreProps) {
 
   return (
     <div className="score-information-home">
+      <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'></link>
       {
-          Array.from({ length: 5 }, (_, i) => {
-            if (i < score) {
-              return (
-                <div className="scoreIconBrand" key={i}>
-                  <FontAwesomeIcon className="coloredIcon1-home" icon={faEarth} />
-                </div>
-              );
-            }
-
+        Array.from({ length: 5 }, (_, i) => {
+          if (i < score) {
             return (
-              <div className="scoreIconBrand" key={i}>
-                <FontAwesomeIcon className="not-colored-icon1-home" icon={faEarth} />
+              <div key={i}>
+                <i className='bx bx-world colored-icon-home'></i>
               </div>
             );
-          })
-        }
+          }
+
+          return (
+            <div key={i}>
+              <i className='bx bx-world uncolored-icon-home'></i>
+            </div>
+          );
+        })
+      }
     </div>
   );
 }
 
-function getGlobalScore(total: number) : number {
+function getGlobalScore(total: number): number {
   return Math.round(total / 3);
 }
 function GlobalInformationsBrand({ globalBrandInformations }: ITopBrandInformationsProps) {
@@ -52,20 +51,10 @@ function GlobalInformationsBrand({ globalBrandInformations }: ITopBrandInformati
   const globalScore = getGlobalScore(globalBrandInformations.environmentRating + globalBrandInformations.animalRating + globalBrandInformations.peopleRating);
 
   return (
-    <div className="global-information-brand">
-      <div className="image-box2">
-        <div className="image-box3">
-
-          <div className="informations-box1">
-            <p className="name1-home">{name}</p>
-            <div>
-              { country }
-            </div>
-
-            <Score globalScore={globalScore} />
-          </div>
-        </div>
-      </div>
+    <div className="header">
+      <div className="title-one">{name}</div>
+      <div style={{ marginTop: 12 }}>{country}</div>
+      <Score globalScore={globalScore} />
     </div>
   );
 }
@@ -83,34 +72,35 @@ function BrandPage() {
   }, []);
 
   return (
-    <div className="brandPage" style={{ width: window.innerWidth, height: window.innerHeight }}>
+    <div className="brandPage">
+      <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'></link>
       {
         data && (
-        <div className="informations-brand">
-          <button className="back-product-page" type="button" aria-label="Back to Previous Page">
-            <Link className="nav-link" to="/Search">
-              <FontAwesomeIcon icon={faArrowLeft} className="icon-navigation" />
-            </Link>
-          </button>
+          <div>
+            <button className="back-product-page" type="button" aria-label="Back to Previous Page">
+              <Link className="nav-link" to="/Search">
+                <i className='bx bx-left-arrow-alt'></i>
+              </Link>
+            </button>
 
-          <GlobalInformationsBrand globalBrandInformations={data} />
+            <div className='brand-content'>
+              <GlobalInformationsBrand globalBrandInformations={data} />
 
-          <div className="description-home-box">
-            {
-            Array.from({ length: 3 }, (_, i) => (
-              <span>
-                { `${data.categories[i]} - `}
-              </span>
-            ))
-}
-          </div>
+              <div className="brand-specialties">
+                {
+                  Array.from({ length: 3 }, (_, i) => (
+                    <span>
+                      {`${data.categories[i]}-`}
+                    </span>
+                  ))
+                }
+              </div>
 
-          <div className="description-home-box">
-            <div className="description-home">
-              { data.ratingDescription }
+              <div className="brand-description">
+                {data.ratingDescription}
+              </div>
             </div>
           </div>
-        </div>
         )
       }
     </div>
