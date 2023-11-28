@@ -29,6 +29,7 @@
 .active,
 .passive {
     display: flex;
+    width: 50px;
     height: fit-content;
     padding: 6px;
     flex-direction: column;

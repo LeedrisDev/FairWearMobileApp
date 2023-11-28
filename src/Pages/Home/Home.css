@@ -157,12 +157,7 @@
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    gap: 8px;
-}
-
-.icon-home-subtitle {
-    width: 20px;
-    height: 20px;
+    gap: 4px;
 }
 
 .top-brands-slider {

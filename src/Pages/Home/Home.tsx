@@ -2,9 +2,6 @@ import './Home.css';
 import * as React from 'react';
 import ImageComponent from '../../Components/Images/Image';
 import { Link } from 'react-router-dom';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faEarth, faPaperclip } from '@fortawesome/free-solid-svg-icons';
-import { faStar } from '@fortawesome/free-regular-svg-icons';
 import topBrands from '../TopBrand/constantes';
 import tips from '../../assets/tips-data/tips-list';
 
@@ -43,14 +40,15 @@ function TipOfTheDay() {
 function Home() {
   return (
     <div className="home">
+      <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'></link>
       <div className="header-home">
-        <FontAwesomeIcon icon={faEarth} className="logo-icon-home" />
+        <i className='bx bx-world fairwear'></i>
         <div className="fairwear">FairWear</div>
       </div>
 
       <div className="content-box">
         <div className="home-subtitle-box">
-          <FontAwesomeIcon icon={faPaperclip} className="icon-home-subtitle" />
+          <i className='bx bx-bulb icon'></i>
           <div className="title-two">Tip of the day</div>
         </div>
         <TipOfTheDay />
@@ -58,8 +56,8 @@ function Home() {
 
       <div className="content-box">
         <div className="home-subtitle-box">
-          <FontAwesomeIcon icon={faStar} className="icon-home-subtitle" />
-          <div className="title-two">Top Brands</div>
+          <i className='bx bx-star icon'></i>
+          <div className="title-two">Top brands</div>
         </div>
         <div className="top-brands-slider">
           <SliderBrand />
