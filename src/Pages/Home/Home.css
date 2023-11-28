@@ -2,7 +2,8 @@
 
 .home {
     margin: 16px;
-    gap: 22px;
+    margin-bottom: 85px;
+    gap: 26px;
     display: flex;
     flex-direction: column;
 }
