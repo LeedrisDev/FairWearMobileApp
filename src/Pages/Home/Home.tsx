@@ -1,6 +1,5 @@
 import './Home.css';
 import * as React from 'react';
-import logo from '../../assets/images/FairWear.png';
 import ImageComponent from '../../Components/Images/Image';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -13,14 +12,14 @@ function SliderBrand() {
   return (
     <div className="brands-grid">
       {
-      Array.from({ length: 5 }, (_, i) => (
-        <div className="brand-item-box">
-          <Link to={`/TopBrand/${encodeURIComponent(i)}`}>
-            <ImageComponent image={topBrands[i].image} />
-          </Link>
-        </div>
-      ))
-}
+        Array.from({ length: 5 }, (_, i) => (
+          <div className="brand-item-box">
+            <Link to={`/TopBrand/${encodeURIComponent(i)}`}>
+              <ImageComponent image={topBrands[i].image} />
+            </Link>
+          </div>
+        ))
+      }
     </div>
   );
 }
@@ -31,14 +30,12 @@ function TipOfTheDay() {
   return (
     <div className="tips-text-box">
       <div className="tips-title">{tips[index].title}</div>
-      <p className="tips-text">
+      <div className="tips-text">
         {tips[index].tip}
-      </p>
-      <div className="tips-image-box">
-        {
-                    tips[index].image ? <img src={tips[index].image} className="tips-image" alt="Item" /> : null
-                }
       </div>
+      {
+        tips[index].image ? <img src={tips[index].image} className="tips-image" alt="Item" /> : null
+      }
     </div>
   );
 }
@@ -48,24 +45,21 @@ function Home() {
     <div className="home">
       <div className="header-home">
         <FontAwesomeIcon icon={faEarth} className="logo-icon-home" />
-        <div className="hearder-home-logo-box">
-          <img src={logo} alt={logo} />
+        <div className="fairwear">FairWear</div>
+      </div>
+
+      <div className="content-box">
+        <div className="home-subtitle-box">
+          <FontAwesomeIcon icon={faPaperclip} className="icon-home-subtitle" />
+          <div className="title-two">Tip of the day</div>
         </div>
-      </div>
-
-      <div className="home-subtitle-box">
-        <FontAwesomeIcon icon={faPaperclip} className="icon-home-subtitle1" />
-        <div className="home-subtitle">Tip of the day</div>
-      </div>
-
-      <div className="tips">
         <TipOfTheDay />
       </div>
 
-      <div className="box-top-brand">
+      <div className="content-box">
         <div className="home-subtitle-box">
-          <FontAwesomeIcon icon={faStar} className="icon-home-subtitle2" />
-          <div className="home-subtitle">Top Brands</div>
+          <FontAwesomeIcon icon={faStar} className="icon-home-subtitle" />
+          <div className="title-two">Top Brands</div>
         </div>
         <div className="top-brands-slider">
           <SliderBrand />

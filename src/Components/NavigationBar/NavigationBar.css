@@ -7,7 +7,7 @@
     height: 10%;
     width: 100%;
 
-    position: absolute;
+    position: fixed;
     bottom: 0;
     border-top: 1px solid #E1E1E1;
     background-color: white;
@@ -69,10 +69,10 @@
     width: 75%;
     align-self: center;
     border-width: 0px;
-    background-color: rgba(87,86,86,0);
+    background-color: rgba(87, 86, 86, 0);
 }
 
-.nav-link  {
+.nav-link {
     display: flex;
     text-decoration: none;
     height: 90%;
