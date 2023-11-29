@@ -1,6 +1,4 @@
 import * as React from 'react';
-import { faGear } from '@fortawesome/free-solid-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import ImageProfile from '../../assets/images/profilePic.jpg';
 import IProfileProps from './interfaceProps';
 import { Link } from 'react-router-dom';
