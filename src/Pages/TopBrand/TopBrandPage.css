@@ -1,9 +1,11 @@
 .brandPage {
     margin: 0 16px;
-    justify-content: center;
     overflow-x: unset;
     overflow-y: scroll;
     z-index: 10;
+    position: absolute;
+    height: 100%;
+    background-color: white;
 }
 
 .back-product-page {
@@ -180,6 +182,7 @@
     flex-direction: column;
     gap: 12px;
     margin-top: 58px;
+    margin-bottom: 16px;
 }
 
 .colored-icon-home {
