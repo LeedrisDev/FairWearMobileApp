@@ -1,6 +1,4 @@
 import * as React from 'react';
-import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { ISecurityInformations } from './interfaces';
 import { Link } from 'react-router-dom';
 import {
@@ -25,7 +23,7 @@ function SettingField({ field, content }: ISettingFieldProps) {
 function PersonalinformationsSettings({ personalInformations }: IPersonalInformationsProps) {
   return (
     <div className="category-settings">
-      <div className="title-one">Personal Information</div>
+      <div className="title-one">Personal information</div>
       <div className="options">
         <SettingField field="Username" content={personalInformations.username} />
         <SettingField field="Email address" content={personalInformations.email} />
@@ -40,7 +38,6 @@ function OptionsSettings({ options }: IOptionsProps) {
     <div className="category-settings">
       <div className="title-one">Options</div>
       <div className="options">
-        <SettingField field="Language" content={options.langage} />
         <SettingField field="Theme" content={options.theme} />
       </div>
     </div>
@@ -60,24 +57,29 @@ function SecuritySettings({ password }: ISecurityInformations) {
 
 function Settings({ settings }: ISettingSetUpProps) {
   return (
-    <div className="settings-page" style={{ width: window.innerWidth, height: window.innerHeight }}>
-      <button className="back" type="button" aria-label="Back to Previous Page">
-        <Link className="nav-link" to="/Profile">
-          <FontAwesomeIcon icon={faArrowLeft} className="icon-navigation" />
-        </Link>
-      </button>
-      {
-          settings.isConnected ? (
-            <div className="content-settings">
-              <PersonalinformationsSettings personalInformations={settings.personalInformations} />
-              <hr />
-              <SecuritySettings password={settings.security.password} />
-              <hr />
-            </div>
-          ) : null
-        }
-      <div className="content-settings">
-        <OptionsSettings options={settings.options} />
+    <div className="settings-page">
+      <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+      <div>
+        <button className="back" type="button" aria-label="Back to Previous Page">
+          <Link className="nav-link" to="/Profile">
+            <i className="bx bx-left-arrow-alt" />
+          </Link>
+        </button>
+        <div className="settings-content">
+          {
+            settings.isConnected ? (
+              <div className="content-settings">
+                <PersonalinformationsSettings personalInformations={settings.personalInformations} />
+                <hr />
+                <SecuritySettings password={settings.security.password} />
+                <hr />
+              </div>
+            ) : null
+          }
+          <div className="content-settings">
+            <OptionsSettings options={settings.options} />
+          </div>
+        </div>
       </div>
     </div>
   );

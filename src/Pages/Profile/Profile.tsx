@@ -1,6 +1,4 @@
 import * as React from 'react';
-import { faGear } from '@fortawesome/free-solid-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import ImageProfile from '../../assets/images/profilePic.jpg';
 import IProfileProps from './interfaceProps';
 import { Link } from 'react-router-dom';
@@ -16,8 +14,8 @@ function UnConnectedProfile() {
     <div>
       <div>
         <img src={Unknow} className="picture-unconnected" alt="Me" />
-        <div className="title-box-unconnected">
-          <div className="title-unconnected">Connectez-vous</div>
+        <div>
+          <div className="title-one">Connectez-vous</div>
         </div>
       </div>
       <div>
@@ -38,14 +36,12 @@ function UnConnectedProfile() {
 
 function ConnectedProfile({ profile }: IProfileProps) {
   return (
-    <div>
-      <div>
+    <div className="profile-content">
+      <div className="header">
         <img src={ImageProfile} className="picture-connected" alt="Me" />
-        <div className="title-box-unconnected">
-          <div className="title-unconnected">{profile.name}</div>
-        </div>
+        <div className="title-one">{profile.name}</div>
       </div>
-      <div className="content-profile">
+      <div className="history-and-progress">
         <HistoryModal history={profile.historic} />
         <ScoreModal profile={profile} />
       </div>
@@ -55,17 +51,16 @@ function ConnectedProfile({ profile }: IProfileProps) {
 
 function Profile({ profile }: IProfileProps) {
   return (
-    <div className="App">
-      <button className="settings" type="button" aria-label="settings">
-        <Link className="nav-link" to="/Settings">
-          <FontAwesomeIcon icon={faGear} className="icon-navigation" />
-        </Link>
-      </button>
-      <div>
-        {
-            profile.isConnected ? <ConnectedProfile profile={profile} /> : <UnConnectedProfile />
-        }
-      </div>
+    <div className="profile">
+      <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+      <Link to="/Settings">
+        <button className="settings" type="button" aria-label="settings">
+          <i className="bx bx-cog icon" />
+        </button>
+      </Link>
+      {
+        profile.isConnected ? <ConnectedProfile profile={profile} /> : <UnConnectedProfile />
+      }
     </div>
   );
 }

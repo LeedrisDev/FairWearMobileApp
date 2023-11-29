@@ -1,10 +1,6 @@
 import * as React from 'react';
 import { Link } from 'react-router-dom';
 import { useState } from 'react';
-import {
-  FaBarcode, FaHome, FaSearch, FaUser,
-} from 'react-icons/fa';
-
 import './NavigationBar.css';
 
 function NavigationBar() {
@@ -16,53 +12,54 @@ function NavigationBar() {
 
   return (
     <div className="navigation-bar">
-      <div className="navbar-icon">
-        <Link className="nav-link" to="/Home">
+      <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+      <div className={`${activeIcon === 'home' ? 'active' : 'passive'}`}>
+        <Link to="/Home">
           <button
             type="button"
-            className={`${activeIcon === 'home' ? 'active' : 'passive'}`}
+            className={`${activeIcon === 'home' ? 'button-active' : 'button'}`}
             onClick={() => handleIconClick('home')}
           >
-            <FaHome className="icon" />
+            <i className="bx bx-home-alt-2 icon" />
             <div className="title">Home</div>
           </button>
         </Link>
       </div>
 
-      <div className="navbar-icon">
-        <Link className="nav-link" to="/Search">
+      <div className={`${activeIcon === 'search' ? 'active' : 'passive'}`}>
+        <Link to="/Search">
           <button
             type="button"
-            className={`${activeIcon === 'search' ? 'active' : 'passive'}`}
+            className={`${activeIcon === 'search' ? 'button-active' : 'button'}`}
             onClick={() => handleIconClick('search')}
           >
-            <FaSearch className="icon" />
+            <i className="bx bx-search icon" />
             <div className="title">Search</div>
           </button>
         </Link>
       </div>
 
-      <div className="navbar-icon">
-        <Link className="nav-link" to="/">
+      <div className={`${activeIcon === 'scan' ? 'active' : 'passive'}`}>
+        <Link to="/">
           <button
             type="button"
-            className={`${activeIcon === 'scan' ? 'active' : 'passive'}`}
             onClick={() => handleIconClick('scan')}
+            className={`${activeIcon === 'scan' ? 'button-active' : 'button'}`}
           >
-            <FaBarcode className="icon" />
+            <i className="bx bx-barcode-reader icon" />
             <div className="title">Scan</div>
           </button>
         </Link>
       </div>
 
-      <div className="navbar-icon">
-        <Link className="nav-link" to="/Profile">
+      <div className={`${activeIcon === 'user' ? 'active' : 'passive'}`}>
+        <Link to="/Profile">
           <button
             type="button"
-            className={`${activeIcon === 'user' ? 'active' : 'passive'}`}
+            className={`${activeIcon === 'user' ? 'button-active' : 'button'}`}
             onClick={() => handleIconClick('user')}
           >
-            <FaUser className="icon" />
+            <i className="bx bx-user icon" />
             <div className="title">Profile</div>
           </button>
         </Link>

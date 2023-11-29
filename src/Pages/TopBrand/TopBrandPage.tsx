@@ -1,12 +1,7 @@
 import * as React from 'react';
-import {
-  faArrowLeft, faEarth,
-} from '@fortawesome/free-solid-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Link, useParams } from 'react-router-dom';
 import topBrands, { ITopBrandInformations } from './constantes';
 import { useState } from 'react';
-
 import './TopBrandPage.css';
 
 interface IScoreProps {
@@ -22,23 +17,24 @@ function Score({ globalScore }: IScoreProps) {
 
   return (
     <div className="score-information-home">
+      <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
       {
-          Array.from({ length: 5 }, (_, i) => {
-            if (i < score) {
-              return (
-                <div className="scoreIconBrand" key={i}>
-                  <FontAwesomeIcon className="coloredIcon1-home" icon={faEarth} />
-                </div>
-              );
-            }
-
+        Array.from({ length: 5 }, (_, i) => {
+          if (i < score) {
             return (
-              <div className="scoreIconBrand" key={i}>
-                <FontAwesomeIcon className="not-colored-icon1-home" icon={faEarth} />
+              <div key={i}>
+                <i className="bx bx-world colored-icon-home" />
               </div>
             );
-          })
-        }
+          }
+
+          return (
+            <div key={i}>
+              <i className="bx bx-world uncolored-icon-home" />
+            </div>
+          );
+        })
+      }
     </div>
   );
 }
@@ -49,21 +45,15 @@ function GlobalInformationsBrand({ globalBrandInformations }: ITopBrandInformati
   const [photo] = useState(globalBrandInformations.image);
 
   return (
-    <div className="global-information-brand">
-      <div className="image-box2">
-        <div className="image-box3">
-          <img src={photo} className="item-image-topbrand" alt="product" />
-
-          <div className="informations-box1">
-            <p className="name1-home">{name}</p>
-            <div>
-              { theme }
-            </div>
-
-            <Score globalScore={globalScore} />
-          </div>
-        </div>
+    <div className="header">
+      <img src={photo} className="item-image-topbrand" alt="product" />
+      <div className="title-one">{name}</div>
+      <div style={{ fontSize: 13 }}>
+        &quot;
+        {theme}
+        &quot;
       </div>
+      <Score globalScore={globalScore} />
     </div>
   );
 }
@@ -73,19 +63,19 @@ function TopBrandPage() {
   const brand = topBrands[Number(productId)];
 
   return (
-    <div className="brandPage" style={{ width: window.innerWidth, height: window.innerHeight }}>
-      <div className="informations-brand">
+    <div className="brandPage">
+      <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+      <div>
         <button className="back-product-page" type="button" aria-label="Back to Previous Page">
           <Link className="nav-link" to="/Home">
-            <FontAwesomeIcon icon={faArrowLeft} className="icon-navigation" />
+            <i className="bx bx-left-arrow-alt" />
           </Link>
         </button>
+        <div className="brand-content">
+          <GlobalInformationsBrand globalBrandInformations={brand} />
 
-        <GlobalInformationsBrand globalBrandInformations={brand} />
-
-        <div className="description-home-box">
-          <div className="description-home">
-            { brand.description }
+          <div className="brand-description">
+            {brand.description}
           </div>
         </div>
       </div>

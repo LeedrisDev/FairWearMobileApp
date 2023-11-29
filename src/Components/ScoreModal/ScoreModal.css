@@ -1,17 +1,8 @@
 .textScoreModale {
-    text-align: center;
+    text-align: left;
     font-size: 12px;
     font-style: normal;
     font-weight: 400;
-    line-height: 15px;
-}
-
-.titleScoreModale {
-    color: #2A301E;
-    text-align: center;
-    font-size: 14px;
-    font-style: normal;
-    font-weight: 500;
     line-height: 15px;
 }
 
@@ -46,7 +37,6 @@
     align-items: flex-start;
     gap: 8px;
     align-self: stretch;
-    margin-top: 10px;
 }
 
 .taskComponent {
@@ -54,30 +44,30 @@
     flex-direction: column;
     align-items: flex-start;
     gap: 8px;
-    margin-top: 6px;
-    width: 100%;
 }
 
-.round-border{
+.round-border {
     display: flex;
+    width: 16px;
+    height: 16px;
+    padding: 12px;
     justify-content: center;
     align-items: center;
     gap: 10px;
-    width: 40px;
-    height: 40px;
-    border-color: #33765D;
-    border-radius: 50%;
-    border-width: 2px;
-    border-style: solid;
+    border-radius: 100px;
+    border: 4px solid var(--Accentuation, #33765D);
 }
 
-.scoreProfile {
-    display: grid;
+.fairscore-and-products {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.score-profile {
+    display: flex;
     align-items: center;
-    justify-content: center;
-    grid-template-columns: repeat(2, 1fr);
-    margin-bottom: 12px;
-    width: 40%;
+    gap: 8px;
 }
 
 .score-box-profil {
@@ -92,16 +82,14 @@
 }
 
 .score-bar-box-profil {
-    width: 90%;
+    width: 100%;
 }
-
 
 .progress-container-profil {
     display: flex;
     flex-direction: column;
     background-color: rgb(225, 225, 225);
     border-radius: 12px;
-    margin-bottom: 15px;
 }
 
 .progress-bar-profil {
@@ -116,12 +104,24 @@
 
 .design-bar-profil {
     display: grid;
-    grid-template-columns: repeat(6, 1fr);
     width: 100%;
-
+    align-items: flex-start;
 }
 
-.percent-design-bar-box-profil {
-    grid-column-start: 2;
-    grid-column-end: 6;
+.subcontent-box {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+}
+
+.progress-content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+}
+
+.title-score-modale {
+    font-weight: 700;
 }

@@ -1,6 +1,5 @@
 import * as React from 'react';
 import { BrandByName, BrandSearchSuggestions } from '../../Business/BrandBusiness';
-
 import './Search.css';
 import { Link } from 'react-router-dom';
 import { BrandModel } from '../../Models/BrandModel';
@@ -16,7 +15,7 @@ function Search() {
         await BrandByName(input);
         const brandSuggestions: BrandModel[] = input !== '' ? await BrandSearchSuggestions(input) : [];
         setBrands(brandSuggestions);
-      } catch (error : any) {
+      } catch (error: any) {
         if (error.response && error.response.status === 404) {
           console.log('Brand not found:', error);
         } else {
@@ -40,11 +39,13 @@ function Search() {
 
   return (
     <div className="search">
+      <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
       <div className="input-box">
+        <i className="bx bx-search" />
         <input
           className="input-search"
           type="text"
-          placeholder="Find an item or brand"
+          placeholder="Find a brand"
           value={inputText}
           onChange={handleChange}
           style={{
@@ -53,18 +54,15 @@ function Search() {
         />
 
       </div>
-      <div className="search-proposition">
+      <div className="brands">
         {
-                    brands.map((brand: BrandModel) => (
-                      <Link to={`/Brand/${encodeURIComponent(brand.id)}`} className="brand-proposition">
-                        <div className="brand-and-grade-search">
-                          <span className="text-search title-brand">{brand.name}</span>
-                        </div>
-                      </Link>
-                    ))
-                }
+          brands.map((brand: BrandModel) => (
+            <Link to={`/Brand/${encodeURIComponent(brand.id)}`} className="brand-proposition">
+              <span className="title-brand">{brand.name}</span>
+            </Link>
+          ))
+        }
       </div>
-      <div />
     </div>
   );
 }

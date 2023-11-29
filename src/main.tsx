@@ -16,7 +16,7 @@ import './index.css';
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
     <BrowserRouter>
-      <div style={{ width: window.innerWidth, height: window.innerHeight }}>
+      <div>
         <Routes>
           <Route path="/Home" element={<Home />} />
           <Route path="/Search" element={<Search />} />
