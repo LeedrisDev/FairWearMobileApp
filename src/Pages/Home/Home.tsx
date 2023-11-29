@@ -46,7 +46,7 @@ function Home() {
         <div className="fairwear">FairWear</div>
       </div>
 
-      <div className="content-box">
+      <div className="content-box-home">
         <div className="home-subtitle-box">
           <i className='bx bx-bulb icon'></i>
           <div className="title-two">Tip of the day</div>
@@ -54,7 +54,7 @@ function Home() {
         <TipOfTheDay />
       </div>
 
-      <div className="content-box">
+      <div className="content-box-home">
         <div className="home-subtitle-box">
           <i className='bx bx-star icon'></i>
           <div className="title-two">Top brands</div>
