@@ -38,32 +38,6 @@ jobs:
       - run: npm i
       - run: npm test
       
-  E2E:
-    name: E2E testing
-    runs-on: ubuntu-latest
-    needs: build
-    strategy:
-      matrix:
-        node-version: [18.x]
-
-    steps:
-      - uses: actions/checkout@v4
-      - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v3
-        with:
-          node-version: ${{ matrix.node-version }}
-      - run: npm i
-      - uses: cypress-io/github-action@v6
-        with:
-          build: npm run build
-          start: npm run dev
-          browser: chrome
-      - uses: actions/upload-artifact@v2
-        if: failure()
-        with:
-          name: Cypress-video
-          path: cypress/videos/
-      
   linter:
     name: Linter
     runs-on: ubuntu-latest

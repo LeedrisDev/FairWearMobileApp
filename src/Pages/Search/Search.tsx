@@ -39,9 +39,9 @@ function Search() {
 
   return (
     <div className="search">
-      <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'></link>
+      <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
       <div className="input-box">
-        <i className='bx bx-search'></i>
+        <i className="bx bx-search" />
         <input
           className="input-search"
           type="text"
@@ -54,7 +54,7 @@ function Search() {
         />
 
       </div>
-      <div className='brands'>
+      <div className="brands">
         {
           brands.map((brand: BrandModel) => (
             <Link to={`/Brand/${encodeURIComponent(brand.id)}`} className="brand-proposition">

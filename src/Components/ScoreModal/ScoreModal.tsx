@@ -45,12 +45,12 @@ function ScoreModal({ profile }: IProfileProps) {
         <span className="title-two">Progress</span>
       </div>
       <div className="content-box">
-        <div className='subcontent-box'>
+        <div className="subcontent-box">
           <div className="score-profile">
             <div className="round-border">
               <div className="colorScoreModale">{score}</div>
             </div>
-            <div className='fairscore-and-products'>
+            <div className="fairscore-and-products">
               <div className="numberScoreModale">FairScore</div>
               <div>
                 {numberOfScan}
@@ -59,7 +59,7 @@ function ScoreModal({ profile }: IProfileProps) {
               </div>
             </div>
           </div>
-          <div className='progress-content'>
+          <div className="progress-content">
             <div className="levelComponent">
               <div className="title-score-modale">
                 Level

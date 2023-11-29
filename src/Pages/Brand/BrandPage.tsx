@@ -19,20 +19,20 @@ function Score({ globalScore }: IScoreProps) {
 
   return (
     <div className="score-information-home">
-      <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'></link>
+      <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
       {
         Array.from({ length: 5 }, (_, i) => {
           if (i < score) {
             return (
               <div key={i}>
-                <i className='bx bx-world colored-icon-home'></i>
+                <i className="bx bx-world colored-icon-home" />
               </div>
             );
           }
 
           return (
             <div key={i}>
-              <i className='bx bx-world uncolored-icon-home'></i>
+              <i className="bx bx-world uncolored-icon-home" />
             </div>
           );
         })
@@ -73,17 +73,17 @@ function BrandPage() {
 
   return (
     <div className="brandPage">
-      <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'></link>
+      <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
       {
         data && (
           <div>
             <button className="back-product-page" type="button" aria-label="Back to Previous Page">
               <Link className="nav-link" to="/Search">
-                <i className='bx bx-left-arrow-alt'></i>
+                <i className="bx bx-left-arrow-alt" />
               </Link>
             </button>
 
-            <div className='brand-content'>
+            <div className="brand-content">
               <GlobalInformationsBrand globalBrandInformations={data} />
 
               <div className="brand-specialties">

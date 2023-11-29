@@ -10,7 +10,7 @@ import { ProductModel } from '../../Models/ProductModel';
 import product1 from '../../Tests/ProductExamples';
 import vinted from '../../assets/images/vinted.png';
 import vestiairecollective from '../../assets/images/vestiaire-collective.jpeg';
-import { useState } from "react";
+import { useState } from 'react';
 
 interface ProductPageProps {
   product: ProductModel

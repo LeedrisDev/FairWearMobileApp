@@ -36,12 +36,12 @@ function UnConnectedProfile() {
 
 function ConnectedProfile({ profile }: IProfileProps) {
   return (
-    <div className='profile-content'>
-      <div className='header'>
+    <div className="profile-content">
+      <div className="header">
         <img src={ImageProfile} className="picture-connected" alt="Me" />
         <div className="title-one">{profile.name}</div>
       </div>
-      <div className='history-and-progress'>
+      <div className="history-and-progress">
         <HistoryModal history={profile.historic} />
         <ScoreModal profile={profile} />
       </div>
@@ -52,10 +52,10 @@ function ConnectedProfile({ profile }: IProfileProps) {
 function Profile({ profile }: IProfileProps) {
   return (
     <div className="profile">
-      <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'></link>
+      <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
       <Link to="/Settings">
         <button className="settings" type="button" aria-label="settings">
-          <i className='bx bx-cog icon'></i>
+          <i className="bx bx-cog icon" />
         </button>
       </Link>
       {

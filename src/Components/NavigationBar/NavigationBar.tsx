@@ -12,7 +12,7 @@ function NavigationBar() {
 
   return (
     <div className="navigation-bar">
-      <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'></link>
+      <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
       <div className={`${activeIcon === 'home' ? 'active' : 'passive'}`}>
         <Link to="/Home">
           <button
@@ -20,7 +20,7 @@ function NavigationBar() {
             className={`${activeIcon === 'home' ? 'button-active' : 'button'}`}
             onClick={() => handleIconClick('home')}
           >
-            <i className='bx bx-home-alt-2 icon'></i>
+            <i className="bx bx-home-alt-2 icon" />
             <div className="title">Home</div>
           </button>
         </Link>
@@ -33,7 +33,7 @@ function NavigationBar() {
             className={`${activeIcon === 'search' ? 'button-active' : 'button'}`}
             onClick={() => handleIconClick('search')}
           >
-            <i className='bx bx-search icon'></i>
+            <i className="bx bx-search icon" />
             <div className="title">Search</div>
           </button>
         </Link>
@@ -46,7 +46,7 @@ function NavigationBar() {
             onClick={() => handleIconClick('scan')}
             className={`${activeIcon === 'scan' ? 'button-active' : 'button'}`}
           >
-            <i className='bx bx-barcode-reader icon'></i>
+            <i className="bx bx-barcode-reader icon" />
             <div className="title">Scan</div>
           </button>
         </Link>
@@ -59,7 +59,7 @@ function NavigationBar() {
             className={`${activeIcon === 'user' ? 'button-active' : 'button'}`}
             onClick={() => handleIconClick('user')}
           >
-            <i className='bx bx-user icon'></i>
+            <i className="bx bx-user icon" />
             <div className="title">Profile</div>
           </button>
         </Link>
