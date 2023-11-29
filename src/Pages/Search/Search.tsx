@@ -1,7 +1,5 @@
 import * as React from 'react';
 import { BrandByName, BrandSearchSuggestions } from '../../Business/BrandBusiness';
-
-import ImageComponent from '../../Components/Images/Image';
 import './Search.css';
 import { Link } from 'react-router-dom';
 import { BrandModel } from '../../Models/BrandModel';
@@ -47,7 +45,7 @@ function Search() {
         <input
           className="input-search"
           type="text"
-          placeholder="Find an item or brand"
+          placeholder="Find a brand"
           value={inputText}
           onChange={handleChange}
           style={{
