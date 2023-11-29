@@ -15,3 +15,15 @@
   bottom: 0;
   right: 0;
 }
+
+.content-box {
+  display: flex;
+  padding: 15px 0px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  align-self: stretch;
+  border-radius: 12px;
+  border: 1px solid var(--Light-grey, #D0D0D0);
+}

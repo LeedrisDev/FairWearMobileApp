@@ -15,7 +15,7 @@ function HistoryModal({ history }: IHistoryModalProp) {
       <div className="box-header">
         <span className="title-two">History</span>
       </div>
-      <div className="box">
+      <div className="content-box">
         <div className="clothes-alternatives-profil">
           {Array.from(history.map(() => (
             <div className="clothing-item-alternatives-profil">
