@@ -1,27 +1,34 @@
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { IconDefinition } from '@fortawesome/fontawesome';
 import { IProductScore } from '../../Tests/InterfaceProduct';
 import './ScoreBar.css';
-import { faDog, faLeaf, faPerson } from '@fortawesome/free-solid-svg-icons';
-
 import * as React from 'react';
-import { IconProp } from '@fortawesome/fontawesome-svg-core';
 
 interface IPropsProductInformations {
   informations: IProductScore
 }
 
 interface IPropsDesignBar {
-  icon: IconDefinition,
+  icon: string,
   percent: number,
 }
 
 function DesignBar({ icon, percent }: IPropsDesignBar) {
   return (
     <div className="design-bar">
-      <div className="icon-design-bar-box">
-        <FontAwesomeIcon icon={icon as IconProp} className="icon-design-bar" />
-      </div>
+      {
+        icon == 'earth' ? (
+          <i className="bx bxs-leaf category-icon" />
+        ) : null
+      }
+      {
+        icon == 'animal' ? (
+          <i className="bx bxs-dog category-icon" />
+        ) : null
+      }
+      {
+        icon == 'moral' ? (
+          <i className="bx bxs-group category-icon" />
+        ) : null
+      }
 
       <div className="percent-design-bar-box">
         <div className="progress-container">
@@ -30,19 +37,18 @@ function DesignBar({ icon, percent }: IPropsDesignBar) {
           </div>
         </div>
       </div>
-
     </div>
   );
 }
 
-function ScoreBar({ informations } : IPropsProductInformations) {
+function ScoreBar({ informations }: IPropsProductInformations) {
   return (
     <div className="score-bar">
-      <div className="score-bar-box">
-        <div className="title-product">Score Breakdown</div>
-        <DesignBar percent={informations.environmental} icon={faLeaf as IconDefinition} />
-        <DesignBar percent={informations.moral} icon={faPerson as IconDefinition} />
-        <DesignBar percent={informations.animal} icon={faDog as IconDefinition} />
+      <div className="title-four">Score Breakdown</div>
+      <div className='score-breakdown'>
+        <DesignBar percent={informations.environmental} icon={'earth'} />
+        <DesignBar percent={informations.moral} icon={'moral'} />
+        <DesignBar percent={informations.animal} icon={'animal'} />
       </div>
     </div>
   );

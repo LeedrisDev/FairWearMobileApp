@@ -23,47 +23,53 @@ function ProductPage({ product, onDetected }: ProductPageProps) {
   return (
     <div className="productPage">
       <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
-      {isAlternative ? (
-        <div className="alternatives">
-          <div className="alternatives-box">
-            <button className="back-product-page" type="button" aria-label="Back to Previous Page">
-              <Link className="nav-link" to="/">
-                <i className="bx bx-left-arrow-alt" />
-              </Link>
-            </button>
+      <div>
+        <button className="back-product-page" type="button" aria-label="Back to Previous Page">
+          <Link className="nav-link" to="/">
+            <i className="bx bx-left-arrow-alt" />
+          </Link>
+        </button>
+        <div className="product-content">
+          <GlobalInformations globalProductInformations={product} />
+          <ScoreBar informations={product.scores} />
 
-            <div className="clothes-alternatives-alternative-page">
-              {
-                Array.from(product1.alternatives).map((alternative) => (
-                  <a href={alternative.link} className="clothing-item-alternatives" style={{ textDecoration: 'none', color: 'black' }}>
-                    <img src={vinted} className="item-image-alternatives" alt="" />
-                    <div className="brand-and-grade1 title-four">
-                      <div style={{ textDecoration: 'none' }}>{alternative.name}</div>
-                    </div>
-                  </a>
-                ))
-              }
-            </div>
-          </div>
-        </div>
-      ) : (
-        <div>
-          <button className="back-product-page" type="button" aria-label="Back to Previous Page">
-            <Link className="nav-link" to="/">
-              <i className="bx bx-left-arrow-alt" />
-            </Link>
-          </button>
-          <div className="product-content">
-            <GlobalInformations globalProductInformations={product} />
-            <ScoreBar informations={product.scores} />
-            <Composition composition={product.composition} />
-            <div className="alternatives">
-              <div className="alternatives-box">
+          {
+            product.composition ? (
+              <Composition composition={product.composition} />
+            ) : null
+          }
+
+          {
+            isAlternative ? (
+              <div className="alternatives">
+                <div className="alternatives-box">
+                  <button className="back-product-page" type="button" aria-label="Back to Previous Page">
+                    <Link className="nav-link" to="/">
+                      <i className="bx bx-left-arrow-alt" />
+                    </Link>
+                  </button>
+
+                  <div className="clothes-alternatives-alternative-page">
+                    {
+                      Array.from(product1.alternatives).map((alternative) => (
+                        <a href={alternative.link} className="clothing-item-alternatives" style={{ textDecoration: 'none', color: 'black' }}>
+                          <img src={vinted} className="item-image-alternatives" alt="" />
+                          <div className="brand-and-grade1 title-four">
+                            <div style={{ textDecoration: 'none' }}>{alternative.name}</div>
+                          </div>
+                        </a>
+                      ))
+                    }
+                  </div>
+                </div>
+              </div>
+            ) : (
+              <div className="alternatives">
                 <div className="box-header-alternative">
-                  <div className="title-product-product-page">Alternatives</div>
+                  <div className="title-four">Alternatives</div>
                   {
                     product1.alternatives.length === 0 ? null
-                      : <div className="voir-plus" onClick={showAlternatives}>Voir plus</div>
+                      : <div className="see-all" onClick={showAlternatives}>See all</div>
                   }
                 </div>
 
@@ -109,19 +115,17 @@ function ProductPage({ product, onDetected }: ProductPageProps) {
                                 className="item-image-alternatives-product-page"
                                 alt=""
                               />
-                              <div className="brand-and-grade1 title-four">
-                                <span>{alternative.name}</span>
-                              </div>
+                              <span>{alternative.name}</span>
                             </a>
                           ))}
                       </div>
                     )
                 }
               </div>
-            </div>
-          </div>
+            )
+          }
         </div>
-      )}
+      </div>
     </div>
   );
 }

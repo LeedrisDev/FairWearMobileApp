@@ -1,12 +1,10 @@
 .productPage {
     position: absolute;
     margin: 0 20px;
-    margin-top: 963px;
+    margin-top: 1117px;
     overflow-x: unset;
-    overflow-y: scroll;
     z-index: 10;
     background-color: white;
-    height: 100%;
 }
 
 .back-product-page {
@@ -35,33 +33,29 @@
 .product-content {
     display: flex;
     flex-direction: column;
-    gap: 12px;
+    gap: 30px;
     margin-top: 47px;
     margin-bottom: 16px;
 }
 
-.title-product-product-page {
-    font-family: 'Poppins', sans-serif;
-    font-style: normal;
-    font-weight: 500;
-    font-size: 17px;
-    line-height: 22px;
-    display: flex;
-    align-items: center;
-    color: #2A301E;
-}
-
 .box-header-alternative {
     display: flex;
-    align-self: center;
-    flex-direction: row;
     justify-content: space-between;
+    align-items: center;
+    align-self: stretch;
+}
+
+.alternatives {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
 }
 
 .item-image-alternatives-product-page {
-    aspect-ratio: 1 / 1;
+    aspect-ratio: 1/1;
     border-radius: 12px;
-    width: 100%;
+    width: 180px;
 }
 
 .clothes-alternatives-alternative-page {
@@ -72,4 +66,23 @@
     grid-auto-rows: minmax(140px, auto);
     gap: 10px;
     margin-top: 20px;
+}
+
+.see-all {
+    color: #33765D;
+}
+
+.clothing-item-alternatives {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 7px;
+}
+
+.clothes-alternatives-product-page {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 20px;
 }
