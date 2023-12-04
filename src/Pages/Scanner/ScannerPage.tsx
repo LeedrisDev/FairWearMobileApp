@@ -47,13 +47,26 @@ function ScannerPage() {
 
   const handleBackButton = () => {
     updateState({ product: null });
+  }; const mockedProduct =
+  {
+    "name": "The North Face M Etip Hardface Glove",
+    "country": "United States",
+    "image": "No image found",
+    "globalScore": 3,
+    "scores": {
+      "moral": 3,
+      "animal": 4,
+      "environmental": 3
+    },
+    "composition": [],
+    "brand": "The North Face"
   };
 
   return (
     <div className="ScannerPage">
       {
-        product ? (
-          <ProductPage product={product} onDetected={handleBackButton} />
+        product == null ? (
+          <ProductPage product={mockedProduct} onDetected={handleBackButton} />
         ) : (
           <Scanner onDetected={onDetected} />
         )

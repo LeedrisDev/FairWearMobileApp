@@ -1,19 +1,22 @@
 .back {
     display: flex;
     align-items: center;
-    padding: 4px;
     position: fixed;
     width: 100%;
-    margin: 0;
-    padding-top: 8px;
+    margin: 16px 0 0 16px;
     left: 0;
     top: 0;
+    padding: 0;
     border: rgba(183, 115, 255, 0);
     background-color: white;
 }
 
+.back-icon {
+    font-size: 35px;
+}
+
 .settings-page {
-    margin: 0 16px;
+    margin: 0 20px;
     overflow-x: unset;
 }
 
@@ -21,7 +24,7 @@
     display: flex;
     flex-direction: column;
     gap: 12px;
-    margin-top: 58px;
+    margin-top: 71px;
 }
 
 .nav-link {
@@ -45,25 +48,21 @@
     align-items: flex-start;
     display: flex;
     flex-direction: column;
-    gap: 21px;
+    gap: 26px;
     padding: 0px;
 }
 
 .options {
-    align-items: flex-start;
     display: flex;
     flex-direction: column;
-    gap: 20px;
-    padding: 0px;
+    gap: 22px;
 }
 
 .option {
     align-items: flex-start;
     display: flex;
     flex-direction: column;
-    gap: 7px;
-    justify-content: center;
-    padding: 0px;
+    gap: 12px;
 }
 
 hr {

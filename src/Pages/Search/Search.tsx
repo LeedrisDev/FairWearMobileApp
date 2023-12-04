@@ -41,7 +41,7 @@ function Search() {
     <div className="search">
       <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
       <div className="input-box">
-        <i className="bx bx-search" />
+        <i className="bx bx-search search-icon" />
         <input
           className="input-search"
           type="text"
@@ -50,6 +50,8 @@ function Search() {
           onChange={handleChange}
           style={{
             color: inputText ? 'black' : 'gray',
+            fontSize: 17,
+            fontFamily: 'Poppins'
           }}
         />
 

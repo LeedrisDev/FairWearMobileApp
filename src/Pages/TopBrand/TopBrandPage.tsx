@@ -48,7 +48,7 @@ function GlobalInformationsBrand({ globalBrandInformations }: ITopBrandInformati
     <div className="header">
       <img src={photo} className="item-image-topbrand" alt="product" />
       <div className="title-one">{name}</div>
-      <div style={{ fontSize: 13 }}>
+      <div style={{ fontSize: 15 }}>
         &quot;
         {theme}
         &quot;

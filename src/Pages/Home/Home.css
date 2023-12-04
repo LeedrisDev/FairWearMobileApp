@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Marck+Script');
 
 .home {
-    margin: 16px;
+    margin: 20px;
     margin-bottom: 85px;
     gap: 26px;
     display: flex;
@@ -23,7 +23,7 @@
 
 .fairwear {
     font-family: 'Marck Script';
-    font-size: 35px;
+    font-size: 40px;
     color: #33765D;
 }
 
@@ -141,6 +141,7 @@
 
 .tips-title {
     font-weight: 600;
+    font-size: 17px;
 }
 
 .tips-text {
@@ -150,7 +151,6 @@
     font-style: italic;
     line-height: 17px;
     white-space: pre-wrap;
-    font-size: 14px;
 }
 
 .home-subtitle-box {
@@ -184,7 +184,7 @@
 }
 
 .brand-item-box {
-    width: 130px;
+    width: 175px;
 }
 
 .tips-image {

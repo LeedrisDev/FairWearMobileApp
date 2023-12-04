@@ -1,5 +1,5 @@
 .brandPage {
-    margin: 0 16px;
+    margin: 0 20px;
     overflow-x: unset;
     overflow-y: scroll;
     z-index: 10;
@@ -90,12 +90,6 @@
 
 .coloredIcon1-home {
     color: #33765D;
-    width: 80%;
-    height: 80%;
-}
-
-.not-colored-icon1-home {
-    color: #E1E1E1;
     width: 80%;
     height: 80%;
 }

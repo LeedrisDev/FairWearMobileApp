@@ -1,6 +1,7 @@
 .brandPage {
     position: absolute;
-    margin: 0 16px;
+    margin: 0 20px;
+    margin-top: 71px;
     overflow-x: unset;
     overflow-y: scroll;
     z-index: 10;
@@ -26,11 +27,9 @@
 .back-product-page {
     display: flex;
     align-items: center;
-    padding: 4px;
     position: fixed;
     width: 100%;
-    margin: 0;
-    padding-top: 8px;
+    margin: 16px 0 0 16px;
     left: 0;
     top: 0;
     border: rgba(183, 115, 255, 0);
@@ -39,17 +38,17 @@
 
 .nav-link {
     text-decoration: none;
-    font-size: 30px;
+    font-size: 35px;
 }
 
 .colored-icon-home {
     color: #33765D;
-    font-size: x-large;
+    font-size: xx-large;
 }
 
 .uncolored-icon-home {
     color: #E1E1E1;
-    font-size: x-large;
+    font-size: xx-large;
 }
 
 .score-information-home {
