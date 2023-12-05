@@ -60,7 +60,7 @@ export async function createUserExperience(userId: number): Promise<UserExperien
         const response = await axios.post(`${AppConstants.API_HOST}/api/userExperience`, {
             userId: userId,
             score: 0,
-            level: 0,
+            level: 1,
             todos: [0, 0, 0]
         });
         return response.data;

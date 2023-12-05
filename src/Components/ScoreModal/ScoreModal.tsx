@@ -1,9 +1,9 @@
 import * as React from 'react';
 import './ScoreModal.css';
-import IProfileProps from '../../Pages/Profile/interfaceProps';
-import { Link } from 'react-router-dom';
+import {Link} from 'react-router-dom';
 import levels from "../../Data/levels";
 import IGeneralModelProps from "../../Pages/Profile/Profile";
+import {GeneralContext} from "../../Contexts/GeneralContext";
 
 function DesignBarScore() {
   return (
@@ -36,10 +36,12 @@ function createTodoList(currentLevel: number, numLevels: number, todosLevel: num
 }
 
 function ScoreModal({ profile }: IGeneralModelProps) {
-  const currentLevel = profile.level;
-  const todos = createTodoList(currentLevel, levels.length, profile.todos);
-  const numberOfScan = profile.history.length;
-  const { score } = profile;
+  const generalContext = React.useContext(GeneralContext);
+  const currentLevel = generalContext?.level;
+  const todos = generalContext?.todos;
+  const numberOfScan = generalContext?.history.length;
+  const score = generalContext?.score;
+
 
   return (
     <div className="category score-box" style={{ marginTop: 20 }}>
@@ -71,17 +73,17 @@ function ScoreModal({ profile }: IGeneralModelProps) {
           <DesignBarScore />
         </div>
         <div className="taskComponent">
-          {levels[currentLevel - 1].map((task, taskIndex) => (
-            <div
-              key={`task${taskIndex + 1}`}
-              className="textScoreModale"
-              style={{
-                color:
-                            todos[taskIndex] === 1 ? '#D0D0D0' : '#2A301E',
-              }}
-            >
-              {task}
-            </div>
+          {levels[currentLevel! - 1].map((task, taskIndex) => (
+              <div
+                  key={`task${taskIndex + 1}`}
+                  className="textScoreModale"
+                  style={{
+                    color:
+                        todos![taskIndex] === 1 ? '#D0D0D0' : '#2A301E',
+                  }}
+              >
+                {task}
+              </div>
           ))}
         </div>
       </div>
