@@ -28,7 +28,7 @@ export default function GeneralProvider({children}: any) {
             getGeneralUserInfo(currentFirebaseUser.uid)
                 .then((currentGeneral) => {
                     setGeneral(currentGeneral)
-                    console.log(currentGeneral)
+                    console.log("test" + currentGeneral)
                 });
         }
     }, [currentFirebaseUser]);

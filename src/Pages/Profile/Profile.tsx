@@ -4,11 +4,15 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import ImageProfile from '../../assets/profilePic.jpg';
 import { Link } from 'react-router-dom';
 import Unknow from '../../assets/unknown.jpeg';
+import { useContext } from 'react';
+import { AuthContext } from '../../Contexts/AuthContext';
+import HistoryModal from '../../Components/HistoryModal/HistoryModal';
+import ScoreModal from '../../Components/ScoreModal/ScoreModal';
 
 import '../../App.css';
 import './Profile.css';
-import { useContext } from 'react';
-import { AuthContext } from '../../Contexts/AuthContext';
+import { profile } from '../../Business/BusinessGeneral';
+import {GeneralContext, GeneralModel} from "../../Contexts/GeneralContext";
 
 function UnConnectedProfile() {
   return (
@@ -37,26 +41,21 @@ function UnConnectedProfile() {
   );
 }
 
-function ConnectedProfile({ profile }: any) {
+export default interface IGeneralModelProps {
+    profile: GeneralModel
+}
+function ConnectedProfile({ profile }: IGeneralModelProps) {
   return (
     <div>
       <div>
         <img src={ImageProfile} className="picture-connected" alt="Me" />
         <div className="title-box-unconnected">
-          <div className="title-unconnected">{profile.displayName}</div>
+          <div className="title-unconnected">Marie</div>
         </div>
       </div>
       <div className="content-profile">
-        <div className="category">
-          <div className="box-header">
-            <span className="title-two">Statistics And Goals</span>
-          </div>
-          <div className="box">
-            <div className="coming-soon">
-              Coming soon
-            </div>
-          </div>
-        </div>
+        <HistoryModal history={profile.history} />
+        <ScoreModal profile={profile} />
       </div>
     </div>
   );
@@ -64,6 +63,7 @@ function ConnectedProfile({ profile }: any) {
 
 function Profile() {
   const currentUser = useContext(AuthContext);
+    const profile = useContext(GeneralContext);
 
   return (
     <div className="App">
@@ -74,7 +74,7 @@ function Profile() {
       </button>
       <div>
         {
-            currentUser ? <ConnectedProfile profile={currentUser} /> : <UnConnectedProfile />
+            currentUser ? <ConnectedProfile profile={profile} /> : <UnConnectedProfile />
         }
       </div>
     </div>

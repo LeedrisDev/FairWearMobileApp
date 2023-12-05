@@ -1,0 +1,140 @@
+.textScoreModale {
+    text-align: center;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 15px;
+}
+
+.titleScoreModale {
+    color: #2A301E;
+    text-align: center;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 15px;
+}
+
+.numberScoreModale {
+    color: #2A301E;
+    text-align: center;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 15px;
+    margin-bottom: 6px;
+}
+
+.colorScoreModale {
+    color: #33765D;
+    text-align: center;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 15px;
+}
+
+.scannedComponent {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.levelComponent {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+    align-self: stretch;
+    margin-top: 10px;
+}
+
+.taskComponent {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+    margin-top: 6px;
+    width: 100%;
+}
+
+.round-border{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    width: 40px;
+    height: 40px;
+    border-color: #33765D;
+    border-radius: 50%;
+    border-width: 2px;
+    border-style: solid;
+}
+
+.scoreProfile {
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    grid-template-columns: repeat(2, 1fr);
+    margin-bottom: 12px;
+    width: 40%;
+}
+
+.score-box-profil {
+    margin-top: 20px;
+}
+
+.score-bar-profil {
+    margin-bottom: 5%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.score-bar-box-profil {
+    width: 90%;
+}
+
+
+.progress-container-profil {
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(225, 225, 225);
+    border-radius: 12px;
+    margin-bottom: 15px;
+}
+
+.progress-bar-profil {
+    border-radius: 12px;
+    background-color: #33765D;
+}
+
+.progress-bar-inside-profil {
+    margin-bottom: 15px;
+    border-radius: 12px;
+}
+
+.design-bar-profil {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    width: 100%;
+
+}
+
+.percent-design-bar-box-profil {
+    grid-column-start: 2;
+    grid-column-end: 6;
+}
+
+.title-see-all {
+    color: #33765D;
+    text-align: right;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 22px;
+}
+
+.nav-link-score {
+    text-decoration: none;
+}
