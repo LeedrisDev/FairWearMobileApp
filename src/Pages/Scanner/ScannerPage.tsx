@@ -1,11 +1,11 @@
 import ProductPage from '../Product/ProductPage';
 import Scanner from './Scanner';
 import * as React from 'react';
-import { useEffect } from 'react';
+import {useEffect} from 'react';
 
 import './ScannerPage.css';
 import ProductByUpc from '../../Business/ProductBusiness';
-import { ProductModel } from '../../Models/ProductModel';
+import {ProductModel} from '../../Models/ProductModel';
 
 interface ScannerStateProps {
   barcode: string;
@@ -37,13 +37,36 @@ function ScannerPage() {
     }
   };
 
+  // useEffect(() => {
+  //   if (barcode !== '') {
+  //     ProductByUpc(barcode).then((productResponse: ProductModel) => {
+  //       updateState({ product: productResponse });
+  //     });
+  //   }
+  // }, [barcode]);
+
   useEffect(() => {
-    if (barcode !== '') {
-      ProductByUpc(barcode).then((productResponse: ProductModel) => {
-        updateState({ product: productResponse });
-      });
-    }
-  }, [barcode]);
+    ProductByUpc('193392069882')
+        .then((productResponse: ProductModel) => {
+          updateState({product: productResponse});
+        });
+  }, []);
+  //
+  // useEffect(() => {
+  //   updateState({product: {
+  //       "name": "The North Face M Etip Hardface Glove",
+  //       "country": "United States",
+  //       "image": "No image found",
+  //       "globalScore": 3,
+  //       "scores": {
+  //         "moral": 3,
+  //         "animal": 4,
+  //         "environmental": 3
+  //       },
+  //       "composition": [],
+  //       "brand": "The North Face"
+  //     }});
+  // }, []);
 
   const handleBackButton = () => {
     updateState({ product: null });

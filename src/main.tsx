@@ -5,11 +5,11 @@ import ImagesGrid from './Components/Images/ImagesGrid';
 import NavigationBar from './Components/NavigationBar/NavigationBar';
 import ProfileSetUp from './Pages/Profile/ProfileSetUp';
 import ReactDOM from 'react-dom/client';
-import { registerSW } from 'virtual:pwa-register';
+import {registerSW} from 'virtual:pwa-register';
 import ScannerPage from './Pages/Scanner/ScannerPage';
 import Search from './Pages/Search/Search';
 import SettingsSetUp from './Pages/Settings/SettingsSetUp';
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import {BrowserRouter, Route, Routes} from 'react-router-dom';
 import BrandPage from './Pages/Brand/BrandPage';
 import 'firebase/auth';
 import './index.css';
@@ -19,10 +19,12 @@ import LoginPage from './Pages/Authentication/Login/LoginPage';
 import AuthenticationPage from './Pages/Authentication/AuthenticationPage';
 import StartPage from './Pages/StartPage/StartPage';
 import PasswordForgotPage from './Pages/Authentication/PasswordForgot/PasswordForgotPage';
+import GeneralProvider from "./Contexts/GeneralContext";
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
     <AuthProvider>
+      <GeneralProvider>
       <BrowserRouter>
         <div style={{ width: window.innerWidth, height: window.innerHeight }}>
           <Routes>
@@ -43,6 +45,7 @@ ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
           <NavigationBar />
         </div>
       </BrowserRouter>
+      </GeneralProvider>
     </AuthProvider>
   </React.StrictMode>,
 );
