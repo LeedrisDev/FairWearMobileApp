@@ -2,13 +2,12 @@ import * as React from 'react';
 import vinted from '../../assets/vinted.png';
 
 import './HistoryModal.css';
-import { SmallProductModel } from "../../Contexts/GeneralContext";
+import {GeneralContext, SmallProductModel} from "../../Contexts/GeneralContext";
 
-interface IHistoryModalProp {
-  history: SmallProductModel[],
-}
+function HistoryModal() {
+    const generalContext = React.useContext(GeneralContext);
+    const history = generalContext.history;
 
-function HistoryModal({ history }: IHistoryModalProp) {
   return (
     <div className="category">
       <div className="box-header">

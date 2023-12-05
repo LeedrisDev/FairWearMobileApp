@@ -25,6 +25,15 @@ export interface UserHistoryModel {
     products: SmallProductModel[];
 }
 
+export async function updateLevel(level: UserExperienceModel): Promise<UserExperienceModel> {
+    try {
+        const response = await axios.put(`${AppConstants.API_HOST}/api/userExperience`, level);
+        return response.data;
+    } catch (error) {
+        console.error('Error:', error);
+        throw error;
+    }
+}
 export default async function createNewUser(user: Partial<UserModel>): Promise<UserModel> {
     try {
         const response = await axios.post(`${AppConstants.API_HOST}/api/user`, user);

@@ -3,6 +3,13 @@ import levels from '../../Data/levels';
 
 import './LevelsPage.css';
 import IGeneralModelProps from "../Profile/Profile";
+import {GeneralContext} from "../../Contexts/GeneralContext";
+import {Link} from "react-router-dom";
+import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
+import {faArrowLeft} from "@fortawesome/free-solid-svg-icons";
+import {getUserExperience, updateLevel} from "../../DataAccess/UserDataAccess";
+import {useEffect} from "react";
+import auth from "../../Utils/Auth";
 
 interface IProgressLevelProp {
   currentLevel: number,
@@ -39,19 +46,70 @@ function ProgressBar({ currentLevel, totalLevels }: IProgressLevelProp) {
   );
 }
 
-function LevelPage({ profile }: IGeneralModelProps) {
-  const todos = createTodoList(profile.level, levels.length, profile.todos);
+function LevelPage() {
+  const generalContext = React.useContext(GeneralContext);
+  const currentLevel = generalContext?.level;
+  const todo = generalContext?.todos;
+
+  const todos = createTodoList(currentLevel, levels.length, todo);
+
+  const updateTask = async (index, taskIndex) => {
+    console.log("here")
+    if (todo[taskIndex] === 0) {
+      todo[taskIndex] = 1;
+    }
+
+    let finished = true;
+    for (let e in todo) {
+      if(todo[e] === 0) {
+        finished = false;
+      }
+    }
+
+    if (finished) {
+      let newCurrentLevel = currentLevel + 1;
+      let newTodo = [0, 0, 0];
+
+      let experience = await getUserExperience(generalContext?.id);
+
+      await updateLevel({
+        "userId": generalContext?.id,
+        "score": generalContext?.score,
+        "level": newCurrentLevel,
+        "todos": newTodo,
+        "id": experience.id
+      })
+    }
+    else {
+      let experience = await getUserExperience(generalContext?.id);
+
+      await updateLevel({
+        "userId": generalContext?.id,
+        "score": generalContext?.score,
+        "level": currentLevel,
+        "todos": todo,
+        "id": experience.id
+      })
+    }
+
+    window.location.reload();
+  }
 
   return (
     <div className="levelPage" style={{ width: window.innerWidth, height: window.innerHeight }}>
+      <button className="back-product-page" type="button" aria-label="Go back">
+        <Link className="nav-link" to="/Profile">
+          <FontAwesomeIcon icon={faArrowLeft} className="icon-navigation" />
+        </Link>
+      </button>
       <div className="componentPage">
         <div className="headerLevel">
           <h1 className="titlePage">
             Level
             {' '}
-            {profile.level}
+            {currentLevel}
           </h1>
-          <ProgressBar currentLevel={profile.level} totalLevels={levels.length} />
+          <ProgressBar currentLevel={currentLevel} totalLevels={levels.length} />
         </div>
         <div className="levelComponent">
           {levels.map((levelTasks, index) => (
@@ -63,19 +121,20 @@ function LevelPage({ profile }: IGeneralModelProps) {
               </h2>
               <div className="taskComponent">
                 {levelTasks.map((task, taskIndex) => (
-                  <div
+                  <button
                     key={`task${taskIndex + 1}`}
                     className="textTask"
+                    onClick={() => updateTask(index, taskIndex)}
                     style={{
                       color:
                         todos[index][taskIndex] === 1 ? '#D0D0D0' : '#2A301E',
                     }}
                   >
                     {task}
-                  </div>
+                  </button>
                 ))}
                 {
-                  profile.level - 1 === index
+                  currentLevel - 1 === index
                     ? (
                       <div className="circleBox">
                         <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 17 17">

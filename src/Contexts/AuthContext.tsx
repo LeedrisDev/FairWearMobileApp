@@ -10,9 +10,9 @@ export default function AuthProvider({ children } : any) {
   const [currentUser, setCurrentUser] = useState<User | null>(null);
 
   useEffect(() => {
-    // auth.onAuthStateChanged(setCurrentUser);
     auth.onAuthStateChanged((user) => {
       setCurrentUser(user || null);
+      console.log(currentUser.uid)
     });
   }, []);
 

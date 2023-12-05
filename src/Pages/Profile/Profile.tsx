@@ -41,21 +41,21 @@ function UnConnectedProfile() {
   );
 }
 
-export default interface IGeneralModelProps {
-    profile: GeneralModel
-}
-function ConnectedProfile({ profile }: IGeneralModelProps) {
-  return (
+function ConnectedProfile() {
+    const generalContext = React.useContext(GeneralContext);
+    const name = generalContext?.name;
+
+    return (
     <div>
       <div>
         <img src={ImageProfile} className="picture-connected" alt="Me" />
         <div className="title-box-unconnected">
-          <div className="title-unconnected">Marie</div>
+          <div className="title-unconnected">{name}</div>
         </div>
       </div>
       <div className="content-profile">
-        <HistoryModal history={profile.history} />
-        <ScoreModal profile={profile} />
+          <HistoryModal />
+        <ScoreModal />
       </div>
     </div>
   );
@@ -63,7 +63,6 @@ function ConnectedProfile({ profile }: IGeneralModelProps) {
 
 function Profile() {
   const currentUser = useContext(AuthContext);
-    const profile = useContext(GeneralContext);
 
   return (
     <div className="App">
@@ -74,7 +73,7 @@ function Profile() {
       </button>
       <div>
         {
-            currentUser ? <ConnectedProfile profile={profile} /> : <UnConnectedProfile />
+            currentUser ? <ConnectedProfile /> : <UnConnectedProfile />
         }
       </div>
     </div>

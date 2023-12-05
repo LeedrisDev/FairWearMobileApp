@@ -20,6 +20,7 @@ import AuthenticationPage from './Pages/Authentication/AuthenticationPage';
 import StartPage from './Pages/StartPage/StartPage';
 import PasswordForgotPage from './Pages/Authentication/PasswordForgot/PasswordForgotPage';
 import GeneralProvider from "./Contexts/GeneralContext";
+import LevelPage from "./Pages/Levels/LevelsPage";
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
@@ -40,7 +41,9 @@ ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
             <Route path="/Auth" element={<AuthenticationPage />} />
             <Route path="/Signup" element={<SignupPage />} />
             <Route path="/Login" element={<LoginPage />} />
+            <Route path="/Levels" element={<LevelPage />} />
             <Route path="/Auth/Reset" element={<PasswordForgotPage />} />
+
           </Routes>
           <NavigationBar />
         </div>

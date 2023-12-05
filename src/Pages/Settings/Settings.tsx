@@ -18,6 +18,7 @@ import { Button } from 'react-bootstrap';
 import { Messages } from 'primereact/messages';
 import { useMountEffect } from 'primereact/hooks';
 import { IPersonalInformations } from './interfaces';
+import {GeneralContext} from "../../Contexts/GeneralContext";
 
 function SettingField({ field, content }: ISettingFieldProps) {
   return (
@@ -29,11 +30,14 @@ function SettingField({ field, content }: ISettingFieldProps) {
 }
 
 function PersonalinformationsSettings({ personalInformations }: IPersonalInformationsProps) {
+    const generalContext = React.useContext(GeneralContext);
+    const name = generalContext?.name;
+
   return (
     <div className="category-settings">
       <div className="title-one">Personal Information</div>
       <div className="options">
-        <SettingField field="Username" content={personalInformations.username} />
+        <SettingField field="Username" content={name} />
         <SettingField field="Email address" content={personalInformations.email} />
         <SettingField field="Phone number" content={personalInformations.phone} />
       </div>

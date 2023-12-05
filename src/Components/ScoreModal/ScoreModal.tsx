@@ -35,7 +35,7 @@ function createTodoList(currentLevel: number, numLevels: number, todosLevel: num
   return todoList[currentLevel - 1];
 }
 
-function ScoreModal({ profile }: IGeneralModelProps) {
+function ScoreModal() {
   const generalContext = React.useContext(GeneralContext);
   const currentLevel = generalContext?.level;
   const todos = generalContext?.todos;
@@ -68,7 +68,7 @@ function ScoreModal({ profile }: IGeneralModelProps) {
           <div className="titleScoreModale">
             Level
             {' '}
-            { currentLevel}
+            {currentLevel}
           </div>
           <DesignBarScore />
         </div>
