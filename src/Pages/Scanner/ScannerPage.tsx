@@ -7,7 +7,9 @@ import './ScannerPage.css';
 import ProductByUpc from '../../Business/ProductBusiness';
 import { ProductModel } from '../../Models/ProductModel';
 import { GeneralContext } from '../../Contexts/GeneralContext';
-import {getUserExperience, getUserHistory, putProductHistory, updateLevel} from '../../DataAccess/UserDataAccess';
+import {
+  getUserExperience, getUserHistory, putProductHistory, updateLevel,
+} from '../../DataAccess/UserDataAccess';
 
 interface ScannerStateProps {
   barcode: string;
@@ -57,12 +59,13 @@ function ScannerPage() {
   useEffect(() => {
     if (barcode !== '') {
       ProductByUpc('193392069882').then(async (productResponse: ProductModel) => {
-        updateState({product: productResponse});
+        updateState({ product: productResponse });
+        console.log(productResponse.id);
 
         await putProductHistory({
-          "userId": generalContext?.id,
-          "productId": productResponse.id,
-        })
+          userId: generalContext?.id,
+          productId: productResponse.id,
+        });
       });
     }
   }, [barcode]);

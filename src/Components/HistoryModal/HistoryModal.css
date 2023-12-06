@@ -2,6 +2,7 @@
     flex-direction: column;
     gap: 7px;
     padding: 0px;
+    width: 85px;
 }
 
 .item-image-alternatives-profil {
@@ -11,10 +12,20 @@
 }
 
 .clothes-alternatives-profil {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-gap: 10px;
-    grid-auto-rows: minmax(100px, auto);
+    display: flex;
+    flex-direction: row;
     gap: 10px;
+    width: 90%;
+    overflow-x: auto;
+    overflow-y: unset;
 }
 
+.nav-link-hist {
+    text-decoration: none;
+    color: #0c4128;
+
+}
+
+.box {
+    padding-right: 0px;
+}

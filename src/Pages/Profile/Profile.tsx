@@ -47,11 +47,11 @@ function ConnectedProfile() {
   return (
     <div>
       <div>
-          <div className="title-box-unconnected">
-        <div className="logo-connected">
+        <div className="title-box-unconnected">
+          <div className="logo-connected">
             {name[0]}
-        </div>
           </div>
+        </div>
         <div className="title-box-name">
           <div className="title-unconnected">{name}</div>
         </div>

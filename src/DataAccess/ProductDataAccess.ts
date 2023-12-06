@@ -12,16 +12,15 @@ export default async function getProductByUpc(barcode: string): Promise<ProductM
   }
 }
 
-
 interface ProductGlobalInfo {
-  "id": number,
-  "upcCode": "string",
-  "name": "string",
-  "category": "string",
-  "ranges": [
-    "string"
+  'id': number,
+  'upcCode': 'string',
+  'name': 'string',
+  'category': 'string',
+  'ranges': [
+    'string',
   ],
-  "brandId": number
+  'brandId': number
 }
 
 export async function getProductById(id: number): Promise<ProductGlobalInfo> {

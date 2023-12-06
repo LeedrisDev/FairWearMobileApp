@@ -90,8 +90,8 @@ export async function getUserHistory(userId: number): Promise<UserHistoryModel> 
 }
 
 interface newProduct {
-  "userId": number,
-  "productId": number,
+  'userId': number,
+  'productId': number,
 }
 export async function putProductHistory(product: newProduct): Promise<UserHistoryModel> {
   try {

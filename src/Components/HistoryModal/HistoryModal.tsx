@@ -1,48 +1,38 @@
 import * as React from 'react';
-import vinted from '../../assets/vinted.png';
+import gloves from '../../assets/glove.jpeg';
 import './HistoryModal.css';
 import { GeneralContext } from '../../Contexts/GeneralContext';
-import {getProductById} from "../../DataAccess/ProductDataAccess";
-
-import { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 
 function HistoryModal() {
-    const generalContext = React.useContext(GeneralContext);
-    const { history } = generalContext;
-    const [productNames, setProductNames] = useState([]);
+  const generalContext = React.useContext(GeneralContext);
+  const { history } = generalContext;
 
-    useEffect(() => {
-        const fetchProductNames = async () => {
-            let names = [];
-            for (let e of history) {
-                let appel = await getProductById(e.productId);
-                names.push(appel.name);
-            }
-            setProductNames(names);
-        };
+  return (
+    <div className="category">
+      <div className="box-header">
+        <span className="title-two">History</span>
 
-        fetchProductNames();
-    }, [history]);
-
-    return (
-        <div className="category">
-            <div className="box-header">
-                <span className="title-two">History</span>
-            </div>
-            <div className="box">
-                <div className="clothes-alternatives-profil">
-                    {productNames.map((value, index) => (
-                        <div className="clothing-item-alternatives-profil" key={index}>
-                            <img src={vinted} className="item-image-alternatives-profil" alt="" />
-                            <div className="brand-and-grade1 title-four">
-                                <span>{value}</span>
-                            </div>
-                        </div>
-                    ))}
+        <Link to="/Levels" className="nav-link-score">
+          <span className="title-see-all nav-link">See all</span>
+        </Link>
+      </div>
+      <div className="box">
+        <div className="clothes-alternatives-profil">
+          {history.map((value, index) => (
+            <Link to={`/Product/${encodeURIComponent(value.id)}`} className="nav-link-hist">
+              <div className="clothing-item-alternatives-profil" key={index}>
+                <img src={gloves} className="item-image-alternatives-profil" alt="" />
+                <div className="brand-and-grade1 title-four">
+                  <span>{value.name}</span>
                 </div>
-            </div>
+              </div>
+            </Link>
+          ))}
         </div>
-    );
+      </div>
+    </div>
+  );
 }
 
 export default HistoryModal;

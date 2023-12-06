@@ -21,6 +21,7 @@ import StartPage from './Pages/StartPage/StartPage';
 import PasswordForgotPage from './Pages/Authentication/PasswordForgot/PasswordForgotPage';
 import GeneralProvider from './Contexts/GeneralContext';
 import LevelPage from './Pages/Levels/LevelsPage';
+import ProductHistPage from './Pages/ProductHist/ProductHistPage';
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
@@ -43,7 +44,7 @@ ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
               <Route path="/Login" element={<LoginPage />} />
               <Route path="/Levels" element={<LevelPage />} />
               <Route path="/Auth/Reset" element={<PasswordForgotPage />} />
-
+              <Route path="/Product/:productId" element={<ProductHistPage />} />
             </Routes>
             <NavigationBar />
           </div>
