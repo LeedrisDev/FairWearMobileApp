@@ -61,7 +61,7 @@ function ScannerPage() {
 
         await putProductHistory({
           "userId": generalContext?.id,
-          "productId": product.id,
+          "productId": productResponse.id,
         })
       });
     }
