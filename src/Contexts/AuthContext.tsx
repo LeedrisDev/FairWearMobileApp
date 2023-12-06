@@ -12,7 +12,7 @@ export default function AuthProvider({ children } : any) {
   useEffect(() => {
     auth.onAuthStateChanged((user) => {
       setCurrentUser(user || null);
-      console.log(currentUser.uid)
+      console.log(currentUser.uid);
     });
   }, []);
 

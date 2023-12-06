@@ -2,14 +2,11 @@ import * as React from 'react';
 import levels from '../../Data/levels';
 
 import './LevelsPage.css';
-import IGeneralModelProps from "../Profile/Profile";
-import {GeneralContext} from "../../Contexts/GeneralContext";
-import {Link} from "react-router-dom";
-import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
-import {faArrowLeft} from "@fortawesome/free-solid-svg-icons";
-import {getUserExperience, updateLevel} from "../../DataAccess/UserDataAccess";
-import {useEffect} from "react";
-import auth from "../../Utils/Auth";
+import { GeneralContext } from '../../Contexts/GeneralContext';
+import { Link } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
+import { getUserExperience, updateLevel } from '../../DataAccess/UserDataAccess';
 
 interface IProgressLevelProp {
   currentLevel: number,
@@ -54,46 +51,44 @@ function LevelPage() {
   const todos = createTodoList(currentLevel, levels.length, todo);
 
   const updateTask = async (index, taskIndex) => {
-    console.log("here")
     if (todo[taskIndex] === 0) {
       todo[taskIndex] = 1;
     }
 
     let finished = true;
-    for (let e in todo) {
-      if(todo[e] === 0) {
+    for (const e in todo) {
+      if (todo[e] === 0) {
         finished = false;
       }
     }
 
     if (finished) {
-      let newCurrentLevel = currentLevel + 1;
-      let newTodo = [0, 0, 0];
+      const newCurrentLevel = currentLevel + 1;
+      const newTodo = [0, 0, 0];
 
-      let experience = await getUserExperience(generalContext?.id);
-
-      await updateLevel({
-        "userId": generalContext?.id,
-        "score": generalContext?.score,
-        "level": newCurrentLevel,
-        "todos": newTodo,
-        "id": experience.id
-      })
-    }
-    else {
-      let experience = await getUserExperience(generalContext?.id);
+      const experience = await getUserExperience(generalContext?.id);
 
       await updateLevel({
-        "userId": generalContext?.id,
-        "score": generalContext?.score,
-        "level": currentLevel,
-        "todos": todo,
-        "id": experience.id
-      })
+        userId: generalContext?.id,
+        score: generalContext?.score + 20,
+        level: newCurrentLevel,
+        todos: newTodo,
+        id: experience.id,
+      });
+    } else {
+      const experience = await getUserExperience(generalContext?.id);
+
+      await updateLevel({
+        userId: generalContext?.id,
+        score: generalContext?.score + 20,
+        level: currentLevel,
+        todos: todo,
+        id: experience.id,
+      });
     }
 
     window.location.reload();
-  }
+  };
 
   return (
     <div className="levelPage" style={{ width: window.innerWidth, height: window.innerHeight }}>

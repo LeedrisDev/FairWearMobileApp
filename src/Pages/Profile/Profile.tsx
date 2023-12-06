@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { GeneralContext } from '../../Contexts/GeneralContext';
 import { faGear } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import ImageProfile from '../../assets/profilePic.jpg';
@@ -11,8 +12,6 @@ import ScoreModal from '../../Components/ScoreModal/ScoreModal';
 
 import '../../App.css';
 import './Profile.css';
-import { profile } from '../../Business/BusinessGeneral';
-import {GeneralContext, GeneralModel} from "../../Contexts/GeneralContext";
 
 function UnConnectedProfile() {
   return (
@@ -42,19 +41,23 @@ function UnConnectedProfile() {
 }
 
 function ConnectedProfile() {
-    const generalContext = React.useContext(GeneralContext);
-    const name = generalContext?.name;
+  const generalContext = React.useContext(GeneralContext);
+  const name = generalContext?.name;
 
-    return (
+  return (
     <div>
       <div>
-        <img src={ImageProfile} className="picture-connected" alt="Me" />
-        <div className="title-box-unconnected">
+          <div className="title-box-unconnected">
+        <div className="logo-connected">
+            {name[0]}
+        </div>
+          </div>
+        <div className="title-box-name">
           <div className="title-unconnected">{name}</div>
         </div>
       </div>
       <div className="content-profile">
-          <HistoryModal />
+        <HistoryModal />
         <ScoreModal />
       </div>
     </div>

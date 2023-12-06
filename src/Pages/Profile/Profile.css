@@ -156,4 +156,23 @@
     height: 60px;
 }
 
+.title-box-name {
+    margin-top : 15%;
+    width: 100%;
+    height: 60px;
+}
+
+.logo-connected {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #33765d;
+    border-radius: 50%;
+    border: #33765d 1px solid;
+    height: 130px;
+    width: 130px;
+    font-size: 450%;
+    color: white;
+}
+
 

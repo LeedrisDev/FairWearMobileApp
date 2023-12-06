@@ -1,9 +1,9 @@
 import * as React from 'react';
 import './ScoreModal.css';
-import {Link} from 'react-router-dom';
-import levels from "../../Data/levels";
-import IGeneralModelProps from "../../Pages/Profile/Profile";
-import {GeneralContext} from "../../Contexts/GeneralContext";
+import { Link } from 'react-router-dom';
+import levels from '../../Data/levels';
+import IGeneralModelProps from '../../Pages/Profile/Profile';
+import { GeneralContext } from '../../Contexts/GeneralContext';
 
 function DesignBarScore() {
   return (
@@ -42,7 +42,6 @@ function ScoreModal() {
   const numberOfScan = generalContext?.history.length;
   const score = generalContext?.score;
 
-
   return (
     <div className="category score-box" style={{ marginTop: 20 }}>
       <div className="box-header">
@@ -57,7 +56,7 @@ function ScoreModal() {
           <div className="round-border">
             <div className="colorScoreModale">{score}</div>
           </div>
-          <div className="numberScoreModale"> FairScore</div>
+          <div className="numberScoreModale">Fairies</div>
         </div>
         <div className="titleScoreModale">
           {numberOfScan}
@@ -74,16 +73,16 @@ function ScoreModal() {
         </div>
         <div className="taskComponent">
           {levels[currentLevel! - 1].map((task, taskIndex) => (
-              <div
-                  key={`task${taskIndex + 1}`}
-                  className="textScoreModale"
-                  style={{
-                    color:
+            <div
+              key={`task${taskIndex + 1}`}
+              className="textScoreModale"
+              style={{
+                color:
                         todos![taskIndex] === 1 ? '#D0D0D0' : '#2A301E',
-                  }}
-              >
-                {task}
-              </div>
+              }}
+            >
+              {task}
+            </div>
           ))}
         </div>
       </div>

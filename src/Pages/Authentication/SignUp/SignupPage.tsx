@@ -1,14 +1,14 @@
-import React, {useRef, useState} from 'react';
+import React, { useRef, useState } from 'react';
 import 'firebaseui/dist/firebaseui.css';
 import auth from '../../../Utils/Auth';
-import {Alert, Button, Form} from 'react-bootstrap';
-import {createUserWithEmailAndPassword} from 'firebase/auth';
-import {useNavigate} from 'react-router-dom';
-import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
-import {faArrowLeft} from '@fortawesome/free-solid-svg-icons';
+import { Alert, Button, Form } from 'react-bootstrap';
+import { createUserWithEmailAndPassword } from 'firebase/auth';
+import { useNavigate } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
 import bigLogo from '../../../assets/FairWearBig.png';
 import './SignupPage.css';
-import {createAndSetupNewUser} from "../../../Business/UserBusiness";
+import { createAndSetupNewUser } from '../../../Business/UserBusiness';
 
 interface SignUpFormStateProps {
   username: string;
@@ -59,16 +59,16 @@ export default function SignupPage() {
           signUpFormState.email,
           signUpFormState.password,
         )
-            .then(async (userCredential) => {
-              await createAndSetupNewUser({
-                username: signUpFormState.username,
-                email: signUpFormState.email,
-                phone: signUpFormState.phone,
-                languagePreferences: "English",
-                theme: "Light",
-                firebaseId: userCredential.user.uid,
-              });
+          .then(async (userCredential) => {
+            await createAndSetupNewUser({
+              username: signUpFormState.username,
+              email: signUpFormState.email,
+              phone: signUpFormState.phone,
+              languagePreferences: 'English',
+              theme: 'Light',
+              firebaseId: userCredential.user.uid,
             });
+          });
         // handle Phone and username
         navigate('/Auth?success=true');
       } catch (error) {

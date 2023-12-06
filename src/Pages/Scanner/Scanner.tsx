@@ -4,11 +4,13 @@ import Quagga from '@ericblade/quagga2';
 import { useEffect } from 'react';
 
 import './Scanner.css';
+import { getUserExperience, updateLevel } from '../../DataAccess/UserDataAccess';
+import { GeneralContext } from '../../Contexts/GeneralContext';
 
 function Scanner(props: any) {
   const { onDetected } = props;
 
-  const detected = (result: any) => {
+  const detected = async (result: any) => {
     onDetected(result.codeResult.code);
   };
 

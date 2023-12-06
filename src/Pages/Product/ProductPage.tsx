@@ -27,8 +27,6 @@ function ProductPage({ product, onDetected }: ProductPageProps) {
       <GlobalInformations globalProductInformations={product} />
       <ScoreBar informations={product.scores} />
       <Composition composition={product1.composition} />
-      {' '}
-      {/* To remove once composition is treated in backend */}
       <Alternatives />
     </div>
   );
