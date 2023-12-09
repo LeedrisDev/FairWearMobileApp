@@ -15,6 +15,7 @@ export default async function getGeneralUserInfo(firebaseId: string): Promise<Ge
   return {
     id: current.id,
     name: current.username,
+    phone: current.phone,
     score: userExperience.score,
     level: userExperience.level,
     todos: userExperience.todos,

@@ -7,6 +7,7 @@ import getGeneralUserInfo from '../Business/UserBusiness';
 export interface GeneralModel {
   id: number,
   name: string,
+  phone: string,
   score: number,
   level: number,
   todos: number[],

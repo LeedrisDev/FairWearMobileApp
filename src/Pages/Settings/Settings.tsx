@@ -32,6 +32,7 @@ function SettingField({ field, content }: ISettingFieldProps) {
 function PersonalinformationsSettings({ personalInformations }: IPersonalInformationsProps) {
   const generalContext = React.useContext(GeneralContext);
   const name = generalContext?.name;
+    const phone = generalContext?.phone;
 
   return (
     <div className="category-settings">
@@ -39,7 +40,7 @@ function PersonalinformationsSettings({ personalInformations }: IPersonalInforma
       <div className="options">
         <SettingField field="Username" content={name} />
         <SettingField field="Email address" content={personalInformations.email} />
-        <SettingField field="Phone number" content={personalInformations.phone} />
+        <SettingField field="Phone number" content={phone} />
       </div>
     </div>
   );
