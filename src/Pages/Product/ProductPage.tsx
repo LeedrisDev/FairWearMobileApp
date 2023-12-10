@@ -13,10 +13,10 @@ import { useState } from 'react';
 
 interface ProductPageProps {
   product: ProductModel
-  // onDetected: () => void
+  onDetected: () => void
 }
 
-function ProductPage({ product }: ProductPageProps) {
+function ProductPage({ product, onDetected }: ProductPageProps) {
   const [isAlternative, setIsAlternative] = useState(false);
   const showAlternatives = () => {
     setIsAlternative(!isAlternative);
