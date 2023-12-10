@@ -74,7 +74,7 @@ function ScannerPage() {
     <div className="ScannerPage">
       {
         product ? (
-          <ProductPage product={mockedProduct} onDetected={handleBackButton} />
+          <ProductPage product={product} onDetected={handleBackButton} />
         ) : (
           <Scanner onDetected={onDetected} />
         )
