@@ -44,7 +44,7 @@ function ProductPage({ product, onDetected }: ProductPageProps) {
             isAlternative ? (
               <div className="alternatives">
                 <div className="alternatives-box">
-                  <button className="back-product-page" type="button" aria-label="Back to Previous Page">
+                  <button className="back-product-page" type="button" onClick={onDetected} aria-label="Back to Previous Page">
                     <Link className="nav-link" to="/">
                       <i className="bx bx-left-arrow-alt" />
                     </Link>
