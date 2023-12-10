@@ -48,7 +48,7 @@ function GlobalInformationsBrand({ globalBrandInformations }: ITopBrandInformati
     <div className="header">
       <img src={photo} className="item-image-topbrand" alt="product" />
       <div className="title-one">{name}</div>
-      <div style={{ fontSize: 13 }}>
+      <div style={{ fontSize: 15 }}>
         &quot;
         {theme}
         &quot;
@@ -66,7 +66,7 @@ function TopBrandPage() {
     <div className="brandPage">
       <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
       <div>
-        <button className="back-product-page" type="button" aria-label="Back to Previous Page">
+        <button className="back-top-brand-page" type="button" aria-label="Back to Previous Page">
           <Link className="nav-link" to="/Home">
             <i className="bx bx-left-arrow-alt" />
           </Link>

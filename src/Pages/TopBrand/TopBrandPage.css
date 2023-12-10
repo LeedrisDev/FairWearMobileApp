@@ -1,5 +1,5 @@
 .brandPage {
-    margin: 0 16px;
+    margin: 0 20px;
     overflow-x: unset;
     overflow-y: scroll;
     z-index: 10;
@@ -8,18 +8,16 @@
     background-color: white;
 }
 
-.back-product-page {
+.back-top-brand-page {
     display: flex;
     align-items: center;
-    padding: 4px;
     position: fixed;
     width: 100%;
-    margin: 0;
-    padding-top: 8px;
     left: 0;
     top: 0;
     border: rgba(183, 115, 255, 0);
     background-color: white;
+    padding: 12px 16px 8px 16px;
 }
 
 .nav-link {
@@ -90,12 +88,6 @@
 
 .coloredIcon1-home {
     color: #33765D;
-    width: 80%;
-    height: 80%;
-}
-
-.not-colored-icon1-home {
-    color: #E1E1E1;
     width: 80%;
     height: 80%;
 }

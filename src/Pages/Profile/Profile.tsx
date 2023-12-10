@@ -1,5 +1,5 @@
 import * as React from 'react';
-import ImageProfile from '../../assets/images/profilePic.jpg';
+import ImageProfile from '../../assets/images/profile-picture.jpg';
 import IProfileProps from './interfaceProps';
 import { Link } from 'react-router-dom';
 import Unknow from '../../assets/images/unknown.jpeg';

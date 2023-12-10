@@ -1,6 +1,5 @@
 .textScoreModale {
     text-align: left;
-    font-size: 12px;
     font-style: normal;
     font-weight: 400;
     line-height: 15px;
@@ -9,9 +8,6 @@
 .numberScoreModale {
     color: #2A301E;
     text-align: center;
-    font-size: 16px;
-    font-style: normal;
-    font-weight: 600;
     line-height: 15px;
     margin-bottom: 6px;
 }
@@ -19,9 +15,6 @@
 .colorScoreModale {
     color: #33765D;
     text-align: center;
-    font-size: 16px;
-    font-style: normal;
-    font-weight: 600;
     line-height: 15px;
 }
 
@@ -48,9 +41,8 @@
 
 .round-border {
     display: flex;
-    width: 16px;
-    height: 16px;
-    padding: 12px;
+    aspect-ratio: 1/1;
+    padding: 8px;
     justify-content: center;
     align-items: center;
     gap: 10px;
@@ -67,7 +59,7 @@
 .score-profile {
     display: flex;
     align-items: center;
-    gap: 8px;
+    gap: 12px;
 }
 
 .score-box-profil {
@@ -112,7 +104,7 @@
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    gap: 16px;
+    gap: 22px;
 }
 
 .progress-content {
@@ -120,8 +112,4 @@
     flex-direction: column;
     align-items: flex-start;
     gap: 16px;
-}
-
-.title-score-modale {
-    font-weight: 700;
 }

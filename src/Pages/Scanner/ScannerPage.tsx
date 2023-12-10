@@ -49,6 +49,26 @@ function ScannerPage() {
     updateState({ product: null });
   };
 
+  /* const mockedProduct = {
+     name: 'The North Face M Etip Hardface Glove',
+     country: 'United States',
+     image: 'No image found',
+     globalScore: 3,
+     scores: {
+       moral: 3,
+       animal: 4,
+       environmental: 3,
+     },
+     composition: [{
+       percentage: 40,
+       component: 'coton',
+     }, {
+       percentage: 60,
+       component: 'polyester',
+     }],
+     brand: 'The North Face',
+   }; */
+
   return (
     <div className="ScannerPage">
       {

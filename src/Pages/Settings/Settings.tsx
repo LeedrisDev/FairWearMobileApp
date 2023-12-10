@@ -14,7 +14,7 @@ import './Settings.css';
 function SettingField({ field, content }: ISettingFieldProps) {
   return (
     <div className="option">
-      <div className="title-four grey">{field}</div>
+      <div className="title-four">{field}</div>
       <div className="action">{content}</div>
     </div>
   );
@@ -62,7 +62,7 @@ function Settings({ settings }: ISettingSetUpProps) {
       <div>
         <button className="back" type="button" aria-label="Back to Previous Page">
           <Link className="nav-link" to="/Profile">
-            <i className="bx bx-left-arrow-alt" />
+            <i className="bx bx-left-arrow-alt back-icon" />
           </Link>
         </button>
         <div className="settings-content">

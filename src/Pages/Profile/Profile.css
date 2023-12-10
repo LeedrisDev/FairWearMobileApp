@@ -1,5 +1,5 @@
 .profile {
-    margin: 16px;
+    margin: 20px;
     margin-bottom: 85px;
     display: flex;
     flex-direction: column;
@@ -10,7 +10,7 @@
 .header {
     display: flex;
     flex-direction: column;
-    gap: 12px;
+    gap: 22px;
 }
 
 .settings {

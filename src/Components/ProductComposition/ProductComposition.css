@@ -1,40 +1,11 @@
 .composition-product {
-    display: flex;
     justify-content: center;
-    align-items: center;
-    margin-bottom: 3%;
-}
-
-.composition-product-box {
-    width: 90%;
-    margin-bottom: 20px;
-}
-
-.composition-product-title {
-    height: 22px;
-
-    font-family: 'Poppins', sans-serif;
-    font-style: normal;
-    font-weight: 500;
-    font-size: 17px;
-    line-height: 22px;
     display: flex;
-    margin-bottom: 5%;
-
-    color: #2A301E;
-
-    flex: none;
-    order: 0;
-    flex-grow: 0;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
 }
 
-.pie-box {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.pie {
-    width: 90%;
-    height: 170px;
+.pie-chart {
+    width: 95%;
 }
