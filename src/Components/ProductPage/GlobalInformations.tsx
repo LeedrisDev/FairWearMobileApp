@@ -51,11 +51,11 @@ function TextAndIcon({ text, icon }: ITextandLogoProps) {
   return (
     <div className="details-information">
       {
-        iconType == 'brand' ? (
-          < i className="bx bx-closet brand-icon" />
+        iconType === 'brand' ? (
+          <i className="bx bx-closet brand-icon" />
         )
           : (
-            < i className="bx bx-map brand-icon" />
+            <i className="bx bx-map brand-icon" />
           )
       }
       <div>{texte}</div>
@@ -73,13 +73,13 @@ function GlobalInformations({ globalProductInformations }: IProps) {
     <div className="global-information">
       <img src={product1} className="item-image1" alt="product" />
       <div className="informations-box1">
-        <div className='title-and-score'>
+        <div className="title-and-score">
           <div className="product-name title-two">{name}</div>
           <Score globalScore={globalScore} />
         </div>
-        <div className='brand-and-location'>
-          <TextAndIcon icon={'brand'} text={brand} />
-          <TextAndIcon icon={'location'} text={country} />
+        <div className="brand-and-location">
+          <TextAndIcon icon="brand" text={brand} />
+          <TextAndIcon icon="location" text={country} />
         </div>
       </div>
     </div>

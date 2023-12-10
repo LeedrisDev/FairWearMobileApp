@@ -51,7 +51,7 @@ function Search() {
           style={{
             color: inputText ? 'black' : 'gray',
             fontSize: 17,
-            fontFamily: 'Poppins'
+            fontFamily: 'Poppins',
           }}
         />
 

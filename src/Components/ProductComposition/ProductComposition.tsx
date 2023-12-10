@@ -21,7 +21,7 @@ function ProductComposition({ composition }: IProductCompositionProps) {
   return (
     <div className="composition-product">
       <div className="title-four">Composition</div>
-      <div className='pie-chart'>
+      <div className="pie-chart">
         <Pie data={pieData} options={options} />
       </div>
     </div>
