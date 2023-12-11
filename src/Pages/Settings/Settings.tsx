@@ -1,6 +1,4 @@
 import * as React from 'react';
-import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import 'primereact/resources/themes/lara-light-indigo/theme.css';
 import { Link, useNavigate } from 'react-router-dom';
 import {
@@ -23,7 +21,7 @@ import { GeneralContext } from '../../Contexts/GeneralContext';
 function SettingField({ field, content }: ISettingFieldProps) {
   return (
     <div className="option">
-      <div className="title-four grey">{field}</div>
+      <div className="title-four">{field}</div>
       <div className="action">{content}</div>
     </div>
   );
@@ -31,12 +29,12 @@ function SettingField({ field, content }: ISettingFieldProps) {
 
 function PersonalinformationsSettings({ personalInformations }: IPersonalInformationsProps) {
   const generalContext = React.useContext(GeneralContext);
-  const name = generalContext?.name;
-    const phone = generalContext?.phone;
+  const name = generalContext?.name ?? "";
+  const phone = generalContext?.phone ?? "";
 
   return (
     <div className="category-settings">
-      <div className="title-one">Personal Information</div>
+      <div className="title-one">Personal information</div>
       <div className="options">
         <SettingField field="Username" content={name} />
         <SettingField field="Email address" content={personalInformations.email} />
@@ -150,29 +148,31 @@ function Settings({ settings }: ISettingSetUpProps) {
     });
   };
   return (
-    <div className="settings-page" style={{ width: window.innerWidth, height: window.innerHeight }}>
-      <button className="back" type="button" aria-label="Go back">
-        <Link className="nav-link" to="/Profile">
-          <FontAwesomeIcon icon={faArrowLeft} className="icon-navigation" />
-        </Link>
-      </button>
-      <Messages ref={msgs} />
-
-      {
-          settings.isConnected ? (
-            <div className="content-settings">
-              <PersonalinformationsSettings personalInformations={settings.personalInformations} />
-              <hr />
-              <SecuritySettings
-                user={settings.personalInformations}
-                setAlert={(state: any) => setAlert(state)}
-              />
-              <hr />
-            </div>
-          ) : null
-        }
-      <div className="content-settings">
-        <OptionsSettings options={settings.options} />
+    <div className="settings-page">
+      <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+      <div>
+        <button className="back" type="button" aria-label="Back to Previous Page">
+          <Link className="nav-link" to="/Profile">
+            <i className="bx bx-left-arrow-alt back-icon" />
+          </Link>
+        </button>
+        <div className="settings-content">
+          {
+            settings.isConnected ? (
+              <div className="content-settings">
+                <PersonalinformationsSettings personalInformations={settings.personalInformations} />
+                <hr />
+                <SecuritySettings
+                  user={settings.personalInformations}
+                  setAlert={(state: any) => setAlert(state)}
+                />                    <hr />
+              </div>
+            ) : null
+          }
+          <div className="content-settings">
+            <OptionsSettings options={settings.options} />
+          </div>
+        </div>
       </div>
       <Button
         className="button-container logout-button"

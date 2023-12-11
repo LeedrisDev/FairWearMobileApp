@@ -1,5 +1,7 @@
 ### Emacs ###
 # -*- mode: gitignore; -*-
+
+dev-dist/
 *~
 \#*\#
 /.emacs.desktop

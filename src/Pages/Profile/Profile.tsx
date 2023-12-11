@@ -1,27 +1,23 @@
 import * as React from 'react';
 import { GeneralContext } from '../../Contexts/GeneralContext';
-import { faGear } from '@fortawesome/free-solid-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import ImageProfile from '../../assets/profilePic.jpg';
 import { Link } from 'react-router-dom';
-import Unknow from '../../assets/unknown.jpeg';
+import Unknow from '../../assets/images/unknown.jpeg';
 import { useContext } from 'react';
 import { AuthContext } from '../../Contexts/AuthContext';
-import HistoryModal from '../../Components/HistoryModal/HistoryModal';
-import ScoreModal from '../../Components/ScoreModal/ScoreModal';
+import ImageProfile from '../../assets/images/profile-picture.jpg';
 
 import '../../App.css';
 import './Profile.css';
+import HistoryModal from '../../Components/HistoryModal/HistoryModal';
+import ScoreModal from '../../Components/ScoreModal/ScoreModal';
 
 function UnConnectedProfile() {
   return (
     <div>
       <div>
         <img src={Unknow} className="picture-unconnected" alt="Me" />
-        <div className="title-box-unconnected">
-          <Link className="nav-link" to="/">
-            <div className="title-unconnected">Connectez-vous</div>
-          </Link>
+        <div>
+          <div className="title-one">Connectez-vous</div>
         </div>
       </div>
       <div>
@@ -45,18 +41,14 @@ function ConnectedProfile() {
   const name = generalContext?.name;
 
   return (
-    <div>
-      <div>
-        <div className="title-box-unconnected">
-          <div className="logo-connected">
-            {name[0]}
-          </div>
+    <div className="profile-content">
+      <div className="header">
+        <div src={ImageProfile} className="picture-connected">
+          {name[0]}
         </div>
-        <div className="title-box-name">
-          <div className="title-unconnected">{name}</div>
-        </div>
+        <div className="title-one">{name}</div>
       </div>
-      <div className="content-profile">
+      <div className="history-and-progress">
         <HistoryModal />
         <ScoreModal />
       </div>
@@ -68,17 +60,16 @@ function Profile() {
   const currentUser = useContext(AuthContext);
 
   return (
-    <div className="App">
-      <button className="settings" type="button" aria-label="Go back">
-        <Link className="nav-link" to="/Settings">
-          <FontAwesomeIcon icon={faGear} className="icon-navigation" />
-        </Link>
-      </button>
-      <div>
-        {
-            currentUser ? <ConnectedProfile /> : <UnConnectedProfile />
-        }
-      </div>
+    <div className="profile">
+      <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+      <Link to="/Settings">
+        <button className="settings" type="button" aria-label="settings">
+          <i className="bx bx-cog icon" />
+        </button>
+      </Link>
+      {
+        currentUser ? <ConnectedProfile /> : <UnConnectedProfile />
+      }
     </div>
   );
 }

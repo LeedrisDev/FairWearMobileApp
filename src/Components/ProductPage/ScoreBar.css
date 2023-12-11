@@ -1,49 +1,47 @@
 .score-bar {
-    margin-bottom: 5%;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
 }
 
-.score-bar-box {
-    width: 90%;
+.score-breakdown {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
 }
-
 
 .progress-container {
     display: flex;
     flex-direction: column;
     background-color: rgb(225, 225, 225);
     border-radius: 12px;
-    margin-bottom: 15px;
+    height: 22px;
 }
 
 .progress-bar {
     border-radius: 12px;
     background-color: #33765D;
+    height: inherit;
 }
 
 .progress-bar-inside {
     margin-bottom: 15px;
     border-radius: 12px;
+
 }
 
 .design-bar {
-    display: grid;
-    grid-template-columns: repeat(6, 1fr);
-
-}
-
-.icon-design-bar {
-    width: 40%;
-}
-
-.icon-design-bar-box {
-    grid-column-start: 1;
-    grid-column-end: 2;
+    display: flex;
+    align-items: center;
+    gap: 12px;
 }
 
 .percent-design-bar-box {
-    grid-column-start: 2;
-    grid-column-end: 7;
+    width: 260px;
+}
+
+.category-icon {
+    font-size: 22px;
 }

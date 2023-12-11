@@ -1,18 +1,30 @@
 .back {
-    height: 30px;
-    margin-right: 80%;
-    margin-top: 50px;
-    width: 30px;
-    border: rgba(183,115,255,0);
-    background-color: rgba(255,253,253,0);
+    display: flex;
+    align-items: center;
+    position: fixed;
+    width: 100%;
+    margin: 16px 0 0 16px;
+    left: 0;
+    top: 0;
+    padding: 0;
+    border: rgba(183, 115, 255, 0);
+    background-color: white;
+}
+
+.back-icon {
+    font-size: 35px;
 }
 
 .settings-page {
-    position: absolute;
+    margin: 0 20px;
     overflow-x: unset;
-    overflow-y: scroll;
-    background-color: #ffffff;
-    z-index: 10;
+}
+
+.settings-content {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 71px;
 }
 
 .nav-link {
@@ -29,36 +41,28 @@
 .content-settings {
     display: flex;
     flex-direction: column;
-    gap: 25px;
-    width: 90%;
-    margin-top: 35px;
-    margin-left: auto;
-    margin-right: auto;
+    gap: 16px;
 }
 
 .category-settings {
     align-items: flex-start;
     display: flex;
     flex-direction: column;
-    gap: 21px;
+    gap: 26px;
     padding: 0px;
 }
 
 .options {
-    align-items: flex-start;
     display: flex;
     flex-direction: column;
-    gap: 25px;
-    padding: 0px;
+    gap: 22px;
 }
 
 .option {
     align-items: flex-start;
     display: flex;
     flex-direction: column;
-    gap: 7px;
-    justify-content: center;
-    padding: 0px;
+    gap: 12px;
 }
 
 hr {

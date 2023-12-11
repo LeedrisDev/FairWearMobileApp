@@ -1,14 +1,7 @@
 import * as React from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { IconDefinition } from '@fortawesome/fontawesome';
-import { IconProp } from '@fortawesome/fontawesome-svg-core';
 import { IGlobalProductInformations } from '../../Tests/InterfaceProduct';
-import product1 from '../../assets/glove.jpeg';
+import product1 from '../../assets/images/glove.jpeg';
 import { useState } from 'react';
-import {
-  faTshirt, faEarth, faMap,
-} from '@fortawesome/free-solid-svg-icons';
-
 import './GlobalInformations.css';
 
 interface IProps {
@@ -24,29 +17,30 @@ function Score({ globalScore }: IScoreProps) {
 
   return (
     <div className="score-information1">
+      <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
       {
-          Array.from({ length: 5 }, (_, i) => {
-            if (i < score) {
-              return (
-                <div className="scoreIcon1" key={i}>
-                  <FontAwesomeIcon className="coloredIcon1" icon={faEarth} />
-                </div>
-              );
-            }
-
+        Array.from({ length: 5 }, (_, i) => {
+          if (i < score) {
             return (
-              <div className="scoreIcon1" key={i}>
-                <FontAwesomeIcon className="not-colored-icon1" icon={faEarth} />
+              <div key={i}>
+                <i className="bx bx-world colored-icon-home" />
               </div>
             );
-          })
-        }
+          }
+
+          return (
+            <div key={i}>
+              <i className="bx bx-world uncolored-icon-home" />
+            </div>
+          );
+        })
+      }
     </div>
   );
 }
 
 interface ITextandLogoProps {
-  icon: IconDefinition,
+  icon: string,
   text: string,
 }
 
@@ -56,11 +50,15 @@ function TextAndIcon({ text, icon }: ITextandLogoProps) {
 
   return (
     <div className="details-information">
-      <div className="details-icon-box">
-        <FontAwesomeIcon icon={iconType as IconProp} className="details-icon" />
-      </div>
-
-      <p className="detailsText1">{texte}</p>
+      {
+        iconType === 'brand' ? (
+          <i className="bx bx-closet brand-icon" />
+        )
+          : (
+            <i className="bx bx-map brand-icon" />
+          )
+      }
+      <div>{texte}</div>
     </div>
   );
 }
@@ -73,18 +71,15 @@ function GlobalInformations({ globalProductInformations }: IProps) {
 
   return (
     <div className="global-information">
-      <div className="grid">
-        <div className="image-box1">
-          <img src={product1} className="item-image1" alt="product" />
-        </div>
-
-        <div className="informations-box1">
-          <p className="name1">{name}</p>
-
+      <img src={product1} className="item-image1" alt="product" />
+      <div className="informations-box1">
+        <div className="title-and-score">
+          <div className="product-name title-two">{name}</div>
           <Score globalScore={globalScore} />
-
-          <TextAndIcon icon={faTshirt as IconDefinition} text={brand} />
-          <TextAndIcon icon={faMap as IconDefinition} text={country} />
+        </div>
+        <div className="brand-and-location">
+          <TextAndIcon icon="brand" text={brand} />
+          <TextAndIcon icon="location" text={country} />
         </div>
       </div>
     </div>

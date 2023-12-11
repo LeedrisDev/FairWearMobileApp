@@ -1,7 +1,6 @@
 import * as React from 'react';
 import TopBrandPage from './Pages/TopBrand/TopBrandPage';
 import Home from './Pages/Home/Home';
-import ImagesGrid from './Components/Images/ImagesGrid';
 import NavigationBar from './Components/NavigationBar/NavigationBar';
 import ProfileSetUp from './Pages/Profile/ProfileSetUp';
 import ReactDOM from 'react-dom/client';
@@ -21,6 +20,7 @@ import StartPage from './Pages/StartPage/StartPage';
 import PasswordForgotPage from './Pages/Authentication/PasswordForgot/PasswordForgotPage';
 import GeneralProvider from './Contexts/GeneralContext';
 import LevelPage from './Pages/Levels/LevelsPage';
+import ImagesGrid from './Components/Images/ImagesGrid';
 import ProductHistPage from './Pages/ProductHist/ProductHistPage';
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
@@ -28,7 +28,7 @@ ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
     <AuthProvider>
       <GeneralProvider>
         <BrowserRouter>
-          <div style={{ width: window.innerWidth, height: window.innerHeight }}>
+          <div>
             <Routes>
               <Route path="/Home" element={<Home />} />
               <Route path="/Search" element={<Search />} />
@@ -51,7 +51,7 @@ ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
         </BrowserRouter>
       </GeneralProvider>
     </AuthProvider>
-  </React.StrictMode>,
+  </React.StrictMode >,
 );
 
 if ('serviceWorker' in navigator) {

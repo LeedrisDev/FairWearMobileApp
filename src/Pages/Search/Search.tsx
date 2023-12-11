@@ -1,10 +1,9 @@
 import * as React from 'react';
-import { searchInformations } from './objects';
 import { BrandByName, BrandSearchSuggestions } from '../../Business/BrandBusiness';
-
 import './Search.css';
 import { Link } from 'react-router-dom';
 import { BrandModel } from '../../Models/BrandModel';
+import { debounce } from 'lodash';
 
 interface SearchStateProps {
   text: string;
@@ -12,72 +11,65 @@ interface SearchStateProps {
 }
 
 function Search() {
-  const initialState: SearchStateProps = {
-    text: '',
-    brands: [],
-  };
+  const [inputText, setInputText] = React.useState<string>('');
+  const [brands, setBrands] = React.useState<BrandModel[]>([]);
 
-  const [state, setState] = React.useState(initialState);
-  const { text, brands } = state;
+  const debouncedBrandByName = React.useRef(
+    debounce(async (input: string) => {
+      try {
+        await BrandByName(input);
+        const brandSuggestions: BrandModel[] = input !== '' ? await BrandSearchSuggestions(input) : [];
+        setBrands(brandSuggestions);
+      } catch (error: any) {
+        if (error.response && error.response.status === 404) {
+          console.log('Brand not found:', error);
+        } else {
+          console.error('An error occurred:', error);
+        }
+      }
+    }, 500),
+  ).current;// Adjust the debounce delay as needed (e.g., 500 milliseconds)
 
-  const updateState = (newState: any) => {
-    setState({ ...state, ...newState });
-  };
+  React.useEffect(() => () => {
+    debouncedBrandByName.cancel();
+  }, [debouncedBrandByName]);
 
   const handleChange = async (event: React.ChangeEvent<HTMLInputElement>) => {
     const input: string = event.target.value;
-    const brandSuggestions: BrandModel[] = event.target.value !== '' ? await BrandSearchSuggestions(input) : [];
-
-    updateState({ text: input, brands: brandSuggestions });
-    searchInformations.input = input;
-  };
-
-  const handleSearch = async () => {
-    try {
-      await BrandByName(text);
-    } catch (error) {
-      console.error(error);
-    }
-
-    updateState({ brands: await BrandSearchSuggestions(text) });
+    const brandSuggestions: BrandModel[] = input !== '' ? await BrandSearchSuggestions(input) : [];
+    setBrands(brandSuggestions);
+    setInputText(input);
+    await debouncedBrandByName(input);
   };
 
   return (
     <div className="search">
+      <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
       <div className="input-box">
+        <i className="bx bx-search search-icon" />
         <input
           className="input-search"
           type="text"
-          placeholder="Find an item or brand"
-          value={text}
+          placeholder="Find a brand"
+          value={inputText}
           onChange={handleChange}
           style={{
-            color: text ? 'black' : 'gray',
+            color: inputText ? 'black' : 'gray',
+            fontSize: 17,
+            fontFamily: 'Poppins',
           }}
         />
-        <button
-          type="button"
-          className="button-search"
-          onClick={handleSearch}
-        >
-          Search
-        </button>
 
       </div>
-      <div className="clothes-alternatives">
+      <div className="brands">
         {
-                    brands.map((brand: BrandModel) => (
-                      <Link to={`/Brand/${encodeURIComponent(brand.id)}`} className="brand-proposition">
-                        <div className="clothing-item-alternatives">
-                          <div className="brand-and-grade-search title-four">
-                            <span className="text-search title-brand">{brand.name}</span>
-                          </div>
-                        </div>
-                      </Link>
-                    ))
-                }
+          brands.map((brand: BrandModel) => (
+            <Link to={`/Brand/${encodeURIComponent(brand.id)}`} className="brand-proposition">
+              <span className="title-brand">{brand.name}</span>
+            </Link>
+          ))
+        }
       </div>
-      <div />
     </div>
   );
 }

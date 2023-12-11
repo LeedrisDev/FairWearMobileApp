@@ -6,23 +6,27 @@ import {
   ISettingSetUp,
 } from '../Pages/Settings/interfaces';
 
-const isConnected = false;
+const isConnected = true;
 
 const profile: IProfileSetUp = {
   isConnected,
   image: '',
-  name: 'Marie Maturana',
+  name: 'Sarah Jones',
   historic: [],
+  numberOfScan: 10,
+  score: 240,
+  level: 2,
+  todos: [1, 1, 0],
 };
 
 const personalInformations: IPersonalInformations = {
-  username: 'XXXXXXXX',
-  email: 'XXXXXXXX',
-  phone: 'XXXXXXXX',
+  username: 'sarahjns',
+  email: 'sarah.jones@gmail.com',
+  phone: '(565) 555-1234',
 };
 
 const security: ISecurityInformations = {
-  password: 'XXXXXXXX',
+  password: '*********',
 };
 
 const options: IOptions = {

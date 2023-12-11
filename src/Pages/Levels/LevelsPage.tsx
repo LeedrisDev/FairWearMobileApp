@@ -8,6 +8,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
 import { getUserExperience, updateLevel } from '../../DataAccess/UserDataAccess';
 
+import './LevelsPage.css';
+
 interface IProgressLevelProp {
   currentLevel: number,
   totalLevels: number,
@@ -32,7 +34,7 @@ function ProgressBar({ currentLevel, totalLevels }: IProgressLevelProp) {
   const levelsInter = Array.from({ length: totalLevels }, (_, i) => i + 1);
 
   return (
-    <div className="progress-bar-score">
+    <div className="progress-bar">
       {levelsInter.map((level) => (
         <div
           key={level}
@@ -105,7 +107,7 @@ function LevelPage() {
             {currentLevel}
           </h1>
           <ProgressBar currentLevel={currentLevel} totalLevels={levels.length} />
-        </div>
+        </div >
         <div className="levelComponent">
           {levels.map((levelTasks, index) => (
             <div key={`level${index + 1}`}>
@@ -126,8 +128,9 @@ function LevelPage() {
                     }}
                   >
                     {task}
-                  </button>
-                ))}
+                  </button >
+                ))
+                }
                 {
                   currentLevel - 1 === index
                     ? (
@@ -138,15 +141,16 @@ function LevelPage() {
                       </div>
                     ) : null
                 }
-              </div>
+              </div >
               <div className="separatorComponent">
                 <div className="separator" />
               </div>
-            </div>
-          ))}
-        </div>
-      </div>
-    </div>
+            </div >
+          ))
+          }
+        </div >
+      </div >
+    </div >
   );
 }
 

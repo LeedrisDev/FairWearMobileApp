@@ -1,10 +1,11 @@
 import { IProductInformations } from './InterfaceProduct';
+import gloves from '../assets/images/glove.jpeg';
 
 const product1: IProductInformations = {
   name: 'Black glove HardFace',
   brand: 'The North Face',
   country: 'United State',
-  image: 'produit1',
+  image: gloves,
   globalScore: 3,
   scores: {
     moral: 3,
@@ -21,7 +22,52 @@ const product1: IProductInformations = {
       component: 'cotton',
     },
   ],
-  alternatives: ['', '', '', ''],
+  alternatives: [
+    {
+      name: 'gants 1',
+      image: gloves,
+      link: 'https://www.vinted.fr/',
+    },
+    {
+      name: 'gants 2',
+      image: gloves,
+      link: 'https://www.vinted.fr/',
+    },
+    {
+      name: 'gants 3',
+      image: gloves,
+      link: 'https://www.vinted.fr/',
+    },
+    {
+      name: 'gants 1',
+      image: gloves,
+      link: 'https://www.vinted.fr/',
+    },
+    {
+      name: 'gants 2',
+      image: gloves,
+      link: 'https://www.vinted.fr/',
+    },
+    {
+      name: 'gants 3',
+      image: gloves,
+      link: 'https://www.vinted.fr/',
+    },
+    {
+      name: 'gants 1',
+      image: gloves,
+      link: 'https://www.vinted.fr/',
+    },
+    {
+      name: 'gants 2',
+      image: gloves,
+      link: 'https://www.vinted.fr/',
+    },
+    {
+      name: 'gants 3',
+      image: gloves,
+      link: 'https://www.vinted.fr/',
+    }],
 };
 
 export default product1;

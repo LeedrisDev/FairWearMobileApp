@@ -1,8 +1,8 @@
-import napperon from '../../assets/nepperon.png';
-import pemlab from '../../assets/pemlab.png';
-import sunaia from '../../assets/sunaia.png';
-import ryfas from '../../assets/ryfas.jpg';
-import nepivel from '../../assets/nepivel.jpg';
+import napperon from '../../assets/images/nepperon.png';
+import pemlab from '../../assets/images/pemlab.png';
+import sunaia from '../../assets/images/sunaia.png';
+import ryfas from '../../assets/images/ryfas.jpg';
+import nepivel from '../../assets/images/nepivel.jpg';
 
 export interface ITopBrandInformations {
   name: string,

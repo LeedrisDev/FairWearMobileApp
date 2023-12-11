@@ -7,13 +7,12 @@
     margin-bottom: 20px;
     display: flex;
     align-items: center;
-
     color: #2A301E;
-
     flex: none;
     order: 0;
     flex-grow: 0;
 }
+
 
 .plus-alternatives {
     color: #33765D;
@@ -41,14 +40,6 @@
     padding: 0px;
 }
 
-.box-header {
-    align-self: stretch;
-    flex-direction: row;
-    gap: 12px;
-    justify-content: space-between;
-    padding: 0px 10px;
-}
-
 .alternatives-link {
     text-decoration: none;
 }
@@ -69,7 +60,6 @@
 .category {
     flex-direction: column;
     gap: 12px;
-    margin: 0 15px;
     width: 91%;
 }
 
@@ -81,8 +71,6 @@
     gap: 10px;
 }
 
-
-/* Item of clothing */
 .clothing-item {
     flex-direction: column;
     gap: 7px;
@@ -99,13 +87,6 @@
     flex-direction: row;
     gap: 7px;
     padding: 0px;
-}
-
-
-.alternatives {
-    display: flex;
-    justify-content: center;
-    align-items: center;
 }
 
 .alternatives-box {

@@ -15,18 +15,14 @@ interface IProductCompositionProps {
   composition: IProductComposition[];
 }
 
-function ProductComposition({ composition } : IProductCompositionProps) {
+function ProductComposition({ composition }: IProductCompositionProps) {
   const pieData = setPieData(composition);
 
   return (
     <div className="composition-product">
-      <div className="composition-product-box">
-        <div className="title-product">Composition</div>
-        <div className="pie-box">
-          <div className="pie">
-            <Pie data={pieData} options={options} />
-          </div>
-        </div>
+      <div className="title-four">Composition</div>
+      <div className="pie-chart">
+        <Pie data={pieData} options={options} />
       </div>
     </div>
   );
