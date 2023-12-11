@@ -6,8 +6,7 @@ import ScoreBar from '../../Components/ProductPage/ScoreBar';
 import './ProductPage.css';
 import { ProductModel } from '../../Models/ProductModel';
 import product1 from '../../Tests/ProductExamples';
-import vinted1 from '../../assets/images/vinted1.jpeg';
-import vinted2 from '../../assets/images/vinted2.jpeg';
+import vinted from '../../assets/images/vinted.png';
 import vestiairecollective from '../../assets/images/vestiaire-collective.jpeg';
 import { useState } from 'react';
 
@@ -54,7 +53,7 @@ function ProductPage({ product, onDetected }: ProductPageProps) {
                     {
                       Array.from(product1.alternatives).map((alternative) => (
                         <a href={alternative.link} className="clothing-item-alternatives" style={{ textDecoration: 'none', color: 'black' }}>
-                          <img src={vinted1} className="item-image-alternatives" alt="" />
+                          <img src={vinted} className="item-image-alternatives" alt="" />
                           <div className="brand-and-grade1 title-four">
                             <div style={{ textDecoration: 'none' }}>{alternative.name}</div>
                           </div>
@@ -81,7 +80,7 @@ function ProductPage({ product, onDetected }: ProductPageProps) {
                       <div className="clothes">
                         <div className="clothing-item">
                           <a href="https://www.vinted.fr/">
-                            <img src={vinted2} className="alternatives-image" alt="vinted" />
+                            <img src={vinted} className="alternatives-image" alt="vinted" />
                           </a>
                           <div className="brand-and-grade1 title-four">
                             <span>Vinted</span>
@@ -112,7 +111,7 @@ function ProductPage({ product, onDetected }: ProductPageProps) {
                               style={{ textDecoration: 'none', color: 'black' }}
                             >
                               <img
-                                src={vinted1}
+                                src={vinted}
                                 className="item-image-alternatives-product-page"
                                 alt=""
                               />

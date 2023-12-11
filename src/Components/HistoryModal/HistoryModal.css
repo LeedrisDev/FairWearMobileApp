@@ -1,6 +1,7 @@
 .clothing-item-alternatives-profil {
     flex-direction: column;
     gap: 7px;
+    display: flex;
     padding: 0px;
 }
 

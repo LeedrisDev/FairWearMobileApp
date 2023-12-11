@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { IProductInformations } from '../../Tests/InterfaceProduct';
-import vinted from '../../assets/images/vinted.png';
+import gloves from '../../assets/images/glove.jpeg';
+import shirt from '../../assets/images/produit1.png';
 
 import '../../App.css';
 import './HistoryModal.css';
@@ -17,14 +18,18 @@ function HistoryModal({ history }: IHistoryModalProp) {
       </div>
       <div className="content-box">
         <div className="clothes-alternatives-profil">
-          {Array.from(history.map(() => (
-            <div className="clothing-item-alternatives-profil">
-              <img src={vinted} className="item-image-alternatives-profil" alt="" />
-              <div className="brand-and-grade1 title-four">
-                <span>Produit</span>
-              </div>
+          <div className="clothing-item-alternatives-profil">
+            <img src={gloves} className="item-image-alternatives-profil" alt="" />
+            <div className="brand-and-grade1">
+              <span>The North F...</span>
             </div>
-          )))}
+          </div>
+          <div className="clothing-item-alternatives-profil">
+            <img src={shirt} className="item-image-alternatives-profil" alt="" />
+            <div className="brand-and-grade1">
+              <span>White shirt</span>
+            </div>
+          </div>
         </div>
       </div>
     </div>
