@@ -58,7 +58,7 @@ function ScannerPage() {
   }; */
 
   const mockedProduct: ProductModel = {
-    name: 'The North Face M Etip Hardface Glove',
+    name: 'The North Face Hardface Glove',
     country: 'United States',
     image: 'No image found',
     globalScore: 3,
