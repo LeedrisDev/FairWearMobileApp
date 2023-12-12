@@ -16,8 +16,14 @@
 }
 
 .settings-page {
+    height: 875px;
     margin: 0 20px;
+    width: -webkit-fill-available;
+    width: -moz-available;
+    z-index: 10;
     overflow-x: unset;
+    background-color: white;
+    position: absolute;
 }
 
 .settings-content {
@@ -81,8 +87,8 @@ hr {
     display: flex;
     border-radius: 22px;
     padding-left: 42px;
-    margin-top: 135px;
-    margin-left: 119px;
+    margin-top: 216px;
+    margin-left: 122px;
     font-weight: 700;
     font-size: 18px;
 }
