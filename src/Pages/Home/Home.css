@@ -5,6 +5,7 @@
     gap: 26px;
     display: flex;
     flex-direction: column;
+    height: 750px;
 }
 
 .header-home {

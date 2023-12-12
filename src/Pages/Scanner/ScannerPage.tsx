@@ -1,16 +1,15 @@
 import ProductPage from '../Product/ProductPage';
 import Scanner from './Scanner';
 import * as React from 'react';
-import { useEffect } from 'react';
-
+// import { useEffect } from 'react';
 import './ScannerPage.css';
 import { ProductModel } from '../../Models/ProductModel';
 import { useState } from 'react';
 
-interface ScannerStateProps {
+/*interface ScannerStateProps {
   barcode: string;
   product: ProductModel | null;
-}
+}*/
 
 function ScannerPage() {
 
@@ -59,7 +58,7 @@ function ScannerPage() {
 
   const mockedProduct: ProductModel = {
     name: 'The North Face Hardface Glove',
-    country: 'United States',
+    country: 'Bangladesh',
     image: 'No image found',
     globalScore: 3,
     scores: {

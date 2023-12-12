@@ -44,7 +44,7 @@ function OptionsSettings({ options }: IOptionsProps) {
     }
   };
   useEffect(() => {
-    document.body.className = theme;
+    document.getElementById('theme-element')!.className = theme;
   }, [theme]);
 
   return (
