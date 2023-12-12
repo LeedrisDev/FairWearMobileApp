@@ -71,3 +71,18 @@ hr {
     height: 1px;
     background-color: #E1E1E1;
 }
+
+.disconnection {
+    background-color: var(--Accentuation, #33765D);
+    color: white;
+    height: 47px;
+    width: 108px;
+    align-items: center;
+    display: flex;
+    border-radius: 22px;
+    padding-left: 42px;
+    margin-top: 135px;
+    margin-left: 119px;
+    font-weight: 700;
+    font-size: 18px;
+}

@@ -59,7 +59,7 @@ function ScoreModal({ profile }: IProfileProps) {
             <div className="colorScoreModale title-two">{score}</div>
           </div>
           <div className="fairscore-and-products">
-            <div className="numberScoreModale title-four">FairScore</div>
+            <div className="numberScoreModale title-four">Fairies</div>
             <div>
               {numberOfScan}
               {' '}

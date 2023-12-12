@@ -12,7 +12,7 @@ import { useState } from 'react';
 
 interface ProductPageProps {
   product: ProductModel
-  onDetected: () => void
+  onDetected: (resultFinal: any) => void
 }
 
 function ProductPage({ product, onDetected }: ProductPageProps) {
@@ -20,11 +20,16 @@ function ProductPage({ product, onDetected }: ProductPageProps) {
   const showAlternatives = () => {
     setIsAlternative(!isAlternative);
   };
+
+  const undetected = () => {
+    onDetected(null);
+  };
+
   return (
     <div className="productPage">
       <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
       <div>
-        <button className="back-product-page" type="button" aria-label="Back to Previous Page">
+        <button className="back-product-page" type="button" onClick={undetected} aria-label="Back to Previous Page">
           <Link className="nav-link" to="/">
             <i className="bx bx-left-arrow-alt" />
           </Link>
@@ -111,7 +116,7 @@ function ProductPage({ product, onDetected }: ProductPageProps) {
                               style={{ textDecoration: 'none', color: 'black' }}
                             >
                               <img
-                                src={vinted}
+                                src={alternative.image}
                                 className="item-image-alternatives-product-page"
                                 alt=""
                               />

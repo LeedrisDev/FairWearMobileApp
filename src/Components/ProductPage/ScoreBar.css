@@ -18,11 +18,13 @@
     background-color: rgb(225, 225, 225);
     border-radius: 12px;
     height: 22px;
+    width: 138%;
 }
 
 .progress-bar {
     border-radius: 12px;
     height: inherit;
+    background-color: var(--Accentuation, #33765D);
 }
 
 .progress-bar-inside {

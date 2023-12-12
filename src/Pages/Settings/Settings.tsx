@@ -59,26 +59,27 @@ function Settings({ settings }: ISettingSetUpProps) {
   return (
     <div className="settings-page">
       <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
-      <div>
-        <button className="back" type="button" aria-label="Back to Previous Page">
-          <Link className="nav-link" to="/Profile">
-            <i className="bx bx-left-arrow-alt back-icon" />
-          </Link>
-        </button>
-        <div className="settings-content">
-          {
-            settings.isConnected ? (
-              <div className="content-settings">
-                <PersonalinformationsSettings personalInformations={settings.personalInformations} />
-                <hr />
-                <SecuritySettings password={settings.security.password} />
-                <hr />
-              </div>
-            ) : null
-          }
-          <div className="content-settings">
-            <OptionsSettings options={settings.options} />
-          </div>
+      <button className="back" type="button" aria-label="Back to Previous Page">
+        <Link className="nav-link" to="/Profile">
+          <i className="bx bx-left-arrow-alt back-icon" />
+        </Link>
+      </button>
+      <div className="settings-content">
+        {
+          settings.isConnected ? (
+            <div className="content-settings">
+              <PersonalinformationsSettings personalInformations={settings.personalInformations} />
+              <hr />
+              <SecuritySettings password={settings.security.password} />
+              <hr />
+            </div>
+          ) : null
+        }
+        <div className="content-settings">
+          <OptionsSettings options={settings.options} />
+        </div>
+        <div className='disconnection'>
+          Log out
         </div>
       </div>
     </div>
