@@ -15,7 +15,7 @@
 .progress-container {
     display: flex;
     flex-direction: column;
-    background-color: rgb(225, 225, 225);
+    background-color: var(--tertiary-color);
     border-radius: 12px;
     height: 22px;
     width: 138%;
@@ -24,7 +24,7 @@
 .progress-bar2 {
     border-radius: 12px;
     height: inherit;
-    background-color: var(--Accentuation, #33765D);
+    background-color: var(--accentuation-color);
 }
 
 .progress-bar-inside {

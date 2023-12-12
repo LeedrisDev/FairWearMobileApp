@@ -1,3 +1,5 @@
+@import "../../App.css";
+
 .navigation-bar {
     display: flex;
     flex-direction: row;
@@ -10,8 +12,8 @@
 
     position: fixed;
     bottom: 0;
-    border-top: 1px solid #E1E1E1;
-    background-color: white;
+    border-top: 1px solid var(--tertiary-color);
+    background-color: var(--background-color);
 
     z-index: 2;
 }
@@ -48,10 +50,10 @@
 .button-active {
     background-color: transparent;
     border-width: 0px;
-    color: var(--Grey, #6D716D);
+    color: var(--secondary-color);
 }
 
 .button-active {
-    color: var(--Accentuation, #33765D);
+    color: var(--accentuation-color);
     font-weight: 700;
 }

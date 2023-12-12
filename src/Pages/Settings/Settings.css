@@ -8,21 +8,22 @@
     top: 0;
     padding: 0;
     border: rgba(183, 115, 255, 0);
-    background-color: white;
+    background-color: var(--background-color);
 }
 
 .back-icon {
     font-size: 35px;
+    color: var(--text-color);
 }
 
 .settings-page {
     height: 875px;
-    margin: 0 20px;
+    padding: 0 20px;
     width: -webkit-fill-available;
     width: -moz-available;
     z-index: 10;
     overflow-x: unset;
-    background-color: white;
+    background-color: var(--background-color);
     position: absolute;
 }
 
@@ -68,7 +69,7 @@
     align-items: flex-start;
     display: flex;
     flex-direction: column;
-    gap: 12px;
+    gap: 8px;
 }
 
 hr {
@@ -79,8 +80,8 @@ hr {
 }
 
 .disconnection {
-    background-color: var(--Accentuation, #33765D);
-    color: white;
+    background-color: var(--accentuation-color);
+    color: var(--background-color);
     height: 47px;
     width: 108px;
     align-items: center;
@@ -91,4 +92,13 @@ hr {
     margin-left: 122px;
     font-weight: 700;
     font-size: 18px;
+}
+
+.field-class {
+    color: var(--secondary-color);
+    font-size: 16px;
+}
+
+.action2 {
+    color: var(--accentuation-color);
 }

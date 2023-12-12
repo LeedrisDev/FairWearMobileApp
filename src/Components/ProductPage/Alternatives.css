@@ -15,7 +15,7 @@
 
 
 .plus-alternatives {
-    color: #33765D;
+    color: var(--accentuation-color);
     width: 20%;
 }
 
@@ -53,7 +53,7 @@
 }
 
 .go-alternative-page {
-    border: rgba(87,86,86,0);
+    border: rgba(87, 86, 86, 0);
     background-color: white;
 }
 

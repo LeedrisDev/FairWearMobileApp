@@ -6,7 +6,7 @@
 
 .nav-link {
     text-decoration: none;
-    color: #0c4128;
+    color: var(--text-color)
 }
 
 .profile-picture {
@@ -26,8 +26,8 @@
     margin-left: 80%;
     margin-top: 50px;
     width: 30px;
-    border: rgba(183,115,255,0);
-    background-color: rgba(255,253,253,0);
+    border: rgba(183, 115, 255, 0);
+    background-color: rgba(255, 253, 253, 0);
     text-decoration: none;
 }
 
@@ -64,7 +64,7 @@
 
 .box {
     border-radius: 12px;
-    border: 2px solid #E1E1E1;
+    border: 2px solid var(--tertiary-color);
     box-sizing: border-box;
     flex-direction: column;
     padding: 12px 12px 10px;

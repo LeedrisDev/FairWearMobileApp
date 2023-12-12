@@ -83,7 +83,7 @@ function ScoreModal({ profile }: IProfileProps) {
                 className="textScoreModale"
                 style={{
                   color:
-                    todos[taskIndex] === 1 ? '#D0D0D0' : '#2A301E',
+                    todos[taskIndex] === 1 ? 'var(--tertiary-color)' : 'var(--text-color)',
                 }}
               >
                 {task}

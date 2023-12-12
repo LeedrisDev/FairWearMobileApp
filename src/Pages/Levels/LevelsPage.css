@@ -1,12 +1,11 @@
 .levelPage {
     position: absolute;
-    margin: 0 20px;
-    margin-top: 17px;
-    overflow-x: unset;
+    padding: 0 20px;
+    padding-top: 17px;
     overflow-y: scroll;
     z-index: 10;
-    background-color: white;
-    width: 91%;
+    background-color: var(--background-color);
+    width: 90%;
 }
 
 .levels-content {
@@ -89,8 +88,6 @@
     margin-top: 10px;
 }
 
-
-
 .progress-bar {
     display: flex;
     align-items: center;
@@ -104,9 +101,9 @@
 }
 
 .completed {
-    background-color: #33765D;
+    background-color: var(--accentuation-color);
 }
 
 .remaining {
-    background-color: #D0D0D0;
+    background-color: var(--secondary-color);
 }

@@ -3,9 +3,8 @@
   line-height: 18px;
   font-size: 17px;
   font-weight: 500;
-
-  color: #2A301E;
-  background-color: white;
+  color: var(--text-color);
+  background-color: var(--background-color);
   overflow: scroll;
 }
 

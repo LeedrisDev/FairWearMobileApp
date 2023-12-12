@@ -49,7 +49,7 @@ function Search() {
           value={inputText}
           onChange={handleChange}
           style={{
-            color: inputText ? 'black' : 'gray',
+            color: inputText ? 'var(--text-color)' : 'var(--secondary-color)',
             fontSize: 17,
             fontFamily: 'Poppins',
           }}

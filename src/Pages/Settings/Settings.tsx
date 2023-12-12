@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { ISecurityInformations } from './interfaces';
 import { Link } from 'react-router-dom';
+import { useState, useEffect } from 'react';
 import {
   IOptionsProps,
   IPersonalInformationsProps,
@@ -11,11 +12,11 @@ import {
 import '../../App.css';
 import './Settings.css';
 
-function SettingField({ field, content }: ISettingFieldProps) {
+function SettingField({ field, content, action }: ISettingFieldProps) {
   return (
     <div className="option">
-      <div className="title-four">{field}</div>
-      <div className="action">{content}</div>
+      <div className="field-class">{field}</div>
+      <div onClick={action} className="action2">{content}</div>
     </div>
   );
 }
@@ -34,11 +35,23 @@ function PersonalinformationsSettings({ personalInformations }: IPersonalInforma
 }
 
 function OptionsSettings({ options }: IOptionsProps) {
+  const [theme, setTheme] = useState('light-mode');
+  const toggleTheme = () => {
+    if (theme === 'light-mode') {
+      setTheme('dark-mode');
+    } else {
+      setTheme('light-mode');
+    }
+  };
+  useEffect(() => {
+    document.body.className = theme;
+  }, [theme]);
+
   return (
     <div className="category-settings">
       <div className="title-one">Options</div>
       <div className="options">
-        <SettingField field="Theme" content={options.theme} />
+        <SettingField field="Theme" content={options.theme} action={toggleTheme} />
       </div>
     </div>
   );
