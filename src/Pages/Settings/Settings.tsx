@@ -39,8 +39,10 @@ function OptionsSettings({ options }: IOptionsProps) {
   const toggleTheme = () => {
     if (theme === 'light-mode') {
       setTheme('dark-mode');
+      options.theme = "Dark";
     } else {
       setTheme('light-mode');
+      options.theme = "Light";
     }
   };
   useEffect(() => {
