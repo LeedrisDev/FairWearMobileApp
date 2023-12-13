@@ -2,6 +2,7 @@
 
 .home {
     padding: 20px;
+    padding-bottom: 110px;
     gap: 26px;
     display: flex;
     flex-direction: column;

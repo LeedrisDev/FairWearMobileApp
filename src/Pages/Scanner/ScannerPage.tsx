@@ -62,8 +62,8 @@ function ScannerPage() {
     image: 'No image found',
     globalScore: 3,
     scores: {
-      moral: 3,
-      animal: 4,
+      moral: 2,
+      animal: 4.4,
       environmental: 3,
     },
     composition: [{

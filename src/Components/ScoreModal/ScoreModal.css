@@ -6,7 +6,7 @@
 }
 
 .numberScoreModale {
-    color: #2A301E;
+    color: var(--accentuation-color);
     text-align: center;
     line-height: 15px;
     margin-bottom: 6px;
