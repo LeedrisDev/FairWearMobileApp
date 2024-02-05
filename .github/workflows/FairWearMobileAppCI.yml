@@ -123,5 +123,3 @@ jobs:
           tags: |
             ${{ secrets.REGISTRY_URL }}/fairwear/frontend:${{ steps.get_branch.outputs.tag }}-${{ github.run_number }}
             ${{ secrets.REGISTRY_URL }}/fairwear/frontend:latest
-
-
