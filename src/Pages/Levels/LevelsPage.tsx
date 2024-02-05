@@ -44,7 +44,7 @@ function LevelsPage() {
   const todos = createTodoList(currentLevel, levels.length, profile.todos);
 
   return (
-    <div className='levelPage'>
+    <div className="levelPage">
       <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
       <div>
         <button className="back-brand-page" type="button" aria-label="Back to Previous Page">
@@ -61,7 +61,7 @@ function LevelsPage() {
                 {' '}
                 {currentLevel}
               </div>
-              <div className='level-title'>Beginner</div>
+              <div className="level-title">Beginner</div>
             </div>
 
             <ProgressBar currentLevel={profile.level} totalLevels={levels.length} />

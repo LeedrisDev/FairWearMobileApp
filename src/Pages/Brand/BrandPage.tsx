@@ -57,27 +57,27 @@ function GlobalInformationsBrand({ globalBrandInformations }: ITopBrandInformati
   return (
     <div className="header">
       {
-        name === "celio" ? (
+        name === 'celio' ? (
           <img src={celio} className="item-image-topbrand" alt="product" />
         ) : null
       }
       {
-        name === "Zara" ? (
+        name === 'Zara' ? (
           <img src={zara} className="item-image-topbrand" alt="product" />
         ) : null
       }
       {
-        name === "Nike" ? (
+        name === 'Nike' ? (
           <img src={nike} className="item-image-topbrand" alt="product" />
         ) : null
       }
       {
-        name === "Bershka" ? (
+        name === 'Bershka' ? (
           <img src={bershka} className="item-image-topbrand" alt="product" />
         ) : null
       }
       {
-        name === "Superdry" ? (
+        name === 'Superdry' ? (
           <img src={superdry} className="item-image-topbrand" alt="product" />
         ) : null
       }

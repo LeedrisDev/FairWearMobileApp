@@ -6,20 +6,19 @@ import './ScannerPage.css';
 import { ProductModel } from '../../Models/ProductModel';
 import { useState } from 'react';
 
-/*interface ScannerStateProps {
+/* interface ScannerStateProps {
   barcode: string;
   product: ProductModel | null;
-}*/
+} */
 
 function ScannerPage() {
-
-  const [result, setResult] = useState(null)
+  const [result, setResult] = useState(null);
 
   const onDetected = (resultFinal: any) => {
-    setResult(resultFinal)
-  }
+    setResult(resultFinal);
+  };
 
-  /*const initialState: ScannerStateProps = {
+  /* const initialState: ScannerStateProps = {
     barcode: '',
     product: null,
   };

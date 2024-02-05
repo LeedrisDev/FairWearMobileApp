@@ -41,7 +41,7 @@ function ScoreModal({ profile }: IProfileProps) {
   const { score } = profile;
 
   return (
-    <div className="category" style={{ marginBottom: "22px" }}>
+    <div className="category" style={{ marginBottom: '22px' }}>
       <div className="box-header">
         <span className="title-two">Progress</span>
         <Link to="/Levels">

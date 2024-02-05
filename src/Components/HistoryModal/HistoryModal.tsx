@@ -1,15 +1,16 @@
 import * as React from 'react';
-import { IProductInformations } from '../../Tests/InterfaceProduct';
 import gloves from '../../assets/images/glove.jpeg';
 import shirt from '../../assets/images/produit1.png';
 
 import '../../App.css';
 import './HistoryModal.css';
+import { IProductInformations } from '../../Tests/InterfaceProduct';
 
 interface IHistoryModalProp {
   history: IProductInformations[],
 }
 
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 function HistoryModal({ history }: IHistoryModalProp) {
   return (
     <div className="category">

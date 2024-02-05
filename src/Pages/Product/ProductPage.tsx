@@ -120,7 +120,7 @@ function ProductPage({ product, onDetected }: ProductPageProps) {
                                 className="item-image-alternatives-product-page"
                                 alt=""
                               />
-                              <span className='alternative-name'>{alternative.name}</span>
+                              <span className="alternative-name">{alternative.name}</span>
                             </a>
                           ))}
                       </div>

@@ -1,12 +1,9 @@
 import * as React from 'react';
+import { useEffect, useState } from 'react';
 import { ISecurityInformations } from './interfaces';
 import { Link } from 'react-router-dom';
-import { useState, useEffect } from 'react';
 import {
-  IOptionsProps,
-  IPersonalInformationsProps,
-  ISettingFieldProps,
-  ISettingSetUpProps,
+  IOptionsProps, IPersonalInformationsProps, ISettingFieldProps, ISettingSetUpProps,
 } from './interfacesProps';
 
 import '../../App.css';
@@ -39,10 +36,12 @@ function OptionsSettings({ options }: IOptionsProps) {
   const toggleTheme = () => {
     if (theme === 'light-mode') {
       setTheme('dark-mode');
-      options.theme = "Dark";
+      // eslint-disable-next-line no-param-reassign
+      options.theme = 'Dark';
     } else {
       setTheme('light-mode');
-      options.theme = "Light";
+      // eslint-disable-next-line no-param-reassign
+      options.theme = 'Light';
     }
   };
   useEffect(() => {
@@ -93,7 +92,7 @@ function Settings({ settings }: ISettingSetUpProps) {
         <div className="content-settings">
           <OptionsSettings options={settings.options} />
         </div>
-        <div className='disconnection'>
+        <div className="disconnection">
           Log out
         </div>
       </div>
