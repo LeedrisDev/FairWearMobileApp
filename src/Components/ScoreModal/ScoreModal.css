@@ -2,18 +2,18 @@
     text-align: left;
     font-style: normal;
     font-weight: 400;
-    line-height: 15px;
+    line-height: 18px;
 }
 
 .numberScoreModale {
-    color: #2A301E;
+    color: var(--accentuation-color);
     text-align: center;
     line-height: 15px;
     margin-bottom: 6px;
 }
 
 .colorScoreModale {
-    color: #33765D;
+    color: var(--accentuation-color);
     text-align: center;
     line-height: 15px;
 }
@@ -24,7 +24,7 @@
     gap: 8px;
 }
 
-.levelComponent {
+.levelComponent2 {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -47,7 +47,7 @@
     align-items: center;
     gap: 10px;
     border-radius: 100px;
-    border: 4px solid var(--Accentuation, #33765D);
+    border: 4px solid var(--accentuation-color);
 }
 
 .fairscore-and-products {
@@ -100,16 +100,30 @@
     align-items: flex-start;
 }
 
-.subcontent-box {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 22px;
-}
-
 .progress-content {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     gap: 16px;
+}
+
+.box-header {
+    display: flex;
+    padding: 0px 10px;
+    justify-content: space-between;
+    align-items: center;
+    align-self: stretch;
+}
+
+.button-class {
+    border-width: 0;
+    background-color: transparent;
+}
+
+.see-all {
+    color: var(--accentuation-color);
+    text-align: right;
+    font-family: 'Poppins';
+    font-size: 17px;
+    font-weight: 700;
 }

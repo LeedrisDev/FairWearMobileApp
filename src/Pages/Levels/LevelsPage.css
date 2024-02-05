@@ -1,24 +1,26 @@
 .levelPage {
     position: absolute;
-    overflow-x: unset;
+    padding: 0 22px;
+    padding-top: 17px;
     overflow-y: scroll;
-    background-color: white;
     z-index: 10;
+    background-color: var(--background-color);
+    width: 90%;
 }
 
-.componentPage {
-    display: inline-flex;
+.levels-content {
+    display: flex;
     flex-direction: column;
-    align-items: center;
-    width: 100%;
-    gap: 44px;
+    gap: 12px;
+    margin-top: 50px;
+    margin-bottom: 16px;
 }
 
 .headerLevel {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 40px;
+    gap: 12px;
 }
 
 .titlePage {
@@ -45,21 +47,18 @@
     gap: 8px;
 }
 
+.level-title {
+    margin-top: 16px;
+    font-size: 19px;
+}
+
 .textLevel {
-    color: #2A301E;
     text-align: center;
-    font-size: 18px;
-    font-style: normal;
-    font-weight: 500;
-    line-height: normal;
+    margin-bottom: 12px;
 }
 
 .textTask {
     text-align: center;
-    font-size: 13px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 15px;
 }
 
 .separatorComponent {
@@ -89,8 +88,6 @@
     margin-top: 10px;
 }
 
-
-
 .progress-bar {
     display: flex;
     align-items: center;
@@ -104,9 +101,9 @@
 }
 
 .completed {
-    background-color: #33765D;
+    background-color: var(--accentuation-color);
 }
 
 .remaining {
-    background-color: #D0D0D0;
+    background-color: var(--secondary-color);
 }

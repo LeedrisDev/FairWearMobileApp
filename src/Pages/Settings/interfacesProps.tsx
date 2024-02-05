@@ -5,6 +5,7 @@ import {
 interface ISettingFieldProps {
   field: string,
   content: string,
+  action?: () => void,
 }
 
 interface ISettingSetUpProps {

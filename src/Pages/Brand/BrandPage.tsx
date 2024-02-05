@@ -1,10 +1,14 @@
 import * as React from 'react';
 import { useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
-
 import './BrandPage.css';
 import { BrandByIdBusiness } from '../../Business/BrandBusiness';
 import { BrandModel } from '../../Models/BrandModel';
+import celio from '../../assets/images/celio.jpg';
+import zara from '../../assets/images/Zara.png';
+import nike from '../../assets/images/nike.jpg';
+import bershka from '../../assets/images/bershka.jpg';
+import superdry from '../../assets/images/superdry.jpg';
 
 interface IScoreProps {
   globalScore: number
@@ -52,8 +56,33 @@ function GlobalInformationsBrand({ globalBrandInformations }: ITopBrandInformati
 
   return (
     <div className="header">
+      {
+        name === "celio" ? (
+          <img src={celio} className="item-image-topbrand" alt="product" />
+        ) : null
+      }
+      {
+        name === "Zara" ? (
+          <img src={zara} className="item-image-topbrand" alt="product" />
+        ) : null
+      }
+      {
+        name === "Nike" ? (
+          <img src={nike} className="item-image-topbrand" alt="product" />
+        ) : null
+      }
+      {
+        name === "Bershka" ? (
+          <img src={bershka} className="item-image-topbrand" alt="product" />
+        ) : null
+      }
+      {
+        name === "Superdry" ? (
+          <img src={superdry} className="item-image-topbrand" alt="product" />
+        ) : null
+      }
       <div className="title-one">{name}</div>
-      <div style={{ marginTop: 12 }}>{country}</div>
+      <div style={{ marginTop: 12, fontSize: 18 }}>{country}</div>
       <Score globalScore={globalScore} />
     </div>
   );

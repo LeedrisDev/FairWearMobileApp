@@ -4,16 +4,15 @@ export interface ProductModel {
   'image': string,
   'globalScore': number,
   'scores': {
-    'moral': 0,
-    'animal': 0,
-    'environmental': 0
+    'moral': number,
+    'animal': number,
+    'environmental': number
   },
-  'composition': [
-    {
-      'percentage': 0,
-      'component': 'string'
-    },
-  ],
-  'brand': 'string'
+  'composition':
+  {
+    'percentage': number,
+    'component': string
+  }[],
+  'brand': string
 
 }

@@ -1,8 +1,9 @@
 .search {
-    margin: 16px;
-    margin-bottom: 85px;
+    padding: 20px;
     display: flex;
     flex-direction: column;
+    height: 750px;
+    padding-bottom: 110px;
 }
 
 .input-box {
@@ -13,8 +14,7 @@
     padding: 4px 16px;
     flex-shrink: 0;
     border-radius: 30px;
-    border: 1px solid var(--Light-grey, #D0D0D0);
-    background: var(--Background, #FFF);
+    border: 1px solid var(--tertiary-color);
     box-shadow: 0px 4px 4px 0px rgba(199, 199, 199, 0.25);
 }
 
@@ -22,7 +22,7 @@
     padding: 13px 0;
     width: -moz-available;
     width: -webkit-fill-available;
-    background: #FFFFFF;
+    background: var(--background-color);
     border: none;
     outline: none;
 }
@@ -37,38 +37,21 @@
 }
 
 .text-filtre {
-    color: #888888;
-}
-
-.filter-field {
-    display: flex;
-    align-items: center;
-    padding: 10px;
-    gap: 7px;
-
-    height: 15px;
-
-    background: #E1E1E1;
-    border-radius: 10px;
-    margin-top: 20%;
+    color: var(--secondary-color);
 }
 
 .icon-filter {
-    color: #888888;
+    color: var(--secondary-color);
 }
 
 .dropdown-filter {
-    background-color: #E1E1E1;
+    background-color: var(--tertiary-color);
     border-bottom-left-radius: 8%;
     border-bottom-right-radius: 8%;
 }
 
 .input {
     width: 90%;
-}
-
-.line {
-    background-color: #fffdfd;
 }
 
 .item-filter {
@@ -84,7 +67,7 @@
     height: 45px;
     margin-top: 10%;
 
-    color: #33765D;
+    color: var(--accentuation-color);
     border: 1px solid rgba(51, 118, 93, 0.65);
     background-color: rgba(51, 118, 93, 0.15);
     box-shadow: 0px 4px 4px rgba(199, 199, 199, 0.25);
@@ -92,31 +75,31 @@
 }
 
 .icon-search {
-    color: #33765d;
+    color: var(--accentuation-color);
     width: 130%;
     height: 130%;
 }
 
 .brands {
-    margin-top: 12px;
+    margin-left: 16px;
+    margin-top: 20px;
     display: flex;
     flex-direction: column;
-    gap: 12px;
+    gap: 16px;
 }
 
 .title-brand {
-    color: rgb(51, 118, 93);
+    color: var(--text-color);
 }
 
 .brand-proposition {
     text-decoration: none;
     display: flex;
-}
-
-.voir-plus {
-    color: rgba(51, 118, 93);
+    color: var(--text-color);
+    font-size: 20px;
 }
 
 .search-icon {
     font-size: 25px;
+    color: var(--secondary-color);
 }

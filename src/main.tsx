@@ -10,13 +10,14 @@ import Search from './Pages/Search/Search';
 import SettingsSetUp from './Pages/Settings/SettingsSetUp';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import BrandPage from './Pages/Brand/BrandPage';
+import LevelsPage from './Pages/Levels/LevelsPage';
 
 import './index.css';
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
     <BrowserRouter>
-      <div>
+      <div className='light-mode' id='theme-element'>
         <Routes>
           <Route path="/Home" element={<Home />} />
           <Route path="/Search" element={<Search />} />
@@ -25,6 +26,7 @@ ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
           <Route path="/Settings" element={<SettingsSetUp />} />
           <Route path="/TopBrand/:productId" element={<TopBrandPage />} />
           <Route path="/Brand/:productId" element={<BrandPage />} />
+          <Route path="/Levels" element={<LevelsPage />} />
         </Routes>
         <NavigationBar />
       </div>

@@ -15,15 +15,16 @@
 .progress-container {
     display: flex;
     flex-direction: column;
-    background-color: rgb(225, 225, 225);
+    background-color: var(--tertiary-color);
     border-radius: 12px;
     height: 22px;
+    width: 138%;
 }
 
-.progress-bar {
+.progress-bar2 {
     border-radius: 12px;
-    background-color: #33765D;
     height: inherit;
+    background-color: var(--accentuation-color);
 }
 
 .progress-bar-inside {

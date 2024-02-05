@@ -1,6 +1,6 @@
 .profile {
-    margin: 20px;
-    margin-bottom: 85px;
+    padding: 20px;
+    padding-bottom: 90px;
     display: flex;
     flex-direction: column;
     align-items: flex-end;
@@ -10,7 +10,7 @@
 .header {
     display: flex;
     flex-direction: column;
-    gap: 22px;
+    gap: 16px;
 }
 
 .settings {
@@ -18,12 +18,12 @@
     padding: 0;
     height: 25px;
     width: 25px;
-    color: var(--Accentuation, #33765D);
+    color: var(--accentuation-color);
 }
 
 .nav-link {
     text-decoration: none;
-    color: #0c4128;
+    color: var(--text-color);
 }
 
 .picture-unconnected {
@@ -34,8 +34,7 @@
 
 .picture-connected {
     border-radius: 50%;
-    height: 30%;
-    width: 30%;
+    height: 100px;
 }
 
 .icon-navigation {
@@ -65,7 +64,7 @@
 
 .profile-content {
     flex-direction: column;
-    gap: 40px;
+    gap: 32px;
 }
 
 .box-unconnected-text {
@@ -74,7 +73,7 @@
 
 .box-unconnected-text {
     border-radius: 12px;
-    border: 2px solid #888888;
+    border: 2px solid var(--tertiary-color);
     box-sizing: border-box;
     padding: 12px 12px 10px;
 }
@@ -127,18 +126,7 @@
     padding: 0px;
 }
 
-.coming-soon {
-    align-items: center;
-    display: flex;
-    justify-content: center;
-    margin-top: 30px;
-    margin-bottom: 30px;
-
-    color: #888888;
-}
-
 .history-and-progress {
     flex-direction: column;
     gap: 24px;
-    width: 100%;
 }

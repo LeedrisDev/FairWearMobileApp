@@ -3,6 +3,7 @@ import '../../App.css';
 import './ScoreModal.css';
 import IProfileProps from '../../Pages/Profile/interfaceProps';
 import levels from '../../Data/levels';
+import { Link } from 'react-router-dom';
 
 function DesignBarScore() {
   return (
@@ -40,48 +41,54 @@ function ScoreModal({ profile }: IProfileProps) {
   const { score } = profile;
 
   return (
-    <div className="category score-box">
+    <div className="category" style={{ marginBottom: "22px" }}>
       <div className="box-header">
         <span className="title-two">Progress</span>
+        <Link to="/Levels">
+          <button
+            type="button"
+            className="button-class"
+          >
+            <div className="see-all">See all</div>
+          </button>
+        </Link>
       </div>
       <div className="content-box">
-        <div className="subcontent-box">
-          <div className="score-profile">
-            <div className="round-border">
-              <div className="colorScoreModale title-two">{score}</div>
-            </div>
-            <div className="fairscore-and-products">
-              <div className="numberScoreModale title-four">FairScore</div>
-              <div>
-                {numberOfScan}
-                {' '}
-                products scanned
-              </div>
+        <div className="score-profile">
+          <div className="round-border">
+            <div className="colorScoreModale title-two">{score}</div>
+          </div>
+          <div className="fairscore-and-products">
+            <div className="numberScoreModale title-four">Fairies</div>
+            <div>
+              {numberOfScan}
+              {' '}
+              products scanned
             </div>
           </div>
-          <div className="progress-content">
-            <div className="levelComponent">
-              <div className="title-four">
-                Level
-                {' '}
-                {currentLevel}
+        </div>
+        <div className="progress-content">
+          <div className="levelComponent2">
+            <div className="title-four">
+              Level
+              {' '}
+              {currentLevel}
+            </div>
+            <DesignBarScore />
+          </div>
+          <div className="taskComponent">
+            {levels[currentLevel - 1].map((task, taskIndex) => (
+              <div
+                key={`task${taskIndex + 1}`}
+                className="textScoreModale"
+                style={{
+                  color:
+                    todos[taskIndex] === 1 ? 'var(--tertiary-color)' : 'var(--text-color)',
+                }}
+              >
+                {task}
               </div>
-              <DesignBarScore />
-            </div>
-            <div className="taskComponent">
-              {levels[currentLevel - 1].map((task, taskIndex) => (
-                <div
-                  key={`task${taskIndex + 1}`}
-                  className="textScoreModale"
-                  style={{
-                    color:
-                      todos[taskIndex] === 1 ? '#D0D0D0' : '#2A301E',
-                  }}
-                >
-                  {task}
-                </div>
-              ))}
-            </div>
+            ))}
           </div>
         </div>
       </div>

@@ -1,22 +1,29 @@
 import ProductPage from '../Product/ProductPage';
 import Scanner from './Scanner';
 import * as React from 'react';
-import { useEffect } from 'react';
-
+// import { useEffect } from 'react';
 import './ScannerPage.css';
-import ProductByUpc from '../../Business/ProductBusiness';
 import { ProductModel } from '../../Models/ProductModel';
+import { useState } from 'react';
 
-interface ScannerStateProps {
+/*interface ScannerStateProps {
   barcode: string;
   product: ProductModel | null;
-}
+}*/
 
 function ScannerPage() {
-  const initialState: ScannerStateProps = {
+
+  const [result, setResult] = useState(null)
+
+  const onDetected = (resultFinal: any) => {
+    setResult(resultFinal)
+  }
+
+  /*const initialState: ScannerStateProps = {
     barcode: '',
     product: null,
   };
+
   const [state, setState] = React.useState(initialState);
   const { barcode, product } = state;
 
@@ -47,33 +54,33 @@ function ScannerPage() {
 
   const handleBackButton = () => {
     updateState({ product: null });
-  };
+  }; */
 
-  /* const mockedProduct = {
-     name: 'The North Face M Etip Hardface Glove',
-     country: 'United States',
-     image: 'No image found',
-     globalScore: 3,
-     scores: {
-       moral: 3,
-       animal: 4,
-       environmental: 3,
-     },
-     composition: [{
-       percentage: 40,
-       component: 'coton',
-     }, {
-       percentage: 60,
-       component: 'polyester',
-     }],
-     brand: 'The North Face',
-   }; */
+  const mockedProduct: ProductModel = {
+    name: 'The North Face Hardface Glove',
+    country: 'Bangladesh',
+    image: 'No image found',
+    globalScore: 3,
+    scores: {
+      moral: 2,
+      animal: 4.4,
+      environmental: 3,
+    },
+    composition: [{
+      percentage: 40,
+      component: 'coton',
+    }, {
+      percentage: 60,
+      component: 'polyester',
+    }],
+    brand: 'The North Face',
+  };
 
   return (
     <div className="ScannerPage">
       {
-        product ? (
-          <ProductPage product={product} onDetected={handleBackButton} />
+        result !== null ? (
+          <ProductPage product={mockedProduct} onDetected={onDetected} />
         ) : (
           <Scanner onDetected={onDetected} />
         )

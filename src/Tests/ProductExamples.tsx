@@ -1,5 +1,7 @@
 import { IProductInformations } from './InterfaceProduct';
-import gloves from '../assets/images/glove.jpeg';
+import gloves from '../assets/images/gloves.jpeg';
+import gloves2 from '../assets/images/gloves2.jpeg';
+import gloves3 from '../assets/images/gloves3.jpeg';
 
 const product1: IProductInformations = {
   name: 'Black glove HardFace',
@@ -24,17 +26,17 @@ const product1: IProductInformations = {
   ],
   alternatives: [
     {
-      name: 'gants 1',
-      image: gloves,
+      name: 'The North Face bl...',
+      image: gloves2,
+      link: 'https://www.vinted.fr/items/3354854143-rino-glove-unisex-gants?referrer=catalog',
+    },
+    {
+      name: 'Black gloves',
+      image: gloves3,
       link: 'https://www.vinted.fr/',
     },
     {
-      name: 'gants 2',
-      image: gloves,
-      link: 'https://www.vinted.fr/',
-    },
-    {
-      name: 'gants 3',
+      name: 'Ski gloves The Nor...',
       image: gloves,
       link: 'https://www.vinted.fr/',
     },
