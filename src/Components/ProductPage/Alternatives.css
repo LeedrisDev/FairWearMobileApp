@@ -1,0 +1,100 @@
+.title-product {
+    font-family: 'Poppins', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 17px;
+    line-height: 22px;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    color: #2A301E;
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+}
+
+
+.plus-alternatives {
+    color: var(--accentuation-color);
+    width: 20%;
+}
+
+.box,
+.clothing-item,
+.profile,
+.category,
+.content,
+.fairscore,
+.clothes,
+.brand-and-grade,
+.box-header {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+
+.content {
+    flex-direction: column;
+    gap: 25px;
+    margin-top: 50px;
+    padding: 0px;
+}
+
+.alternatives-link {
+    text-decoration: none;
+}
+
+.box {
+    border-radius: 12px;
+    border: 2px solid #E1E1E1;
+    box-sizing: border-box;
+    flex-direction: column;
+    padding: 12px 12px 10px;
+}
+
+.go-alternative-page {
+    border: rgba(87, 86, 86, 0);
+    background-color: white;
+}
+
+.category {
+    flex-direction: column;
+    gap: 12px;
+    width: 91%;
+}
+
+.clothes {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 10px;
+    grid-auto-rows: minmax(100px, auto);
+    gap: 10px;
+}
+
+.clothing-item {
+    flex-direction: column;
+    gap: 7px;
+    padding: 0px;
+}
+
+.item-image {
+    aspect-ratio: 1 / 1;
+    border-radius: 12px;
+    width: 100%;
+}
+
+.brand-and-grade {
+    flex-direction: row;
+    gap: 7px;
+    padding: 0px;
+}
+
+.alternatives-box {
+    width: 90%;
+}
+
+.alternatives-image {
+    aspect-ratio: 1 / 1;
+    border-radius: 50%;
+    width: 40%;
+}

@@ -1,0 +1,59 @@
+@import "../../App.css";
+
+.navigation-bar {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+
+    width: -moz-available;
+    width: -webkit-fill-available;
+    padding: 12px;
+
+    position: fixed;
+    bottom: 0;
+    border-top: 1px solid var(--tertiary-color);
+    background-color: var(--background-color);
+
+    z-index: 2;
+}
+
+.icon {
+    font-size: 30px;
+}
+
+.title {
+    font-family: 'Poppins';
+    margin-top: 2px;
+}
+
+.active,
+.passive {
+    display: flex;
+    width: 15%;
+    height: fit-content;
+    padding: 6px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    flex-shrink: 0;
+    align-self: stretch;
+}
+
+.active {
+    border-radius: 12px;
+    background: var(--Background-icons, rgba(51, 118, 93, 0.15));
+}
+
+.button,
+.button-active {
+    background-color: transparent;
+    border-width: 0px;
+    color: var(--secondary-color);
+}
+
+.button-active {
+    color: var(--accentuation-color);
+    font-weight: 700;
+}

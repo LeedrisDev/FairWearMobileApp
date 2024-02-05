@@ -1,0 +1,48 @@
+#root {
+  margin: 0;
+  text-align: center;
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}
+
+.nav-bar {
+  bottom: 0;
+  right: 0;
+}
+
+.content-box {
+  display: flex;
+  padding: 16px;
+  flex-direction: column;
+  justify-content: center;
+  gap: 10px;
+  align-self: stretch;
+  border-radius: 12px;
+  border: 1px solid var(--tertiary-color);
+}
+
+.light-mode {
+  background-color: #fff;
+  color: #2A301E;
+  --background-color: #FFFF;
+  --text-color: #2A301E;
+  --accentuation-color: #33765D;
+  --secondary-color: #6D716D;
+  --tertiary-color: #E1E1E1;
+}
+
+.dark-mode {
+  background-color: #34312A;
+  color: #FFFF;
+  --background-color: #34312A;
+  --text-color: #FFFF;
+  --accentuation-color: #6ADE9F;
+  --secondary-color: #E8E0D1;
+  --tertiary-color: #858077;
+}

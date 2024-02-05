@@ -1,0 +1,132 @@
+.profile {
+    padding: 20px;
+    padding-bottom: 90px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 0;
+}
+
+.header {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.settings {
+    margin: 0;
+    padding: 0;
+    height: 25px;
+    width: 25px;
+    color: var(--accentuation-color);
+}
+
+.nav-link {
+    text-decoration: none;
+    color: var(--text-color);
+}
+
+.picture-unconnected {
+    border-radius: 50%;
+    height: 60%;
+    width: 60%;
+}
+
+.picture-connected {
+    border-radius: 50%;
+    height: 100px;
+}
+
+.icon-navigation {
+    text-decoration: none;
+    height: 150%;
+    width: 150%;
+}
+
+.clothing-item,
+.category,
+.profile-content,
+.brand-and-grade,
+.title-box-unconnected,
+.box-unconnected,
+.history-and-progress,
+.box-header {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+
+.content-profile {
+    flex-direction: column;
+    margin-top: 20px;
+    padding: 0px;
+}
+
+.profile-content {
+    flex-direction: column;
+    gap: 32px;
+}
+
+.box-unconnected-text {
+    height: 40%;
+}
+
+.box-unconnected-text {
+    border-radius: 12px;
+    border: 2px solid var(--tertiary-color);
+    box-sizing: border-box;
+    padding: 12px 12px 10px;
+}
+
+.text {
+    font-size: 140%;
+    line-height: 1.2em;
+    text-align: justify;
+}
+
+.box-header {
+    align-self: stretch;
+    flex-direction: row;
+    gap: 12px;
+    justify-content: space-between;
+    padding: 0px 10px;
+}
+
+.category {
+    flex-direction: column;
+    gap: 12px;
+    margin: 0;
+    width: 100%;
+}
+
+.historic {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    padding: 0px;
+}
+
+
+/* Item of clothing */
+.clothing-item {
+    flex-direction: column;
+    gap: 7px;
+    padding: 0px;
+}
+
+.item-image {
+    aspect-ratio: 1 / 1;
+    border-radius: 12px;
+    width: 100%;
+}
+
+.brand-and-grade {
+    flex-direction: row;
+    gap: 7px;
+    padding: 0px;
+}
+
+.history-and-progress {
+    flex-direction: column;
+    gap: 24px;
+}

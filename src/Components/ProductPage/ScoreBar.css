@@ -1,0 +1,48 @@
+.score-bar {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+}
+
+.score-breakdown {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+}
+
+.progress-container {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--tertiary-color);
+    border-radius: 12px;
+    height: 22px;
+    width: 138%;
+}
+
+.progress-bar2 {
+    border-radius: 12px;
+    height: inherit;
+    background-color: var(--accentuation-color);
+}
+
+.progress-bar-inside {
+    margin-bottom: 15px;
+    border-radius: 12px;
+
+}
+
+.design-bar {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.percent-design-bar-box {
+    width: 260px;
+}
+
+.category-icon {
+    font-size: 22px;
+}
